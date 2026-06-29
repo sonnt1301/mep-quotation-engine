@@ -1,0 +1,172 @@
+{
+  "$defs": {
+    "FilePathsModel": {
+      "properties": {
+        "corrections_json": {
+          "description": "Đường dẫn file corrections JSON, tương đối",
+          "title": "Corrections Json",
+          "type": "string"
+        },
+        "logs_jsonl": {
+          "description": "Đường dẫn file nhật ký log JSONL, tương đối",
+          "title": "Logs Jsonl",
+          "type": "string"
+        },
+        "normalized_json": {
+          "description": "Đường dẫn file normalized JSON, tương đối",
+          "title": "Normalized Json",
+          "type": "string"
+        },
+        "parsed_json": {
+          "description": "Đường dẫn file JSON thô parsed, tương đối",
+          "title": "Parsed Json",
+          "type": "string"
+        },
+        "parsed_markdown": {
+          "description": "Đường dẫn file Markdown parsed, tương đối",
+          "title": "Parsed Markdown",
+          "type": "string"
+        },
+        "source_pdf": {
+          "description": "Đường dẫn file PDF gốc, tương đối từ package root",
+          "title": "Source Pdf",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_pdf",
+        "parsed_json",
+        "parsed_markdown",
+        "normalized_json",
+        "corrections_json",
+        "logs_jsonl"
+      ],
+      "title": "FilePathsModel",
+      "type": "object"
+    },
+    "SupplierModel": {
+      "properties": {
+        "code": {
+          "description": "Mã nhà cung cấp, ví dụ: AUT, CADIVI",
+          "title": "Code",
+          "type": "string"
+        },
+        "name": {
+          "description": "Tên nhà cung cấp",
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ],
+      "title": "SupplierModel",
+      "type": "object"
+    },
+    "VersionMetadataModel": {
+      "properties": {
+        "llm": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Tên model LLM sử dụng",
+          "title": "Llm"
+        },
+        "parser_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Phiên bản parser sử dụng",
+          "title": "Parser Version"
+        },
+        "prompt_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Phiên bản prompt sử dụng",
+          "title": "Prompt Version"
+        },
+        "schema_version": {
+          "default": "1.0",
+          "description": "Phiên bản schema dữ liệu",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workflow_version": {
+          "default": "mvp_spec_v1",
+          "description": "Phiên bản quy trình xử lý",
+          "title": "Workflow Version",
+          "type": "string"
+        }
+      },
+      "title": "VersionMetadataModel",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "files": {
+      "$ref": "#/$defs/FilePathsModel",
+      "description": "Danh sách các file trong gói báo giá"
+    },
+    "quotation_date": {
+      "description": "Ngày báo giá định dạng YYYY-MM-DD",
+      "title": "Quotation Date",
+      "type": "string"
+    },
+    "quotation_id": {
+      "description": "ID báo giá định dạng {SUPPLIER}_{YYYYMMDD}_{SEQ}",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "sequence": {
+      "description": "Số thứ tự trong ngày",
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "supplier": {
+      "$ref": "#/$defs/SupplierModel",
+      "description": "Thông tin nhà cung cấp"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "versions": {
+      "$ref": "#/$defs/VersionMetadataModel"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "supplier",
+    "quotation_date",
+    "sequence",
+    "files"
+  ],
+  "title": "QuotationPackageModel",
+  "type": "object"
+}

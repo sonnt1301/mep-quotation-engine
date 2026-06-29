@@ -1,0 +1,1 @@
+from mep_quotation.corrections.recorder import record_correction

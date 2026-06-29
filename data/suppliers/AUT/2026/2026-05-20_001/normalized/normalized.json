@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "quotation_id": "AUT_20260520_001",
+  "supplier_code": "AUT",
+  "quotation_date": "2026-05-20",
+  "currency": "VND",
+  "items": [
+    {
+      "item_id": "AUT_20260520_001_0001",
+      "material_code": "CV-3X2.5",
+      "material_name": "Cáp điện CV 3x2.5 CADIVI",
+      "category": "Electrical Cable",
+      "unit": "m",
+      "unit_price": 18500.0,
+      "vat_rate": 0.1,
+      "brand": "CADIVI",
+      "origin": "Vietnam",
+      "raw_text": "Cáp điện CV 3x2.5",
+      "evidence": {
+        "source_pdf": "source/original.pdf",
+        "page": 1,
+        "bbox": null,
+        "crop_path": null
+      }
+    },
+    {
+      "item_id": "AUT_20260520_001_0002",
+      "material_code": "VALVE-DN50",
+      "material_name": "Van cổng đồng DN50",
+      "category": "Valve",
+      "unit": "cái",
+      "unit_price": 1250000.0,
+      "vat_rate": 0.1,
+      "brand": "AUT",
+      "origin": "Malaysia",
+      "raw_text": "Van cổng đồng DN50",
+      "evidence": {
+        "source_pdf": "source/original.pdf",
+        "page": 2,
+        "bbox": null,
+        "crop_path": null
+      }
+    }
+  ]
+}

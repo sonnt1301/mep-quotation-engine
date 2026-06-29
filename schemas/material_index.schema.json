@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "MaterialIndexEntryModel": {
+      "properties": {
+        "currency": {
+          "default": "VND",
+          "description": "Đơn vị tiền tệ",
+          "title": "Currency",
+          "type": "string"
+        },
+        "material_name": {
+          "description": "Tên vật tư",
+          "title": "Material Name",
+          "type": "string"
+        },
+        "package_path": {
+          "description": "Đường dẫn tương đối tới package, tính từ Project Root",
+          "title": "Package Path",
+          "type": "string"
+        },
+        "quotation_date": {
+          "description": "Ngày báo giá",
+          "title": "Quotation Date",
+          "type": "string"
+        },
+        "quotation_id": {
+          "description": "ID báo giá gốc",
+          "title": "Quotation Id",
+          "type": "string"
+        },
+        "source_path": {
+          "default": "normalized/normalized.json",
+          "description": "Đường dẫn tương đối tới file normalized.json",
+          "title": "Source Path",
+          "type": "string"
+        },
+        "supplier_code": {
+          "description": "Mã nhà cung cấp",
+          "title": "Supplier Code",
+          "type": "string"
+        },
+        "unit": {
+          "description": "Đơn vị tính",
+          "title": "Unit",
+          "type": "string"
+        },
+        "unit_price": {
+          "description": "Đơn giá",
+          "title": "Unit Price",
+          "type": "number"
+        }
+      },
+      "required": [
+        "quotation_id",
+        "supplier_code",
+        "quotation_date",
+        "material_name",
+        "unit",
+        "unit_price",
+        "package_path"
+      ],
+      "title": "MaterialIndexEntryModel",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "materials": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/MaterialIndexEntryModel"
+        },
+        "type": "array"
+      },
+      "description": "Bản đồ các vật tư theo mã vật tư",
+      "title": "Materials",
+      "type": "object"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema index",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "title": "MaterialIndexFileModel",
+  "type": "object"
+}

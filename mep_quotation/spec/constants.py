@@ -1,0 +1,4 @@
+SCHEMA_VERSION = "1.0"
+WORKFLOW_VERSION = "mvp_spec_v1"
+DATE_FORMAT = "%Y-%m-%d"
+DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"

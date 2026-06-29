@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "quotation_id": "AUT_20260520_001",
+  "corrections": [
+    {
+      "correction_id": "corr_001",
+      "timestamp": "2026-06-29T10:16:54Z",
+      "user": "human",
+      "field_path": "items[0].unit_price",
+      "old_value": 18500,
+      "new_value": 19200,
+      "reason": "Supplier revised quotation",
+      "correction_type": "manual_update"
+    }
+  ]
+}
