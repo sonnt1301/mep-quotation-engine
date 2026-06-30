@@ -10,7 +10,10 @@ from mep_quotation.spec.models import (
     CorrectionsFileModel,
     AuditLogEntryModel,
     MaterialIndexEntryModel,
-    MaterialIndexFileModel
+    MaterialIndexFileModel,
+    WarningModel,
+    PdfMetadataModel,
+    PdfValidationResult
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

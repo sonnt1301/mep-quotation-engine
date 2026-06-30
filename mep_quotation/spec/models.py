@@ -30,6 +30,7 @@ class VersionMetadataModel(BaseModel):
 
 class FilePathsModel(BaseModel):
     source_pdf: str = Field(..., description="Đường dẫn file PDF gốc, tương đối từ package root")
+    pdf_metadata: str = Field("source/metadata.json", description="Đường dẫn file metadata PDF, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
@@ -193,3 +194,29 @@ class MaterialIndexFileModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+class WarningModel(BaseModel):
+    code: str = Field(..., description="Mã cảnh báo kỹ thuật")
+    message: str = Field(..., description="Nội dung chi tiết cảnh báo")
+
+class PdfMetadataModel(BaseModel):
+    schema_version: str = Field("1.0", description="Phiên bản schema metadata")
+    file_name: str = Field(..., description="Tên file PDF gốc")
+    file_size: int = Field(..., description="Dung lượng file tính bằng bytes")
+    sha256: str = Field(..., description="Mã băm SHA256 của file")
+    page_count: Optional[int] = Field(None, description="Số trang của PDF")
+    pdf_version: Optional[str] = Field(None, description="Phiên bản PDF")
+    encrypted: bool = Field(False, description="File có bị mã hóa/đặt mật khẩu không")
+    created_at: Optional[str] = Field(None, description="Thời điểm tạo PDF gốc")
+    modified_at: Optional[str] = Field(None, description="Thời điểm chỉnh sửa PDF gốc")
+    imported_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách các cảnh báo")
+
+    @field_serializer("imported_at")
+    def serialize_imported_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+class PdfValidationResult(BaseModel):
+    is_valid: bool = Field(..., description="Kết quả validate tổng thể")
+    warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+    error_message: Optional[str] = Field(None, description="Thông báo lỗi chi tiết nếu không valid")

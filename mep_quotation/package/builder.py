@@ -22,6 +22,8 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
         
     # 2. Tính toán đường dẫn thư mục và Quotation ID
     package_dir = get_package_dir(data_root, supplier_code, date_str, seq)
+    if package_dir.exists():
+        raise ValueError(f"Package directory already exists: {package_dir}. Overwrite is not allowed.")
     quotation_id = generate_quotation_id(supplier_code, date_str, seq)
     
     # 3. Tạo các thư mục con
@@ -41,6 +43,7 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
         versions=VersionMetadataModel(),
         files=FilePathsModel(
             source_pdf="source/original.pdf",
+            pdf_metadata="source/metadata.json",
             parsed_json="parsed/quotation.json",
             parsed_markdown="parsed/quotation.md",
             normalized_json="normalized/normalized.json",

@@ -27,6 +27,12 @@
           "title": "Parsed Markdown",
           "type": "string"
         },
+        "pdf_metadata": {
+          "default": "source/metadata.json",
+          "description": "Đường dẫn file metadata PDF, tương đối từ package root",
+          "title": "Pdf Metadata",
+          "type": "string"
+        },
         "source_pdf": {
           "description": "Đường dẫn file PDF gốc, tương đối từ package root",
           "title": "Source Pdf",

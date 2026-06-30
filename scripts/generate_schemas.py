@@ -10,7 +10,8 @@ from mep_quotation.spec.models import (
     QuotationPackageModel,
     NormalizedQuotationModel,
     CorrectionsFileModel,
-    MaterialIndexFileModel
+    MaterialIndexFileModel,
+    PdfMetadataModel
 )
 
 def generate_schemas():
@@ -23,7 +24,8 @@ def generate_schemas():
         "quotation_package.schema.json": QuotationPackageModel,
         "normalized.schema.json": NormalizedQuotationModel,
         "corrections.schema.json": CorrectionsFileModel,
-        "material_index.schema.json": MaterialIndexFileModel
+        "material_index.schema.json": MaterialIndexFileModel,
+        "pdf_metadata.schema.json": PdfMetadataModel
     }
 
     for filename, model in models_to_generate.items():

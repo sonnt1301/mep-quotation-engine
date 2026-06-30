@@ -1,13 +1,14 @@
 [project]
 name = "mep-quotation"
 version = "1.0.0"
-description = "MEP Quotation Pipeline Phase 1 - Foundation"
+description = "MEP Quotation Pipeline - Foundation and PDF Intake"
 authors = [
     { name = "Gemini Code Expert" }
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "pydantic>=2.0.0"
+    "pydantic>=2.0.0",
+    "pypdf>=4.0.0"
 ]
 
 [project.optional-dependencies]

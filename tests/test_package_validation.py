@@ -31,6 +31,18 @@ def test_create_and_validate_empty_package(temp_project_dir):
     assert corr.quotation_id == "AUT_20260520_001"
     assert len(corr.corrections) == 0
 
+def test_create_package_duplicate_sequence(temp_project_dir):
+    data_root = temp_project_dir / "data"
+    supplier = "AUT"
+    date_str = "2026-05-20"
+    
+    # Tạo lần 1 thành công
+    create_empty_package(data_root, supplier, date_str, 1)
+    
+    # Tạo lần 2 trùng sequence -> Phải ném ValueError
+    with pytest.raises(ValueError, match="already exists.*Overwrite is not allowed"):
+        create_empty_package(data_root, supplier, date_str, 1)
+
 def test_invalid_package_validation():
     # Trường hợp thiếu trường bắt buộc
     invalid_data = {

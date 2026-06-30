@@ -5,6 +5,14 @@ from pathlib import Path
 import json
 from typing import Any
 
+# Đảm bảo console Windows hỗ trợ UTF-8 tránh crash UnicodeEncodeError
+if sys.platform.startswith("win"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 # Thêm project root vào sys.path để import mep_quotation
 project_root = Path(__file__).parent.parent.parent.resolve()
 if str(project_root) not in sys.path:
@@ -172,9 +180,64 @@ def handle_search_material(args):
         print(f"Error searching materials: {e}", file=sys.stderr)
         sys.exit(1)
 
+def handle_import_pdf(args):
+    pdf_path = Path(args.file)
+    data_root = project_root / "data"
+    
+    try:
+        from mep_quotation.pdf import import_pdf
+        package_dir = import_pdf(
+            pdf_path=pdf_path,
+            data_root=data_root,
+            supplier_code=args.supplier,
+            quotation_date=args.date,
+            seq=args.seq,
+            max_size_mb=args.max_size_mb
+        )
+        
+        # Load package.json và metadata.json để in thông tin
+        pkg = load_package_json(package_dir)
+        meta_path = package_dir / "source" / "metadata.json"
+        
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta_data = json.load(f)
+            
+        print(f"Successfully imported PDF.")
+        print(f"  Quotation ID   : {pkg.quotation_id}")
+        print(f"  Package Path   : {package_dir.relative_to(project_root).as_posix()}")
+        print(f"  Source PDF Path: {(package_dir / pkg.files.source_pdf).relative_to(project_root).as_posix()}")
+        print(f"  Metadata Path  : {meta_path.relative_to(project_root).as_posix()}")
+        print(f"  Page Count     : {meta_data.get('page_count')}")
+        print(f"  File Size      : {meta_data.get('file_size')} bytes")
+        print(f"  SHA256         : {meta_data.get('sha256')}")
+        print(f"  Encrypted      : {meta_data.get('encrypted')}")
+        
+        # Hiển thị warnings nếu có
+        warnings = meta_data.get("warnings", [])
+        if warnings:
+            for w in warnings:
+                if w.get("code") == "large_pdf":
+                    file_size_mb = meta_data.get('file_size') / (1024 * 1024)
+                    print()
+                    print("WARNING")
+                    print()
+                    print("Large PDF detected.")
+                    print()
+                    print(f"File size: {file_size_mb:.2f} MB")
+                    print(f"Configured threshold: {args.max_size_mb} MB")
+                    print()
+                    print("Import will continue.")
+                    print()
+                else:
+                    print(f"\nWarning [{w.get('code')}]: {w.get('message')}")
+                    
+    except Exception as e:
+        print(f"Error importing PDF: {e}", file=sys.stderr)
+        sys.exit(1)
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 1 Foundation"
+        description="MEP Quotation Pipeline CLI Tool - Phase 2 PDF Infrastructure"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -205,6 +268,15 @@ def main():
     parser_index = subparsers.add_parser("build-index", help="Quét các package và xây dựng chỉ mục vật tư")
     parser_index.add_argument("--strict", action="store_true", help="Chế độ nghiêm ngặt, dừng và báo lỗi ngay khi có file lỗi")
     parser_index.set_defaults(func=handle_build_index)
+
+    # Command import-pdf
+    parser_import = subparsers.add_parser("import-pdf", help="Import tệp PDF báo giá vào hệ thống")
+    parser_import.add_argument("--supplier", required=True, help="Mã nhà cung cấp (ví dụ: AUT)")
+    parser_import.add_argument("--date", required=True, help="Ngày báo giá định dạng YYYY-MM-DD")
+    parser_import.add_argument("--file", required=True, help="Đường dẫn đến tệp PDF")
+    parser_import.add_argument("--seq", type=int, default=None, help="Số thứ tự báo giá (tự động tính nếu bỏ qua)")
+    parser_import.add_argument("--max-size-mb", type=int, default=50, help="Dung lượng tối đa cấu hình bằng MB")
+    parser_import.set_defaults(func=handle_import_pdf)
 
     # Command search-material
     parser_search = subparsers.add_parser("search-material", help="Tìm kiếm vật tư từ chỉ mục")

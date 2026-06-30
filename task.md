@@ -1,15 +1,32 @@
-# Danh Sách Công Việc MEP Quotation Pipeline Phase 1 - Harden Data Contract
+# Danh Sách Công Việc MEP Quotation Pipeline Phase 2 - PDF Infrastructure (Bản Cập Nhật 2)
 
-- `[x]` Sửa lỗi packaging trong `pyproject.toml`
-- `[x]` Thắt chặt validation cho `NormalizedQuotationModel` trong `mep_quotation/spec/models.py`
-- `[x]` Tạo module `mep_quotation/package/integrity.py` và hàm `validate_package_integrity`
-- `[x]` Cập nhật CLI `validate-package` để kiểm tra toàn vẹn liên kết dữ liệu
-- `[x]` Nâng cấp `build_material_index` trong `mep_quotation/indexer/material_indexer.py` (chữ ký hàm mới và strict mode)
-- `[x]` Cập nhật CLI `build-index` và các test cũ tương thích với chữ ký hàm mới của indexer
-- `[x]` Cập nhật tài liệu `README.md`
-- `[x]` Sinh lại các file JSON Schema qua script `generate_schemas.py`
-- `[x]` Viết bộ test mới `tests/test_integrity_mismatch.py`
-- `[x]` Thực hiện quy trình xác minh bắt buộc (Verify):
-  - `[x]` Chạy `python -m pip install -e ".[dev]"`
-  - `[x]` Chạy `python scripts/generate_schemas.py`
-  - `[x]` Chạy `python -m pytest -v` và kiểm tra tất cả test đều pass.
+- [x] Cấu hình & Môi trường
+  - [x] Thêm thư viện `pypdf` vào `pyproject.toml`
+  - [x] Tạo cấu trúc thư mục module `mep_quotation/pdf/`
+- [x] Cập nhật dữ liệu chuẩn (Spec & Models)
+  - [x] Thêm `WarningModel`, `PdfMetadataModel` và `PdfValidationResult` vào `mep_quotation/spec/models.py`
+  - [x] Cập nhật `FilePathsModel` trong `mep_quotation/spec/models.py` (trường `pdf_metadata` có default value)
+  - [x] Export models mới trong `mep_quotation/spec/__init__.py`
+  - [x] Cập nhật `create_empty_package` trong `mep_quotation/package/builder.py` để gán mặc định `pdf_metadata`
+- [x] Triển khai module `pdf`
+  - [x] Tạo `mep_quotation/pdf/__init__.py`
+  - [x] Tạo `mep_quotation/pdf/checksum.py` (tính toán SHA256)
+  - [x] Tạo `mep_quotation/pdf/validator.py` (kiểm tra header, dung lượng, encrypted, reader và trả về PdfValidationResult, là source of truth cho cảnh báo file lớn)
+  - [x] Tạo `mep_quotation/pdf/metadata.py` (trích xuất thông tin kỹ thuật bằng pypdf)
+  - [x] Tạo `mep_quotation/pdf/importer.py` (hàm `import_pdf` kết hợp các bước, xử lý flow ghi audit event sau khi package được tạo)
+- [x] Cập nhật CLI (CLI Module)
+  - [x] Thêm subcommand `import-pdf` và flag tương ứng trong `mep_quotation/cli/main.py`
+  - [x] Load `source/metadata.json` sau khi import thành công để in siêu dữ liệu và cảnh báo (warnings) ra console
+- [x] Cập nhật tài liệu
+  - [x] Cập nhật `README.md` (CLI command import-pdf)
+  - [x] Tạo mới/Cập nhật `walkthrough.md` tổng kết nghiệm thu Phase 2
+  - [x] Cập nhật `implementation_plan.md` nếu có thay đổi phát sinh trong lúc triển khai
+- [x] Sinh lại JSON Schemas
+  - [x] Cập nhật `scripts/generate_schemas.py` để sinh thêm `schemas/pdf_metadata.schema.json`
+  - [x] Chạy `python scripts/generate_schemas.py` và lưu các schema mới
+- [x] Viết bộ test suite cho Phase 2
+  - [x] Tạo tệp `tests/test_pdf_infrastructure.py` kiểm thử đầy đủ các kịch bản PDF
+- [x] Thực hiện quy trình xác minh bắt buộc (Verify)
+  - [x] Chạy `python -m pip install -e ".[dev]"`
+  - [x] Chạy `python scripts/generate_schemas.py`
+  - [x] Chạy `python -m pytest -v` (đảm bảo 21 test cũ và test mới đều pass 100%)
