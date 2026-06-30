@@ -17,6 +17,12 @@
           "title": "Normalized Json",
           "type": "string"
         },
+        "page_manifest": {
+          "default": "source/page_manifest.json",
+          "description": "Đường dẫn file manifest trang PDF, tương đối từ package root",
+          "title": "Page Manifest",
+          "type": "string"
+        },
         "parsed_json": {
           "description": "Đường dẫn file JSON thô parsed, tương đối",
           "title": "Parsed Json",

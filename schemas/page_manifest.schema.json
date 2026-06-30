@@ -1,0 +1,110 @@
+{
+  "$defs": {
+    "PageImageModel": {
+      "properties": {
+        "file_size": {
+          "description": "Dung lượng file ảnh tính bằng bytes",
+          "title": "File Size",
+          "type": "integer"
+        },
+        "height": {
+          "description": "Chiều cao ảnh tính bằng pixels",
+          "title": "Height",
+          "type": "integer"
+        },
+        "image_path": {
+          "description": "Đường dẫn tương đối tới ảnh trang từ package root",
+          "title": "Image Path",
+          "type": "string"
+        },
+        "page_number": {
+          "description": "Số trang (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "rotation": {
+          "description": "Góc xoay của trang gốc (độ)",
+          "title": "Rotation",
+          "type": "integer"
+        },
+        "sha256": {
+          "description": "Mã băm SHA256 của file ảnh",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "width": {
+          "description": "Chiều rộng ảnh tính bằng pixels",
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page_number",
+        "image_path",
+        "width",
+        "height",
+        "rotation",
+        "sha256",
+        "file_size"
+      ],
+      "title": "PageImageModel",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "dpi": {
+      "description": "Độ phân giải dùng để rasterize",
+      "title": "Dpi",
+      "type": "integer"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "image_format": {
+      "default": "png",
+      "description": "Định dạng ảnh (chỉ chấp nhận png)",
+      "title": "Image Format",
+      "type": "string"
+    },
+    "page_count": {
+      "description": "Tổng số trang",
+      "title": "Page Count",
+      "type": "integer"
+    },
+    "pages": {
+      "description": "Danh sách chi tiết các trang",
+      "items": {
+        "$ref": "#/$defs/PageImageModel"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema manifest",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_pdf": {
+      "description": "Đường dẫn tương đối tới file PDF gốc",
+      "title": "Source Pdf",
+      "type": "string"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_pdf",
+    "page_count",
+    "dpi",
+    "pages"
+  ],
+  "title": "PageManifestModel",
+  "type": "object"
+}

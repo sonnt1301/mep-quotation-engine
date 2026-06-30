@@ -1,158 +1,186 @@
-# Kế Hoạch Triển Khai MEP Quotation Pipeline Phase 2 - PDF Infrastructure (Bản Cập Nhật 2)
+# Kế Hoạch Triển Khai MEP Quotation Pipeline Phase 3 - PDF Page Preparation (Bản Cập Nhật)
 
-Tài liệu này trình bày kế hoạch triển khai chi tiết cho **Phase 2 – PDF Infrastructure / PDF Intake Layer** sau khi điều chỉnh các yêu cầu nghiệp vụ từ người dùng. Toàn bộ các thay đổi được áp dụng tại thư mục dự án: **[D:/mep_quotation_pipeline](file:///D:/mep_quotation_pipeline)** trên nhánh `feature/pdf-infrastructure`.
-
----
-
-## 1. Các Ràng Buộc Kỹ Thuật Điều Chỉnh
-
-> [!IMPORTANT]
-> 1. **Luồng Ghi Nhật Ký Kiểm Toán (Audit Flow)**: Do tệp log nằm trong thư mục package, hệ thống không thể ghi log trước khi package được tạo. Quy trình đúng:
->    - Validate PDF cơ bản trước (nếu fail thì raise exception ngay và kết thúc, không ghi log).
->    - Tạo package bằng `create_empty_package`.
->    - Ghi sự kiện kiểm toán `pdf_import_started` vào log của package.
->    - Thực hiện sao chép PDF, sinh metadata và cập nhật package.json.
->    - Nếu xảy ra bất kỳ lỗi nào sau khi package đã được tạo, ghi nhận sự kiện `pdf_import_failed` vào log trước khi raise exception.
-> 2. **Kiểm Tra Trùng Lặp**:
->    - Nếu người dùng truyền `seq` mà package tương ứng đã tồn tại trên đĩa, ném ngoại lệ rõ ràng ngay trước khi khởi tạo package để tránh overwrite dữ liệu.
-> 3. **Tương Thích Ngược (Compatibility)**:
->    - Trường `pdf_metadata` trong `FilePathsModel` bắt buộc phải có giá trị mặc định là `"source/metadata.json"` để đảm bảo các tệp cấu hình cũ và test suite của Phase 1 tiếp tục pass.
-> 4. **Trích Xuất Thông Tin Siêu Dữ Liệu PDF**:
->    - Định nghĩa Pydantic models cho mọi dữ liệu cấu trúc: `WarningModel`, `PdfMetadataModel` và `PdfValidationResult` (để chứa kết quả validate).
->    - Cập nhật script `scripts/generate_schemas.py` để sinh thêm tệp schema: `schemas/pdf_metadata.schema.json`.
-> 5. **Hiển Thị CLI và Source of Truth**:
->    - **Importer/Validator là Source of Truth duy nhất** cho việc kiểm tra dung lượng lớn và sinh ra WarningModel(code="large_pdf", ...).
->    - CLI không tự động kiểm tra kích thước file để sinh cảnh báo trước khi import.
->    - CLI chỉ gọi `import_pdf(...)`. Sau khi import hoàn tất, CLI nạp tệp `source/metadata.json` của package vừa được tạo và in ra màn hình thông tin siêu dữ liệu cùng danh sách các `warnings` đọc được từ tệp metadata đó (bao gồm cảnh báo `large_pdf` nếu có).
-> 6. **Quy Tắc Xử Lý PDF Bị Mã Hóa (Encrypted PDF Rule)**:
->    - Encrypted PDF **không được xem là corrupted** nếu `pypdf` vẫn đọc được cấu trúc file vật lý của tệp PDF.
->    - Khi phát hiện tệp bị encrypted:
->      - Tiến trình import vẫn được tiếp tục bình thường (không bị fail).
->      - Siêu dữ liệu trong `metadata.json` ghi nhận trường `encrypted: true`.
->      - Trường số trang `page_count` sẽ được gán giá trị `null` (None) nếu không thể giải mã để đếm số trang.
->      - Hệ thống không cố giải mã tệp (decryption) hay parse nội dung của PDF.
->      - Không thu thập ngày tạo `created_at` và ngày sửa đổi `modified_at` từ document metadata nếu việc này yêu cầu mật khẩu giải mã hoặc không chắc chắn.
+Tài liệu này trình bày kế hoạch triển khai chi tiết cho **Phase 3 – PDF Page Preparation / Page Image Layer** sau khi điều chỉnh các yêu cầu từ người dùng. Toàn bộ các thay đổi sẽ được phát triển trên nhánh `feature/pdf-page-preparation` tại thư mục dự án: **[D:/mep_quotation_pipeline](file:///D:/mep_quotation_pipeline)**.
 
 ---
 
-## 2. Các Thay Đổi Đề Xuất (Proposed Changes)
+## Mục Tiêu Phase 3
+Xây dựng lớp quản lý ảnh trang PDF (Page Image Layer - v0.3.0). Lớp này thực hiện chuyển đổi (rasterize) các trang của tệp PDF gốc thành các tệp ảnh định dạng PNG riêng biệt, lưu trữ chúng một cách deterministic trong thư mục `source/pages/` dưới dạng `page_0001.png`, `page_0002.png`,... và sinh tệp chỉ mục trang `source/page_manifest.json` phục vụ đối chiếu minh chứng (evidence-based) cho các Phase sau.
 
-### A. Cấu Hình và Models dữ liệu
+---
+
+## Các Thay Đổi Đề Xuất (Proposed Changes)
+
+### 1. Phụ Thuộc (Dependencies)
 
 #### [MODIFY] [pyproject.toml](file:///D:/mep_quotation_pipeline/pyproject.toml)
-- Thêm phụ thuộc `pypdf>=4.0.0` vào danh sách `dependencies`.
+- Bổ sung thư viện `pymupdf>=1.24.0` vào danh sách `dependencies` chính.
+
+---
+
+### 2. Định Nghĩa Mô Hình Dữ Liệu (Models & Schemas)
 
 #### [MODIFY] [models.py](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py)
-- Cập nhật `FilePathsModel`: Bổ sung trường `pdf_metadata: str = Field("source/metadata.json", description="...")` (có giá trị mặc định).
-- Tạo `WarningModel`:
+- Cập nhật `FilePathsModel`: Bổ sung trường `page_manifest: str = Field("source/page_manifest.json", description="...")` (có giá trị mặc định là `"source/page_manifest.json"` để giữ tương thích ngược 100%).
+- Tạo `PageImageModel` đại diện cho thông tin của một ảnh trang:
   ```python
-  class WarningModel(BaseModel):
-      code: str = Field(..., description="Mã cảnh báo kỹ thuật")
-      message: str = Field(..., description="Nội dung chi tiết cảnh báo")
+  class PageImageModel(BaseModel):
+      page_number: int = Field(..., description="Số trang (1-indexed)")
+      image_path: str = Field(..., description="Đường dẫn tương đối tới ảnh trang từ package root")
+      width: int = Field(..., description="Chiều rộng ảnh tính bằng pixels")
+      height: int = Field(..., description="Chiều cao ảnh tính bằng pixels")
+      rotation: int = Field(..., description="Góc xoay của trang gốc (độ)")
+      sha256: str = Field(..., description="Mã băm SHA256 của file ảnh")
+      file_size: int = Field(..., description="Dung lượng file ảnh tính bằng bytes")
   ```
-- Tạo `PdfMetadataModel`:
+- Tạo `PageManifestModel` đại diện cho cấu trúc của `source/page_manifest.json`:
   ```python
-  class PdfMetadataModel(BaseModel):
-      schema_version: str = Field("1.0", description="Phiên bản schema metadata")
-      file_name: str = Field(..., description="Tên file PDF gốc")
-      file_size: int = Field(..., description="Dung lượng file tính bằng bytes")
-      sha256: str = Field(..., description="Mã băm SHA256 của file")
-      page_count: Optional[int] = Field(None, description="Số trang của PDF")
-      pdf_version: Optional[str] = Field(None, description="Phiên bản PDF")
-      encrypted: bool = Field(False, description="File có bị mã hóa/đặt mật khẩu không")
-      created_at: Optional[str] = Field(None, description="Thời điểm tạo PDF gốc")
-      modified_at: Optional[str] = Field(None, description="Thời điểm chỉnh sửa PDF gốc")
-      imported_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-      warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách các cảnh báo")
-  ```
-- Tạo `PdfValidationResult` phục vụ kết quả validate PDF:
-  ```python
-  class PdfValidationResult(BaseModel):
-      is_valid: bool = Field(..., description="Kết quả validate tổng thể")
-      warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
-      error_message: Optional[str] = Field(None, description="Thông báo lỗi chi tiết nếu không valid")
+  class PageManifestModel(BaseModel):
+      schema_version: str = Field("1.0", description="Phiên bản schema manifest")
+      quotation_id: str = Field(..., description="ID báo giá liên kết")
+      source_pdf: str = Field(..., description="Đường dẫn tương đối tới file PDF gốc")
+      page_count: int = Field(..., description="Tổng số trang")
+      dpi: int = Field(..., description="Độ phân giải dùng để rasterize")
+      image_format: str = Field("png", description="Định dạng ảnh (chỉ chấp nhận png)")
+      pages: List[PageImageModel] = Field(..., description="Danh sách chi tiết các trang")
+      generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+      @field_serializer("generated_at")
+      def serialize_generated_at(self, dt: datetime) -> str:
+          return serialize_dt(dt)
   ```
 
 #### [MODIFY] [__init__.py](file:///D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py)
-- Xuất các model mới: `WarningModel`, `PdfMetadataModel`, `PdfValidationResult`.
+- Xuất các model mới: `PageImageModel`, `PageManifestModel`.
 
 #### [MODIFY] [generate_schemas.py](file:///D:/mep_quotation_pipeline/scripts/generate_schemas.py)
-- Thêm `pdf_metadata.schema.json` sinh ra từ `PdfMetadataModel` vào danh sách sinh tự động.
+- Import `PageManifestModel` và bổ sung `"page_manifest.schema.json": PageManifestModel` vào cấu hình để sinh schema `schemas/page_manifest.schema.json` tự động.
 
 ---
 
-### B. Module pdf (mep_quotation/pdf/)
+### 3. Khởi Tạo Package Builder (Tương Thích Ngược)
 
-#### [NEW] [checksum.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf/checksum.py)
-- Hàm `calculate_sha256(file_path: Path) -> str`.
-
-#### [NEW] [validator.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf/validator.py)
-- Hàm `validate_pdf(pdf_path: Path, max_size_mb: int = 50) -> PdfValidationResult`:
-  - Thực hiện các kiểm tra: Tồn tại, là file, đuôi `.pdf`, dung lượng > 0, header `%PDF-`, đọc được bằng `pypdf.PdfReader`, check trạng thái mã hóa.
-  - Kiểm tra kích thước file: Nếu lớn hơn `max_size_mb`, không báo lỗi mà sinh một `WarningModel(code="large_pdf", message="...")`.
-  - Trả về `PdfValidationResult`.
-
-#### [NEW] [metadata.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf/metadata.py)
-- Trích xuất thông tin kỹ thuật từ `pypdf.PdfReader`: `page_count`, `pdf_version` (từ header), `encrypted`.
-- Trích xuất thông tin ngày tạo/sửa đổi thô từ metadata `/CreationDate` và `/ModDate`, chuyển đổi sang chuỗi ISO 8601 thô nếu hợp lệ, ngược lại để `None` (không đoán mò).
-
-#### [NEW] [importer.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf/importer.py)
-- Triển khai hàm `import_pdf`:
-  1. Gọi `validate_pdf`. Nếu `is_valid` của kết quả validate là `False`, raise Exception ngay lập tức (không ghi log vì package chưa được tạo).
-  2. Kiểm tra xem package tương ứng (dựa vào supplier, date, seq) đã tồn tại trên đĩa chưa. Nếu có truyền `seq` mà package đã tồn tại, ném ngoại lệ rõ ràng ngay lập tức (không overwrite).
-  3. Gọi `create_empty_package` để khởi tạo package rỗng.
-  4. Ghi sự kiện nhật ký kiểm toán `pdf_import_started` vào log của package.
-  5. Bắt đầu xử lý nghiệp vụ trong khối `try...except`:
-     - Ghi nhận `pdf_validated`.
-     - Nếu kết quả validate trước đó có chứa warning `large_pdf`, ghi sự kiện log `pdf_large_file_warning`.
-     - Sao chép file PDF gốc vào `source/original.pdf` trong package. Ghi sự kiện `pdf_copied`.
-     - Trích xuất thông tin siêu dữ liệu PDF, tạo đối tượng `PdfMetadataModel` (nạp kèm danh sách warnings từ kết quả validate), ghi tệp siêu dữ liệu `source/metadata.json` một cách deterministic. Ghi sự kiện `pdf_metadata_written`.
-     - Cập nhật `package.json` với trường `files.pdf_metadata = "source/metadata.json"` và cập nhật `updated_at`.
-     - Chạy kiểm tra toàn vẹn package `validate_package_integrity`.
-     - Ghi sự kiện `pdf_import_completed`.
-  6. Nếu có lỗi xảy ra trong khối `try...except` sau khi package đã được tạo:
-     - Ghi sự kiện `pdf_import_failed` vào file log của package.
-     - Raise Exception đó lên để báo lỗi.
+#### [MODIFY] [builder.py](file:///D:/mep_quotation_pipeline/mep_quotation/package/builder.py)
+- Cập nhật hàm `create_empty_package`: Bổ sung gán mặc định trường `page_manifest="source/page_manifest.json"` cho `FilePathsModel`.
 
 ---
 
-### C. CLI Giao Diện Dòng Lệnh
+### 4. Module Nghiệp Vụ PDF Pages (mep_quotation/pdf_pages/)
+
+#### [NEW] [__init__.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf_pages/__init__.py)
+- Xuất các hàm nghiệp vụ chính: `rasterize_pdf_pages` và `prepare_pdf_pages`.
+
+#### [NEW] [rasterizer.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf_pages/rasterizer.py)
+- Triển khai hàm:
+  ```python
+  def rasterize_pdf_pages(
+      pdf_path: Path,
+      output_dir: Path,
+      dpi: int = 150,
+      image_format: str = "png",
+  ) -> List[PageImageModel]
+  ```
+- Quy tắc hoạt động:
+  - Kiểm tra `pdf_path` tồn tại và đọc được.
+  - Sử dụng `PyMuPDF` (`import fitz`) để mở file.
+  - Kiểm tra trạng thái mã hóa: Nếu tệp bị encrypted (`doc.is_encrypted` là True), **ném ngoại lệ ValueError ngay lập tức và dừng lại**.
+  - Kiểm tra `dpi` phải là số nguyên dương (`dpi > 0`), nếu không, ném lỗi ValueError.
+  - Kiểm tra định dạng ảnh: Chỉ hỗ trợ định dạng `"png"` (case-insensitive). Nếu truyền định dạng khác, ném lỗi ValueError.
+  - **Không kiểm tra trùng lặp file ảnh hay manifest trong hàm này** (hàm này chỉ chịu trách nhiệm render ảnh trang và ghi vào `output_dir`).
+  - Duyệt qua từng trang của PDF:
+    - **Không tự xoay trang thủ công** (không tự thực hiện xoay theo `page.rotation` để tránh double-rotation). Render theo cách mặc định hiển thị của PyMuPDF.
+    - Ghi nhận `rotation = page.rotation` vào `PageImageModel`.
+    - Rasterize trang thành Pixmap với độ phân giải DPI tương ứng (sử dụng ma trận tỉ lệ `zoom = dpi / 72`).
+    - Lưu Pixmap thành tệp ảnh `page_0001.png`, `page_0002.png` (luôn định dạng 4 chữ số, đệm số 0).
+    - Tính toán kích thước ảnh thực tế (width, height), dung lượng file và SHA256 checksum của ảnh trang.
+    - Tạo đối tượng `PageImageModel`.
+  - Trả về danh sách `PageImageModel`.
+
+#### [NEW] [manifest.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf_pages/manifest.py)
+- Triển khai hàm tạo manifest `source/page_manifest.json` theo cấu trúc của `PageManifestModel`, ghi tệp deterministic và chạy validate lại trước khi lưu.
+
+#### [NEW] [page_service.py](file:///D:/mep_quotation_pipeline/mep_quotation/pdf_pages/page_service.py)
+- Triển khai hàm dịch vụ chuẩn hóa:
+  ```python
+  def prepare_pdf_pages(
+      package_path: Path,
+      dpi: int = 150,
+      image_format: str = "png",
+      overwrite: bool = False,
+  ) -> Path
+  ```
+- Quy trình hoạt động:
+  1. Đọc và nạp `package.json`.
+  2. Nối đường dẫn tệp PDF gốc `source/original.pdf` và tệp metadata `source/metadata.json`.
+  3. Kiểm tra xem tệp PDF có bị encrypted không dựa trên `metadata.json` (`encrypted` == True) hoặc trực tiếp từ file. Nếu encrypted, ném ngoại lệ ValueError và dừng lại ngay lập tức (không decrypt, không tiếp tục).
+  4. **Kiểm Tra Trùng Lặp Atomic**:
+     - Nếu `overwrite=False`:
+       - Kiểm tra nếu file manifest `source/page_manifest.json` đã tồn tại trên đĩa.
+       - Kiểm tra nếu bất kỳ file ảnh trang mong đợi nào (ví dụ `source/pages/page_0001.png` ứng với tổng số trang của PDF gốc) đã tồn tại trên đĩa.
+       - Nếu bất kỳ tệp nào đã tồn tại, **ném ngoại lệ ValueError rõ ràng ngay lập tức trước khi gọi tiến trình render** (tránh sinh ảnh dở dang).
+     - Nếu `overwrite=True`: Chấp nhận xóa hoặc ghi đè toàn bộ ảnh trang và tệp manifest cũ.
+  5. Ghi event log `pdf_page_preparation_started`.
+  6. Gọi hàm `rasterize_pdf_pages` xuất các trang ảnh vào thư mục `source/pages/`.
+  7. Ghi event log `pdf_page_rasterized` kèm thông tin chi tiết (`page_count`, `dpi`, `image_format`, `output_dir`) **sau khi hoàn thành toàn bộ các trang** (tránh spam log cho mỗi trang).
+  8. Sinh tệp chỉ mục `source/page_manifest.json` và lưu deterministic. Ghi event log `pdf_page_manifest_written`.
+  9. **Kiểm tra tính hợp lệ của manifest sau khi sinh**:
+     - Validate bằng `PageManifestModel`.
+     - Kiểm tra `page_manifest.page_count == len(page_manifest.pages)`.
+     - Tất cả các đường dẫn trong manifest phải là đường dẫn tương đối tính từ package root (ví dụ: `source/original.pdf` và `source/pages/page_0001.png`), không chấp nhận đường dẫn tuyệt đối.
+     - Mỗi `image_path` khai báo trong manifest phải thực sự tồn tại trên đĩa.
+     - Dung lượng file `file_size` và mã băm `sha256` của từng trang ảnh trong manifest phải khớp chính xác với file ảnh thực tế trên đĩa.
+  10. Cập nhật `package.json` với trường `files.page_manifest = "source/page_manifest.json"` và cập nhật `updated_at`.
+  11. Chạy kiểm tra toàn vẹn package `validate_package_integrity`.
+  12. Ghi event log `pdf_page_preparation_completed` và trả về `package_path`.
+  13. Nếu có lỗi xảy ra sau khi bắt đầu, ghi nhận sự kiện `pdf_page_preparation_failed` vào log trước khi ném ngoại lệ lên.
+
+---
+
+### 5. Kiểm Tra Toàn Vẹn Package (Integrity)
+
+#### [MODIFY] [integrity.py](file:///D:/mep_quotation_pipeline/mep_quotation/package/integrity.py)
+- **Tương Thích Ngược**: Bộ xác thực kiểm tra chéo package **không được bắt buộc** tệp `page_manifest.json` phải tồn tại. Điều này đảm bảo các package Phase 1 và Phase 2 (chưa chạy prepare-pages) vẫn validate pass bình thường.
+- Chỉ thực hiện kiểm tra chéo manifest nếu tệp `source/page_manifest.json` **thực sự tồn tại trên đĩa**:
+  - Đối chiếu `page_manifest.quotation_id == package.quotation_id`.
+  - Đối chiếu `page_manifest.page_count` phải khớp với số lượng ảnh trang thực tế trong thư mục `source/pages/`.
+  - Đảm bảo các tệp ảnh trang khai báo trong manifest thực sự tồn tại trên đĩa.
+- Sau khi tiến trình `prepare-pages` chạy xong thành công, tệp `page_manifest.json` bắt buộc phải tồn tại và hợp lệ.
+
+---
+
+### 6. CLI Giao Diện Dòng Lệnh
 
 #### [MODIFY] [main.py](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py)
-- Thêm subcommand `import-pdf` và flag tương ứng.
-- CLI chỉ gọi `import_pdf(...)`. Sau khi import hoàn tất, CLI nạp tệp `source/metadata.json` từ thư mục package được trả về.
-- In ra màn hình đầy đủ các thông tin siêu dữ liệu: `quotation_id`, `package path`, `source PDF path`, `metadata path`, `page count`, `file size`, `sha256`, `encrypted`.
-- Nếu trong file metadata nạp được có chứa cảnh báo (warnings), in các cảnh báo đó ra console theo định dạng:
-  ```
-  WARNING
-
-  Large PDF detected.
-
-  File size: xxx MB
-  Configured threshold: 50 MB
-
-  Import will continue.
-  ```
+- Thêm subcommand `prepare-pages <package_path>`:
+  `python -m mep_quotation.cli.main prepare-pages data/suppliers/AUT/2026/2026-06-20_001 [--dpi 150] [--format png] [--overwrite]`
+- Lệnh chỉ chấp nhận format `png`. Nếu truyền định dạng khác hoặc DPI <= 0, báo lỗi rõ ràng và thoát.
+- Sau khi chuẩn bị thành công, in ra stdout: `quotation_id`, `package path`, `page count`, `output directory`, `manifest path`, `dpi`, `image format`.
 
 ---
 
-### D. Bộ Kiểm Thử (Tests)
+### 7. Bộ Kiểm Thử (Tests)
 
-#### [NEW] [test_pdf_infrastructure.py](file:///D:/mep_quotation_pipeline/tests/test_pdf_infrastructure.py)
-- Viết test suite bao phủ tất cả các kịch bản kiểm định, cảnh báo dung lượng, lỗi không khớp, kiểm tra log kiểm toán và ngăn cản overwrite.
+#### [NEW] [test_pdf_pages.py](file:///D:/mep_quotation_pipeline/tests/test_pdf_pages.py)
+- Viết test suite bao phủ tất cả các kịch bản:
+  - Rasterize PDF hợp lệ (đọc được ảnh, kích thước > 0, SHA256 khớp).
+  - Tên file ảnh đệm đúng 4 chữ số `page_0001.png`.
+  - Validate schema của `page_manifest.json` và kiểm tra tính tương thích ngược của `validate_package_integrity`.
+  - Kiểm tra `overwrite=False` ném lỗi trước khi render nếu tệp đã tồn tại, `overwrite=True` ghi đè thành công.
+  - Từ chối tệp PDF bị mã hóa (encrypted PDF) ngay lập tức.
+  - Gọi lệnh CLI `prepare-pages` và kiểm tra log kiểm toán đầy đủ các sự kiện.
 
 ---
 
 ## Quy Trình Xác Minh Bắt Buộc (Verify)
-1. Cài đặt dependencies:
+1. Cài đặt các phụ thuộc chính và dev dependencies:
    ```bash
    python -m pip install -e ".[dev]"
    ```
-2. Sinh lại JSON Schemas:
+2. Sinh lại các file JSON Schema trên đĩa:
    ```bash
    python scripts/generate_schemas.py
    ```
-3. Chạy toàn bộ unit tests:
+3. Chạy toàn bộ các unit tests (đảm bảo tương thích ngược 100%):
    ```bash
    python -m pytest -v
    ```

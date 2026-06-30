@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-06-30T03:26:20Z",
+  "files": {
+    "corrections_json": "corrections/corrections.json",
+    "logs_jsonl": "logs/processing.log.jsonl",
+    "normalized_json": "normalized/normalized.json",
+    "page_manifest": "source/page_manifest.json",
+    "parsed_json": "parsed/quotation.json",
+    "parsed_markdown": "parsed/quotation.md",
+    "pdf_metadata": "source/metadata.json",
+    "source_pdf": "source/original.pdf"
+  },
+  "quotation_date": "2026-06-20",
+  "quotation_id": "AUT_20260620_001",
+  "sequence": 1,
+  "supplier": {
+    "code": "AUT",
+    "name": "AUT"
+  },
+  "updated_at": "2026-06-30T04:04:30Z",
+  "versions": {
+    "llm": null,
+    "parser_version": null,
+    "prompt_version": null,
+    "schema_version": "1.0",
+    "workflow_version": "mvp_spec_v1"
+  }
+}

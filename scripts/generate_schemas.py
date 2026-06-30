@@ -11,7 +11,8 @@ from mep_quotation.spec.models import (
     NormalizedQuotationModel,
     CorrectionsFileModel,
     MaterialIndexFileModel,
-    PdfMetadataModel
+    PdfMetadataModel,
+    PageManifestModel
 )
 
 def generate_schemas():
@@ -25,7 +26,8 @@ def generate_schemas():
         "normalized.schema.json": NormalizedQuotationModel,
         "corrections.schema.json": CorrectionsFileModel,
         "material_index.schema.json": MaterialIndexFileModel,
-        "pdf_metadata.schema.json": PdfMetadataModel
+        "pdf_metadata.schema.json": PdfMetadataModel,
+        "page_manifest.schema.json": PageManifestModel
     }
 
     for filename, model in models_to_generate.items():

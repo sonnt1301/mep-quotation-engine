@@ -2,6 +2,11 @@
 
 Dự án này là nền tảng (Foundation và PDF Intake) của hệ thống MEP Quotation Pipeline, được xây dựng theo hướng **Specification-First** sử dụng Python 3.12+, Pydantic v2 và Pytest.
 
+## Release Scope
+
+- `v0.2.0 PDF Intake Core` không rasterize các trang PDF và không sinh page images.
+- Rasterization/page image generation được hoãn có chủ đích sang `v0.3.0 PDF Page Preparation`.
+
 ## Cấu Trúc Thư Mục Dữ Liệu
 
 Dữ liệu được lưu trữ một cách deterministic trong thư mục `data/` theo định dạng:
@@ -49,6 +54,14 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
    
    # Tùy chọn sequence cố định và giới hạn kích thước cảnh báo (mặc định 50MB):
    python -m mep_quotation.cli.main import-pdf --supplier AUT --date 2026-06-20 --file quotation.pdf --seq 1 --max-size-mb 10
+   ```
+
+1. **Chuẩn Bị Ảnh Các Trang PDF (Page Image Preparation):**
+   ```bash
+   python -m mep_quotation.cli.main prepare-pages data/suppliers/AUT/2026/2026-06-20_001
+   
+   # Tùy chọn DPI, định dạng và ghi đè:
+   python -m mep_quotation.cli.main prepare-pages data/suppliers/AUT/2026/2026-06-20_001 --dpi 150 --format png --overwrite
    ```
 
 1. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**

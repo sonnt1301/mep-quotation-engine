@@ -13,7 +13,9 @@ from mep_quotation.spec.models import (
     MaterialIndexFileModel,
     WarningModel,
     PdfMetadataModel,
-    PdfValidationResult
+    PdfValidationResult,
+    PageImageModel,
+    PageManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,
