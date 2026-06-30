@@ -13,7 +13,8 @@ from mep_quotation.spec.models import (
     MaterialIndexFileModel,
     PdfMetadataModel,
     PageManifestModel,
-    RawTextManifestModel
+    RawTextManifestModel,
+    TextAssemblyManifestModel
 )
 
 def generate_schemas():
@@ -29,7 +30,8 @@ def generate_schemas():
         "material_index.schema.json": MaterialIndexFileModel,
         "pdf_metadata.schema.json": PdfMetadataModel,
         "page_manifest.schema.json": PageManifestModel,
-        "raw_text.schema.json": RawTextManifestModel
+        "raw_text.schema.json": RawTextManifestModel,
+        "quotation_text.schema.json": TextAssemblyManifestModel
     }
 
     for filename, model in models_to_generate.items():

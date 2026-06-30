@@ -49,6 +49,18 @@
           "description": "Đường dẫn file PDF gốc, tương đối từ package root",
           "title": "Source Pdf",
           "type": "string"
+        },
+        "text_manifest": {
+          "default": "text/quotation_text.json",
+          "description": "Đường dẫn file manifest text assembly JSON, tương đối từ package root",
+          "title": "Text Manifest",
+          "type": "string"
+        },
+        "text_markdown": {
+          "default": "text/quotation.md",
+          "description": "Đường dẫn file Markdown text assembled, tương đối từ package root",
+          "title": "Text Markdown",
+          "type": "string"
         }
       },
       "required": [
