@@ -86,3 +86,13 @@ def validate_package_integrity(package_path: Path) -> None:
             validate_raw_text_file(raw_text_file, package_path)
         except Exception as e:
             raise ValueError(f"Integrity check failed: raw_text.json validation error: {e}")
+
+    # 8. Kiểm tra quotation_text.json (chỉ khi file tồn tại thực tế để tương thích ngược)
+    assembly_manifest_file = package_path / "text" / "quotation_text.json"
+    if assembly_manifest_file.exists():
+        try:
+            from mep_quotation.text_assembly.manifest import validate_assembly_manifest_file
+            validate_assembly_manifest_file(assembly_manifest_file, package_path)
+        except Exception as e:
+            raise ValueError(f"Integrity check failed: quotation_text.json validation error: {e}")
+

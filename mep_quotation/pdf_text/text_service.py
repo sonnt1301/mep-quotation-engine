@@ -52,33 +52,33 @@ def extract_package_text(
     # 1. Load package.json
     package = load_package_json(package_path)
 
-    # 2. Kiểm tra mã hóa từ metadata.json
-    metadata_path = package_path / "source" / "metadata.json"
-    if metadata_path.exists():
-        with open(metadata_path, "r", encoding="utf-8") as f:
-            try:
-                meta_data = json.load(f)
-                if meta_data.get("encrypted") is True:
-                    raise ValueError(
-                        f"PDF package '{package.quotation_id}' is encrypted. "
-                        "Cannot extract text from encrypted files."
-                    )
-            except json.JSONDecodeError:
-                pass
-
-    pdf_file_path = package_path / "source" / "original.pdf"
-    if not pdf_file_path.exists():
-        raise FileNotFoundError(f"Original PDF file not found: {pdf_file_path}")
-
-    # 3. Overwrite check
-    raw_text_path = package_path / "source" / "raw_text.json"
-    if not overwrite and raw_text_path.exists():
-        raise ValueError(
-            f"raw_text.json already exists at {raw_text_path}. "
-            "Set overwrite=True to re-extract."
-        )
-
     try:
+        # 2. Kiểm tra mã hóa từ metadata.json
+        metadata_path = package_path / "source" / "metadata.json"
+        if metadata_path.exists():
+            with open(metadata_path, "r", encoding="utf-8") as f:
+                try:
+                    meta_data = json.load(f)
+                    if meta_data.get("encrypted") is True:
+                        raise ValueError(
+                            f"PDF package '{package.quotation_id}' is encrypted. "
+                            "Cannot extract text from encrypted files."
+                        )
+                except json.JSONDecodeError:
+                    pass
+
+        pdf_file_path = package_path / "source" / "original.pdf"
+        if not pdf_file_path.exists():
+            raise FileNotFoundError(f"Original PDF file not found: {pdf_file_path}")
+
+        # 3. Overwrite check
+        raw_text_path = package_path / "source" / "raw_text.json"
+        if not overwrite and raw_text_path.exists():
+            raise ValueError(
+                f"raw_text.json already exists at {raw_text_path}. "
+                "Set overwrite=True to re-extract."
+            )
+
         # 4. Audit: bắt đầu
         log_event(
             package_path=package_path,

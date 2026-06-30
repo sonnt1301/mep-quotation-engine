@@ -33,11 +33,14 @@ class FilePathsModel(BaseModel):
     pdf_metadata: str = Field("source/metadata.json", description="Đường dẫn file metadata PDF, tương đối từ package root")
     page_manifest: str = Field("source/page_manifest.json", description="Đường dẫn file manifest trang PDF, tương đối từ package root")
     raw_text: str = Field("source/raw_text.json", description="Đường dẫn file raw text JSON, tương đối từ package root")
+    text_markdown: str = Field("text/quotation.md", description="Đường dẫn file Markdown text assembled, tương đối từ package root")
+    text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn file manifest text assembly JSON, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
     corrections_json: str = Field(..., description="Đường dẫn file corrections JSON, tương đối")
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
+
 
 class QuotationPackageModel(BaseModel):
     quotation_id: str = Field(..., description="ID báo giá định dạng {SUPPLIER}_{YYYYMMDD}_{SEQ}")
@@ -270,3 +273,31 @@ class RawTextManifestModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class TextAssemblyPageModel(BaseModel):
+    """Model cho thông tin lắp ghép văn bản của một trang PDF."""
+    page_number: int = Field(..., description="Số trang (1-indexed)")
+    has_text: bool = Field(..., description="True nếu trang có chứa ký tự văn bản")
+    character_count: int = Field(..., description="Số lượng ký tự văn bản của trang gốc")
+    start_offset: int = Field(..., description="Vị trí bắt đầu của text trang trong file MD (Python string index)")
+    end_offset: int = Field(..., description="Vị trí kết thúc ngay sau ký tự cuối cùng của text trang trong file MD (Python string index)")
+
+
+class TextAssemblyManifestModel(BaseModel):
+    """Model cho file quotation_text.json – artifact chính của Phase 5."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_raw_text: str = Field("source/raw_text.json", description="Đường dẫn tương đối tới file raw_text.json nguồn")
+    source_sha256: str = Field(..., description="SHA256 của tệp source/raw_text.json")
+    page_count: int = Field(..., description="Tổng số trang")
+    total_characters: int = Field(..., description="Tổng số ký tự văn bản gốc")
+    pages_with_text: int = Field(..., description="Số lượng trang thực tế có chứa text")
+    markdown_path: str = Field("text/quotation.md", description="Đường dẫn tương đối tới file Markdown kết quả")
+    pages: List[TextAssemblyPageModel] = Field(..., description="Danh sách chi tiết offset các trang")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+

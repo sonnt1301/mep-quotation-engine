@@ -174,6 +174,19 @@ def test_extract_pdf_text_encrypted(encrypted_package):
         extract_pdf_text(pdf_path)
 
 
+def test_extract_package_text_encrypted_audit_failed(encrypted_package):
+    with pytest.raises(ValueError, match="encrypted"):
+        extract_package_text(encrypted_package, overwrite=False)
+
+    assert not (encrypted_package / "source" / "raw_text.json").exists()
+
+    log_path = encrypted_package / "logs" / "processing.log.jsonl"
+    with open(log_path, "r", encoding="utf-8") as f:
+        events = [json.loads(line)["event"] for line in f if line.strip()]
+
+    assert "pdf_text_extraction_failed" in events
+
+
 # ---------------------------------------------------------------------------
 # Test 4: Pydantic schema hợp lệ
 # ---------------------------------------------------------------------------

@@ -32,6 +32,7 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
     (package_dir / "normalized").mkdir(parents=True, exist_ok=True)
     (package_dir / "corrections").mkdir(parents=True, exist_ok=True)
     (package_dir / "logs").mkdir(parents=True, exist_ok=True)
+    (package_dir / "text").mkdir(parents=True, exist_ok=True)
     
     # 4. Tạo đối tượng package.json
     now = datetime.now(timezone.utc)
@@ -46,6 +47,8 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
             pdf_metadata="source/metadata.json",
             page_manifest="source/page_manifest.json",
             raw_text="source/raw_text.json",
+            text_markdown="text/quotation.md",
+            text_manifest="text/quotation_text.json",
             parsed_json="parsed/quotation.json",
             parsed_markdown="parsed/quotation.md",
             normalized_json="normalized/normalized.json",

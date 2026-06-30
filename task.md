@@ -1,91 +1,54 @@
-# Danh Sách Công Việc MEP Quotation Pipeline Phase 4 – PDF Native Content Extraction
+# Danh Sách Công Việc MEP Quotation Pipeline Phase 5 – Text Assembly
 
 ## Component 1 – Spec & Models
 
-- [x] Thêm `RawTextPageModel` vào `mep_quotation/spec/models.py`
-- [x] Thêm `RawTextManifestModel` vào `mep_quotation/spec/models.py`
-- [x] Thêm trường `raw_text: str = Field("source/raw_text.json", ...)` vào `FilePathsModel`
-- [x] Export `RawTextPageModel`, `RawTextManifestModel` trong `mep_quotation/spec/__init__.py`
+- [x] Thêm trường `text_markdown: str = Field("text/quotation.md", ...)` và `text_manifest: str = Field("text/quotation_text.json", ...)` vào `FilePathsModel` trong `mep_quotation/spec/models.py`
+- [x] Thêm `TextAssemblyPageModel` vào `mep_quotation/spec/models.py`
+- [x] Thêm `TextAssemblyManifestModel` vào `mep_quotation/spec/models.py`
+- [x] Export `TextAssemblyPageModel` và `TextAssemblyManifestModel` trong `mep_quotation/spec/__init__.py`
 
-## Component 2 – Package Builder
+## Component 2 – Package Builder & Integrity
 
-- [x] Cập nhật `builder.py`: thêm `raw_text="source/raw_text.json"` khi khởi tạo `FilePathsModel`
+- [x] Cập nhật `builder.py` để gán mặc định `text_markdown` và `text_manifest` khi tạo package rỗng
+- [x] Cập nhật `builder.py` tự động tạo thư mục con `text/` khi tạo package mới
+- [x] Cập nhật `integrity.py` gọi hàm `validate_assembly_manifest_file(manifest_path, package_path)` kiểm tra tính toàn vẹn của tệp index/markdown (chỉ chạy khi tệp manifest thực tế tồn tại trên đĩa)
 
-## Component 3 – Package Integrity
+## Component 3 – Module text_assembly (MỚI)
 
-- [x] Cập nhật `integrity.py`: thêm đối chiếu chéo `raw_text.json` (backward compatible)
-  - [x] Chỉ chạy khi `source/raw_text.json` tồn tại thực tế trên đĩa
-  - [x] Gọi thẳng `validate_raw_text_file(raw_text_path, package_path)` từ `pdf_text.manifest`
-  - [x] Không tự duplicate logic validation trong integrity.py
+- [x] Sửa đổi `mep_quotation/text_assembly/assembly_service.py`
+  - [x] Di chuyển các đoạn check validation (PDF encrypted, thiếu `raw_text.json`, cản ghi đè) vào trong khối `try`
+  - [x] Ghi nhận log kiểm toán `text_assembly_failed` khi bất kỳ lỗi nào xảy ra trong luồng với `level="ERROR"` và `details.error`
+- [x] Tạo `mep_quotation/text_assembly/__init__.py`
+- [x] Tạo `mep_quotation/text_assembly/assembler.py`
+- [x] Tạo `mep_quotation/text_assembly/manifest.py`
 
-## Component 4 – Module pdf_text (MỚI)
+## Component 4 – CLI Integration
 
-- [x] Tạo thư mục `mep_quotation/pdf_text/`
-- [x] Tạo `mep_quotation/pdf_text/__init__.py` (export `extract_pdf_text`, `extract_package_text`)
-- [x] Tạo `mep_quotation/pdf_text/extractor.py`
-  - [x] Hàm `extract_pdf_text(pdf_path: Path) -> RawTextManifestModel`
-  - [x] Mở PDF bằng PyMuPDF (`fitz`), block encrypted ngay lập tức
-  - [x] Lấy text bằng `page.get_text()`, không trim/clean/normalize
-  - [x] `has_text = bool(text)`, `character_count = len(text)`
-  - [x] Ghi nhận `extraction_engine = "pymupdf"`, `extraction_engine_version`
-  - [x] Tính `source_sha256` của file PDF
-- [x] Tạo `mep_quotation/pdf_text/manifest.py`
-  - [x] Hàm `write_raw_text_manifest(path, data)`: ghi JSON deterministic
-  - [x] Hàm `validate_raw_text_file(raw_text_path, package_path)`:
-    - [x] Validate `quotation_id` khớp `package.json`
-    - [x] Validate `page_count` khớp số trang PDF thực tế
-    - [x] Cross-check `page_count` với `metadata.json` nếu tồn tại
-    - [x] Cross-check `page_count` với `page_manifest.json` nếu tồn tại
-    - [x] Validate `page_number` bắt đầu từ 1, liên tục, không thiếu trang
-    - [x] Validate `character_count == len(text)` cho từng trang
-- [x] Tạo `mep_quotation/pdf_text/text_service.py`
-  - [x] Hàm `extract_package_text(package_path, overwrite=False) -> Path`
-  - [x] Load `package.json`
-  - [x] Kiểm tra `metadata.json` → block encrypted
-  - [x] Overwrite check: fail rõ nếu `raw_text.json` đã tồn tại và `overwrite=False`
-  - [x] Gọi `extract_pdf_text()`
-  - [x] Ghi `source/raw_text.json`
-  - [x] Validate sau khi ghi
-  - [x] Cập nhật `package.json` (`files.raw_text`, `updated_at`)
-  - [x] Ghi audit log đầy đủ các success events (4 events: `pdf_text_extraction_started` → `pdf_text_extracted` → `raw_text_written` → `pdf_text_extraction_completed`); `pdf_text_extraction_failed` chỉ ghi khi có lỗi, không ghi trên success path
+- [x] Thêm handler `handle_assemble_text(args)` trong `cli/main.py`
+- [x] Thêm subcommand `assemble-text <package_path> [--overwrite]` trong `cli/main.py`
+- [x] Cập nhật description CLI hỗ trợ thông tin Phase 5
 
-## Component 5 – CLI
+## Component 5 – Schema Generation
 
-- [x] Thêm handler `handle_extract_text(args)` trong `main.py`
-- [x] Thêm subcommand `extract-text <package_path> [--overwrite]`
-- [x] Output: `Quotation ID`, `Page Count`, `Total Characters`, `Pages With Text`, `Output Path`
-- [x] Cập nhật description CLI từ Phase 3 sang Phase 4
+- [x] Thêm `TextAssemblyManifestModel` vào `scripts/generate_schemas.py`
+- [x] Chạy sinh schema mới và xác thực tệp `schemas/quotation_text.schema.json` được tạo thành công (Xác nhận sinh đầy đủ **8 schemas**)
 
-## Component 6 – Schema Generation
+## Component 6 – Tests
 
-- [x] Thêm `RawTextManifestModel` vào `scripts/generate_schemas.py`
-- [x] Chạy `python scripts/generate_schemas.py` và verify `schemas/raw_text.schema.json` sinh ra đúng
+- [x] Cập nhật bộ kiểm thử `tests/test_text_assembly.py`
+  - [x] Cập nhật `test_missing_raw_text_fail` kiểm tra ném lỗi và ghi log `text_assembly_failed`
+  - [x] Cập nhật `test_overwrite_protection` kiểm tra ném lỗi và ghi log `text_assembly_failed` khi trùng đè
+  - [x] Bổ sung `test_encrypted_package_assembly_fail` kiểm tra PDF encrypted ném lỗi và ghi log `text_assembly_failed`
 
-## Component 7 – Tests
+## Component 7 – Tài liệu
 
-- [x] Tạo `tests/test_pdf_text.py` với đầy đủ các test cases:
-  - [x] `test_extract_pdf_text_with_text`
-  - [x] `test_extract_pdf_text_no_text`
-  - [x] `test_extract_pdf_text_encrypted`
-  - [x] `test_raw_text_schema_valid`
-  - [x] `test_character_count_accuracy`
-  - [x] `test_page_count_matches_pdf`
-  - [x] `test_page_count_cross_check_metadata`
-  - [x] `test_page_count_cross_check_page_manifest`
-  - [x] `test_extract_package_text_flow`
-  - [x] `test_overwrite_false_fail`
-  - [x] `test_overwrite_true_pass`
-  - [x] `test_source_sha256_traceability`
-  - [x] `test_cli_extract_text`
-  - [x] `test_audit_events`
-
-## Component 8 – Tài liệu
-
+- [x] Cập nhật `README.md` hướng dẫn sử dụng lệnh CLI `assemble-text`
+- [x] Cập nhật số lượng test pass thực tế và nghiệm thu failure path trong `walkthrough.md`
 - [x] Cập nhật `implementation_plan.md`
-- [x] Cập nhật `task.md` (file này)
-- [x] Thay `walkthrough.md` bằng báo cáo nghiệm thu Phase 4
 
 ## Verification Bắt Buộc
 
-- [x] `python scripts/generate_schemas.py` → sinh đủ 7 schemas (bao gồm `raw_text.schema.json`)
-- [x] `python -m pytest -v` → **59 PASSED**, 0 FAILED (45 cũ + 14 mới Phase 4)
+- [x] `python -m pip install -e ".[dev]"` thành công
+- [x] `python scripts/generate_schemas.py` sinh đủ **8 schemas**
+- [x] `python -m pytest -v` đạt 100% passed (70 tests passed)
+- [x] Thực hiện Manual Acceptance Test kiểm tra failure path có `text_assembly_failed`

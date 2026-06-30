@@ -321,9 +321,42 @@ def handle_extract_text(args):
         sys.exit(1)
 
 
+def handle_assemble_text(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.text_assembly import assemble_package_text
+        assemble_package_text(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại package và quotation_text.json để hiển thị
+        pkg = load_package_json(package_path)
+        manifest_path = package_path / pkg.files.text_manifest
+        md_path = package_path / pkg.files.text_markdown
+
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        print("Successfully assembled PDF text.")
+        print(f"  Quotation ID     : {pkg.quotation_id}")
+        print(f"  Page Count       : {manifest_data.get('page_count')}")
+        print(f"  Total Characters : {manifest_data.get('total_characters')}")
+        print(f"  Pages With Text  : {manifest_data.get('pages_with_text')}")
+        print(f"  Markdown Path    : {get_display_path(md_path)}")
+        print(f"  Manifest Path    : {get_display_path(manifest_path)}")
+
+    except Exception as e:
+        print(f"Error assembling PDF text: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 4 PDF Native Content Extraction"
+        description="MEP Quotation Pipeline CLI Tool - Phase 5 Text Assembly / Parser Input Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -382,6 +415,12 @@ def main():
     parser_text.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_text.add_argument("--overwrite", action="store_true", help="Ghi đè nếu raw_text.json đã tồn tại")
     parser_text.set_defaults(func=handle_extract_text)
+
+    # Command assemble-text
+    parser_assembly = subparsers.add_parser("assemble-text", help="Lắp ghép văn bản gốc từ raw_text.json thành Markdown")
+    parser_assembly.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_assembly.add_argument("--overwrite", action="store_true", help="Ghi đè nếu quotation.md hoặc quotation_text.json đã tồn tại")
+    parser_assembly.set_defaults(func=handle_assemble_text)
 
     args = parser.parse_args()
     args.func(args)

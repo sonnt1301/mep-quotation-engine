@@ -17,7 +17,9 @@ from mep_quotation.spec.models import (
     PageImageModel,
     PageManifestModel,
     RawTextPageModel,
-    RawTextManifestModel
+    RawTextManifestModel,
+    TextAssemblyPageModel,
+    TextAssemblyManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

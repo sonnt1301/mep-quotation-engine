@@ -1,0 +1,112 @@
+{
+  "$defs": {
+    "TextAssemblyPageModel": {
+      "description": "Model cho thông tin lắp ghép văn bản của một trang PDF.",
+      "properties": {
+        "character_count": {
+          "description": "Số lượng ký tự văn bản của trang gốc",
+          "title": "Character Count",
+          "type": "integer"
+        },
+        "end_offset": {
+          "description": "Vị trí kết thúc ngay sau ký tự cuối cùng của text trang trong file MD (Python string index)",
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "has_text": {
+          "description": "True nếu trang có chứa ký tự văn bản",
+          "title": "Has Text",
+          "type": "boolean"
+        },
+        "page_number": {
+          "description": "Số trang (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "start_offset": {
+          "description": "Vị trí bắt đầu của text trang trong file MD (Python string index)",
+          "title": "Start Offset",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page_number",
+        "has_text",
+        "character_count",
+        "start_offset",
+        "end_offset"
+      ],
+      "title": "TextAssemblyPageModel",
+      "type": "object"
+    }
+  },
+  "description": "Model cho file quotation_text.json – artifact chính của Phase 5.",
+  "properties": {
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "markdown_path": {
+      "default": "text/quotation.md",
+      "description": "Đường dẫn tương đối tới file Markdown kết quả",
+      "title": "Markdown Path",
+      "type": "string"
+    },
+    "page_count": {
+      "description": "Tổng số trang",
+      "title": "Page Count",
+      "type": "integer"
+    },
+    "pages": {
+      "description": "Danh sách chi tiết offset các trang",
+      "items": {
+        "$ref": "#/$defs/TextAssemblyPageModel"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "pages_with_text": {
+      "description": "Số lượng trang thực tế có chứa text",
+      "title": "Pages With Text",
+      "type": "integer"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_raw_text": {
+      "default": "source/raw_text.json",
+      "description": "Đường dẫn tương đối tới file raw_text.json nguồn",
+      "title": "Source Raw Text",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của tệp source/raw_text.json",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "total_characters": {
+      "description": "Tổng số ký tự văn bản gốc",
+      "title": "Total Characters",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_sha256",
+    "page_count",
+    "total_characters",
+    "pages_with_text",
+    "pages"
+  ],
+  "title": "TextAssemblyManifestModel",
+  "type": "object"
+}
