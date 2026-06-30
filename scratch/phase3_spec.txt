@@ -1,0 +1,221 @@
+Phase 3 – PDF Page Preparation / Page Image Layer
+Triển khai Phase 3 cho dự án:
+D:\mep_quotation_pipeline
+
+Mục tiêu
+Phase 3 chỉ xây dựng Page Image Layer.
+Đầu vào là Quotation Package đã được import ở Phase 2.
+Pipeline:
+Quotation Package        │        ▼source/original.pdf        │        ▼Rasterize từng trang PDF        │        ▼source/pages/page_0001.pngsource/pages/page_0002.png...        │        ▼Sinh page_manifest.json        │        ▼Validate Package        │        ▼Audit Log        │        ▼Finish
+Phase này không đọc nội dung PDF.
+
+Không làm trong Phase này
+Không triển khai:
+OCR 
+AI / LLM 
+Docling 
+Table Extraction 
+Text Extraction 
+Quotation Parser 
+parsed/quotation.json 
+parsed/quotation.md 
+normalized.json 
+BOQ Matching 
+Database 
+Website/API 
+Không tự mở rộng scope.
+
+Module mới
+Tạo:
+mep_quotation/pdf_pages/    __init__.py    rasterizer.py    manifest.py    page_service.py
+Có thể sử dụng:
+PyMuPDF (fitz)
+Nếu thêm dependency thì cập nhật:
+pyproject.toml
+
+Output
+Trong Quotation Package:
+source/    original.pdf    metadata.json    page_manifest.json    pages/        page_0001.png        page_0002.png        page_0003.png
+Quy tắc đặt tên:
+luôn 4 chữ số 
+deterministic 
+không phụ thuộc số trang 
+Ví dụ:
+page_0001.pngpage_0010.pngpage_0100.png
+
+page_manifest.json
+Sinh:
+source/page_manifest.json
+Ví dụ:
+{  "schema_version": "1.0",  "quotation_id": "AUT_20260620_001",  "source_pdf": "source/original.pdf",  "page_count": 8,  "dpi": 150,  "image_format": "png",  "pages": [    {      "page_number": 1,      "image_path": "source/pages/page_0001.png",      "width": 1240,      "height": 1754,      "rotation": 0,      "sha256": "...",      "file_size": 123456    }  ],  "generated_at": "..."}
+
+Data Contract
+Pydantic Model tiếp tục là Source of Truth.
+Thêm model:
+PageImageModelPageManifestModel
+Không dùng:
+dict[str, Any]
+khi cấu trúc đã xác định.
+Sinh thêm schema:
+schemas/page_manifest.schema.json
+Cập nhật:
+scripts/generate_schemas.py
+Nếu cần, bổ sung:
+FilePathsModel.page_manifest
+Phải tương thích ngược với package của Phase 1 và Phase 2.
+
+Rasterizer
+Implement:
+rasterize_pdf_pages(    pdf_path: Path,    output_dir: Path,    dpi: int = 150,    image_format: str = "png",    overwrite: bool = False,) -> list[PageImageModel]
+Yêu cầu:
+PDF phải tồn tại. 
+PDF phải đọc được. 
+Nếu encrypted → fail rõ ràng. 
+Rasterize từng trang. 
+Không OCR. 
+Không parse text. 
+Không AI. 
+Sinh PNG. 
+Tính: 
+width 
+height 
+rotation 
+sha256 
+file_size 
+Nếu:
+overwrite=False
+thì không ghi đè file ảnh đã tồn tại.
+
+Page Service
+Implement:
+prepare_pdf_pages(    package_path: Path,    dpi: int = 150,    image_format: str = "png",    overwrite: bool = False,) -> Path
+Flow:
+Load package.json↓Load source/original.pdf↓Load source/metadata.json↓Nếu encrypted → fail↓Rasterize↓Sinh page_manifest.json↓Validate Package↓Audit Log↓Finish
+Không sửa metadata Phase 2.
+
+Audit
+Audit events:
+pdf_page_preparation_startedpdf_page_rasterizedpdf_page_manifest_writtenpdf_page_preparation_completedpdf_page_preparation_failed
+Tiếp tục dùng JSONL append.
+
+CLI
+Thêm command:
+python -m mep_quotation.cli.main prepare-pages <package_path>
+Options:
+--dpi 150--format png--overwrite
+Output:
+quotation_id 
+package path 
+page count 
+output directory 
+manifest path 
+dpi 
+image format 
+
+Tests
+Bổ sung test:
+Rasterize PDF hợp lệ. 
+Đúng số lượng ảnh theo page_count. 
+Tên file:
+page_0001.png
+width > 0. 
+height > 0. 
+rotation tồn tại. 
+sha256 có giá trị. 
+file_size có giá trị. 
+page_manifest đúng schema. 
+prepare_pages cập nhật package đúng. 
+overwrite=False không ghi đè. 
+overwrite=True ghi đè thành công. 
+encrypted PDF bị reject. 
+CLI prepare-pages. 
+Audit có:
+pdf_page_preparation_completed
+Có thể dùng:
+pypdf.PdfWriter
+để tạo PDF test.
+
+Verification
+Chạy:
+python -m pip install -e ".[dev]"python scripts/generate_schemas.pypython -m pytest -v
+Nếu pytest lỗi cache trên Windows:
+python -m pytest -v -p no:cacheprovider --basetemp <writable_temp_dir>
+
+Documentation
+Cập nhật nếu cần:
+README.mdimplementation_plan.mdtask.mdwalkthrough.md
+Ghi rõ:
+v0.3.0 = PDF Page Preparation. 
+Phase này chỉ rasterize PDF. 
+Chưa OCR. 
+Chưa parser. 
+Chưa AI. 
+Chưa quotation.json. 
+Chưa quotation.md. 
+Chưa normalized.json. 
+
+Implementation Rules
+Add the following implementation constraints for Phase 3:
+1. Dependency
+If PyMuPDF is used, add dependency in pyproject.toml as: pymupdf>=1.24.0.
+Code may import it as: import fitz.
+Use PyMuPDF only to rasterize PDF pages into images. Do not use it to extract text, tables, blocks, words, or quotation content.
+2. FilePathsModel
+If FilePathsModel.page_manifest is added, it must have this default: page_manifest: str = "source/page_manifest.json".
+This keeps Phase 1 and Phase 2 packages backward compatible.
+3. Manifest path convention
+All paths in page_manifest.json must be relative to package root.
+Examples: source/original.pdf and source/pages/page_0001.png. Do not write absolute paths such as D:\...
+4. Manifest validation
+After writing source/page_manifest.json, validate it with PageManifestModel.
+If a new schema is added, generate schemas/page_manifest.schema.json and update scripts/generate_schemas.py.
+5. Atomic / overwrite behavior
+If overwrite=False and any output image or source/page_manifest.json already exists, fail clearly before rasterization starts.
+Do not create partial output and then fail halfway.
+If overwrite=True, rewriting all page images and the manifest is allowed.
+6. Supported image format
+Phase 3 only needs to support png.
+If CLI accepts --format, currently accept only png. Any other format must fail clearly.
+Do not add jpeg/webp unless explicitly requested.
+7. DPI validation
+dpi must be a positive integer. If dpi <= 0, fail clearly. Default is 150.
+8. Encrypted PDF
+If source/metadata.json has encrypted: true, prepare-pages must fail before rasterization.
+Do not decrypt. Do not ask for a password. Do not continue processing.
+9. Audit logging
+pdf_page_rasterized may be logged once after all pages are rasterized, with details: page_count, dpi, image_format, output_dir.
+Do not log one event per page; avoid overly long audit logs.
+10. Scope reminder
+Phase 3 only creates page images and page_manifest.
+Do not generate parsed/quotation.json, parsed/quotation.md, normalized.json from PDF, OCR text, extracted text, or table data.
+
+Acceptance Criteria
+Phase 3 hoàn thành khi:
+Chạy được prepare-pages trên package của Phase 2. 
+Sinh:
+source/pages/page_0001.pngsource/pages/page_0002.png...
+Sinh:
+source/page_manifest.json
+Manifest có: 
+page_count 
+image_path 
+width 
+height 
+rotation 
+sha256 
+file_size 
+Package validation pass. 
+Audit log đầy đủ. 
+Unit tests pass. 
+Không làm hỏng Phase 1 và Phase 2. 
+Không mở rộng scope ngoài PDF Page Preparation. 
+
+Báo cáo khi hoàn thành
+Sau khi hoàn thành, báo cáo:
+File đã tạo. 
+File đã sửa. 
+Command đã chạy. 
+Test pass/fail. 
+Assumptions (nếu có). 
+Những phần chưa làm. 
+Xác nhận không mở rộng scope ngoài Phase 3.

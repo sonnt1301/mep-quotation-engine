@@ -18,6 +18,13 @@ project_root = Path(__file__).parent.parent.parent.resolve()
 if str(project_root) not in sys.path:
     sys.path.append(str(project_root))
 
+def get_display_path(path: Any) -> str:
+    p = Path(path)
+    try:
+        return p.relative_to(project_root).as_posix()
+    except ValueError:
+        return p.resolve().as_posix()
+
 from mep_quotation.package import (
     create_empty_package,
     load_package_json,
@@ -53,7 +60,7 @@ def handle_create_package(args):
         print(f"Successfully created empty package.")
         print(f"Quotation ID: {pkg.quotation_id}")
         # Print path with relative path for better clean display
-        rel_path = package_dir.relative_to(project_root).as_posix()
+        rel_path = get_display_path(package_dir)
         print(f"Package Path: {rel_path}")
     except Exception as e:
         print(f"Error creating package: {e}", file=sys.stderr)
@@ -143,13 +150,13 @@ def handle_build_index(args):
     data_root = project_root / "data"
     try:
         index_file, skipped = build_material_index(data_root, project_root, strict=args.strict)
-        rel_path = index_file.relative_to(project_root).as_posix()
+        rel_path = get_display_path(index_file)
         print(f"Successfully built material index.")
         print(f"Index File: {rel_path}")
         if skipped:
             print(f"\nWarning: Skipped {len(skipped)} invalid normalized files:")
             for path in skipped:
-                print(f"  - {path.relative_to(project_root).as_posix()}")
+                print(f"  - {get_display_path(path)}")
     except Exception as e:
         print(f"Error building index: {e}", file=sys.stderr)
         sys.exit(1)
@@ -204,9 +211,9 @@ def handle_import_pdf(args):
             
         print(f"Successfully imported PDF.")
         print(f"  Quotation ID   : {pkg.quotation_id}")
-        print(f"  Package Path   : {package_dir.relative_to(project_root).as_posix()}")
-        print(f"  Source PDF Path: {(package_dir / pkg.files.source_pdf).relative_to(project_root).as_posix()}")
-        print(f"  Metadata Path  : {meta_path.relative_to(project_root).as_posix()}")
+        print(f"  Package Path   : {get_display_path(package_dir)}")
+        print(f"  Source PDF Path: {get_display_path(package_dir / pkg.files.source_pdf)}")
+        print(f"  Metadata Path  : {get_display_path(meta_path)}")
         print(f"  Page Count     : {meta_data.get('page_count')}")
         print(f"  File Size      : {meta_data.get('file_size')} bytes")
         print(f"  SHA256         : {meta_data.get('sha256')}")
@@ -235,9 +242,53 @@ def handle_import_pdf(args):
         print(f"Error importing PDF: {e}", file=sys.stderr)
         sys.exit(1)
 
+def handle_prepare_pages(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+        
+    # CLI validation
+    if args.dpi <= 0:
+        print(f"Error: DPI must be a positive integer: {args.dpi}", file=sys.stderr)
+        sys.exit(1)
+        
+    if args.format.lower() != "png":
+        print(f"Error: Unsupported image format: {args.format}. Only 'png' is supported.", file=sys.stderr)
+        sys.exit(1)
+        
+    try:
+        from mep_quotation.pdf_pages import prepare_pdf_pages
+        prepare_pdf_pages(
+            package_path=package_path,
+            dpi=args.dpi,
+            image_format=args.format,
+            overwrite=args.overwrite
+        )
+        
+        # Nạp lại package để in thông tin
+        pkg = load_package_json(package_path)
+        
+        # Nạp page_manifest.json để lấy số trang
+        manifest_path = package_path / pkg.files.page_manifest
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+            
+        print("Successfully prepared PDF pages.")
+        print(f"  Quotation ID   : {pkg.quotation_id}")
+        print(f"  Package Path   : {get_display_path(package_path)}")
+        print(f"  Page Count     : {manifest_data.get('page_count')}")
+        print(f"  Output Dir     : {get_display_path(package_path / 'source' / 'pages')}")
+        print(f"  Manifest Path  : {get_display_path(manifest_path)}")
+        print(f"  DPI            : {manifest_data.get('dpi')}")
+        print(f"  Image Format   : {manifest_data.get('image_format')}")
+        
+    except Exception as e:
+        print(f"Error preparing PDF pages: {e}", file=sys.stderr)
+        sys.exit(1)
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 2 PDF Infrastructure"
+        description="MEP Quotation Pipeline CLI Tool - Phase 3 PDF Page Preparation"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -282,6 +333,14 @@ def main():
     parser_search = subparsers.add_parser("search-material", help="Tìm kiếm vật tư từ chỉ mục")
     parser_search.add_argument("query", help="Từ khóa tìm kiếm (mã hoặc tên vật tư)")
     parser_search.set_defaults(func=handle_search_material)
+
+    # Command prepare-pages
+    parser_prep = subparsers.add_parser("prepare-pages", help="Chuyển đổi các trang PDF thành ảnh PNG")
+    parser_prep.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_prep.add_argument("--dpi", type=int, default=150, help="Độ phân giải DPI (mặc định 150)")
+    parser_prep.add_argument("--format", default="png", help="Định dạng ảnh xuất ra (chỉ nhận png)")
+    parser_prep.add_argument("--overwrite", action="store_true", help="Ghi đè nếu ảnh trang hoặc manifest đã tồn tại")
+    parser_prep.set_defaults(func=handle_prepare_pages)
 
     args = parser.parse_args()
     args.func(args)

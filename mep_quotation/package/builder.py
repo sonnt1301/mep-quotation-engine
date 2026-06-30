@@ -44,6 +44,7 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
         files=FilePathsModel(
             source_pdf="source/original.pdf",
             pdf_metadata="source/metadata.json",
+            page_manifest="source/page_manifest.json",
             parsed_json="parsed/quotation.json",
             parsed_markdown="parsed/quotation.md",
             normalized_json="normalized/normalized.json",

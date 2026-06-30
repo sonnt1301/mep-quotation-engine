@@ -31,6 +31,7 @@ class VersionMetadataModel(BaseModel):
 class FilePathsModel(BaseModel):
     source_pdf: str = Field(..., description="Đường dẫn file PDF gốc, tương đối từ package root")
     pdf_metadata: str = Field("source/metadata.json", description="Đường dẫn file metadata PDF, tương đối từ package root")
+    page_manifest: str = Field("source/page_manifest.json", description="Đường dẫn file manifest trang PDF, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
@@ -220,3 +221,26 @@ class PdfValidationResult(BaseModel):
     is_valid: bool = Field(..., description="Kết quả validate tổng thể")
     warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
     error_message: Optional[str] = Field(None, description="Thông báo lỗi chi tiết nếu không valid")
+
+class PageImageModel(BaseModel):
+    page_number: int = Field(..., description="Số trang (1-indexed)")
+    image_path: str = Field(..., description="Đường dẫn tương đối tới ảnh trang từ package root")
+    width: int = Field(..., description="Chiều rộng ảnh tính bằng pixels")
+    height: int = Field(..., description="Chiều cao ảnh tính bằng pixels")
+    rotation: int = Field(..., description="Góc xoay của trang gốc (độ)")
+    sha256: str = Field(..., description="Mã băm SHA256 của file ảnh")
+    file_size: int = Field(..., description="Dung lượng file ảnh tính bằng bytes")
+
+class PageManifestModel(BaseModel):
+    schema_version: str = Field("1.0", description="Phiên bản schema manifest")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_pdf: str = Field(..., description="Đường dẫn tương đối tới file PDF gốc")
+    page_count: int = Field(..., description="Tổng số trang")
+    dpi: int = Field(..., description="Độ phân giải dùng để rasterize")
+    image_format: str = Field("png", description="Định dạng ảnh (chỉ chấp nhận png)")
+    pages: List[PageImageModel] = Field(..., description="Danh sách chi tiết các trang")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
