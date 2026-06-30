@@ -96,3 +96,13 @@ def validate_package_integrity(package_path: Path) -> None:
         except Exception as e:
             raise ValueError(f"Integrity check failed: quotation_text.json validation error: {e}")
 
+    # 9. Kiểm tra line_candidates.json (chỉ khi file tồn tại thực tế để tương thích ngược)
+    line_candidates_file = package_path / "parsed" / "line_candidates.json"
+    if line_candidates_file.exists():
+        try:
+            from mep_quotation.parser.candidate_manifest import validate_line_candidates_file
+            validate_line_candidates_file(line_candidates_file, package_path)
+        except Exception as e:
+            raise ValueError(f"Integrity check failed: line_candidates.json validation error: {e}")
+
+

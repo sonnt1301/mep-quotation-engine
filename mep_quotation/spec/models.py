@@ -35,11 +35,13 @@ class FilePathsModel(BaseModel):
     raw_text: str = Field("source/raw_text.json", description="Đường dẫn file raw text JSON, tương đối từ package root")
     text_markdown: str = Field("text/quotation.md", description="Đường dẫn file Markdown text assembled, tương đối từ package root")
     text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn file manifest text assembly JSON, tương đối từ package root")
+    line_candidates: str = Field("parsed/line_candidates.json", description="Đường dẫn file line candidates JSON, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
     corrections_json: str = Field(..., description="Đường dẫn file corrections JSON, tương đối")
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
+
 
 
 class QuotationPackageModel(BaseModel):
@@ -300,4 +302,56 @@ class TextAssemblyManifestModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class ParserWarningModel(BaseModel):
+    """Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest."""
+    code: str = Field(..., description="Mã cảnh báo (ví dụ: low_confidence, quantity_missing)")
+    message: str = Field(..., description="Chi tiết nội dung cảnh báo")
+
+
+class LineCandidateEvidenceModel(BaseModel):
+    """Model cho thông tin bằng chứng định vị dòng trong file Markdown."""
+    source_path: str = Field("text/quotation.md", description="Đường dẫn file văn bản Markdown nguồn")
+    start_offset: int = Field(..., description="Vị trí bắt đầu của dòng trong file MD (Python string index)")
+    end_offset: int = Field(..., description="Vị trí kết thúc ngay sau ký tự cuối của dòng trong file MD (Python string index)")
+    text: str = Field(..., description="Đoạn văn bản thô nguyên bản của dòng")
+
+
+class LineCandidateModel(BaseModel):
+    """Model cho thông tin một dòng ứng viên chứa báo giá MEP thô."""
+    candidate_id: str = Field(..., description="ID dòng ứng viên định dạng {QUOTATION_ID}_LINECAND_{SEQ}")
+    line_number: int = Field(..., description="Số dòng (1-indexed tính theo file Markdown nguồn)")
+    page_number: int = Field(..., description="Số trang chứa dòng (1-indexed)")
+    raw_line: str = Field(..., description="Nội dung văn bản thô của dòng")
+    description_candidate: Optional[str] = Field(None, description="Mô tả vật tư thô")
+    material_code_candidate: Optional[str] = Field(None, description="Mã vật tư thô phát hiện được")
+    brand_candidate: Optional[str] = Field(None, description="Thương hiệu thô")
+    unit_candidate: Optional[str] = Field(None, description="Đơn vị tính thô")
+    quantity_candidate: Optional[float] = Field(None, description="Số lượng thô")
+    unit_price_candidate: Optional[float] = Field(None, description="Đơn giá thô")
+    currency_candidate: Optional[str] = Field(None, description="Đơn vị tiền tệ thô")
+    confidence: float = Field(..., description="Độ tin cậy của dòng ứng viên (0.0 đến 1.0)")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+    evidence: LineCandidateEvidenceModel = Field(..., description="Minh chứng định vị dòng văn bản")
+
+
+class LineCandidatesManifestModel(BaseModel):
+    """Model cho file line_candidates.json – artifact chính của Phase 6."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn tương đối tới file text_manifest")
+    source_markdown: str = Field("text/quotation.md", description="Đường dẫn tương đối tới file text_markdown")
+    source_sha256: str = Field(..., description="SHA256 của file text/quotation.md")
+    parser_name: str = Field("rule_based_line_candidate_v1", description="Tên công cụ phân tích")
+    parser_version: str = Field("0.1.0", description="Phiên bản công cụ phân tích")
+    candidate_count: int = Field(..., description="Tổng số dòng ứng viên trích xuất được")
+    candidates: List[LineCandidateModel] = Field(..., description="Danh sách chi tiết các dòng ứng viên")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo cấp độ manifest")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 

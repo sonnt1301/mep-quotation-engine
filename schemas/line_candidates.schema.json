@@ -1,0 +1,278 @@
+{
+  "$defs": {
+    "LineCandidateEvidenceModel": {
+      "description": "Model cho thông tin bằng chứng định vị dòng trong file Markdown.",
+      "properties": {
+        "end_offset": {
+          "description": "Vị trí kết thúc ngay sau ký tự cuối của dòng trong file MD (Python string index)",
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "source_path": {
+          "default": "text/quotation.md",
+          "description": "Đường dẫn file văn bản Markdown nguồn",
+          "title": "Source Path",
+          "type": "string"
+        },
+        "start_offset": {
+          "description": "Vị trí bắt đầu của dòng trong file MD (Python string index)",
+          "title": "Start Offset",
+          "type": "integer"
+        },
+        "text": {
+          "description": "Đoạn văn bản thô nguyên bản của dòng",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_offset",
+        "end_offset",
+        "text"
+      ],
+      "title": "LineCandidateEvidenceModel",
+      "type": "object"
+    },
+    "LineCandidateModel": {
+      "description": "Model cho thông tin một dòng ứng viên chứa báo giá MEP thô.",
+      "properties": {
+        "brand_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thương hiệu thô",
+          "title": "Brand Candidate"
+        },
+        "candidate_id": {
+          "description": "ID dòng ứng viên định dạng {QUOTATION_ID}_LINECAND_{SEQ}",
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "confidence": {
+          "description": "Độ tin cậy của dòng ứng viên (0.0 đến 1.0)",
+          "title": "Confidence",
+          "type": "number"
+        },
+        "currency_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tiền tệ thô",
+          "title": "Currency Candidate"
+        },
+        "description_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mô tả vật tư thô",
+          "title": "Description Candidate"
+        },
+        "evidence": {
+          "$ref": "#/$defs/LineCandidateEvidenceModel",
+          "description": "Minh chứng định vị dòng văn bản"
+        },
+        "line_number": {
+          "description": "Số dòng (1-indexed tính theo file Markdown nguồn)",
+          "title": "Line Number",
+          "type": "integer"
+        },
+        "material_code_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mã vật tư thô phát hiện được",
+          "title": "Material Code Candidate"
+        },
+        "page_number": {
+          "description": "Số trang chứa dòng (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "quantity_candidate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng thô",
+          "title": "Quantity Candidate"
+        },
+        "raw_line": {
+          "description": "Nội dung văn bản thô của dòng",
+          "title": "Raw Line",
+          "type": "string"
+        },
+        "unit_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tính thô",
+          "title": "Unit Candidate"
+        },
+        "unit_price_candidate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn giá thô",
+          "title": "Unit Price Candidate"
+        },
+        "warnings": {
+          "description": "Danh sách cảnh báo",
+          "items": {
+            "$ref": "#/$defs/ParserWarningModel"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "line_number",
+        "page_number",
+        "raw_line",
+        "confidence",
+        "evidence"
+      ],
+      "title": "LineCandidateModel",
+      "type": "object"
+    },
+    "ParserWarningModel": {
+      "description": "Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest.",
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo (ví dụ: low_confidence, quantity_missing)",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Chi tiết nội dung cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ParserWarningModel",
+      "type": "object"
+    }
+  },
+  "description": "Model cho file line_candidates.json – artifact chính của Phase 6.",
+  "properties": {
+    "candidate_count": {
+      "description": "Tổng số dòng ứng viên trích xuất được",
+      "title": "Candidate Count",
+      "type": "integer"
+    },
+    "candidates": {
+      "description": "Danh sách chi tiết các dòng ứng viên",
+      "items": {
+        "$ref": "#/$defs/LineCandidateModel"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "parser_name": {
+      "default": "rule_based_line_candidate_v1",
+      "description": "Tên công cụ phân tích",
+      "title": "Parser Name",
+      "type": "string"
+    },
+    "parser_version": {
+      "default": "0.1.0",
+      "description": "Phiên bản công cụ phân tích",
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_markdown": {
+      "default": "text/quotation.md",
+      "description": "Đường dẫn tương đối tới file text_markdown",
+      "title": "Source Markdown",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của file text/quotation.md",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "source_text_manifest": {
+      "default": "text/quotation_text.json",
+      "description": "Đường dẫn tương đối tới file text_manifest",
+      "title": "Source Text Manifest",
+      "type": "string"
+    },
+    "warnings": {
+      "description": "Danh sách cảnh báo cấp độ manifest",
+      "items": {
+        "$ref": "#/$defs/ParserWarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_sha256",
+    "candidate_count",
+    "candidates"
+  ],
+  "title": "LineCandidatesManifestModel",
+  "type": "object"
+}

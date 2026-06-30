@@ -19,7 +19,11 @@ from mep_quotation.spec.models import (
     RawTextPageModel,
     RawTextManifestModel,
     TextAssemblyPageModel,
-    TextAssemblyManifestModel
+    TextAssemblyManifestModel,
+    ParserWarningModel,
+    LineCandidateEvidenceModel,
+    LineCandidateModel,
+    LineCandidatesManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,
