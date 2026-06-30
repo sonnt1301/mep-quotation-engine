@@ -15,7 +15,9 @@ from mep_quotation.spec.models import (
     PdfMetadataModel,
     PdfValidationResult,
     PageImageModel,
-    PageManifestModel
+    PageManifestModel,
+    RawTextPageModel,
+    RawTextManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

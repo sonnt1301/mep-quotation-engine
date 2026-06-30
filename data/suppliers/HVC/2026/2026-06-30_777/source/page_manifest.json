@@ -1,0 +1,83 @@
+{
+  "dpi": 150,
+  "generated_at": "2026-06-30T06:28:29Z",
+  "image_format": "png",
+  "page_count": 8,
+  "pages": [
+    {
+      "file_size": 294308,
+      "height": 1650,
+      "image_path": "source/pages/page_0001.png",
+      "page_number": 1,
+      "rotation": 0,
+      "sha256": "b2e9001688e432cc3691fec14a661a004c9def14e838f4bcf4a3d6829fe313d1",
+      "width": 1275
+    },
+    {
+      "file_size": 283966,
+      "height": 1650,
+      "image_path": "source/pages/page_0002.png",
+      "page_number": 2,
+      "rotation": 0,
+      "sha256": "52c52ac9a3434c51cf69aaa9a1abcef3aa78c628dffb9afa9bece07c30cbeff8",
+      "width": 1275
+    },
+    {
+      "file_size": 292963,
+      "height": 1650,
+      "image_path": "source/pages/page_0003.png",
+      "page_number": 3,
+      "rotation": 0,
+      "sha256": "86ef441f4222b5dec2379450cb72a4268794e5e968388a35debae0c781a7ced0",
+      "width": 1275
+    },
+    {
+      "file_size": 357301,
+      "height": 1650,
+      "image_path": "source/pages/page_0004.png",
+      "page_number": 4,
+      "rotation": 0,
+      "sha256": "8c1d388488c2783d62ac461385853c61b7a47575b29a63d5918355ab452b9c87",
+      "width": 1275
+    },
+    {
+      "file_size": 331994,
+      "height": 1650,
+      "image_path": "source/pages/page_0005.png",
+      "page_number": 5,
+      "rotation": 0,
+      "sha256": "beeb133ae41366d03535280ce091326ae38405ce80179d63a114cc3bbdee64df",
+      "width": 1275
+    },
+    {
+      "file_size": 298522,
+      "height": 1650,
+      "image_path": "source/pages/page_0006.png",
+      "page_number": 6,
+      "rotation": 0,
+      "sha256": "8624bf084d96a23ac39ad162003ea720af7615f9edc93e14119853c338a74f04",
+      "width": 1275
+    },
+    {
+      "file_size": 365204,
+      "height": 1650,
+      "image_path": "source/pages/page_0007.png",
+      "page_number": 7,
+      "rotation": 0,
+      "sha256": "2f2b328d0576a3d8e048384be1b6a3929a7060aeff5ddde1a7017608fd70c44b",
+      "width": 1275
+    },
+    {
+      "file_size": 360036,
+      "height": 1650,
+      "image_path": "source/pages/page_0008.png",
+      "page_number": 8,
+      "rotation": 0,
+      "sha256": "d8cd75ff2b2d62af123bba4a2597000566e7cda05f644ceddd386f8d1ed864d0",
+      "width": 1275
+    }
+  ],
+  "quotation_id": "HVC_20260630_777",
+  "schema_version": "1.0",
+  "source_pdf": "source/original.pdf"
+}

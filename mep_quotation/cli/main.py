@@ -286,9 +286,44 @@ def handle_prepare_pages(args):
         print(f"Error preparing PDF pages: {e}", file=sys.stderr)
         sys.exit(1)
 
+def handle_extract_text(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.pdf_text import extract_package_text
+        extract_package_text(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại package và raw_text.json để in thông tin
+        pkg = load_package_json(package_path)
+        raw_text_path = package_path / pkg.files.raw_text
+        with open(raw_text_path, "r", encoding="utf-8") as f:
+            raw_data = json.load(f)
+
+        page_count = raw_data.get("page_count", 0)
+        pages = raw_data.get("pages", [])
+        total_chars = sum(p.get("character_count", 0) for p in pages)
+        pages_with_text = sum(1 for p in pages if p.get("has_text", False))
+
+        print("Successfully extracted PDF text.")
+        print(f"  Quotation ID     : {pkg.quotation_id}")
+        print(f"  Page Count       : {page_count}")
+        print(f"  Total Characters : {total_chars}")
+        print(f"  Pages With Text  : {pages_with_text}")
+        print(f"  Output Path      : {get_display_path(raw_text_path)}")
+
+    except Exception as e:
+        print(f"Error extracting PDF text: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 3 PDF Page Preparation"
+        description="MEP Quotation Pipeline CLI Tool - Phase 4 PDF Native Content Extraction"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -341,6 +376,12 @@ def main():
     parser_prep.add_argument("--format", default="png", help="Định dạng ảnh xuất ra (chỉ nhận png)")
     parser_prep.add_argument("--overwrite", action="store_true", help="Ghi đè nếu ảnh trang hoặc manifest đã tồn tại")
     parser_prep.set_defaults(func=handle_prepare_pages)
+
+    # Command extract-text
+    parser_text = subparsers.add_parser("extract-text", help="Trích xuất text gốc (native) từ PDF")
+    parser_text.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_text.add_argument("--overwrite", action="store_true", help="Ghi đè nếu raw_text.json đã tồn tại")
+    parser_text.set_defaults(func=handle_extract_text)
 
     args = parser.parse_args()
     args.func(args)

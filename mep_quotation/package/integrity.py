@@ -77,3 +77,12 @@ def validate_package_integrity(package_path: Path) -> None:
                 raise ValueError(
                     f"Integrity check failed: Page image file declared in manifest does not exist: {page.image_path}"
                 )
+
+    # 7. Kiểm tra raw_text.json (chỉ khi file tồn tại thực tế để tương thích ngược)
+    raw_text_file = package_path / "source" / "raw_text.json"
+    if raw_text_file.exists():
+        try:
+            from mep_quotation.pdf_text.manifest import validate_raw_text_file
+            validate_raw_text_file(raw_text_file, package_path)
+        except Exception as e:
+            raise ValueError(f"Integrity check failed: raw_text.json validation error: {e}")

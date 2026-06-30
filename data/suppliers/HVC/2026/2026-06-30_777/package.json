@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-06-30T03:26:20Z",
+  "created_at": "2026-06-30T06:28:28Z",
   "files": {
     "corrections_json": "corrections/corrections.json",
     "logs_jsonl": "logs/processing.log.jsonl",
@@ -8,17 +8,16 @@
     "parsed_json": "parsed/quotation.json",
     "parsed_markdown": "parsed/quotation.md",
     "pdf_metadata": "source/metadata.json",
-    "raw_text": "source/raw_text.json",
     "source_pdf": "source/original.pdf"
   },
-  "quotation_date": "2026-06-20",
-  "quotation_id": "AUT_20260620_001",
-  "sequence": 1,
+  "quotation_date": "2026-06-30",
+  "quotation_id": "HVC_20260630_777",
+  "sequence": 777,
   "supplier": {
-    "code": "AUT",
-    "name": "AUT"
+    "code": "HVC",
+    "name": "HVC"
   },
-  "updated_at": "2026-06-30T07:18:05Z",
+  "updated_at": "2026-06-30T06:28:29Z",
   "versions": {
     "llm": null,
     "parser_version": null,
