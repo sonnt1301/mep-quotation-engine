@@ -1,0 +1,13 @@
+{"details": {"pdf_file_name": "Bang gia LS ap dung ngay 15-04-2026.pdf"}, "event": "pdf_import_started", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {}, "event": "pdf_validated", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {}, "event": "pdf_copied", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {}, "event": "pdf_metadata_written", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {}, "event": "pdf_import_completed", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {"dpi": 150, "image_format": "png", "overwrite": false}, "event": "pdf_page_preparation_started", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:28Z"}
+{"details": {"dpi": 150, "image_format": "png", "output_dir": "source/pages", "page_count": 8}, "event": "pdf_page_rasterized", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"page_count": 8}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"dpi": 150, "image_format": "png", "overwrite": true}, "event": "pdf_page_preparation_started", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"dpi": 150, "image_format": "png", "output_dir": "source/pages", "page_count": 8}, "event": "pdf_page_rasterized", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}
+{"details": {"page_count": 8}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "HVC_20260630_777", "timestamp": "2026-06-30T06:28:29Z"}

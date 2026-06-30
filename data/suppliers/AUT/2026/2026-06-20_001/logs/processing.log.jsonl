@@ -9,3 +9,12 @@
 {"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T04:04:30Z"}
 {"details": {"page_count": 8}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T04:04:30Z"}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T04:04:31Z"}
+{"details": {"overwrite": false, "pdf_path": "source/original.pdf"}, "event": "pdf_text_extraction_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:16:38Z"}
+{"details": {"extraction_engine": "pymupdf", "extraction_engine_version": "1.28.0", "page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "pdf_text_extracted", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:16:38Z"}
+{"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:16:38Z"}
+{"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:16:38Z"}
+{"details": {"overwrite": true, "pdf_path": "source/original.pdf"}, "event": "pdf_text_extraction_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
+{"details": {"extraction_engine": "pymupdf", "extraction_engine_version": "1.28.0", "page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "pdf_text_extracted", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
+{"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
+{"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:13Z"}

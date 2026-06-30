@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "RawTextPageModel": {
+      "description": "Model cho text thô của một trang PDF.",
+      "properties": {
+        "character_count": {
+          "description": "Số ký tự Unicode trong text (len(text) Python)",
+          "title": "Character Count",
+          "type": "integer"
+        },
+        "has_text": {
+          "description": "True nếu trang có text, False nếu không",
+          "title": "Has Text",
+          "type": "boolean"
+        },
+        "page_number": {
+          "description": "Số trang (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "text": {
+          "description": "Text thô do engine trả về, không trim/normalize",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "page_number",
+        "has_text",
+        "character_count",
+        "text"
+      ],
+      "title": "RawTextPageModel",
+      "type": "object"
+    }
+  },
+  "description": "Model cho file raw_text.json – artifact chính của Phase 4.",
+  "properties": {
+    "extraction_engine": {
+      "description": "Tên engine dùng để extract, ví dụ: pymupdf",
+      "title": "Extraction Engine",
+      "type": "string"
+    },
+    "extraction_engine_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Phiên bản engine, None nếu không lấy được",
+      "title": "Extraction Engine Version"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "page_count": {
+      "description": "Tổng số trang PDF",
+      "title": "Page Count",
+      "type": "integer"
+    },
+    "pages": {
+      "description": "Danh sách text từng trang",
+      "items": {
+        "$ref": "#/$defs/RawTextPageModel"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_pdf": {
+      "description": "Đường dẫn tương đối tới file PDF gốc",
+      "title": "Source Pdf",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của file source/original.pdf",
+      "title": "Source Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_pdf",
+    "source_sha256",
+    "extraction_engine",
+    "page_count",
+    "pages"
+  ],
+  "title": "RawTextManifestModel",
+  "type": "object"
+}

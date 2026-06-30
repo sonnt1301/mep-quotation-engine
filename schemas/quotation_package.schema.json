@@ -39,6 +39,12 @@
           "title": "Pdf Metadata",
           "type": "string"
         },
+        "raw_text": {
+          "default": "source/raw_text.json",
+          "description": "Đường dẫn file raw text JSON, tương đối từ package root",
+          "title": "Raw Text",
+          "type": "string"
+        },
         "source_pdf": {
           "description": "Đường dẫn file PDF gốc, tương đối từ package root",
           "title": "Source Pdf",

@@ -32,6 +32,7 @@ class FilePathsModel(BaseModel):
     source_pdf: str = Field(..., description="Đường dẫn file PDF gốc, tương đối từ package root")
     pdf_metadata: str = Field("source/metadata.json", description="Đường dẫn file metadata PDF, tương đối từ package root")
     page_manifest: str = Field("source/page_manifest.json", description="Đường dẫn file manifest trang PDF, tương đối từ package root")
+    raw_text: str = Field("source/raw_text.json", description="Đường dẫn file raw text JSON, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
@@ -239,6 +240,31 @@ class PageManifestModel(BaseModel):
     dpi: int = Field(..., description="Độ phân giải dùng để rasterize")
     image_format: str = Field("png", description="Định dạng ảnh (chỉ chấp nhận png)")
     pages: List[PageImageModel] = Field(..., description="Danh sách chi tiết các trang")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+
+class RawTextPageModel(BaseModel):
+    """Model cho text thô của một trang PDF."""
+    page_number: int = Field(..., description="Số trang (1-indexed)")
+    has_text: bool = Field(..., description="True nếu trang có text, False nếu không")
+    character_count: int = Field(..., description="Số ký tự Unicode trong text (len(text) Python)")
+    text: str = Field(..., description="Text thô do engine trả về, không trim/normalize")
+
+
+class RawTextManifestModel(BaseModel):
+    """Model cho file raw_text.json – artifact chính của Phase 4."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_pdf: str = Field(..., description="Đường dẫn tương đối tới file PDF gốc")
+    source_sha256: str = Field(..., description="SHA256 của file source/original.pdf")
+    extraction_engine: str = Field(..., description="Tên engine dùng để extract, ví dụ: pymupdf")
+    extraction_engine_version: Optional[str] = Field(None, description="Phiên bản engine, None nếu không lấy được")
+    page_count: int = Field(..., description="Tổng số trang PDF")
+    pages: List[RawTextPageModel] = Field(..., description="Danh sách text từng trang")
     generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
     @field_serializer("generated_at")
