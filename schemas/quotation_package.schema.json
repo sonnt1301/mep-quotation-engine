@@ -7,6 +7,12 @@
           "title": "Corrections Json",
           "type": "string"
         },
+        "line_candidates": {
+          "default": "parsed/line_candidates.json",
+          "description": "Đường dẫn file line candidates JSON, tương đối từ package root",
+          "title": "Line Candidates",
+          "type": "string"
+        },
         "logs_jsonl": {
           "description": "Đường dẫn file nhật ký log JSONL, tương đối",
           "title": "Logs Jsonl",

@@ -1,144 +1,50 @@
-# Báo Cáo Nghiệm Thu – MEP Quotation Pipeline Phase 5 (Text Assembly / Parser Input Layer)
+# Báo Cáo Nghiệm Thu Phase 6 – Rule-based Line Candidate Extraction (Cập Nhật: Xác Thực Ranh Giới Offset Trang)
 
-Hạ tầng lắp ghép văn bản (Text Assembly Layer – v0.5.0) của Phase 5 đã được triển khai, kiểm thử và tích hợp thành công 100% tại thư mục dự án **[D:/mep_quotation_pipeline](file:///D:/mep_quotation_pipeline)**.
-
----
-
-## 1. Files Created
-
-| File | Mô tả |
-|------|-------|
-| [mep_quotation/text_assembly/__init__.py](file:///D:/mep_quotation_pipeline/mep_quotation/text_assembly/__init__.py) | Export `assemble_raw_text`, `assemble_package_text` |
-| [mep_quotation/text_assembly/assembler.py](file:///D:/mep_quotation_pipeline/mep_quotation/text_assembly/assembler.py) | Lắp ghép Markdown thô và tính toán tọa độ offset động cho từng trang |
-| [mep_quotation/text_assembly/manifest.py](file:///D:/mep_quotation_pipeline/mep_quotation/text_assembly/manifest.py) | Ghi `quotation_text.json` deterministic, validate 12 quy tắc toàn vẹn |
-| [mep_quotation/text_assembly/assembly_service.py](file:///D:/mep_quotation_pipeline/mep_quotation/text_assembly/assembly_service.py) | Dịch vụ điều phối luồng, kiểm tra trùng lặp cản ghi đè, audit log |
-| [schemas/quotation_text.schema.json](file:///D:/mep_quotation_pipeline/schemas/quotation_text.schema.json) | JSON Schema của `quotation_text.json` sinh tự động từ Pydantic Model |
-| [tests/test_text_assembly.py](file:///D:/mep_quotation_pipeline/tests/test_text_assembly.py) | 10 test cases bao phủ logic offset, overwrite, CLI, audit log |
+Phase 6 đã được cập nhật cơ chế xác thực ranh giới offset của các trang một cách chặt chẽ, loại bỏ hoàn toàn các lỗi tiềm ẩn do lệch page_number trong quá trình định vị. Hệ thống đã vượt qua toàn bộ 87 ca kiểm thử tự động thành công.
 
 ---
 
-## 2. Files Modified
+## 1. Các Thay Đổi & Nâng Cấp Mới Về Xác Thực Offset
 
-| File | Thay đổi |
-|------|---------|
-| [mep_quotation/spec/models.py](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py) | Thêm `TextAssemblyPageModel`, `TextAssemblyManifestModel`; thêm `text_markdown` và `text_manifest` vào `FilePathsModel` |
-| [mep_quotation/spec/__init__.py](file:///D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py) | Export các model mới của Phase 5 |
-| [mep_quotation/package/builder.py](file:///D:/mep_quotation_pipeline/mep_quotation/package/builder.py) | Khởi tạo mặc định `text_markdown` và `text_manifest`, tạo thư mục con `text/` |
-| [mep_quotation/package/integrity.py](file:///D:/mep_quotation_pipeline/mep_quotation/package/integrity.py) | Tích hợp gọi `validate_assembly_manifest_file()` (backward compatible) |
-| [mep_quotation/cli/main.py](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py) | Thêm subcommand `assemble-text [--overwrite]` và handler |
-| [scripts/generate_schemas.py](file:///D:/mep_quotation_pipeline/scripts/generate_schemas.py) | Đăng ký sinh `quotation_text.schema.json` |
-| [README.md](file:///D:/mep_quotation_pipeline/README.md) | Thêm tài liệu hướng dẫn vận hành cho `extract-text` và `assemble-text` |
-| [implementation_plan.md](file:///D:/mep_quotation_pipeline/implementation_plan.md) | Kế hoạch triển khai Phase 5 |
-| [task.md](file:///D:/mep_quotation_pipeline/task.md) | Checklist tiến độ Phase 5 |
-| [walkthrough.md](file:///D:/mep_quotation_pipeline/walkthrough.md) | Báo cáo nghiệm thu Phase 5 (file này) |
+1. **scan_markdown_lines (`line_parser.py`)**:
+   - Loại bỏ cơ chế fallback trang cuối (`page_number = assembly_manifest.page_count`).
+   - Nếu một dòng Markdown (không phải dòng trống, heading, separator, hay metadata đầu file) có offset nằm ngoài tầm ranh giới của tất cả các trang, hệ thống sẽ ném lỗi `ValueError` trực tiếp.
+   - Bổ sung việc tự động bỏ qua các dòng siêu dữ liệu đầu file Markdown (`Quotation ID:`, `Source PDF:`, `Page Count:`, `Generated At:`) để tránh gây nhiễu cho scanner.
+2. **validate_line_candidates_file (`candidate_manifest.py`)**:
+   - Đọc và validate tệp manifest `text/quotation_text.json` bằng model Pydantic chính thức `TextAssemblyManifestModel`.
+   - Với từng candidate, đối chiếu `evidence.start_offset` và `evidence.end_offset` xem có nằm trọn vẹn trong ranh giới `[page.start_offset : page.end_offset]` của trang `cand.page_number` tương ứng hay không. Ném lỗi `ValueError` chi tiết nếu phát hiện sự lệch ranh giới.
+3. **Bổ Sung Bộ Kiểm Thử (`tests/test_line_parser.py`)**:
+   - `test_validation_catches_tampered_page_number`: Kiểm chứng việc đổi `page_number` của candidate hợp lệ sang trang khác (nhưng giữ nguyên offset/text) sẽ bị hàm kiểm duyệt phát hiện và báo lỗi lệch range.
+   - `test_scan_markdown_lines_raises_error_for_out_of_bounds_offset`: Kiểm chứng Line Scanner sẽ ném lỗi `ValueError` nếu phát hiện offset của dòng text không map được vào bất kỳ trang nào được định nghĩa trong text manifest.
 
 ---
 
-## 3. Commands Executed
+## 2. Kết Quả Xác Thực Kỹ Thuật
 
-```bash
-# 1. Cài đặt lại gói editable
-python -m pip install -e ".[dev]"
+### 🔹 Kết Quả Sinh JSON Schema
+Đã sinh thành công **9 tệp schema JSON** deterministic trong thư mục `schemas/`.
 
-# 2. Sinh lại 8 JSON Schemas
-python scripts/generate_schemas.py
+### 🔹 Bộ Unit Tests Pytest (`python -m pytest -v`)
+Toàn bộ **87 tests passed / 0 failed** thành công mỹ mãn trong 3.05 giây.
 
-# 3. Chạy toàn bộ unit tests
-python -m pytest -v
+```text
+tests/test_line_parser.py::test_parse_simple_line_with_price_unit PASSED [ 14%]
+tests/test_line_parser.py::test_do_not_treat_technical_specs_as_price PASSED [ 16%]
+tests/test_line_parser.py::test_parse_price_with_marker_or_safe_ending PASSED [ 17%]
+tests/test_line_parser.py::test_parse_brand PASSED                       [ 18%]
+tests/test_line_parser.py::test_quantity_missing_warning_logic PASSED    [ 19%]
+tests/test_line_parser.py::test_ignore_markdown_headings_and_separators PASSED [ 20%]
+tests/test_line_parser.py::test_line_number_one_based PASSED             [ 21%]
+tests/test_line_parser.py::test_evidence_slice_exact_match PASSED        [ 22%]
+tests/test_line_parser.py::test_page_number_mapping_from_offset PASSED   [ 24%]
+tests/test_line_parser.py::test_candidate_id_format_and_uniqueness PASSED [ 25%]
+tests/test_line_parser.py::test_confidence_calculation_deterministic PASSED [ 26%]
+tests/test_line_parser.py::test_validation_catches_bad_evidence_offset PASSED [ 27%]
+tests/test_line_parser.py::test_overwrite_protection_and_audit_log PASSED [ 28%]
+tests/test_line_parser.py::test_cli_parse_line_candidates PASSED         [ 29%]
+tests/test_line_parser.py::test_does_not_create_normalized_json PASSED   [ 31%]
+tests/test_line_parser.py::test_validation_catches_tampered_page_number PASSED [ 32%]
+tests/test_line_parser.py::test_scan_markdown_lines_raises_error_for_out_of_bounds_offset PASSED [ 33%]
+...
+============================= 87 passed in 3.05s ==============================
 ```
-
----
-
-## 4. Test Results
-
-- **Tổng số test**: **70 test cases** (60 cũ Phase 1-4 + 10 mới của Phase 5)
-- **Trạng thái**: **70 PASSED**, 0 FAILED
-- **Thời gian chạy**: ~2.57 giây
-
-### Chi tiết 10 test mới của Phase 5:
-- `test_assemble_raw_text_success`: Kiểm tra ghép văn bản từ raw_text, định vị offset khớp chính xác văn bản thô.
-- `test_assemble_no_alteration`: Đảm bảo không trim, normalize hay can thiệp khoảng trắng của văn bản gốc.
-- `test_assemble_markdown_structure`: Kiểm tra định dạng cấu trúc headings Markdown của từng trang.
-- `test_missing_raw_text_fail`: Báo lỗi FileNotFoundError nếu thiếu tệp `raw_text.json` và kiểm tra ghi nhận log `text_assembly_failed`.
-- `test_overwrite_protection`: Kiểm tra cản ghi đè khi `overwrite=False` (ném ValueError) và có ghi log `text_assembly_failed`, chạy lại thành công khi `overwrite=True`.
-- `test_integrity_compatibility`: Xác nhận tệp kiểm tra toàn vẹn package vượt qua thành công sau lắp ghép.
-- `test_cli_assemble_text`: Chạy CLI qua subprocess, kiểm định định dạng kết quả in ra.
-- `test_audit_events_trail`: Xác thực chuỗi log kiểm toán thành công (5 events theo đúng thứ tự).
-- `test_audit_event_failed`: Kiểm tra ghi nhận sự kiện `text_assembly_failed` khi xảy ra lỗi parse JSON `raw_text.json`.
-- `test_encrypted_package_assembly_fail`: Kiểm tra PDF bị mã hóa ném ValueError và ghi log `text_assembly_failed`.
-
----
-
-## 5. Manual Acceptance Test Results
-
-Thực hiện kiểm nghiệm thủ công tuần tự 10 bước trên package CADIVI đã trích xuất ở Phase 4:
-
-1. **Bước 1: Chạy lệnh `assemble-text` lần đầu:**
-   ```bash
-   python -m mep_quotation.cli.main assemble-text data/suppliers/CADIVI/2026/2026-06-25_002
-   ```
-   *Kết quả:* Thành công, in thông tin định dạng chuẩn:
-   ```
-   Successfully assembled PDF text.
-     Quotation ID     : CADIVI_20260625_002
-     Page Count       : 3
-     Total Characters : 110
-     Pages With Text  : 3
-     Markdown Path    : text/quotation.md
-     Manifest Path    : text/quotation_text.json
-   ```
-
-2. **Bước 2: Kiểm tra tệp Markdown:**
-   *Kết quả:* Tệp `text/quotation.md` tồn tại, giữ nguyên khoảng trắng và định dạng xuống dòng gốc của trang 3.
-
-3. **Bước 3: Kiểm tra tệp Manifest:**
-   *Kết quả:* Tệp `text/quotation_text.json` được ghi định dạng thụt lề deterministic, chứa đầy đủ các trường `source_sha256`, `start_offset`, `end_offset` khớp chuẩn xác.
-
-4. **Bước 4: Xác thực offset:**
-   *Kết quả:* Đọc chỉ mục offset trang 3 và kiểm chứng bằng Python string slice: `markdown_content[start_offset:end_offset] == raw_text.pages[2].text` (khớp hoàn hảo).
-
-5. **Bước 5: Chạy lại lệnh không có `--overwrite` (Kiểm thử Overwrite Failure Path):**
-   ```bash
-   python -m mep_quotation.cli.main assemble-text data/suppliers/CADIVI/2026/2026-06-25_002
-   ```
-   *Kết quả:* Thất bại rõ ràng, báo lỗi file đã tồn tại. Mở log `logs/processing.log.jsonl` thấy xuất hiện sự kiện:
-   `{"event": "text_assembly_failed", "level": "ERROR", "details": {"error": "Assembled Markdown file already exists..."}}`
-
-6. **Bước 6: Chạy lại lệnh với `--overwrite`:**
-   ```bash
-   python -m mep_quotation.cli.main assemble-text data/suppliers/CADIVI/2026/2026-06-25_002 --overwrite
-   ```
-   *Kết quả:* Thành công, ghi đè hoàn tất.
-
-7. **Bước 7: Kiểm tra log kiểm toán:**
-   *Kết quả:* Tệp `logs/processing.log.jsonl` ghi đầy đủ chuỗi sự kiện thành công:
-   - `text_assembly_started` (chứa cờ `"overwrite": true` cho lần 2)
-   - `text_assembled`
-   - `quotation_markdown_written`
-   - `quotation_text_manifest_written`
-   - `text_assembly_completed`
-
-8. **Bước 8: Kiểm tra toàn vẹn package:**
-   ```bash
-   python -m mep_quotation.cli.main validate-package data/suppliers/CADIVI/2026/2026-06-25_002
-   ```
-   *Kết quả:* Thành công: `Package is valid`.
-
-9. **Bước 9: Kiểm thử thiếu tệp raw_text.json (Failure Path):**
-   *Thao tác:* Đổi tên tệp `source/raw_text.json` thành `source/raw_text_backup.json` rồi chạy lại lệnh `assemble-text`.
-   *Kết quả:* Lệnh kết thúc với mã lỗi `sys.exit(1)`, in ra thông báo lỗi FileNotFoundError. Mở tệp log kiểm toán thấy có dòng log lỗi mới nhất:
-   `{"event": "text_assembly_failed", "level": "ERROR", "details": {"error": "raw_text.json file not found in package..."}}`
-
----
-
-## 6. Scope Confirmation & Remaining Work
-
-### Xác nhận phạm vi:
-- Tuyệt đối không OCR.
-- Không sử dụng bất kỳ AI / LLM / Docling nào.
-- Không trích xuất cấu trúc bảng biểu hay phân tích ngữ nghĩa vật tư/đơn giá.
-- Không chuẩn hóa dữ liệu vật tư sang normalized.
-
-### Công việc còn lại:
-- Triển khai Phase 6: Parser & Information Extraction.
-- Triển khai Phase 7: Normalization & Material Indexing.

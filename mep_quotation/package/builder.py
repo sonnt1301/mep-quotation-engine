@@ -49,6 +49,7 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
             raw_text="source/raw_text.json",
             text_markdown="text/quotation.md",
             text_manifest="text/quotation_text.json",
+            line_candidates="parsed/line_candidates.json",
             parsed_json="parsed/quotation.json",
             parsed_markdown="parsed/quotation.md",
             normalized_json="normalized/normalized.json",

@@ -354,9 +354,48 @@ def handle_assemble_text(args):
         sys.exit(1)
 
 
+def handle_parse_line_candidates(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.parser import parse_package_line_candidates
+        parse_package_line_candidates(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại package và line_candidates.json để in ra
+        pkg = load_package_json(package_path)
+        candidates_path = package_path / pkg.files.line_candidates
+        md_path = package_path / pkg.files.text_markdown
+
+        with open(candidates_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        candidate_count = manifest_data.get("candidate_count", 0)
+        
+        # Đếm tổng warnings của cả manifest và các candidates
+        total_warnings = len(manifest_data.get("warnings", []))
+        for cand in manifest_data.get("candidates", []):
+            total_warnings += len(cand.get("warnings", []))
+
+        print("Successfully extracted line candidates.")
+        print(f"  Quotation ID     : {pkg.quotation_id}")
+        print(f"  Candidate Count  : {candidate_count}")
+        print(f"  Source Markdown  : {get_display_path(md_path)}")
+        print(f"  Candidates Path  : {get_display_path(candidates_path)}")
+        print(f"  Warnings Count   : {total_warnings}")
+
+    except Exception as e:
+        print(f"Error parsing line candidates: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 5 Text Assembly / Parser Input Layer"
+        description="MEP Quotation Pipeline CLI Tool - Phase 6 Rule-based Line Candidate Extraction"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -421,6 +460,12 @@ def main():
     parser_assembly.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_assembly.add_argument("--overwrite", action="store_true", help="Ghi đè nếu quotation.md hoặc quotation_text.json đã tồn tại")
     parser_assembly.set_defaults(func=handle_assemble_text)
+
+    # Command parse-line-candidates
+    parser_cand = subparsers.add_parser("parse-line-candidates", help="Trích xuất các dòng báo giá thô từ Markdown")
+    parser_cand.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_cand.add_argument("--overwrite", action="store_true", help="Ghi đè nếu line_candidates.json đã tồn tại")
+    parser_cand.set_defaults(func=handle_parse_line_candidates)
 
     args = parser.parse_args()
     args.func(args)

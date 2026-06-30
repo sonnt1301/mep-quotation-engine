@@ -14,7 +14,8 @@ from mep_quotation.spec.models import (
     PdfMetadataModel,
     PageManifestModel,
     RawTextManifestModel,
-    TextAssemblyManifestModel
+    TextAssemblyManifestModel,
+    LineCandidatesManifestModel
 )
 
 def generate_schemas():
@@ -31,7 +32,8 @@ def generate_schemas():
         "pdf_metadata.schema.json": PdfMetadataModel,
         "page_manifest.schema.json": PageManifestModel,
         "raw_text.schema.json": RawTextManifestModel,
-        "quotation_text.schema.json": TextAssemblyManifestModel
+        "quotation_text.schema.json": TextAssemblyManifestModel,
+        "line_candidates.schema.json": LineCandidatesManifestModel
     }
 
     for filename, model in models_to_generate.items():
