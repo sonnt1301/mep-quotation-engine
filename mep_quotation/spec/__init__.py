@@ -23,7 +23,9 @@ from mep_quotation.spec.models import (
     ParserWarningModel,
     LineCandidateEvidenceModel,
     LineCandidateModel,
-    LineCandidatesManifestModel
+    LineCandidatesManifestModel,
+    RowCandidateModel,
+    RowCandidateManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

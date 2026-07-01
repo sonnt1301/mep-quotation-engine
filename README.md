@@ -88,30 +88,38 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
    python -m mep_quotation.cli.main parse-line-candidates data/suppliers/AUT/2026/2026-06-20_001 --overwrite
    ```
 
-6. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
+6. **Gom Nhóm Hàng Ứng Viên Ghép (Row Candidate Assembly):**
+   ```bash
+   python -m mep_quotation.cli.main assemble-rows data/suppliers/AUT/2026/2026-06-20_001
+   
+   # Tùy chọn cho phép ghi đè và điều chỉnh gap dòng cho đơn giá:
+   python -m mep_quotation.cli.main assemble-rows data/suppliers/AUT/2026/2026-06-20_001 --overwrite --max-line-gap-for-price 6
+   ```
+
+7. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
    ```bash
    python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
    ```
 
-7. **Kiểm Tra Tính Hợp Lệ Của Gói:**
+8. **Kiểm Tra Tính Hợp Lệ Của Gói:**
    ```bash
    python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-05-20_001
    ```
 
-8. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
+9. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
    ```bash
    python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
    ```
 
-9. **Xây Dựng Lại Chỉ Mục Vật Tư:**
-   ```bash
-   python -m mep_quotation.cli.main build-index
- 
-   # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
-   python -m mep_quotation.cli.main build-index --strict
-   ```
+10. **Xây Dựng Lại Chỉ Mục Vật Tư:**
+    ```bash
+    python -m mep_quotation.cli.main build-index
+  
+    # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
+    python -m mep_quotation.cli.main build-index --strict
+    ```
 
-10. **Tìm Kiếm Vật Tư:**
+11. **Tìm Kiếm Vật Tư:**
     ```bash
     python -m mep_quotation.cli.main search-material "CV-3X2.5"
     ```

@@ -393,9 +393,53 @@ def handle_parse_line_candidates(args):
         sys.exit(1)
 
 
+def handle_assemble_rows(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.row_assembly import assemble_row_candidates
+        assemble_row_candidates(
+            package_path=package_path,
+            overwrite=args.overwrite,
+            max_line_gap_for_price=args.max_line_gap_for_price
+        )
+
+        # Nạp lại package và row_candidates.json để in ra
+        pkg = load_package_json(package_path)
+        row_candidates_path = package_path / pkg.files.row_candidates
+        line_candidates_path = package_path / pkg.files.line_candidates
+
+        with open(row_candidates_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        row_count = manifest_data.get("row_count", 0)
+        
+        # Đếm số rows có giá thô
+        rows_with_price = 0
+        total_warnings = len(manifest_data.get("warnings", []))
+        for row in manifest_data.get("rows", []):
+            if row.get("unit_price_candidate") is not None:
+                rows_with_price += 1
+            total_warnings += len(row.get("warnings", []))
+
+        print("Successfully assembled row candidates.")
+        print(f"  Quotation ID          : {pkg.quotation_id}")
+        print(f"  Row Count             : {row_count}")
+        print(f"  Source Line Candidates: {get_display_path(line_candidates_path)}")
+        print(f"  Row Candidates Path   : {get_display_path(row_candidates_path)}")
+        print(f"  Rows With Price Count : {rows_with_price}")
+        print(f"  Warnings Count        : {total_warnings}")
+
+    except Exception as e:
+        print(f"Error assembling row candidates: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 6 Rule-based Line Candidate Extraction"
+        description="MEP Quotation Pipeline CLI Tool - Phase 7 Row Candidate Assembly / Price Association Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -466,6 +510,13 @@ def main():
     parser_cand.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_cand.add_argument("--overwrite", action="store_true", help="Ghi đè nếu line_candidates.json đã tồn tại")
     parser_cand.set_defaults(func=handle_parse_line_candidates)
+
+    # Command assemble-rows
+    parser_row = subparsers.add_parser("assemble-rows", help="Gom các line candidates thành các row candidates ghép và liên kết giá")
+    parser_row.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_row.add_argument("--overwrite", action="store_true", help="Ghi đè nếu row_candidates.json đã tồn tại")
+    parser_row.add_argument("--max-line-gap-for-price", type=int, default=6, help="Khoảng cách dòng tối đa cho phép liên kết giá (mặc định 6)")
+    parser_row.set_defaults(func=handle_assemble_rows)
 
     args = parser.parse_args()
     args.func(args)
