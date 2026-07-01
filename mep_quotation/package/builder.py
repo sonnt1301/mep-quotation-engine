@@ -55,6 +55,7 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
             parsed_json="parsed/quotation.json",
             parsed_markdown="parsed/quotation.md",
             normalized_json="normalized/normalized.json",
+            normalized_draft="normalized/normalized_draft.json",
             corrections_json="corrections/corrections.json",
             logs_jsonl="logs/processing.log.jsonl"
         ),

@@ -484,9 +484,61 @@ def handle_build_item_candidates(args):
         sys.exit(1)
 
 
+def handle_build_normalized_draft(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.normalized_draft import build_normalized_draft
+        build_normalized_draft(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại package và normalized_draft.json để in ra
+        pkg = load_package_json(package_path)
+        item_candidates_path = package_path / pkg.files.item_candidates
+        normalized_draft_path = package_path / pkg.files.normalized_draft
+
+        with open(normalized_draft_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        item_count = manifest_data.get("item_count", 0)
+        review_required_count = manifest_data.get("review_required_count", 0)
+        
+        # Đếm số lượng của từng trạng thái review_status
+        auto_ready_count = 0
+        rejected_candidate_count = 0
+        total_warnings = len(manifest_data.get("warnings", []))
+        for item in manifest_data.get("items", []):
+            status = item.get("review_status")
+            if status == "auto_ready":
+                auto_ready_count += 1
+            elif status == "rejected_candidate":
+                rejected_candidate_count += 1
+            total_warnings += len(item.get("warnings", []))
+
+        print("Successfully built normalized draft.")
+        print(f"  Quotation ID          : {pkg.quotation_id}")
+        print(f"  Supplier Code         : {manifest_data.get('supplier_code')}")
+        print(f"  Quotation Date        : {manifest_data.get('quotation_date')}")
+        print(f"  Item Count            : {item_count}")
+        print(f"  Review Required Count : {review_required_count}")
+        print(f"  Auto Ready Count      : {auto_ready_count}")
+        print(f"  Rejected Candidate Count: {rejected_candidate_count}")
+        print(f"  Source Item Candidates: {get_display_path(item_candidates_path)}")
+        print(f"  Normalized Draft Path : {get_display_path(normalized_draft_path)}")
+        print(f"  Warnings Count        : {total_warnings}")
+
+    except Exception as e:
+        print(f"Error building normalized draft: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 8 Structured Item Candidate Layer"
+        description="MEP Quotation Pipeline CLI Tool - Phase 9 Normalized Draft Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -570,6 +622,12 @@ def main():
     parser_item.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_item.add_argument("--overwrite", action="store_true", help="Ghi đè nếu item_candidates.json đã tồn tại")
     parser_item.set_defaults(func=handle_build_item_candidates)
+
+    # Command build-normalized-draft
+    parser_draft = subparsers.add_parser("build-normalized-draft", help="Chuyển các item candidates thành bản dữ liệu nháp chuẩn hóa")
+    parser_draft.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_draft.add_argument("--overwrite", action="store_true", help="Ghi đè nếu normalized_draft.json đã tồn tại")
+    parser_draft.set_defaults(func=handle_build_normalized_draft)
 
     args = parser.parse_args()
     args.func(args)

@@ -41,6 +41,7 @@ class FilePathsModel(BaseModel):
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
+    normalized_draft: str = Field("normalized/normalized_draft.json", description="Đường dẫn file nháp chuẩn hóa JSON, tương đối từ package root")
     corrections_json: str = Field(..., description="Đường dẫn file corrections JSON, tương đối")
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
 
@@ -436,6 +437,59 @@ class ItemCandidateManifestModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class NormalizedDraftEvidenceModel(BaseModel):
+    """Model lưu trữ trace vết chứng cứ văn bản thô cho draft item."""
+    raw_evidence_text: str = Field(..., description="Văn bản gốc từ row candidate")
+    start_offset: int = Field(..., description="Vị trí bắt đầu trong file MD")
+    end_offset: int = Field(..., description="Vị trí kết thúc trong file MD")
+
+
+class NormalizedDraftItemModel(BaseModel):
+    """Model lưu trữ thông tin một dòng vật tư chuẩn hóa nháp của Phase 9."""
+    draft_item_id: str = Field(..., description="ID nháp chuẩn hóa định dạng {QUOTATION_ID}_DRAFTITEM_{SEQ}")
+    source_item_candidate_id: str = Field(..., description="ID item candidate nguồn từ Phase 8")
+    source_row_id: str = Field(..., description="ID row candidate nguồn từ Phase 7")
+    page_number: int = Field(..., description="Số trang chứa ứng viên (1-indexed)")
+    start_line_number: int = Field(..., description="Số dòng bắt đầu trong file MD")
+    end_line_number: int = Field(..., description="Số dòng kết thúc trong file MD")
+    material_code: Optional[str] = Field(None, description="Mã vật tư chuẩn hóa nháp")
+    description: Optional[str] = Field(None, description="Mô tả vật tư chuẩn hóa nháp")
+    brand: Optional[str] = Field(None, description="Thương hiệu chuẩn hóa nháp")
+    unit: Optional[str] = Field(None, description="Đơn vị tính chuẩn hóa nháp")
+    quantity: Optional[float] = Field(None, description="Số lượng chuẩn hóa nháp")
+    unit_price: Optional[float] = Field(None, description="Đơn giá chuẩn hóa nháp")
+    currency: Optional[str] = Field(None, description="Đơn vị tiền tệ chuẩn hóa nháp")
+    amount: Optional[float] = Field(None, description="Thành tiền chuẩn hóa nháp")
+    review_status: str = Field(..., description="Trạng thái review (auto_ready | needs_review | rejected_candidate)")
+    review_reasons: List[str] = Field(default_factory=list, description="Danh sách mã lý do cần review")
+    confidence: float = Field(..., description="Điểm tin cậy điều chỉnh (0.0 đến 1.0)")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+    evidence: NormalizedDraftEvidenceModel = Field(..., description="Trace vết văn bản chứng cứ")
+
+
+class NormalizedDraftModel(BaseModel):
+    """Model kê khai tệp normalized_draft.json chứa dữ liệu nháp chuẩn hóa."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    supplier_code: Optional[str] = Field(None, description="Mã nhà cung cấp lấy từ package.json")
+    quotation_date: Optional[str] = Field(None, description="Ngày báo giá lấy từ package.json")
+    currency: Optional[str] = Field(None, description="Đơn vị tiền tệ chung của báo giá")
+    source_item_candidates: str = Field("parsed/item_candidates.json", description="Đường dẫn tương đối tới file item_candidates")
+    source_sha256: str = Field(..., description="SHA256 của file parsed/item_candidates.json")
+    draft_builder_name: str = Field("rule_based_normalized_draft_builder", description="Tên công cụ dựng nháp")
+    draft_builder_version: str = Field("1.0", description="Phiên bản công cụ dựng nháp")
+    item_count: int = Field(..., description="Tổng số draft items")
+    review_required_count: int = Field(..., description="Số draft items cần review (review_status = needs_review)")
+    items: List[NormalizedDraftItemModel] = Field(..., description="Danh sách các draft items")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo cấp độ manifest")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 
 
 

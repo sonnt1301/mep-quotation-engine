@@ -24,6 +24,12 @@
           "title": "Logs Jsonl",
           "type": "string"
         },
+        "normalized_draft": {
+          "default": "normalized/normalized_draft.json",
+          "description": "Đường dẫn file nháp chuẩn hóa JSON, tương đối từ package root",
+          "title": "Normalized Draft",
+          "type": "string"
+        },
         "normalized_json": {
           "description": "Đường dẫn file normalized JSON, tương đối",
           "title": "Normalized Json",

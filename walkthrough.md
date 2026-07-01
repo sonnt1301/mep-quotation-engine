@@ -1,86 +1,76 @@
-# Báo Cáo Nghiệm Thu Phase 8 – Structured Item Candidate Layer
+# Kết Quả Nghiệm Thu MEP Quotation Pipeline Phase 9 – Normalized Draft Layer
 
-## Tóm Tắt Công Việc Đã Thực Hiện
+## Các công việc đã thực hiện
+Phase 9 nhận dữ liệu đầu vào từ tệp ứng viên vật tư (`parsed/item_candidates.json`) được tạo ở Phase 8, và xây dựng thành công tệp dữ liệu nháp chuẩn hóa `normalized/normalized_draft.json` để phục vụ rà soát thủ công hoặc đối chiếu ở các phase sau.
 
-Phase 8 đã được triển khai thành công, tiếp nhận các row candidates thô từ Phase 7 và tạo ra tệp cấu trúc ứng viên vật tư (`parsed/item_candidates.json`) theo đúng mục tiêu thiết kế.
+### 1. Spec & Models
+- Bổ sung trường `normalized_draft` vào `FilePathsModel` trong `models.py`.
+- Định nghĩa các Pydantic models mới chính xác làm Source of Truth:
+  - `NormalizedDraftEvidenceModel`: trace vết văn bản gốc từ candidate.
+  - `NormalizedDraftItemModel`: chứa cấu trúc dữ liệu nháp chuẩn hóa chi tiết cho từng dòng vật tư.
+  - `NormalizedDraftModel`: manifest kê khai tổng số lượng items, trạng thái cần rà soát và siêu dữ liệu đi kèm.
+- Xuất các model qua `mep_quotation/spec/__init__.py`.
 
-### Các File Đã Tạo Mới & Sửa Đổi
-1. **Spec & Models**:
-   - `mep_quotation/spec/models.py`: Bổ sung cấu hình đường dẫn `item_candidates` vào `FilePathsModel`. Định nghĩa hai Pydantic models mới: `ItemCandidateModel` và `ItemCandidateManifestModel`.
-   - `mep_quotation/spec/__init__.py`: Xuất các model mới ra ngoài API của spec.
-2. **Package Integrity**:
-   - `mep_quotation/package/builder.py`: Khởi tạo mặc định thuộc tính `item_candidates`.
-   - `mep_quotation/package/integrity.py`: Tích hợp hàm kiểm duyệt chéo `validate_item_candidates_file` khi tệp `item_candidates.json` tồn tại thực tế trên đĩa (đảm bảo tính tương thích ngược).
-3. **Module item_candidates**:
-   - `mep_quotation/item_candidates/__init__.py`: Xuất API chính.
-   - `mep_quotation/item_candidates/builder.py`: Triển khai chuyển đổi dữ liệu, candidate-level unit alias mapping cơ bản (`pcs`/`piece`/`cái` ➔ `cái`, `m`/`meter`/`met` ➔ `m`, `bộ`/`set` ➔ `bộ`), tính thành tiền `amount_candidate`, gán VND có điều kiện (chỉ khi có đơn giá thô và trong evidence text xuất hiện từ khóa tiền tệ Việt Nam rõ ràng), tính confidence deterministic và sinh cảnh báo độ tin cậy thấp.
-   - `mep_quotation/item_candidates/manifest.py`: Triển khai ghi JSON deterministic và validate 10 quy tắc toàn vẹn cấu trúc dữ liệu liên kết.
-   - `mep_quotation/item_candidates/item_service.py`: Điều phối luồng dịch vụ chính, cản ghi đè, ghi log audit đầy đủ 5 sự kiện.
-4. **CLI Integration**:
-   - `mep_quotation/cli/main.py`: Tích hợp subcommand `build-item-candidates` và handler in báo cáo thống kê.
-5. **Schema Generator**:
-   - `scripts/generate_schemas.py`: Đăng ký sinh JSON schema cho `ItemCandidateManifestModel`.
-6. **Tests**:
-   - `tests/test_item_candidates.py`: Thiết lập 8 kịch bản unit tests bao phủ 17 quy tắc nghiệp vụ Phase 8.
+### 2. Module mep_quotation/normalized_draft/
+- Triển khai `builder.py` để chuyển đổi deterministic từ item candidates sang draft items:
+  - Trim whitespace mô tả.
+  - Tự động tính toán thành tiền `amount = quantity * unit_price` và validate so khớp với dữ liệu ứng viên gốc, phát cảnh báo `amount_mismatch_recomputed` khi lệch.
+  - Gán tiền tệ chung có điều kiện hoặc kế thừa từ thuộc tính candidate.
+  - Điều chỉnh điểm tin cậy `confidence` clamp trong `[0.0, 1.0]` và phân loại trạng thái rà soát `review_status` (`auto_ready`, `needs_review`, `rejected_candidate`).
+- Triển khai `manifest.py` chứa logic ghi tệp JSON deterministic và hàm validate toàn vẹn 14 quy tắc chéo bắt buộc.
+- Triển khai `draft_service.py` để điều phối luồng xử lý: kiểm duyệt đầu vào, overwrite check, ghi audit log, cập nhật package.json và bảo vệ tuyệt đối tệp `normalized.json` chính thức (không thay đổi SHA256, không tự ý tạo mới).
 
----
-
-## Kết Quả Kiểm Thử Tự Động (Automated Tests Result)
-
-### 1. Sinh Schema Thành Công
-Chạy script sinh JSON schemas:
-```bash
-python scripts/generate_schemas.py
-```
-➔ **PASS**. Sinh đủ **11 schemas** trong thư mục `schemas/` (bao gồm tệp mới `schemas/item_candidates.schema.json`).
-
-### 2. Chạy pytest
-Chạy pytest cho toàn bộ dự án:
-```bash
-python -m pytest -v
-```
-➔ **PASS**. Kết quả: **108 tests PASSED**, 0 FAILED.
-Trong đó, các unit test mới của Phase 8:
-- `test_build_item_candidates_success` ➔ PASS (Kiểm chứng alias mapping, tính amount, gán VND có điều kiện hoạt động đúng).
-- `test_empty_row_candidates_still_generates_valid_items` ➔ PASS (Chấp nhận row_candidates rỗng).
-- `test_overwrite_protection_and_audit_logs` ➔ PASS (Bảo vệ ghi đè, ghi đủ log `item_candidate_build_started`, `item_candidates_built`, `item_candidates_written`, `item_candidate_build_completed`, `item_candidate_build_failed`).
-- `test_cli_build_item_candidates` ➔ PASS (Subprocess CLI hoạt động chính xác).
-- `test_backward_compatibility_integrity_check` ➔ PASS (Tương thích ngược khi chưa chạy Phase 8).
-- `test_validation_catches_bad_data_in_item_candidates` ➔ PASS (Bắt lỗi khi sai lệch SHA256, sai offset, sai ID, sai amount).
-- `test_does_not_modify_or_create_normalized_json` ➔ PASS (Không can thiệp đến tệp normalized.json).
+### 3. CLI & Schema
+- Tích hợp subcommand `build-normalized-draft` vào CLI.
+- Tích hợp tự động sinh JSON Schema mới `normalized_draft.schema.json` trong `generate_schemas.py`.
 
 ---
 
-## Kết Quả Xác Minh Thủ Công (Manual Verification Result)
-
-Chạy thử nghiệm trên gói dữ liệu thực tế `data/suppliers/AUT/2026/2026-06-20_001`:
-
-### 1. Chạy CLI build-item-candidates:
-```bash
-python -m mep_quotation.cli.main build-item-candidates data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+## Kết quả kiểm thử tự động (Pytest)
+Chạy toàn bộ 115 pytest thành công 100%:
 ```
-**Kết quả in ra console:**
-```text
-Successfully built item candidates.
+tests/test_normalized_draft.py::test_build_normalized_draft_success PASSED
+tests/test_normalized_draft.py::test_empty_candidates_generates_valid_empty_draft PASSED
+tests/test_normalized_draft.py::test_overwrite_protection_and_integrity_audit PASSED
+tests/test_normalized_draft.py::test_cli_build_normalized_draft PASSED
+tests/test_normalized_draft.py::test_normalized_json_safety_protection PASSED
+tests/test_normalized_draft.py::test_validation_catches_errors_in_manifest PASSED
+tests/test_normalized_draft.py::test_amount_mismatch_warning_generation PASSED
+
+============================= 115 passed in 5.30s =============================
+```
+
+---
+
+## Kết quả nghiệm thu thủ công (Manual Acceptance Test)
+Chạy trực tiếp CLI trên gói dữ liệu thực tế `data/suppliers/AUT/2026/2026-06-20_001`:
+```bash
+python -m mep_quotation.cli.main build-normalized-draft data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+```
+**Kết quả hiển thị:**
+```
+Successfully built normalized draft.
   Quotation ID          : AUT_20260620_001
+  Supplier Code         : AUT
+  Quotation Date        : 2026-06-20
   Item Count            : 287
-  Source Row Candidates : data/suppliers/AUT/2026/2026-06-20_001/parsed/row_candidates.json
-  Item Candidates Path  : data/suppliers/AUT/2026/2026-06-20_001/parsed/item_candidates.json
-  Items With Price Count: 19
-  Items With Amount Count: 0
-  Warnings Count        : 267
+  Review Required Count : 264
+  Auto Ready Count      : 0
+  Rejected Candidate Count: 23
+  Source Item Candidates: data/suppliers/AUT/2026/2026-06-20_001/parsed/item_candidates.json
+  Normalized Draft Path : data/suppliers/AUT/2026/2026-06-20_001/normalized/normalized_draft.json
+  Warnings Count        : 856
 ```
 
-### 2. Chạy validate-package:
-```bash
-python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-06-20_001
-```
-**Kết quả in ra console:**
-```text
-Package is valid.
-  Quotation ID : AUT_20260620_001
-  Supplier     : AUT
-  Items Count  : 0
-  Corrections  : 0
-```
-➔ Hệ thống xác nhận gói báo giá hoàn toàn hợp lệ, các liên kết kiểm duyệt chéo Phase 8 hoạt động hoàn hảo.
+### 1. Overwrite Protection:
+Chạy lại không có `--overwrite` ném lỗi đúng mong đợi:
+`Error building normalized draft: Normalized draft file already exists at ... Set overwrite=True to replace it.`
+
+### 2. Dữ liệu nháp được tạo:
+- Tạo thành công tệp `normalized/normalized_draft.json` khớp schema.
+- Toàn bộ 287 ứng viên được giữ lại đầy đủ (không silently drop).
+- Trạng thái rà soát và lý do cần rà soát (`missing_unit`, `missing_quantity`, `currency_uncertain`, `low_confidence`) được định nghĩa rõ ràng.
+
+### 3. Bảo vệ dữ liệu chính thức:
+- Chạy `git status` xác nhận tệp `normalized.json` chính thức không bị chạm vào hoặc chỉnh sửa nội dung, SHA256 hoàn toàn không đổi.
+- Chạy `validate-package` thành công, báo cáo gói dữ liệu hoàn toàn hợp lệ.

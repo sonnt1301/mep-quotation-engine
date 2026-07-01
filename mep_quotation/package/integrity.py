@@ -123,6 +123,16 @@ def validate_package_integrity(package_path: Path) -> None:
         except Exception as e:
             raise ValueError(f"Integrity check failed: item_candidates.json validation error: {e}")
 
+    # 12. Kiểm tra normalized_draft.json (chỉ khi file tồn tại thực tế để tương thích ngược)
+    normalized_draft_file = package_path / "normalized" / "normalized_draft.json"
+    if normalized_draft_file.exists():
+        try:
+            from mep_quotation.normalized_draft.manifest import validate_normalized_draft_file
+            validate_normalized_draft_file(normalized_draft_file, package_path)
+        except Exception as e:
+            raise ValueError(f"Integrity check failed: normalized_draft.json validation error: {e}")
+
+
 
 
 

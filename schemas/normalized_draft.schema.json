@@ -1,0 +1,350 @@
+{
+  "$defs": {
+    "NormalizedDraftEvidenceModel": {
+      "description": "Model lưu trữ trace vết chứng cứ văn bản thô cho draft item.",
+      "properties": {
+        "end_offset": {
+          "description": "Vị trí kết thúc trong file MD",
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "raw_evidence_text": {
+          "description": "Văn bản gốc từ row candidate",
+          "title": "Raw Evidence Text",
+          "type": "string"
+        },
+        "start_offset": {
+          "description": "Vị trí bắt đầu trong file MD",
+          "title": "Start Offset",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "raw_evidence_text",
+        "start_offset",
+        "end_offset"
+      ],
+      "title": "NormalizedDraftEvidenceModel",
+      "type": "object"
+    },
+    "NormalizedDraftItemModel": {
+      "description": "Model lưu trữ thông tin một dòng vật tư chuẩn hóa nháp của Phase 9.",
+      "properties": {
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thành tiền chuẩn hóa nháp",
+          "title": "Amount"
+        },
+        "brand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thương hiệu chuẩn hóa nháp",
+          "title": "Brand"
+        },
+        "confidence": {
+          "description": "Điểm tin cậy điều chỉnh (0.0 đến 1.0)",
+          "title": "Confidence",
+          "type": "number"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tiền tệ chuẩn hóa nháp",
+          "title": "Currency"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mô tả vật tư chuẩn hóa nháp",
+          "title": "Description"
+        },
+        "draft_item_id": {
+          "description": "ID nháp chuẩn hóa định dạng {QUOTATION_ID}_DRAFTITEM_{SEQ}",
+          "title": "Draft Item Id",
+          "type": "string"
+        },
+        "end_line_number": {
+          "description": "Số dòng kết thúc trong file MD",
+          "title": "End Line Number",
+          "type": "integer"
+        },
+        "evidence": {
+          "$ref": "#/$defs/NormalizedDraftEvidenceModel",
+          "description": "Trace vết văn bản chứng cứ"
+        },
+        "material_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mã vật tư chuẩn hóa nháp",
+          "title": "Material Code"
+        },
+        "page_number": {
+          "description": "Số trang chứa ứng viên (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng chuẩn hóa nháp",
+          "title": "Quantity"
+        },
+        "review_reasons": {
+          "description": "Danh sách mã lý do cần review",
+          "items": {
+            "type": "string"
+          },
+          "title": "Review Reasons",
+          "type": "array"
+        },
+        "review_status": {
+          "description": "Trạng thái review (auto_ready | needs_review | rejected_candidate)",
+          "title": "Review Status",
+          "type": "string"
+        },
+        "source_item_candidate_id": {
+          "description": "ID item candidate nguồn từ Phase 8",
+          "title": "Source Item Candidate Id",
+          "type": "string"
+        },
+        "source_row_id": {
+          "description": "ID row candidate nguồn từ Phase 7",
+          "title": "Source Row Id",
+          "type": "string"
+        },
+        "start_line_number": {
+          "description": "Số dòng bắt đầu trong file MD",
+          "title": "Start Line Number",
+          "type": "integer"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tính chuẩn hóa nháp",
+          "title": "Unit"
+        },
+        "unit_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn giá chuẩn hóa nháp",
+          "title": "Unit Price"
+        },
+        "warnings": {
+          "description": "Danh sách cảnh báo",
+          "items": {
+            "$ref": "#/$defs/ParserWarningModel"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "draft_item_id",
+        "source_item_candidate_id",
+        "source_row_id",
+        "page_number",
+        "start_line_number",
+        "end_line_number",
+        "review_status",
+        "confidence",
+        "evidence"
+      ],
+      "title": "NormalizedDraftItemModel",
+      "type": "object"
+    },
+    "ParserWarningModel": {
+      "description": "Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest.",
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo (ví dụ: low_confidence, quantity_missing)",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Chi tiết nội dung cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ParserWarningModel",
+      "type": "object"
+    }
+  },
+  "description": "Model kê khai tệp normalized_draft.json chứa dữ liệu nháp chuẩn hóa.",
+  "properties": {
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Đơn vị tiền tệ chung của báo giá",
+      "title": "Currency"
+    },
+    "draft_builder_name": {
+      "default": "rule_based_normalized_draft_builder",
+      "description": "Tên công cụ dựng nháp",
+      "title": "Draft Builder Name",
+      "type": "string"
+    },
+    "draft_builder_version": {
+      "default": "1.0",
+      "description": "Phiên bản công cụ dựng nháp",
+      "title": "Draft Builder Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "item_count": {
+      "description": "Tổng số draft items",
+      "title": "Item Count",
+      "type": "integer"
+    },
+    "items": {
+      "description": "Danh sách các draft items",
+      "items": {
+        "$ref": "#/$defs/NormalizedDraftItemModel"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "quotation_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Ngày báo giá lấy từ package.json",
+      "title": "Quotation Date"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "review_required_count": {
+      "description": "Số draft items cần review (review_status = needs_review)",
+      "title": "Review Required Count",
+      "type": "integer"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_item_candidates": {
+      "default": "parsed/item_candidates.json",
+      "description": "Đường dẫn tương đối tới file item_candidates",
+      "title": "Source Item Candidates",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của file parsed/item_candidates.json",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "supplier_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Mã nhà cung cấp lấy từ package.json",
+      "title": "Supplier Code"
+    },
+    "warnings": {
+      "description": "Danh sách cảnh báo cấp độ manifest",
+      "items": {
+        "$ref": "#/$defs/ParserWarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_sha256",
+    "item_count",
+    "review_required_count",
+    "items"
+  ],
+  "title": "NormalizedDraftModel",
+  "type": "object"
+}
