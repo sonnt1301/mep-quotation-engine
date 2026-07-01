@@ -5,6 +5,7 @@
     "item_candidates": "parsed/item_candidates.json",
     "line_candidates": "parsed/line_candidates.json",
     "logs_jsonl": "logs/processing.log.jsonl",
+    "normalized_draft": "normalized/normalized_draft.json",
     "normalized_json": "normalized/normalized.json",
     "page_manifest": "source/page_manifest.json",
     "parsed_json": "parsed/quotation.json",
@@ -23,7 +24,7 @@
     "code": "AUT",
     "name": "AUT"
   },
-  "updated_at": "2026-07-01T01:12:00Z",
+  "updated_at": "2026-07-01T08:09:52Z",
   "versions": {
     "llm": null,
     "parser_version": null,

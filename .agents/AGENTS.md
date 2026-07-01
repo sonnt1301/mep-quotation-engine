@@ -1,15 +1,5 @@
-# Custom Rules for MEP Quotation Pipeline Project
+# Quy tắc hành vi của trợ lý lập trình Antigravity
 
-- **Báo cáo và tài liệu**: Khi kết thúc công việc hoặc báo cáo tiến độ/nghiệm thu, luôn đính kèm đường link click được (sử dụng định dạng link file markdown `[basename](file:///path/to/file)`) của các tệp báo cáo quan trọng như `walkthrough.md`, `task.md` hoặc `implementation_plan.md` ở thư mục dự án để người dùng dễ dàng chuyển giao cho các AI khác kiểm tra.
-
-- **BẮT BUỘC – Link tài liệu sau mỗi kế hoạch**: Mỗi khi tạo hoặc cập nhật `implementation_plan.md`, `task.md`, `walkthrough.md` (dù là Artifact hay file trong dự án), phải:
-  1. **Copy file** từ brain artifact về thư mục gốc của dự án hiện hành (dùng `-Force` để ghi đè).
-  2. **IN đường link ngắn gọn** dạng link clickable + đường dẫn thô ngay trong phản hồi đó dựa trên thư mục dự án thực tế.
-
-  **Format bắt buộc (với <project_root> là đường dẫn tuyệt đối của thư mục dự án hiện hành)**:
-  - [implementation_plan.md](file:///<project_root>/implementation_plan.md) (`<project_root>\implementation_plan.md`)
-  - [task.md](file:///<project_root>/task.md) (`<project_root>\task.md`)
-  - [walkthrough.md](file:///<project_root>/walkthrough.md) (`<project_root>\walkthrough.md`)
-
-
-
+- **Quy tắc hiển thị đường dẫn tệp tin bắt buộc**: Bất cứ khi nào nhắc đến tên một tệp tin hoặc thư mục trong bất kỳ câu thoại phản hồi nào (bao gồm cả phản hồi trung gian trước khi gọi tool và phản hồi cuối turn), BẮT BUỘC phải viết kèm đường dẫn tuyệt đối đầy đủ thể hiện vị trí tệp tin đó và làm cho nó click được dưới dạng markdown link sử dụng scheme `file://`.
+  - *Ví dụ đúng*: `[models.py (D:/mep_quotation_pipeline/mep_quotation/spec/models.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py)`
+  - *Lưu ý*: Tuyệt đối không được viết tên file trống không (như `tệp models.py` hay `tệp task.md`) mà không chèn đường dẫn đầy đủ hiển thị rõ ràng vị trí và link click được.

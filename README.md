@@ -104,22 +104,30 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
    python -m mep_quotation.cli.main build-item-candidates data/suppliers/AUT/2026/2026-06-20_001 --overwrite
    ```
 
-8. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
+8. **Chuyển Đổi Các Ứng Viên Vật Tư Thành Bản Nháp Chuẩn Hóa (Normalized Draft Layer):**
+   ```bash
+   python -m mep_quotation.cli.main build-normalized-draft data/suppliers/AUT/2026/2026-06-20_001
+
+   # Tùy chọn cho phép ghi đè:
+   python -m mep_quotation.cli.main build-normalized-draft data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+   ```
+
+9. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
    ```bash
    python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
    ```
 
-9. **Kiểm Tra Tính Hợp Lệ Của Gói:**
+10. **Kiểm Tra Tính Hợp Lệ Của Gói:**
    ```bash
    python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-05-20_001
    ```
 
-10. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
+11. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
     ```bash
     python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
     ```
 
-11. **Xây Dựng Lại Chỉ Mục Vật Tư:**
+12. **Xây Dựng Lại Chỉ Mục Vật Tư:**
     ```bash
     python -m mep_quotation.cli.main build-index
   
@@ -127,7 +135,7 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
     python -m mep_quotation.cli.main build-index --strict
     ```
 
-12. **Tìm Kiếm Vật Tư:**
+13. **Tìm Kiếm Vật Tư:**
     ```bash
     python -m mep_quotation.cli.main search-material "CV-3X2.5"
     ```

@@ -50,3 +50,10 @@
 {"details": {"item_candidates_path": "parsed/item_candidates.json"}, "event": "item_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
 {"details": {"item_count": 287}, "event": "item_candidate_build_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:05Z"}
+{"details": {"overwrite": true}, "event": "normalized_draft_build_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:09:52Z"}
+{"details": {"item_count": 287, "review_required_count": 264}, "event": "normalized_draft_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:09:52Z"}
+{"details": {"normalized_draft_path": "normalized/normalized_draft.json"}, "event": "normalized_draft_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:09:52Z"}
+{"details": {"item_count": 287, "review_required_count": 264}, "event": "normalized_draft_build_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:09:52Z"}
+{"details": {"overwrite": false}, "event": "normalized_draft_build_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:29:40Z"}
+{"details": {"error": "Normalized draft file already exists at D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\normalized\\normalized_draft.json. Set overwrite=True to replace it."}, "event": "normalized_draft_build_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:29:40Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T08:29:46Z"}
