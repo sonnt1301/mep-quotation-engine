@@ -36,6 +36,7 @@ class FilePathsModel(BaseModel):
     text_markdown: str = Field("text/quotation.md", description="Đường dẫn file Markdown text assembled, tương đối từ package root")
     text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn file manifest text assembly JSON, tương đối từ package root")
     line_candidates: str = Field("parsed/line_candidates.json", description="Đường dẫn file line candidates JSON, tương đối từ package root")
+    row_candidates: str = Field("parsed/row_candidates.json", description="Đường dẫn file row candidates JSON, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
@@ -353,5 +354,46 @@ class LineCandidatesManifestModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class RowCandidateModel(BaseModel):
+    """Model cho thông tin một dòng ứng viên ghép chứa báo giá MEP thô từ Phase 7."""
+    row_id: str = Field(..., description="ID dòng ứng viên ghép định dạng {QUOTATION_ID}_ROWCAND_{SEQ}")
+    page_number: int = Field(..., description="Số trang chứa dòng ứng viên (1-indexed)")
+    start_line_number: int = Field(..., description="Số dòng bắt đầu trong file MD")
+    end_line_number: int = Field(..., description="Số dòng kết thúc trong file MD")
+    source_candidate_ids: List[str] = Field(..., description="Danh sách các ID line candidate được ghép")
+    description_candidate: Optional[str] = Field(None, description="Mô tả vật tư thô gộp")
+    material_code_candidate: Optional[str] = Field(None, description="Mã vật tư thô phát hiện được")
+    brand_candidate: Optional[str] = Field(None, description="Thương hiệu thô")
+    unit_candidate: Optional[str] = Field(None, description="Đơn vị tính thô")
+    quantity_candidate: Optional[float] = Field(None, description="Số lượng thô")
+    unit_price_candidate: Optional[float] = Field(None, description="Đơn giá thô")
+    currency_candidate: Optional[str] = Field(None, description="Đơn vị tiền tệ thô")
+    evidence_text: str = Field(..., description="Văn bản thô nguyên bản ghép từ start_offset đến end_offset trong Markdown")
+    start_offset: int = Field(..., description="Vị trí bắt đầu nhỏ nhất của các candidates trong dòng")
+    end_offset: int = Field(..., description="Vị trí kết thúc lớn nhất của các candidates trong dòng")
+    confidence: float = Field(..., description="Độ tin cậy của dòng ứng viên ghép (0.0 đến 1.0)")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+
+
+class RowCandidateManifestModel(BaseModel):
+    """Model cho file row_candidates.json – artifact chính của Phase 7."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_line_candidates: str = Field("parsed/line_candidates.json", description="Đường dẫn tương đối tới file line_candidates")
+    source_text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn tương đối tới tệp text_manifest")
+    source_sha256: str = Field(..., description="SHA256 của file parsed/line_candidates.json")
+    assembler_name: str = Field("rule_based_row_candidate_assembler", description="Tên công cụ ghép dòng")
+    assembler_version: str = Field("1.0", description="Phiên bản công cụ ghép dòng")
+    row_count: int = Field(..., description="Tổng số row candidates ghép được")
+    rows: List[RowCandidateModel] = Field(..., description="Danh sách chi tiết các row candidates")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo cấp độ manifest")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 
 

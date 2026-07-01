@@ -51,6 +51,12 @@
           "title": "Raw Text",
           "type": "string"
         },
+        "row_candidates": {
+          "default": "parsed/row_candidates.json",
+          "description": "Đường dẫn file row candidates JSON, tương đối từ package root",
+          "title": "Row Candidates",
+          "type": "string"
+        },
         "source_pdf": {
           "description": "Đường dẫn file PDF gốc, tương đối từ package root",
           "title": "Source Pdf",

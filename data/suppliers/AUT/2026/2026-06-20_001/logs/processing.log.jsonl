@@ -18,3 +18,30 @@
 {"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
 {"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:05Z"}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T07:18:13Z"}
+{"details": {"overwrite": false, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:13Z"}
+{"details": {"error": "Assembled Markdown file not found: D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\text\\quotation.md"}, "event": "line_parser_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:13Z"}
+{"details": {"overwrite": false, "source_raw_text": "source/raw_text.json"}, "event": "text_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:38Z"}
+{"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24238}, "event": "text_assembled", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:38Z"}
+{"details": {"markdown_path": "text/quotation.md"}, "event": "quotation_markdown_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:38Z"}
+{"details": {"manifest_path": "text/quotation_text.json"}, "event": "quotation_text_manifest_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:38Z"}
+{"details": {"page_count": 8, "quotation_id": "AUT_20260620_001", "total_characters": 24238}, "event": "text_assembly_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:38Z"}
+{"details": {"overwrite": false, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:46Z"}
+{"details": {"total_lines_scanned": 2071}, "event": "line_parser_lines_scanned", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:46Z"}
+{"details": {"candidate_count": 287}, "event": "line_candidates_extracted", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:46Z"}
+{"details": {"line_candidates_path": "parsed/line_candidates.json"}, "event": "line_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:46Z"}
+{"details": {"candidate_count": 287}, "event": "line_parser_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:37:46Z"}
+{"details": {"overwrite": false, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:12Z"}
+{"details": {"error": "Line candidates file already exists at D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\parsed\\line_candidates.json. Set overwrite=True to replace it."}, "event": "line_parser_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:12Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:31Z"}
+{"details": {"overwrite": true, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:32Z"}
+{"details": {"total_lines_scanned": 2071}, "event": "line_parser_lines_scanned", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:32Z"}
+{"details": {"candidate_count": 287}, "event": "line_candidates_extracted", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:32Z"}
+{"details": {"line_candidates_path": "parsed/line_candidates.json"}, "event": "line_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:32Z"}
+{"details": {"candidate_count": 287}, "event": "line_parser_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T11:38:32Z"}
+{"details": {"max_line_gap_for_price": 6, "overwrite": true}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:20Z"}
+{"details": {"row_count": 287}, "event": "row_candidates_assembled", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:20Z"}
+{"details": {"row_candidates_path": "parsed/row_candidates.json"}, "event": "row_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:20Z"}
+{"details": {"row_count": 287}, "event": "row_assembly_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:20Z"}
+{"details": {"max_line_gap_for_price": 6, "overwrite": false}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:23Z"}
+{"details": {"error": "Row candidates file already exists at D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\parsed\\row_candidates.json. Set overwrite=True to replace it."}, "event": "row_assembly_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:23Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:35Z"}
