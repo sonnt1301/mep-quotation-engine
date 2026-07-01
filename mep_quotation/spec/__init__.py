@@ -25,7 +25,9 @@ from mep_quotation.spec.models import (
     LineCandidateModel,
     LineCandidatesManifestModel,
     RowCandidateModel,
-    RowCandidateManifestModel
+    RowCandidateManifestModel,
+    ItemCandidateModel,
+    ItemCandidateManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

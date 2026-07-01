@@ -16,7 +16,8 @@ from mep_quotation.spec.models import (
     RawTextManifestModel,
     TextAssemblyManifestModel,
     LineCandidatesManifestModel,
-    RowCandidateManifestModel
+    RowCandidateManifestModel,
+    ItemCandidateManifestModel
 )
 
 def generate_schemas():
@@ -35,7 +36,8 @@ def generate_schemas():
         "raw_text.schema.json": RawTextManifestModel,
         "quotation_text.schema.json": TextAssemblyManifestModel,
         "line_candidates.schema.json": LineCandidatesManifestModel,
-        "row_candidates.schema.json": RowCandidateManifestModel
+        "row_candidates.schema.json": RowCandidateManifestModel,
+        "item_candidates.schema.json": ItemCandidateManifestModel
     }
 
     for filename, model in models_to_generate.items():
