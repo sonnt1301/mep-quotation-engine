@@ -45,3 +45,8 @@
 {"details": {"max_line_gap_for_price": 6, "overwrite": false}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:23Z"}
 {"details": {"error": "Row candidates file already exists at D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\parsed\\row_candidates.json. Set overwrite=True to replace it."}, "event": "row_assembly_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:23Z"}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-06-30T12:07:35Z"}
+{"details": {"overwrite": true}, "event": "item_candidate_build_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
+{"details": {"item_count": 287}, "event": "item_candidates_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
+{"details": {"item_candidates_path": "parsed/item_candidates.json"}, "event": "item_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
+{"details": {"item_count": 287}, "event": "item_candidate_build_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:00Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-01T01:12:05Z"}

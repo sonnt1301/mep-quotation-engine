@@ -1,0 +1,277 @@
+{
+  "$defs": {
+    "ItemCandidateModel": {
+      "description": "Model cho thông tin một ứng viên vật tư báo giá MEP từ Phase 8.",
+      "properties": {
+        "amount_candidate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thành tiền candidate (chỉ tính khi có đủ đơn giá và số lượng)",
+          "title": "Amount Candidate"
+        },
+        "brand_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thương hiệu thô",
+          "title": "Brand Candidate"
+        },
+        "confidence": {
+          "description": "Độ tin cậy của ứng viên vật tư (0.0 đến 1.0)",
+          "title": "Confidence",
+          "type": "number"
+        },
+        "currency_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tiền tệ thô",
+          "title": "Currency Candidate"
+        },
+        "description_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mô tả vật tư thô",
+          "title": "Description Candidate"
+        },
+        "end_line_number": {
+          "description": "Số dòng kết thúc trong file MD",
+          "title": "End Line Number",
+          "type": "integer"
+        },
+        "end_offset": {
+          "description": "Vị trí kết thúc lớn nhất của các candidates",
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "item_candidate_id": {
+          "description": "ID ứng viên vật tư định dạng {QUOTATION_ID}_ITEMCAND_{SEQ}",
+          "title": "Item Candidate Id",
+          "type": "string"
+        },
+        "material_code_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mã vật tư thô",
+          "title": "Material Code Candidate"
+        },
+        "page_number": {
+          "description": "Số trang chứa ứng viên (1-indexed)",
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "quantity_candidate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng thô",
+          "title": "Quantity Candidate"
+        },
+        "raw_evidence_text": {
+          "description": "Văn bản thô nguyên bản từ row.evidence_text",
+          "title": "Raw Evidence Text",
+          "type": "string"
+        },
+        "source_row_id": {
+          "description": "ID row candidate nguồn từ Phase 7",
+          "title": "Source Row Id",
+          "type": "string"
+        },
+        "start_line_number": {
+          "description": "Số dòng bắt đầu trong file MD",
+          "title": "Start Line Number",
+          "type": "integer"
+        },
+        "start_offset": {
+          "description": "Vị trí bắt đầu nhỏ nhất của các candidates",
+          "title": "Start Offset",
+          "type": "integer"
+        },
+        "unit_candidate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tính candidate, có thể được map alias rất hạn chế nếu chắc chắn; không phải normalized unit",
+          "title": "Unit Candidate"
+        },
+        "unit_price_candidate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn giá thô",
+          "title": "Unit Price Candidate"
+        },
+        "warnings": {
+          "description": "Danh sách cảnh báo",
+          "items": {
+            "$ref": "#/$defs/ParserWarningModel"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "item_candidate_id",
+        "source_row_id",
+        "page_number",
+        "start_line_number",
+        "end_line_number",
+        "raw_evidence_text",
+        "start_offset",
+        "end_offset",
+        "confidence"
+      ],
+      "title": "ItemCandidateModel",
+      "type": "object"
+    },
+    "ParserWarningModel": {
+      "description": "Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest.",
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo (ví dụ: low_confidence, quantity_missing)",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Chi tiết nội dung cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ParserWarningModel",
+      "type": "object"
+    }
+  },
+  "description": "Model cho file item_candidates.json – tệp tin kê khai ứng viên vật tư của Phase 8.",
+  "properties": {
+    "builder_name": {
+      "default": "rule_based_item_candidate_builder",
+      "description": "Tên công cụ dựng item",
+      "title": "Builder Name",
+      "type": "string"
+    },
+    "builder_version": {
+      "default": "1.0",
+      "description": "Phiên bản công cụ dựng item",
+      "title": "Builder Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "item_count": {
+      "description": "Tổng số item candidates dựng được",
+      "title": "Item Count",
+      "type": "integer"
+    },
+    "items": {
+      "description": "Danh sách chi tiết các item candidates",
+      "items": {
+        "$ref": "#/$defs/ItemCandidateModel"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_row_candidates": {
+      "default": "parsed/row_candidates.json",
+      "description": "Đường dẫn tương đối tới tệp row_candidates",
+      "title": "Source Row Candidates",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của file parsed/row_candidates.json",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "source_text_manifest": {
+      "default": "text/quotation_text.json",
+      "description": "Đường dẫn tương đối tới tệp text_manifest",
+      "title": "Source Text Manifest",
+      "type": "string"
+    },
+    "warnings": {
+      "description": "Danh sách cảnh báo cấp độ manifest",
+      "items": {
+        "$ref": "#/$defs/ParserWarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_sha256",
+    "item_count",
+    "items"
+  ],
+  "title": "ItemCandidateManifestModel",
+  "type": "object"
+}

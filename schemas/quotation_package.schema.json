@@ -7,6 +7,12 @@
           "title": "Corrections Json",
           "type": "string"
         },
+        "item_candidates": {
+          "default": "parsed/item_candidates.json",
+          "description": "Đường dẫn file item candidates JSON, tương đối từ package root",
+          "title": "Item Candidates",
+          "type": "string"
+        },
         "line_candidates": {
           "default": "parsed/line_candidates.json",
           "description": "Đường dẫn file line candidates JSON, tương đối từ package root",

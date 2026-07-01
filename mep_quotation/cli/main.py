@@ -437,9 +437,56 @@ def handle_assemble_rows(args):
         sys.exit(1)
 
 
+def handle_build_item_candidates(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.item_candidates import build_item_candidates
+        build_item_candidates(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại package và item_candidates.json để in ra
+        pkg = load_package_json(package_path)
+        row_candidates_path = package_path / pkg.files.row_candidates
+        item_candidates_path = package_path / pkg.files.item_candidates
+
+        with open(item_candidates_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        item_count = manifest_data.get("item_count", 0)
+        
+        # Đếm số items có đơn giá và số items có thành tiền
+        items_with_price = 0
+        items_with_amount = 0
+        total_warnings = len(manifest_data.get("warnings", []))
+        for item in manifest_data.get("items", []):
+            if item.get("unit_price_candidate") is not None:
+                items_with_price += 1
+            if item.get("amount_candidate") is not None:
+                items_with_amount += 1
+            total_warnings += len(item.get("warnings", []))
+
+        print("Successfully built item candidates.")
+        print(f"  Quotation ID          : {pkg.quotation_id}")
+        print(f"  Item Count            : {item_count}")
+        print(f"  Source Row Candidates : {get_display_path(row_candidates_path)}")
+        print(f"  Item Candidates Path  : {get_display_path(item_candidates_path)}")
+        print(f"  Items With Price Count: {items_with_price}")
+        print(f"  Items With Amount Count: {items_with_amount}")
+        print(f"  Warnings Count        : {total_warnings}")
+
+    except Exception as e:
+        print(f"Error building item candidates: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 7 Row Candidate Assembly / Price Association Layer"
+        description="MEP Quotation Pipeline CLI Tool - Phase 8 Structured Item Candidate Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -517,6 +564,12 @@ def main():
     parser_row.add_argument("--overwrite", action="store_true", help="Ghi đè nếu row_candidates.json đã tồn tại")
     parser_row.add_argument("--max-line-gap-for-price", type=int, default=6, help="Khoảng cách dòng tối đa cho phép liên kết giá (mặc định 6)")
     parser_row.set_defaults(func=handle_assemble_rows)
+
+    # Command build-item-candidates
+    parser_item = subparsers.add_parser("build-item-candidates", help="Chuyển các row candidates thành các item candidates có cấu trúc")
+    parser_item.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_item.add_argument("--overwrite", action="store_true", help="Ghi đè nếu item_candidates.json đã tồn tại")
+    parser_item.set_defaults(func=handle_build_item_candidates)
 
     args = parser.parse_args()
     args.func(args)

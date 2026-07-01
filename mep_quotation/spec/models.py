@@ -37,6 +37,7 @@ class FilePathsModel(BaseModel):
     text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn file manifest text assembly JSON, tương đối từ package root")
     line_candidates: str = Field("parsed/line_candidates.json", description="Đường dẫn file line candidates JSON, tương đối từ package root")
     row_candidates: str = Field("parsed/row_candidates.json", description="Đường dẫn file row candidates JSON, tương đối từ package root")
+    item_candidates: str = Field("parsed/item_candidates.json", description="Đường dẫn file item candidates JSON, tương đối từ package root")
     parsed_json: str = Field(..., description="Đường dẫn file JSON thô parsed, tương đối")
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
@@ -394,6 +395,48 @@ class RowCandidateManifestModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class ItemCandidateModel(BaseModel):
+    """Model cho thông tin một ứng viên vật tư báo giá MEP từ Phase 8."""
+    item_candidate_id: str = Field(..., description="ID ứng viên vật tư định dạng {QUOTATION_ID}_ITEMCAND_{SEQ}")
+    source_row_id: str = Field(..., description="ID row candidate nguồn từ Phase 7")
+    page_number: int = Field(..., description="Số trang chứa ứng viên (1-indexed)")
+    start_line_number: int = Field(..., description="Số dòng bắt đầu trong file MD")
+    end_line_number: int = Field(..., description="Số dòng kết thúc trong file MD")
+    description_candidate: Optional[str] = Field(None, description="Mô tả vật tư thô")
+    material_code_candidate: Optional[str] = Field(None, description="Mã vật tư thô")
+    brand_candidate: Optional[str] = Field(None, description="Thương hiệu thô")
+    unit_candidate: Optional[str] = Field(None, description="Đơn vị tính candidate, có thể được map alias rất hạn chế nếu chắc chắn; không phải normalized unit")
+    quantity_candidate: Optional[float] = Field(None, description="Số lượng thô")
+    unit_price_candidate: Optional[float] = Field(None, description="Đơn giá thô")
+    currency_candidate: Optional[str] = Field(None, description="Đơn vị tiền tệ thô")
+    amount_candidate: Optional[float] = Field(None, description="Thành tiền candidate (chỉ tính khi có đủ đơn giá và số lượng)")
+    raw_evidence_text: str = Field(..., description="Văn bản thô nguyên bản từ row.evidence_text")
+    start_offset: int = Field(..., description="Vị trí bắt đầu nhỏ nhất của các candidates")
+    end_offset: int = Field(..., description="Vị trí kết thúc lớn nhất của các candidates")
+    confidence: float = Field(..., description="Độ tin cậy của ứng viên vật tư (0.0 đến 1.0)")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+
+
+class ItemCandidateManifestModel(BaseModel):
+    """Model cho file item_candidates.json – tệp tin kê khai ứng viên vật tư của Phase 8."""
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_row_candidates: str = Field("parsed/row_candidates.json", description="Đường dẫn tương đối tới tệp row_candidates")
+    source_sha256: str = Field(..., description="SHA256 của file parsed/row_candidates.json")
+    source_text_manifest: str = Field("text/quotation_text.json", description="Đường dẫn tương đối tới tệp text_manifest")
+    builder_name: str = Field("rule_based_item_candidate_builder", description="Tên công cụ dựng item")
+    builder_version: str = Field("1.0", description="Phiên bản công cụ dựng item")
+    item_count: int = Field(..., description="Tổng số item candidates dựng được")
+    items: List[ItemCandidateModel] = Field(..., description="Danh sách chi tiết các item candidates")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo cấp độ manifest")
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("generated_at")
+    def serialize_generated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 
 
 
