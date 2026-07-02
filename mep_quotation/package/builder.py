@@ -8,7 +8,8 @@ from mep_quotation.spec.models import (
     VersionMetadataModel,
     FilePathsModel,
     NormalizedQuotationModel,
-    CorrectionsFileModel
+    CorrectionsFileModel,
+    ExportSummaryModel
 )
 
 def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq: int = None) -> Path:
@@ -72,7 +73,24 @@ def create_empty_package(data_root: Path, supplier_code: str, date_str: str, seq
         quotation_id=quotation_id,
         supplier_code=supplier_code,
         quotation_date=date_str,
-        items=[]
+        currency="VND",
+        source_normalized_draft="normalized/normalized_draft.json",
+        source_normalized_draft_sha256="",
+        source_review_decisions="review/review_decisions.json",
+        source_review_decisions_sha256="",
+        item_count=0,
+        export_summary=ExportSummaryModel(
+            draft_item_count=0,
+            approved_count=0,
+            edited_count=0,
+            rejected_count=0,
+            unreviewed_count=0,
+            exported_item_count=0
+        ),
+        warnings=[],
+        items=[],
+        created_at=now,
+        updated_at=now
     )
     write_json_file(package_dir / "normalized" / "normalized.json", normalized_model)
     

@@ -3,52 +3,65 @@ import json
 from pathlib import Path
 from pydantic import ValidationError
 
-from mep_quotation.spec.models import NormalizedQuotationModel, NormalizedItemModel, EvidenceModel
+from mep_quotation.spec.models import NormalizedQuotationModel, NormalizedItemModel, EvidenceModel, ExportSummaryModel
+from datetime import datetime, timezone
 from mep_quotation.package.builder import create_empty_package
 from mep_quotation.package.writer import write_json_file
 from mep_quotation.package.integrity import validate_package_integrity
 from mep_quotation.indexer.material_indexer import build_material_index
 
+# Helper sinh dữ liệu mock NormalizedQuotationModel bắt buộc của Phase 11
+def make_mock_norm_data(**kwargs):
+    now = datetime.now(timezone.utc)
+    base = {
+        "quotation_id": "AUT_20260520_001",
+        "supplier_code": "AUT",
+        "quotation_date": "2026-05-20",
+        "currency": "VND",
+        "source_normalized_draft": "normalized/normalized_draft.json",
+        "source_normalized_draft_sha256": "",
+        "source_review_decisions": "review/review_decisions.json",
+        "source_review_decisions_sha256": "",
+        "item_count": 0,
+        "export_summary": ExportSummaryModel(
+            draft_item_count=0,
+            approved_count=0,
+            edited_count=0,
+            rejected_count=0,
+            unreviewed_count=0,
+            exported_item_count=0
+        ),
+        "warnings": [],
+        "items": [],
+        "created_at": now,
+        "updated_at": now
+    }
+    base.update(kwargs)
+    return base
+
 # 1. Tests cho NormalizedQuotationModel validation
 def test_normalized_model_invalid_id_format():
     # Sai format quotation_id (thiếu sequence padding hoặc sai cấu trúc)
     with pytest.raises(ValidationError, match="must match format"):
-        NormalizedQuotationModel(
-            quotation_id="AUT_20260520_1", # sequence phải là 3 chữ số
-            supplier_code="AUT",
-            quotation_date="2026-05-20",
-            items=[]
-        )
+        NormalizedQuotationModel(**make_mock_norm_data(quotation_id="AUT_20260520_1"))
 
 def test_normalized_model_supplier_mismatch():
     # supplier_code lệch với supplier trong quotation_id
     with pytest.raises(ValidationError, match="does not match supplier in quotation_id"):
-        NormalizedQuotationModel(
-            quotation_id="AUT_20260520_001",
-            supplier_code="CADIVI", # Lệch supplier
-            quotation_date="2026-05-20",
-            items=[]
-        )
+        NormalizedQuotationModel(**make_mock_norm_data(supplier_code="CADIVI"))
 
 def test_normalized_model_date_mismatch():
     # quotation_date lệch với date trong quotation_id
     with pytest.raises(ValidationError, match="does not match date in quotation_id"):
-        NormalizedQuotationModel(
-            quotation_id="AUT_20260520_001",
-            supplier_code="AUT",
-            quotation_date="2026-05-21", # Lệch date (21 vs 20)
-            items=[]
-        )
+        NormalizedQuotationModel(**make_mock_norm_data(quotation_date="2026-05-21"))
 
 def test_normalized_model_invalid_date_value():
     # Ngày không tồn tại thực tế (như 31/02)
     with pytest.raises(ValidationError, match="is not a valid date"):
-        NormalizedQuotationModel(
+        NormalizedQuotationModel(**make_mock_norm_data(
             quotation_id="AUT_20260231_001",
-            supplier_code="AUT",
-            quotation_date="2026-02-31", # Ngày không hợp lệ thực tế
-            items=[]
-        )
+            quotation_date="2026-02-31"
+        ))
 
 # 2. Tests cho validate_package_integrity
 def test_validate_package_integrity_success(temp_project_dir):

@@ -12,6 +12,10 @@ def create_fake_normalized_file(package_dir, supplier, date_str, seq, items):
     for i, item in enumerate(items, 1):
         norm_items.append(NormalizedItemModel(
             item_id=f"{quotation_id}_{i:04d}",
+            source_draft_item_id=f"{quotation_id}_DRAFTITEM_{i:04d}",
+            source_review_decision_id=f"{quotation_id}_REVIEW_{i:04d}",
+            description=item["name"],
+            currency="VND",
             material_code=item["code"],
             material_name=item["name"],
             category=item.get("category", "Cable"),
@@ -24,11 +28,32 @@ def create_fake_normalized_file(package_dir, supplier, date_str, seq, items):
             evidence=EvidenceModel(source_pdf="source/original.pdf")
         ))
         
+    from datetime import datetime, timezone
+    from mep_quotation.spec.models import ExportSummaryModel
+    now = datetime.now(timezone.utc)
+    
     norm_quot = NormalizedQuotationModel(
         quotation_id=quotation_id,
         supplier_code=supplier,
         quotation_date=date_str,
-        items=norm_items
+        currency="VND",
+        source_normalized_draft="normalized/normalized_draft.json",
+        source_normalized_draft_sha256="",
+        source_review_decisions="review/review_decisions.json",
+        source_review_decisions_sha256="",
+        item_count=len(norm_items),
+        export_summary=ExportSummaryModel(
+            draft_item_count=len(norm_items),
+            approved_count=len(norm_items),
+            edited_count=0,
+            rejected_count=0,
+            unreviewed_count=0,
+            exported_item_count=len(norm_items)
+        ),
+        warnings=[],
+        items=norm_items,
+        created_at=now,
+        updated_at=now
     )
     
     write_json_file(package_dir / "normalized" / "normalized.json", norm_quot)

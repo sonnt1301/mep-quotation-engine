@@ -56,8 +56,67 @@
       "title": "EvidenceModel",
       "type": "object"
     },
+    "ExportSummaryModel": {
+      "additionalProperties": false,
+      "description": "Model chứa thống kê tóm tắt kết quả xuất bản của Phase 11.",
+      "properties": {
+        "approved_count": {
+          "description": "Số lượng items được approved",
+          "title": "Approved Count",
+          "type": "integer"
+        },
+        "draft_item_count": {
+          "description": "Tổng số draft items đầu vào",
+          "title": "Draft Item Count",
+          "type": "integer"
+        },
+        "edited_count": {
+          "description": "Số lượng items được edited",
+          "title": "Edited Count",
+          "type": "integer"
+        },
+        "exported_item_count": {
+          "description": "Số lượng items thực tế xuất bản",
+          "title": "Exported Item Count",
+          "type": "integer"
+        },
+        "rejected_count": {
+          "description": "Số lượng items bị rejected",
+          "title": "Rejected Count",
+          "type": "integer"
+        },
+        "unreviewed_count": {
+          "description": "Số lượng items chưa được review",
+          "title": "Unreviewed Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "draft_item_count",
+        "approved_count",
+        "edited_count",
+        "rejected_count",
+        "unreviewed_count",
+        "exported_item_count"
+      ],
+      "title": "ExportSummaryModel",
+      "type": "object"
+    },
     "NormalizedItemModel": {
       "properties": {
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thành tiền đã được tính toán lại",
+          "title": "Amount"
+        },
         "brand": {
           "anyOf": [
             {
@@ -72,28 +131,96 @@
           "title": "Brand"
         },
         "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Phân loại vật tư",
-          "title": "Category",
+          "title": "Category"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Độ tin cậy của dòng",
+          "title": "Confidence"
+        },
+        "currency": {
+          "description": "Đơn vị tiền tệ (uppercase: VND, USD)",
+          "title": "Currency",
+          "type": "string"
+        },
+        "description": {
+          "description": "Mô tả chuẩn của vật tư (enforced non-empty)",
+          "title": "Description",
           "type": "string"
         },
         "evidence": {
-          "$ref": "#/$defs/EvidenceModel",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Minh chứng trích xuất"
         },
+        "evidence_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đoạn văn bản chứa minh chứng gốc",
+          "title": "Evidence Text"
+        },
         "item_id": {
-          "description": "ID dòng vật tư định dạng {QUOTATION_ID}_{SEQ}",
+          "description": "ID dòng vật tư chuẩn hóa định dạng {QUOTATION_ID}_ITEM_{SEQ}",
           "title": "Item Id",
           "type": "string"
         },
         "material_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Mã vật tư chuẩn",
-          "title": "Material Code",
-          "type": "string"
+          "title": "Material Code"
         },
         "material_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Tên vật tư",
-          "title": "Material Name",
-          "type": "string"
+          "title": "Material Name"
         },
         "origin": {
           "anyOf": [
@@ -108,48 +235,163 @@
           "description": "Xuất xứ",
           "title": "Origin"
         },
+        "page_number": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số trang chứa vật tư (1-indexed)",
+          "title": "Page Number"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng vật tư",
+          "title": "Quantity"
+        },
         "raw_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Đoạn text gốc trích xuất từ PDF để truy vết",
-          "title": "Raw Text",
+          "title": "Raw Text"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Reviewer thực hiện dòng này",
+          "title": "Reviewer"
+        },
+        "source_draft_item_id": {
+          "description": "ID draft item nguồn",
+          "title": "Source Draft Item Id",
+          "type": "string"
+        },
+        "source_review_decision_id": {
+          "description": "ID quyết định review nguồn",
+          "title": "Source Review Decision Id",
           "type": "string"
         },
         "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Đơn vị tính",
-          "title": "Unit",
-          "type": "string"
+          "title": "Unit"
         },
         "unit_price": {
-          "description": "Đơn giá",
+          "description": "Đơn giá vật tư",
           "title": "Unit Price",
           "type": "number"
         },
         "vat_rate": {
-          "default": 0.1,
-          "description": "Thuế suất VAT (ví dụ: 0.1 đại diện cho 10%)",
-          "title": "Vat Rate",
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thuế suất VAT",
+          "title": "Vat Rate"
+        },
+        "warnings": {
+          "description": "Danh sách các cảnh báo item-level",
+          "items": {
+            "$ref": "#/$defs/ParserWarningModel"
+          },
+          "title": "Warnings",
+          "type": "array"
         }
       },
       "required": [
         "item_id",
-        "material_code",
-        "material_name",
-        "category",
-        "unit",
+        "source_draft_item_id",
+        "source_review_decision_id",
+        "description",
         "unit_price",
-        "raw_text",
-        "evidence"
+        "currency"
       ],
       "title": "NormalizedItemModel",
+      "type": "object"
+    },
+    "ParserWarningModel": {
+      "description": "Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest.",
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo (ví dụ: low_confidence, quantity_missing)",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Chi tiết nội dung cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ParserWarningModel",
       "type": "object"
     }
   },
   "properties": {
+    "created_at": {
+      "description": "Thời điểm tạo",
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
     "currency": {
       "default": "VND",
       "description": "Đơn vị tiền tệ",
       "title": "Currency",
       "type": "string"
+    },
+    "export_summary": {
+      "$ref": "#/$defs/ExportSummaryModel",
+      "description": "Thống kê tóm tắt xuất bản"
+    },
+    "item_count": {
+      "default": 0,
+      "description": "Số lượng items xuất bản",
+      "title": "Item Count",
+      "type": "integer"
     },
     "items": {
       "description": "Danh sách vật tư đã chuẩn hóa",
@@ -175,16 +417,66 @@
       "title": "Schema Version",
       "type": "string"
     },
+    "source_normalized_draft": {
+      "default": "normalized/normalized_draft.json",
+      "description": "Đường dẫn tương đối tới file normalized_draft",
+      "title": "Source Normalized Draft",
+      "type": "string"
+    },
+    "source_normalized_draft_sha256": {
+      "default": "",
+      "description": "SHA256 của file normalized_draft",
+      "title": "Source Normalized Draft Sha256",
+      "type": "string"
+    },
+    "source_review_decisions": {
+      "default": "review/review_decisions.json",
+      "description": "Đường dẫn tương đối tới file review_decisions",
+      "title": "Source Review Decisions",
+      "type": "string"
+    },
+    "source_review_decisions_sha256": {
+      "default": "",
+      "description": "SHA256 của file review_decisions",
+      "title": "Source Review Decisions Sha256",
+      "type": "string"
+    },
     "supplier_code": {
       "description": "Mã nhà cung cấp",
       "title": "Supplier Code",
       "type": "string"
+    },
+    "updated_at": {
+      "description": "Thời điểm cập nhật",
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "warnings": {
+      "description": "Danh sách các cảnh báo file-level",
+      "items": {
+        "$ref": "#/$defs/ParserWarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
     }
   },
   "required": [
+    "schema_version",
     "quotation_id",
     "supplier_code",
-    "quotation_date"
+    "quotation_date",
+    "currency",
+    "source_normalized_draft",
+    "source_normalized_draft_sha256",
+    "source_review_decisions",
+    "source_review_decisions_sha256",
+    "item_count",
+    "export_summary",
+    "warnings",
+    "items",
+    "created_at",
+    "updated_at"
   ],
   "title": "NormalizedQuotationModel",
   "type": "object"

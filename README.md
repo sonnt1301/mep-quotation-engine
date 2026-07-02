@@ -134,7 +134,17 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
     python -m mep_quotation.cli.main list-review data/suppliers/AUT/2026/2026-06-20_001
     ```
 
-10. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
+ 10. **Xuất Bản Tệp Báo Giá Chuẩn Hóa Chính Thức (Official Normalized Export Layer):**
+     *Chạy xuất bản tệp normalized.json từ draft và review decisions:*
+     ```bash
+     python -m mep_quotation.cli.main export-normalized data/suppliers/AUT/2026/2026-06-20_001
+     ```
+     *Tùy chọn ghi đè tệp normalized.json hiện hữu:*
+     ```bash
+     python -m mep_quotation.cli.main export-normalized data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+     ```
+
+11. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
     ```bash
     python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
     ```

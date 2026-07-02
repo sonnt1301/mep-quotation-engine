@@ -1,8 +1,49 @@
 {
+  "created_at": "2026-07-02T04:26:55Z",
   "currency": "VND",
-  "items": [],
+  "export_summary": {
+    "approved_count": 0,
+    "draft_item_count": 287,
+    "edited_count": 1,
+    "exported_item_count": 1,
+    "rejected_count": 0,
+    "unreviewed_count": 286
+  },
+  "item_count": 1,
+  "items": [
+    {
+      "amount": 1850000.0,
+      "brand": null,
+      "category": null,
+      "confidence": 0.65,
+      "currency": "VND",
+      "description": "(Áp dụng từ ngày 15-04-)",
+      "evidence": null,
+      "evidence_text": "(Áp dụng từ ngày 15-04-2026)\n",
+      "item_id": "AUT_20260620_001_ITEM_0001",
+      "material_code": null,
+      "material_name": "(Áp dụng từ ngày 15-04-)",
+      "origin": null,
+      "page_number": 1,
+      "quantity": 100.0,
+      "raw_text": null,
+      "reviewer": "test_reviewer",
+      "source_draft_item_id": "AUT_20260620_001_DRAFTITEM_0001",
+      "source_review_decision_id": "AUT_20260620_001_REVIEW_0001",
+      "unit": null,
+      "unit_price": 18500.0,
+      "vat_rate": null,
+      "warnings": []
+    }
+  ],
   "quotation_date": "2026-06-20",
   "quotation_id": "AUT_20260620_001",
   "schema_version": "1.0",
-  "supplier_code": "AUT"
+  "source_normalized_draft": "normalized/normalized_draft.json",
+  "source_normalized_draft_sha256": "f35f3925986f959856e84a9d97324d6d870096ebeefd5ea62baa7fd50f4f45b9",
+  "source_review_decisions": "review/review_decisions.json",
+  "source_review_decisions_sha256": "7ce99bc881c821c18b1b326db33fdb08abfd98c61a0983b76e6cafdb2c9384a9",
+  "supplier_code": "AUT",
+  "updated_at": "2026-07-02T04:26:55Z",
+  "warnings": []
 }

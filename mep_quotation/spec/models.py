@@ -91,24 +91,58 @@ class EvidenceModel(BaseModel):
     bbox: Optional[List[float]] = Field(None, description="Hộp bao quanh bounding box [x0, y0, x1, y1]")
     crop_path: Optional[str] = Field(None, description="Đường dẫn ảnh cắt chứa thông tin minh chứng")
 
+class ExportSummaryModel(BaseModel):
+    """Model chứa thống kê tóm tắt kết quả xuất bản của Phase 11."""
+    model_config = ConfigDict(extra="forbid")
+
+    draft_item_count: int = Field(..., description="Tổng số draft items đầu vào")
+    approved_count: int = Field(..., description="Số lượng items được approved")
+    edited_count: int = Field(..., description="Số lượng items được edited")
+    rejected_count: int = Field(..., description="Số lượng items bị rejected")
+    unreviewed_count: int = Field(..., description="Số lượng items chưa được review")
+    exported_item_count: int = Field(..., description="Số lượng items thực tế xuất bản")
+
+
 class NormalizedItemModel(BaseModel):
-    item_id: str = Field(..., description="ID dòng vật tư định dạng {QUOTATION_ID}_{SEQ}")
-    material_code: str = Field(..., description="Mã vật tư chuẩn")
-    material_name: str = Field(..., description="Tên vật tư")
-    category: str = Field(..., description="Phân loại vật tư")
-    unit: str = Field(..., description="Đơn vị tính")
-    unit_price: float = Field(..., description="Đơn giá")
-    vat_rate: float = Field(0.1, description="Thuế suất VAT (ví dụ: 0.1 đại diện cho 10%)")
+    # Các trường bắt buộc mới của Phase 11
+    item_id: str = Field(..., description="ID dòng vật tư chuẩn hóa định dạng {QUOTATION_ID}_ITEM_{SEQ}")
+    source_draft_item_id: str = Field(..., description="ID draft item nguồn")
+    source_review_decision_id: str = Field(..., description="ID quyết định review nguồn")
+    description: str = Field(..., description="Mô tả chuẩn của vật tư (enforced non-empty)")
+    unit_price: float = Field(..., description="Đơn giá vật tư")
+    currency: str = Field(..., description="Đơn vị tiền tệ (uppercase: VND, USD)")
+
+    # Các trường tùy chọn mới của Phase 11
     brand: Optional[str] = Field(None, description="Thương hiệu")
+    unit: Optional[str] = Field(None, description="Đơn vị tính")
+    quantity: Optional[float] = Field(None, description="Số lượng vật tư")
+    amount: Optional[float] = Field(None, description="Thành tiền đã được tính toán lại")
+    page_number: Optional[int] = Field(None, description="Số trang chứa vật tư (1-indexed)")
+    evidence_text: Optional[str] = Field(None, description="Đoạn văn bản chứa minh chứng gốc")
+    confidence: Optional[float] = Field(None, description="Độ tin cậy của dòng")
+    reviewer: Optional[str] = Field(None, description="Reviewer thực hiện dòng này")
+    warnings: List["ParserWarningModel"] = Field(default_factory=list, description="Danh sách các cảnh báo item-level")
+
+    # Các trường cũ của Phase 1 chuyển thành Optional để giữ tương thích ngược
+    material_code: Optional[str] = Field(None, description="Mã vật tư chuẩn")
+    material_name: Optional[str] = Field(None, description="Tên vật tư")
+    category: Optional[str] = Field(None, description="Phân loại vật tư")
+    vat_rate: Optional[float] = Field(None, description="Thuế suất VAT")
     origin: Optional[str] = Field(None, description="Xuất xứ")
-    raw_text: str = Field(..., description="Đoạn text gốc trích xuất từ PDF để truy vết")
-    evidence: EvidenceModel = Field(..., description="Minh chứng trích xuất")
+    raw_text: Optional[str] = Field(None, description="Đoạn text gốc trích xuất từ PDF để truy vết")
+    evidence: Optional[EvidenceModel] = Field(None, description="Minh chứng trích xuất")
 
     @model_validator(mode="after")
     def validate_item_id(self):
-        if not re.match(r"^.+_\d{4}\d{2}\d{2}_\d{3}_\d{4}$", self.item_id):
-            raise ValueError("item_id must be in format {QUOTATION_ID}_{ITEM_SEQ} where ITEM_SEQ is 4 digits")
+        if not re.match(r"^.+_\d{4}\d{2}\d{2}_\d{3}_(ITEM_)?\d{4}$", self.item_id):
+            raise ValueError("item_id must be in format {QUOTATION_ID}_{ITEM_SEQ} or {QUOTATION_ID}_ITEM_{ITEM_SEQ}")
+        
+        # Enforce description non-empty
+        if not self.description.strip():
+            raise ValueError("description must be a non-empty string after trim")
+            
         return self
+
 
 class NormalizedQuotationModel(BaseModel):
     schema_version: str = Field("1.0", description="Phiên bản schema normalized")
@@ -116,7 +150,61 @@ class NormalizedQuotationModel(BaseModel):
     supplier_code: str = Field(..., description="Mã nhà cung cấp")
     quotation_date: str = Field(..., description="Ngày báo giá")
     currency: str = Field("VND", description="Đơn vị tiền tệ")
+    
+    # Thiết lập model config thắt chặt required fields trong JSON Schema sinh ra
+    model_config = ConfigDict(
+        json_schema_extra={
+            "required": [
+                "schema_version",
+                "quotation_id",
+                "supplier_code",
+                "quotation_date",
+                "currency",
+                "source_normalized_draft",
+                "source_normalized_draft_sha256",
+                "source_review_decisions",
+                "source_review_decisions_sha256",
+                "item_count",
+                "export_summary",
+                "warnings",
+                "items",
+                "created_at",
+                "updated_at"
+            ]
+        }
+    )
+
+    # Các trường manifest mới của Phase 11 (bắt buộc trong Schema, có default trong model để tương thích ngược)
+    source_normalized_draft: str = Field("normalized/normalized_draft.json", description="Đường dẫn tương đối tới file normalized_draft")
+    source_normalized_draft_sha256: str = Field("", description="SHA256 của file normalized_draft")
+    source_review_decisions: str = Field("review/review_decisions.json", description="Đường dẫn tương đối tới file review_decisions")
+    source_review_decisions_sha256: str = Field("", description="SHA256 của file review_decisions")
+    item_count: int = Field(0, description="Số lượng items xuất bản")
+    export_summary: ExportSummaryModel = Field(
+        default_factory=lambda: ExportSummaryModel(
+            draft_item_count=0,
+            approved_count=0,
+            edited_count=0,
+            rejected_count=0,
+            unreviewed_count=0,
+            exported_item_count=0
+        ),
+        description="Thống kê tóm tắt xuất bản"
+    )
+    warnings: List["ParserWarningModel"] = Field(default_factory=list, description="Danh sách các cảnh báo file-level")
+    
     items: List[NormalizedItemModel] = Field(default_factory=list, description="Danh sách vật tư đã chuẩn hóa")
+    
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Thời điểm tạo")
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Thời điểm cập nhật")
+
+    @field_serializer("created_at")
+    def serialize_created_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+    @field_serializer("updated_at")
+    def serialize_updated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
 
     @model_validator(mode="after")
     def validate_id_and_date_supplier(self):

@@ -62,6 +62,10 @@ def test_invalid_normalized_validation():
         "items": [
             {
                 "item_id": "WRONG_ID_FORMAT",  # Sai định dạng item_id
+                "source_draft_item_id": "AUT_20260520_001_DRAFTITEM_0001",
+                "source_review_decision_id": "AUT_20260520_001_REVIEW_0001",
+                "description": "Cáp điện",
+                "currency": "VND",
                 "material_code": "CV-3X2.5",
                 "material_name": "Cáp điện",
                 "category": "Electrical",
@@ -73,7 +77,23 @@ def test_invalid_normalized_validation():
                     "source_pdf": "source/original.pdf"
                 }
             }
-        ]
+        ],
+        "source_normalized_draft": "normalized/normalized_draft.json",
+        "source_normalized_draft_sha256": "",
+        "source_review_decisions": "review/review_decisions.json",
+        "source_review_decisions_sha256": "",
+        "item_count": 1,
+        "export_summary": {
+            "draft_item_count": 1,
+            "approved_count": 1,
+            "edited_count": 0,
+            "rejected_count": 0,
+            "unreviewed_count": 0,
+            "exported_item_count": 1
+        },
+        "warnings": [],
+        "created_at": "2026-06-20T00:00:00Z",
+        "updated_at": "2026-06-20T00:00:00Z"
     }
     with pytest.raises(ValueError, match="item_id must be in format"):
         validate_normalized_data(invalid_norm)

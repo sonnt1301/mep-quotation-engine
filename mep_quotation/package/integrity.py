@@ -141,6 +141,77 @@ def validate_package_integrity(package_path: Path) -> None:
         except Exception as e:
             raise ValueError(f"Integrity check failed: review_decisions.json validation error: {e}")
 
+    # 14. Kiểm duyệt sâu tệp normalized.json chính thức (chỉ khi file tồn tại thực tế)
+    normalized_file = package_path / pkg.files.normalized_json
+    if normalized_file.exists():
+        # Kiểm tra item_count khớp len(items)
+        if norm.item_count != len(norm.items):
+            raise ValueError(
+                f"Integrity check failed: normalized.item_count ({norm.item_count}) "
+                f"does not match items size ({len(norm.items)})"
+            )
+
+        if norm.export_summary is not None:
+            if norm.export_summary.exported_item_count != len(norm.items):
+                raise ValueError(
+                    f"Integrity check failed: exported_item_count ({norm.export_summary.exported_item_count}) "
+                    f"does not match actual items size ({len(norm.items)})"
+                )
+
+        # Kiểm định chéo chữ ký băm của các tệp nguồn nếu có lưu và tệp tồn tại thực tế
+        from mep_quotation.pdf.checksum import calculate_sha256
+        if norm.source_normalized_draft_sha256:
+            draft_file = package_path / norm.source_normalized_draft
+            if draft_file.exists():
+                actual_draft_sha = calculate_sha256(draft_file)
+                if norm.source_normalized_draft_sha256 != actual_draft_sha:
+                    raise ValueError("Integrity check failed: source_normalized_draft_sha256 mismatch")
+                
+        if norm.source_review_decisions_sha256:
+            review_file = package_path / norm.source_review_decisions
+            if review_file.exists():
+                actual_review_sha = calculate_sha256(review_file)
+                if norm.source_review_decisions_sha256 != actual_review_sha:
+                    raise ValueError("Integrity check failed: source_review_decisions_sha256 mismatch")
+
+        # Kiểm tra chi tiết từng item
+        item_ids = set()
+        for item in norm.items:
+            # item_id duy nhất
+            if item.item_id in item_ids:
+                raise ValueError(f"Integrity check failed: Duplicate item_id found: '{item.item_id}'")
+            item_ids.add(item.item_id)
+            
+            # item_id đúng format
+            import re
+            if not re.match(r"^.+_\d{4}\d{2}\d{2}_\d{3}_(ITEM_)?\d{4}$", item.item_id):
+                raise ValueError(f"Integrity check failed: item_id '{item.item_id}' has invalid format")
+
+            # amount đúng quantity * unit_price nếu đủ dữ liệu
+            if item.quantity is not None and item.unit_price is not None:
+                expected_amt = item.quantity * item.unit_price
+                if item.amount is None or abs(item.amount - expected_amt) > 1e-4:
+                    raise ValueError(f"Integrity check failed: Item '{item.item_id}' amount does not match quantity * unit_price")
+
+            # currency hợp lệ
+            if item.currency not in ("VND", "USD"):
+                raise ValueError(f"Integrity check failed: Item '{item.item_id}' has invalid currency '{item.currency}'")
+
+        # Đối chiếu với review decisions để cấm items rejected/unreviewed
+        if review_decisions_file.exists():
+            from mep_quotation.review.decisions import load_review_decisions
+            review_manifest = load_review_decisions(review_decisions_file)
+            decisions_map = {dec.draft_item_id: dec for dec in review_manifest.decisions}
+            
+            for item in norm.items:
+                if item.source_draft_item_id:
+                    dec = decisions_map.get(item.source_draft_item_id)
+                    if dec is None:
+                        raise ValueError(f"Integrity check failed: Item '{item.item_id}' was exported but has no review decision")
+                    if dec.decision_type == "rejected":
+                        raise ValueError(f"Integrity check failed: Item '{item.item_id}' was exported but is rejected in decisions")
+
+
 
 
 
