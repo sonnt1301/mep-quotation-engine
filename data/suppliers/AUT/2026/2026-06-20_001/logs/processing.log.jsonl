@@ -60,3 +60,12 @@
 {"details": {"overwrite": true, "reviewer": "human"}, "event": "review_file_created", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:05Z"}
 {"details": {"decision_id": "AUT_20260620_001_REVIEW_0001", "decision_type": "approved", "draft_item_id": "AUT_20260620_001_DRAFTITEM_0001", "reviewer": "human"}, "event": "review_decision_recorded", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:14Z"}
 {"details": {"decision_id": "AUT_20260620_001_REVIEW_0001", "decision_type": "edited", "draft_item_id": "AUT_20260620_001_DRAFTITEM_0001", "reviewer": "test_reviewer"}, "event": "review_decision_replaced", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:18Z"}
+{"details": {"overwrite": true}, "event": "normalized_export_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T03:50:24Z"}
+{"details": {"exported_item_count": 1}, "event": "normalized_export_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T03:50:24Z"}
+{"details": {"export_path": "normalized/normalized.json"}, "event": "normalized_export_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T03:50:24Z"}
+{"details": {"export_summary": {"approved_count": 0, "draft_item_count": 287, "edited_count": 1, "exported_item_count": 1, "rejected_count": 0, "unreviewed_count": 286}}, "event": "normalized_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T03:50:25Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T03:50:29Z"}
+{"details": {"overwrite": true}, "event": "normalized_export_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
+{"details": {"exported_item_count": 1}, "event": "normalized_export_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
+{"details": {"export_path": "normalized/normalized.json"}, "event": "normalized_export_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
+{"details": {"export_summary": {"approved_count": 0, "draft_item_count": 287, "edited_count": 1, "exported_item_count": 1, "rejected_count": 0, "unreviewed_count": 286}}, "event": "normalized_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}

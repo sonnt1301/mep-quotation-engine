@@ -33,7 +33,8 @@ from mep_quotation.spec.models import (
     NormalizedDraftModel,
     ReviewFieldOverridesModel,
     ReviewDecisionModel,
-    ReviewDecisionsFileModel
+    ReviewDecisionsFileModel,
+    ExportSummaryModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

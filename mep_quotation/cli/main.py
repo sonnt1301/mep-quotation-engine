@@ -647,9 +647,49 @@ def handle_list_review(args):
         sys.exit(1)
 
 
+def handle_export_normalized(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.normalized_export import export_normalized
+        export_file = export_normalized(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại normalized.json kết quả để in thống kê
+        with open(export_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        summary = data.get("export_summary", {})
+        warnings_count = len(data.get("warnings", []))
+        for item in data.get("items", []):
+            warnings_count += len(item.get("warnings", []))
+
+        print("Successfully exported official normalized quotation.")
+        print(f"  Quotation ID          : {data.get('quotation_id')}")
+        print(f"  Supplier Code         : {data.get('supplier_code')}")
+        print(f"  Quotation Date        : {data.get('quotation_date')}")
+        print(f"  Exported Item Count   : {data.get('item_count')}")
+        print(f"  Draft Item Count      : {summary.get('draft_item_count')}")
+        print(f"  Approved Count        : {summary.get('approved_count')}")
+        print(f"  Edited Count          : {summary.get('edited_count')}")
+        print(f"  Rejected Count        : {summary.get('rejected_count')}")
+        print(f"  Unreviewed Count      : {summary.get('unreviewed_count')}")
+        print(f"  Warnings Count        : {warnings_count}")
+        print(f"  Normalized JSON Path  : {get_display_path(export_file)}")
+
+    except Exception as e:
+        print(f"Error exporting normalized quotation: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 10 Human Review / Approval Layer"
+        description="MEP Quotation Pipeline CLI Tool - Phase 11 Official Normalized Export Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -770,6 +810,13 @@ def main():
     parser_lst_review = subparsers.add_parser("list-review", help="Hiển thị thống kê các quyết định rà soát")
     parser_lst_review.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_lst_review.set_defaults(func=handle_list_review)
+
+    # Command export-normalized
+    parser_exp_norm = subparsers.add_parser("export-normalized", help="Xuất bản tệp normalized.json báo giá chính thức")
+    parser_exp_norm.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_exp_norm.add_argument("--overwrite", action="store_true", help="Ghi đè nếu normalized.json đã tồn tại")
+    parser_exp_norm.set_defaults(func=handle_export_normalized)
+
 
     args = parser.parse_args()
     args.func(args)
