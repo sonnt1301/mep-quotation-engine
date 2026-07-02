@@ -4,7 +4,8 @@ from mep_quotation.spec.models import (
     QuotationPackageModel,
     NormalizedQuotationModel,
     CorrectionsFileModel,
-    MaterialIndexFileModel
+    MaterialIndexFileModel,
+    ExcelExportManifestModel
 )
 
 def test_schema_generation_matches_models():
@@ -17,7 +18,8 @@ def test_schema_generation_matches_models():
         "quotation_package.schema.json": QuotationPackageModel,
         "normalized.schema.json": NormalizedQuotationModel,
         "corrections.schema.json": CorrectionsFileModel,
-        "material_index.schema.json": MaterialIndexFileModel
+        "material_index.schema.json": MaterialIndexFileModel,
+        "excel_export_manifest.schema.json": ExcelExportManifestModel
     }
     
     for filename, model in expected_schemas.items():

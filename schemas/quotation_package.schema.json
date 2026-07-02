@@ -7,6 +7,32 @@
           "title": "Corrections Json",
           "type": "string"
         },
+        "excel_export": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "exports/quotation.xlsx",
+          "description": "Đường dẫn file Excel xuất bản, tương đối từ package root",
+          "title": "Excel Export"
+        },
+        "excel_export_manifest": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "exports/export_manifest.json",
+          "description": "Đường dẫn file manifest Excel xuất bản, tương đối từ package root",
+          "title": "Excel Export Manifest"
+        },
         "item_candidates": {
           "default": "parsed/item_candidates.json",
           "description": "Đường dẫn file item candidates JSON, tương đối từ package root",

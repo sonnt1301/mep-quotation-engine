@@ -34,7 +34,10 @@ from mep_quotation.spec.models import (
     ReviewFieldOverridesModel,
     ReviewDecisionModel,
     ReviewDecisionsFileModel,
-    ExportSummaryModel
+    ExportSummaryModel,
+    ExcelExportSheetModel,
+    ExcelExportContextModel,
+    ExcelExportManifestModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

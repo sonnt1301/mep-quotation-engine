@@ -686,6 +686,38 @@ def handle_export_normalized(args):
         sys.exit(1)
 
 
+def handle_export_excel(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.excel_export import export_excel
+        excel_file = export_excel(
+            package_path=package_path,
+            overwrite=args.overwrite
+        )
+
+        # Nạp lại manifest.json kết quả để in thống kê
+        manifest_path = package_path / "exports" / "export_manifest.json"
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+
+        print("Successfully exported official Excel quotation.")
+        print(f"  Quotation ID          : {manifest_data.get('quotation_id')}")
+        print(f"  Supplier Code         : {manifest_data.get('supplier_code')}")
+        print(f"  Quotation Date        : {manifest_data.get('quotation_date')}")
+        print(f"  Item Count            : {manifest_data.get('sheets')[1].get('row_count') if len(manifest_data.get('sheets', [])) > 1 else 'N/A'}")
+        print(f"  Excel Export Path     : {get_display_path(excel_file)}")
+        print(f"  Manifest JSON Path    : {get_display_path(manifest_path)}")
+        print(f"  Sheet Count           : {manifest_data.get('sheet_count')}")
+        print(f"  Source Normalized SHA256 : {manifest_data.get('source_normalized_sha256')}")
+        print(f"  Export File SHA256    : {manifest_data.get('export_file_sha256')}")
+
+    except Exception as e:
+        print(f"Error exporting Excel quotation: {e}", file=sys.stderr)
+        sys.exit(1)
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -816,6 +848,11 @@ def main():
     parser_exp_norm.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_exp_norm.add_argument("--overwrite", action="store_true", help="Ghi đè nếu normalized.json đã tồn tại")
     parser_exp_norm.set_defaults(func=handle_export_normalized)
+    # Command export-excel
+    parser_exp_excel = subparsers.add_parser("export-excel", help="Xuất bản tệp Excel báo giá chính thức")
+    parser_exp_excel.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_exp_excel.add_argument("--overwrite", action="store_true", help="Ghi đè nếu quotation.xlsx hoặc export_manifest.json đã tồn tại")
+    parser_exp_excel.set_defaults(func=handle_export_excel)
 
 
     args = parser.parse_args()
