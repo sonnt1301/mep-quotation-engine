@@ -1,0 +1,277 @@
+{
+  "$defs": {
+    "ParserWarningModel": {
+      "description": "Model cho cảnh báo phân tích cú pháp ở cấp độ dòng hoặc manifest.",
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo (ví dụ: low_confidence, quantity_missing)",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Chi tiết nội dung cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ParserWarningModel",
+      "type": "object"
+    },
+    "ReviewDecisionModel": {
+      "additionalProperties": false,
+      "description": "Model lưu trữ một quyết định review đối với một draft item.",
+      "properties": {
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "decision_id": {
+          "description": "ID quyết định định dạng {QUOTATION_ID}_REVIEW_{SEQ}",
+          "title": "Decision Id",
+          "type": "string"
+        },
+        "decision_type": {
+          "description": "Loại quyết định (approved | rejected | edited)",
+          "title": "Decision Type",
+          "type": "string"
+        },
+        "draft_item_id": {
+          "description": "ID draft item liên kết từ Phase 9",
+          "title": "Draft Item Id",
+          "type": "string"
+        },
+        "field_overrides": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewFieldOverridesModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Các trường dữ liệu ghi đè khi decision_type = edited"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lý do phê duyệt/từ chối/chỉnh sửa",
+          "title": "Reason"
+        },
+        "reviewer": {
+          "default": "human",
+          "description": "Người thực hiện rà soát dòng này",
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision_id",
+        "draft_item_id",
+        "decision_type"
+      ],
+      "title": "ReviewDecisionModel",
+      "type": "object"
+    },
+    "ReviewFieldOverridesModel": {
+      "additionalProperties": false,
+      "description": "Model chứa các trường dữ liệu ghi đè khi decision_type = edited.",
+      "properties": {
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thành tiền ghi đè",
+          "title": "Amount"
+        },
+        "brand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Thương hiệu ghi đè",
+          "title": "Brand"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tiền tệ ghi đè",
+          "title": "Currency"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mô tả vật tư ghi đè",
+          "title": "Description"
+        },
+        "material_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mã vật tư ghi đè",
+          "title": "Material Code"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng ghi đè",
+          "title": "Quantity"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn vị tính ghi đè",
+          "title": "Unit"
+        },
+        "unit_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đơn giá ghi đè",
+          "title": "Unit Price"
+        }
+      },
+      "title": "ReviewFieldOverridesModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Model manifest cho tệp review_decisions.json.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "decision_count": {
+      "description": "Tổng số quyết định hiện có",
+      "title": "Decision Count",
+      "type": "integer"
+    },
+    "decisions": {
+      "description": "Danh sách các quyết định review chi tiết",
+      "items": {
+        "$ref": "#/$defs/ReviewDecisionModel"
+      },
+      "title": "Decisions",
+      "type": "array"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "default": "human",
+      "description": "Reviewer mặc định cấp độ file",
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_normalized_draft": {
+      "default": "normalized/normalized_draft.json",
+      "description": "Đường dẫn tương đối tới file normalized_draft",
+      "title": "Source Normalized Draft",
+      "type": "string"
+    },
+    "source_sha256": {
+      "description": "SHA256 của file normalized/normalized_draft.json",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "warnings": {
+      "description": "Danh sách cảnh báo",
+      "items": {
+        "$ref": "#/$defs/ParserWarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_sha256",
+    "decision_count",
+    "decisions"
+  ],
+  "title": "ReviewDecisionsFileModel",
+  "type": "object"
+}

@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from typing import List, Optional, Any, Dict
-from pydantic import BaseModel, Field, field_serializer, model_validator
+from pydantic import BaseModel, Field, field_serializer, model_validator, ConfigDict
 import re
 
 # Helper to serialize datetime to ISO 8601 UTC format ending with Z
@@ -42,6 +42,7 @@ class FilePathsModel(BaseModel):
     parsed_markdown: str = Field(..., description="Đường dẫn file Markdown parsed, tương đối")
     normalized_json: str = Field(..., description="Đường dẫn file normalized JSON, tương đối")
     normalized_draft: str = Field("normalized/normalized_draft.json", description="Đường dẫn file nháp chuẩn hóa JSON, tương đối từ package root")
+    review_decisions: Optional[str] = Field("review/review_decisions.json", description="Đường dẫn file quyết định review JSON, tương đối từ package root")
     corrections_json: str = Field(..., description="Đường dẫn file corrections JSON, tương đối")
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
 
@@ -489,6 +490,67 @@ class NormalizedDraftModel(BaseModel):
     @field_serializer("generated_at")
     def serialize_generated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class ReviewFieldOverridesModel(BaseModel):
+    """Model chứa các trường dữ liệu ghi đè khi decision_type = edited."""
+    model_config = ConfigDict(extra="forbid")
+
+    material_code: Optional[str] = Field(None, description="Mã vật tư ghi đè")
+    description: Optional[str] = Field(None, description="Mô tả vật tư ghi đè")
+    brand: Optional[str] = Field(None, description="Thương hiệu ghi đè")
+    unit: Optional[str] = Field(None, description="Đơn vị tính ghi đè")
+    quantity: Optional[float] = Field(None, description="Số lượng ghi đè")
+    unit_price: Optional[float] = Field(None, description="Đơn giá ghi đè")
+    currency: Optional[str] = Field(None, description="Đơn vị tiền tệ ghi đè")
+    amount: Optional[float] = Field(None, description="Thành tiền ghi đè")
+
+
+class ReviewDecisionModel(BaseModel):
+    """Model lưu trữ một quyết định review đối với một draft item."""
+    model_config = ConfigDict(extra="forbid")
+
+    decision_id: str = Field(..., description="ID quyết định định dạng {QUOTATION_ID}_REVIEW_{SEQ}")
+    draft_item_id: str = Field(..., description="ID draft item liên kết từ Phase 9")
+    decision_type: str = Field(..., description="Loại quyết định (approved | rejected | edited)")
+    reviewer: str = Field("human", description="Người thực hiện rà soát dòng này")
+    reason: Optional[str] = Field(None, description="Lý do phê duyệt/từ chối/chỉnh sửa")
+    field_overrides: Optional[ReviewFieldOverridesModel] = Field(None, description="Các trường dữ liệu ghi đè khi decision_type = edited")
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("created_at")
+    def serialize_created_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+    @field_serializer("updated_at")
+    def serialize_updated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+
+class ReviewDecisionsFileModel(BaseModel):
+    """Model manifest cho tệp review_decisions.json."""
+    model_config = ConfigDict(extra="forbid")
+
+    schema_version: str = Field("1.0", description="Phiên bản schema")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_normalized_draft: str = Field("normalized/normalized_draft.json", description="Đường dẫn tương đối tới file normalized_draft")
+    source_sha256: str = Field(..., description="SHA256 của file normalized/normalized_draft.json")
+    reviewer: str = Field("human", description="Reviewer mặc định cấp độ file")
+    decision_count: int = Field(..., description="Tổng số quyết định hiện có")
+    decisions: List[ReviewDecisionModel] = Field(..., description="Danh sách các quyết định review chi tiết")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách cảnh báo")
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @field_serializer("created_at")
+    def serialize_created_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+    @field_serializer("updated_at")
+    def serialize_updated_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 
 
 

@@ -63,6 +63,19 @@
           "title": "Raw Text",
           "type": "string"
         },
+        "review_decisions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "review/review_decisions.json",
+          "description": "Đường dẫn file quyết định review JSON, tương đối từ package root",
+          "title": "Review Decisions"
+        },
         "row_candidates": {
           "default": "parsed/row_candidates.json",
           "description": "Đường dẫn file row candidates JSON, tương đối từ package root",

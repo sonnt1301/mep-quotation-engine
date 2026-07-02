@@ -132,6 +132,16 @@ def validate_package_integrity(package_path: Path) -> None:
         except Exception as e:
             raise ValueError(f"Integrity check failed: normalized_draft.json validation error: {e}")
 
+    # 13. Kiểm tra review_decisions.json (chỉ khi file tồn tại thực tế để tương thích ngược)
+    review_decisions_file = package_path / "review" / "review_decisions.json"
+    if review_decisions_file.exists():
+        try:
+            from mep_quotation.review.decisions import validate_review_decisions_file
+            validate_review_decisions_file(review_decisions_file, package_path)
+        except Exception as e:
+            raise ValueError(f"Integrity check failed: review_decisions.json validation error: {e}")
+
+
 
 
 

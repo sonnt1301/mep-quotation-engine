@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-07-02T02:42:05Z",
+  "decision_count": 1,
+  "decisions": [
+    {
+      "created_at": "2026-07-02T02:42:14Z",
+      "decision_id": "AUT_20260620_001_REVIEW_0001",
+      "decision_type": "edited",
+      "draft_item_id": "AUT_20260620_001_DRAFTITEM_0001",
+      "field_overrides": {
+        "amount": 1850000.0,
+        "brand": null,
+        "currency": "VND",
+        "description": null,
+        "material_code": null,
+        "quantity": 100.0,
+        "unit": null,
+        "unit_price": 18500.0
+      },
+      "reason": "Sửa giá trị thực",
+      "reviewer": "test_reviewer",
+      "updated_at": "2026-07-02T02:42:18Z"
+    }
+  ],
+  "quotation_id": "AUT_20260620_001",
+  "reviewer": "human",
+  "schema_version": "1.0",
+  "source_normalized_draft": "normalized/normalized_draft.json",
+  "source_sha256": "f35f3925986f959856e84a9d97324d6d870096ebeefd5ea62baa7fd50f4f45b9",
+  "updated_at": "2026-07-02T02:42:18Z",
+  "warnings": []
+}

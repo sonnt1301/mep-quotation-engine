@@ -1,76 +1,102 @@
-# Kết Quả Nghiệm Thu MEP Quotation Pipeline Phase 9 – Normalized Draft Layer
+# Báo Cáo Nghiệm Thu Phase 10 – Human Review / Approval Layer
 
-## Các công việc đã thực hiện
-Phase 9 nhận dữ liệu đầu vào từ tệp ứng viên vật tư (`parsed/item_candidates.json`) được tạo ở Phase 8, và xây dựng thành công tệp dữ liệu nháp chuẩn hóa `normalized/normalized_draft.json` để phục vụ rà soát thủ công hoặc đối chiếu ở các phase sau.
+Báo cáo tóm tắt quá trình triển khai, kết quả kiểm thử tự động, và chạy kiểm duyệt thủ công cho Phase 10.
 
-### 1. Spec & Models
-- Bổ sung trường `normalized_draft` vào `FilePathsModel` trong `models.py`.
-- Định nghĩa các Pydantic models mới chính xác làm Source of Truth:
-  - `NormalizedDraftEvidenceModel`: trace vết văn bản gốc từ candidate.
-  - `NormalizedDraftItemModel`: chứa cấu trúc dữ liệu nháp chuẩn hóa chi tiết cho từng dòng vật tư.
-  - `NormalizedDraftModel`: manifest kê khai tổng số lượng items, trạng thái cần rà soát và siêu dữ liệu đi kèm.
-- Xuất các model qua `mep_quotation/spec/__init__.py`.
+## Kết quả đạt được
+1. **Pydantic Models cho Review Decisions**:
+   - Tích hợp thành công `ReviewFieldOverridesModel`, `ReviewDecisionModel`, và `ReviewDecisionsFileModel` vào tệp [models.py (D:/mep_quotation_pipeline/mep_quotation/spec/models.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py).
+   - Thiết lập cấu hình nghiêm ngặt cấm các thuộc tính thừa (`model_config = ConfigDict(extra="forbid")`) trên toàn bộ các model mới để ngăn dữ liệu rác.
 
-### 2. Module mep_quotation/normalized_draft/
-- Triển khai `builder.py` để chuyển đổi deterministic từ item candidates sang draft items:
-  - Trim whitespace mô tả.
-  - Tự động tính toán thành tiền `amount = quantity * unit_price` và validate so khớp với dữ liệu ứng viên gốc, phát cảnh báo `amount_mismatch_recomputed` khi lệch.
-  - Gán tiền tệ chung có điều kiện hoặc kế thừa từ thuộc tính candidate.
-  - Điều chỉnh điểm tin cậy `confidence` clamp trong `[0.0, 1.0]` và phân loại trạng thái rà soát `review_status` (`auto_ready`, `needs_review`, `rejected_candidate`).
-- Triển khai `manifest.py` chứa logic ghi tệp JSON deterministic và hàm validate toàn vẹn 14 quy tắc chéo bắt buộc.
-- Triển khai `draft_service.py` để điều phối luồng xử lý: kiểm duyệt đầu vào, overwrite check, ghi audit log, cập nhật package.json và bảo vệ tuyệt đối tệp `normalized.json` chính thức (không thay đổi SHA256, không tự ý tạo mới).
+2. **Quy Tắc Ghi Đè Reviewer & Metadata**:
+   - Khi chạy lệnh ghi đè quyết định cũ (`overwrite=True`):
+     - Giữ nguyên `decision_id` cũ và `created_at` cũ.
+     - Cập nhật trường `reviewer` thành người thực hiện review mới.
+     - Cập nhật các trường `decision_type`, `reason`, `field_overrides`, và thời gian sửa đổi `updated_at`.
+     - Ghi nhận sự kiện audit log `review_decision_replaced` chi tiết.
 
-### 3. CLI & Schema
-- Tích hợp subcommand `build-normalized-draft` vào CLI.
-- Tích hợp tự động sinh JSON Schema mới `normalized_draft.schema.json` trong `generate_schemas.py`.
+3. **Cơ Chế Ghi An Toàn (Atomic Write)**:
+   - Triển khai ghi tệp `review_decisions.json` thông qua tệp tạm `.tmp` và đổi tên nguyên tử (`os.replace`).
+   - Đảm bảo dữ liệu cũ không bị hỏng nếu có lỗi ổ đĩa hoặc ngắt tiến trình xảy ra giữa chừng.
+
+4. **Kiểm Định Tính Toàn Vẹn Chặt Chẽ (14 Quy Tắc Chéo)**:
+   - Thiết lập hàm kiểm duyệt `validate_review_decisions_file` trong [decisions.py (D:/mep_quotation_pipeline/mep_quotation/review/decisions.py)](file:///D:/mep_quotation_pipeline/mep_quotation/review/decisions.py) để tự động kiểm duyệt:
+     - `source_sha256` khớp SHA256 thực tế của `normalized_draft.json` để tránh rò rỉ dữ liệu lỗi (ném lỗi `source_sha256_mismatch` nếu bị lệch, không tự cập nhật).
+     - ID sequence tăng tiến dạng `max(seq) + 1` không phụ thuộc vào `len(decisions)`.
+     - Mỗi `draft_item_id` chỉ có duy nhất một quyết định.
+     - Quyết định `approved` hoặc `rejected` cấm có overrides.
+     - Quyết định `rejected` hoặc `edited` bắt buộc có lý do phi-rỗng sau khi trim.
+     - Các trường overrides của `edited` phải phi-âm và thuộc whitelist.
+     - Không có logic nào áp dụng (apply) decisions hay tự tạo `normalized.json` hoặc chạm vào `normalized_draft.json` (bảo vệ nghiêm ngặt Critical Scope Guard).
+
+5. **CLI Integration**:
+   - Tích hợp thành công 3 subcommand CLI vào [main.py (D:/mep_quotation_pipeline/mep_quotation/cli/main.py)](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py):
+     - `create-review-file`: Khởi tạo file review trống.
+     - `record-review`: Ghi nhận quyết định phê duyệt (hỗ trợ chuẩn hóa tiền tệ và nhận plain numeric values).
+     - `list-review`: In báo cáo thống kê số lượng.
+
+6. **Tự động sinh Schema**:
+   - Đăng ký và sinh thành công tệp schema JSON thứ 13 của hệ thống: [review_decisions.schema.json (D:/mep_quotation_pipeline/schemas/review_decisions.schema.json)](file:///D:/mep_quotation_pipeline/schemas/review_decisions.schema.json).
+
+7. **Bộ Kiểm Thử Hoàn Chỉnh**:
+   - Tạo mới tệp kiểm thử [test_review_decisions.py (D:/mep_quotation_pipeline/tests/test_review_decisions.py)](file:///D:/mep_quotation_pipeline/tests/test_review_decisions.py) bao phủ toàn bộ các quy tắc nghiệp vụ.
+   - Vượt qua toàn bộ **124/124 tests** tự động của toàn bộ hệ thống.
 
 ---
 
-## Kết quả kiểm thử tự động (Pytest)
-Chạy toàn bộ 115 pytest thành công 100%:
-```
-tests/test_normalized_draft.py::test_build_normalized_draft_success PASSED
-tests/test_normalized_draft.py::test_empty_candidates_generates_valid_empty_draft PASSED
-tests/test_normalized_draft.py::test_overwrite_protection_and_integrity_audit PASSED
-tests/test_normalized_draft.py::test_cli_build_normalized_draft PASSED
-tests/test_normalized_draft.py::test_normalized_json_safety_protection PASSED
-tests/test_normalized_draft.py::test_validation_catches_errors_in_manifest PASSED
-tests/test_normalized_draft.py::test_amount_mismatch_warning_generation PASSED
-
-============================= 115 passed in 5.30s =============================
-```
-
----
-
-## Kết quả nghiệm thu thủ công (Manual Acceptance Test)
-Chạy trực tiếp CLI trên gói dữ liệu thực tế `data/suppliers/AUT/2026/2026-06-20_001`:
+## Xác nhận kiểm thử tự động (Pytest)
 ```bash
-python -m mep_quotation.cli.main build-normalized-draft data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+python -m pytest -v
 ```
-**Kết quả hiển thị:**
-```
-Successfully built normalized draft.
-  Quotation ID          : AUT_20260620_001
-  Supplier Code         : AUT
-  Quotation Date        : 2026-06-20
-  Item Count            : 287
-  Review Required Count : 264
-  Auto Ready Count      : 0
-  Rejected Candidate Count: 23
-  Source Item Candidates: data/suppliers/AUT/2026/2026-06-20_001/parsed/item_candidates.json
-  Normalized Draft Path : data/suppliers/AUT/2026/2026-06-20_001/normalized/normalized_draft.json
-  Warnings Count        : 856
+Kết quả thực tế:
+```text
+tests/test_review_decisions.py::test_create_empty_review_file PASSED
+tests/test_review_decisions.py::test_record_approved_decision PASSED
+tests/test_review_decisions.py::test_record_rejected_decision_validation PASSED
+tests/test_review_decisions.py::test_record_edited_decision_validation PASSED
+tests/test_review_decisions.py::test_duplicate_decision_and_overwrite_replacement PASSED
+tests/test_review_decisions.py::test_sequence_calculation_independent PASSED
+tests/test_review_decisions.py::test_validate_review_decisions_file_source_sha_mismatch PASSED
+tests/test_review_decisions.py::test_cli_subcommands PASSED
+tests/test_review_decisions.py::test_atomic_write_protection PASSED
+
+============================= 124 passed in 8.14s =============================
 ```
 
-### 1. Overwrite Protection:
-Chạy lại không có `--overwrite` ném lỗi đúng mong đợi:
-`Error building normalized draft: Normalized draft file already exists at ... Set overwrite=True to replace it.`
+---
 
-### 2. Dữ liệu nháp được tạo:
-- Tạo thành công tệp `normalized/normalized_draft.json` khớp schema.
-- Toàn bộ 287 ứng viên được giữ lại đầy đủ (không silently drop).
-- Trạng thái rà soát và lý do cần rà soát (`missing_unit`, `missing_quantity`, `currency_uncertain`, `low_confidence`) được định nghĩa rõ ràng.
+## Kiểm thử thủ công trên gói thực tế
+Chạy kiểm duyệt trên gói `data/suppliers/AUT/2026/2026-06-20_001`:
+1. **Khởi tạo tệp review**:
+   ```bash
+   python -m mep_quotation.cli.main create-review-file data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+   ```
+2. **Ghi nhận quyết định phê duyệt**:
+   ```bash
+   python -m mep_quotation.cli.main record-review data/suppliers/AUT/2026/2026-06-20_001 --draft-item-id AUT_20260620_001_DRAFTITEM_0001 --decision approved --reason "Khớp thông tin thủ công"
+   ```
+3. **Ghi đè bằng chỉnh sửa (edited)**:
+   ```bash
+   python -m mep_quotation.cli.main record-review data/suppliers/AUT/2026/2026-06-20_001 --draft-item-id AUT_20260620_001_DRAFTITEM_0001 --decision edited --reason "Sửa giá trị thực" --quantity 100 --unit-price 18500 --currency VND --amount 1850000 --reviewer test_reviewer --overwrite
+   ```
+4. **In thống kê**:
+   ```bash
+   python -m mep_quotation.cli.main list-review data/suppliers/AUT/2026/2026-06-20_001
+   ```
+   *Kết quả in*:
+   ```text
+   Successfully loaded review decisions statistics.
+     Quotation ID          : AUT_20260620_001
+     Decision Count        : 1
+     Approved Count        : 0
+     Rejected Count        : 0
+     Edited Count          : 1
+     Review File Path      : data/suppliers/AUT/2026/2026-06-20_001/review/review_decisions.json
+   ```
 
-### 3. Bảo vệ dữ liệu chính thức:
-- Chạy `git status` xác nhận tệp `normalized.json` chính thức không bị chạm vào hoặc chỉnh sửa nội dung, SHA256 hoàn toàn không đổi.
-- Chạy `validate-package` thành công, báo cáo gói dữ liệu hoàn toàn hợp lệ.
+5. **Nhật ký Audit Log (processing.log.jsonl)**:
+   ```json
+   {"details": {"overwrite": true, "reviewer": "human"}, "event": "review_file_created", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:05Z"}
+   {"details": {"decision_id": "AUT_20260620_001_REVIEW_0001", "decision_type": "approved", "draft_item_id": "AUT_20260620_001_DRAFTITEM_0001", "reviewer": "human"}, "event": "review_decision_recorded", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:14Z"}
+   {"details": {"decision_id": "AUT_20260620_001_REVIEW_0001", "decision_type": "edited", "draft_item_id": "AUT_20260620_001_DRAFTITEM_0001", "reviewer": "test_reviewer"}, "event": "review_decision_replaced", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T02:42:18Z"}
+   ```
+   Tất cả các hành động ghi đè reviewer mới, giữ timestamps tạo cũ và cập nhật thời điểm sửa đổi mới đều diễn ra hoàn hảo.
