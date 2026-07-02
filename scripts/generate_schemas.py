@@ -19,7 +19,8 @@ from mep_quotation.spec.models import (
     RowCandidateManifestModel,
     ItemCandidateManifestModel,
     NormalizedDraftModel,
-    ReviewDecisionsFileModel
+    ReviewDecisionsFileModel,
+    ExcelExportManifestModel
 )
 
 def generate_schemas():
@@ -41,7 +42,8 @@ def generate_schemas():
         "row_candidates.schema.json": RowCandidateManifestModel,
         "item_candidates.schema.json": ItemCandidateManifestModel,
         "normalized_draft.schema.json": NormalizedDraftModel,
-        "review_decisions.schema.json": ReviewDecisionsFileModel
+        "review_decisions.schema.json": ReviewDecisionsFileModel,
+        "excel_export_manifest.schema.json": ExcelExportManifestModel
     }
 
     for filename, model in models_to_generate.items():

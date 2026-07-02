@@ -69,3 +69,40 @@
 {"details": {"exported_item_count": 1}, "event": "normalized_export_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
 {"details": {"export_path": "normalized/normalized.json"}, "event": "normalized_export_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
 {"details": {"export_summary": {"approved_count": 0, "draft_item_count": 287, "edited_count": 1, "exported_item_count": 1, "rejected_count": 0, "unreviewed_count": 286}}, "event": "normalized_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T04:26:55Z"}
+{"details": {"overwrite": true}, "event": "normalized_export_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:34:35Z"}
+{"details": {"exported_item_count": 1}, "event": "normalized_export_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:34:35Z"}
+{"details": {"export_path": "normalized/normalized.json"}, "event": "normalized_export_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:34:35Z"}
+{"details": {"export_summary": {"approved_count": 0, "draft_item_count": 287, "edited_count": 1, "exported_item_count": 1, "rejected_count": 0, "unreviewed_count": 286}}, "event": "normalized_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:34:36Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:35:05Z"}
+{"details": {"overwrite": false}, "event": "normalized_export_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:35:20Z"}
+{"details": {"error": "Official normalized file already exists at D:\\mep_quotation_pipeline\\data\\suppliers\\AUT\\2026\\2026-06-20_001\\normalized\\normalized.json. Set overwrite=True to replace it."}, "event": "normalized_export_failed", "level": "ERROR", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T06:35:20Z"}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_001","details":{"overwrite":true}}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_workbook_built","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_workbook_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/quotation.xlsx"}}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T07:21:47Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_001","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:53Z"}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_001","details":{"overwrite":true}}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_workbook_built","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_workbook_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/quotation.xlsx"}}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T07:27:18Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_001","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T07:27:45Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_001","details":{"overwrite":false}}
+{"timestamp":"2026-07-02T07:27:45Z","level":"ERROR","event":"excel_export_failed","quotation_id":"AUT_20260620_001","details":{"error":"Excel export files already exist. Set overwrite=True to replace them."}}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:27:46Z"}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_001","details":{"overwrite":true}}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_workbook_built","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_workbook_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/quotation.xlsx"}}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T07:36:27Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_001","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:36:32Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:39:47Z"}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_001","details":{"overwrite":true}}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_workbook_built","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_workbook_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/quotation.xlsx"}}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_001","details":{}}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_001","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}

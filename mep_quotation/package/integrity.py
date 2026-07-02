@@ -211,6 +211,40 @@ def validate_package_integrity(package_path: Path) -> None:
                     if dec.decision_type == "rejected":
                         raise ValueError(f"Integrity check failed: Item '{item.item_id}' was exported but is rejected in decisions")
 
+        # 9. Kiểm định chéo Excel export nếu exports/export_manifest.json tồn tại
+        excel_manifest_path = package_path / "exports" / "export_manifest.json"
+        if excel_manifest_path.exists():
+            from mep_quotation.spec.models import ExcelExportManifestModel
+            with open(excel_manifest_path, "r", encoding="utf-8") as f:
+                manifest_data = json.load(f)
+            excel_manifest = ExcelExportManifestModel.model_validate(manifest_data)
+            
+            # source_normalized_sha256 khớp SHA256 thực tế của normalized.json
+            actual_norm_sha = calculate_sha256(normalized_file)
+            if excel_manifest.source_normalized_sha256 != actual_norm_sha:
+                raise ValueError("Excel integrity failed: source_normalized_sha256 mismatch")
+                
+            # export_file tồn tại
+            excel_file_path = package_path / excel_manifest.export_file
+            if not excel_file_path.exists():
+                raise ValueError(f"Excel integrity failed: export file not found at {excel_file_path}")
+                
+            # export_file_sha256 khớp SHA256 thực tế của quotation.xlsx
+            actual_excel_sha = calculate_sha256(excel_file_path)
+            if excel_manifest.export_file_sha256 != actual_excel_sha:
+                raise ValueError("Excel integrity failed: export_file_sha256 mismatch")
+                
+            # sheet_count == len(sheets)
+            if excel_manifest.sheet_count != len(excel_manifest.sheets):
+                raise ValueError("Excel integrity failed: sheet_count mismatch in manifest")
+                
+            # sheet names trong manifest đúng Summary, Items, Warnings, Trace
+            sheet_names = [sheet.name for sheet in excel_manifest.sheets]
+            expected_names = ["Summary", "Items", "Warnings", "Trace"]
+            if sheet_names != expected_names:
+                raise ValueError(f"Excel integrity failed: expected sheet names {expected_names}, but got {sheet_names}")
+
+
 
 
 

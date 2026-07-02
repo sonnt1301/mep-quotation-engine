@@ -144,30 +144,40 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
      python -m mep_quotation.cli.main export-normalized data/suppliers/AUT/2026/2026-06-20_001 --overwrite
      ```
 
-11. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
-    ```bash
-    python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
-    ```
+ 11. **Xuất Bản Tệp Excel Báo Giá Chính Thức (Excel Export Layer):**
+     *Chạy xuất bản tệp Excel quotation.xlsx và manifest đi kèm từ normalized.json:*
+     ```bash
+     python -m mep_quotation.cli.main export-excel data/suppliers/AUT/2026/2026-06-20_001
+     ```
+     *Tùy chọn ghi đè tệp Excel và manifest hiện hữu:*
+     ```bash
+     python -m mep_quotation.cli.main export-excel data/suppliers/AUT/2026/2026-06-20_001 --overwrite
+     ```
 
-11. **Kiểm Tra Tính Hợp Lệ Của Gói:**
+ 12. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
+     ```bash
+     python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
+     ```
+
+13. **Kiểm Tra Tính Hợp Lệ Của Gói:**
     ```bash
     python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-05-20_001
     ```
 
-12. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
-     ```bash
-     python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
-     ```
+ 14. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
+      ```bash
+      python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
+      ```
 
-13. **Xây Dựng Lại Chỉ Mục Vật Tư:**
-     ```bash
-     python -m mep_quotation.cli.main build-index
-   
-     # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
-     python -m mep_quotation.cli.main build-index --strict
-     ```
+ 15. **Xây Dựng Lại Chỉ Mục Vật Tư:**
+      ```bash
+      python -m mep_quotation.cli.main build-index
+    
+      # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
+      python -m mep_quotation.cli.main build-index --strict
+      ```
 
-14. **Tìm Kiếm Vật Tư:**
+ 16. **Tìm Kiếm Vật Tư:**
      ```bash
      python -m mep_quotation.cli.main search-material "CV-3X2.5"
      ```

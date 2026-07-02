@@ -45,6 +45,8 @@ class FilePathsModel(BaseModel):
     review_decisions: Optional[str] = Field("review/review_decisions.json", description="Đường dẫn file quyết định review JSON, tương đối từ package root")
     corrections_json: str = Field(..., description="Đường dẫn file corrections JSON, tương đối")
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
+    excel_export: Optional[str] = Field("exports/quotation.xlsx", description="Đường dẫn file Excel xuất bản, tương đối từ package root")
+    excel_export_manifest: Optional[str] = Field("exports/export_manifest.json", description="Đường dẫn file manifest Excel xuất bản, tương đối từ package root")
 
 
 
@@ -638,6 +640,49 @@ class ReviewDecisionsFileModel(BaseModel):
     @field_serializer("updated_at")
     def serialize_updated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
+
+
+class ExcelExportSheetModel(BaseModel):
+    """Model chứa thông tin thống kê từng worksheet Excel."""
+    model_config = ConfigDict(extra="forbid")
+
+    name: str = Field(..., description="Tên worksheet")
+    row_count: int = Field(..., description="Số dòng dữ liệu (không tính header row)")
+
+
+class ExcelExportContextModel(BaseModel):
+    """Model context trung gian cho việc xuất Excel."""
+    model_config = ConfigDict(extra="forbid")
+
+    source_normalized_sha256: str = Field(..., description="SHA256 của tệp normalized.json")
+    exported_at: datetime = Field(..., description="Thời điểm xuất bản")
+    exporter_name: str = Field("openpyxl_excel_exporter", description="Tên bộ xuất bản")
+    exporter_version: str = Field("1.0", description="Phiên bản bộ xuất bản")
+
+
+class ExcelExportManifestModel(BaseModel):
+    """Model manifest ghi nhận kết quả xuất bản Excel chính thức."""
+    model_config = ConfigDict(extra="forbid")
+
+    schema_version: str = Field("1.0", description="Phiên bản schema export manifest")
+    quotation_id: str = Field(..., description="ID báo giá gốc")
+    supplier_code: Optional[str] = Field(None, description="Mã nhà cung cấp")
+    quotation_date: Optional[str] = Field(None, description="Ngày báo giá")
+    source_normalized: str = Field("normalized/normalized.json", description="Đường dẫn tương đối tới file normalized")
+    source_normalized_sha256: str = Field(..., description="SHA256 của file normalized")
+    export_file: str = Field("exports/quotation.xlsx", description="Đường dẫn tương đối tới file Excel xuất bản")
+    export_file_sha256: str = Field(..., description="SHA256 của file Excel xuất bản")
+    sheet_count: int = Field(..., description="Số lượng worksheets")
+    sheets: List[ExcelExportSheetModel] = Field(..., description="Danh sách chi tiết sheets")
+    exported_at: datetime = Field(..., description="Thời điểm xuất bản")
+    exporter_name: str = Field("openpyxl_excel_exporter", description="Tên bộ xuất bản")
+    exporter_version: str = Field("1.0", description="Phiên bản bộ xuất bản")
+    warnings: List[ParserWarningModel] = Field(default_factory=list, description="Danh sách các cảnh báo")
+
+    @field_serializer("exported_at")
+    def serialize_exported_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
 
 
 
