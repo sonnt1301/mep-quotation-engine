@@ -536,9 +536,120 @@ def handle_build_normalized_draft(args):
         sys.exit(1)
 
 
+def handle_create_review_file(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.review import create_empty_review_file
+        review_file = create_empty_review_file(
+            package_path=package_path,
+            reviewer=args.reviewer,
+            overwrite=args.overwrite
+        )
+
+        pkg = load_package_json(package_path)
+        print("Successfully created empty review decisions file.")
+        print(f"  Quotation ID     : {pkg.quotation_id}")
+        print(f"  Review File Path : {get_display_path(review_file)}")
+        print(f"  Reviewer         : {args.reviewer}")
+        print(f"  Decision Count   : 0")
+
+    except Exception as e:
+        print(f"Error creating review decisions file: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+def handle_record_review(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        # Validate enum decision trước khi ghi file
+        allowed_decisions = {"approved", "rejected", "edited"}
+        if args.decision not in allowed_decisions:
+            raise ValueError(f"Invalid decision option '{args.decision}'. Must be approved, rejected or edited.")
+
+        # Xử lý overrides cho edited decision
+        field_overrides = None
+        if args.decision == "edited":
+            from mep_quotation.review import ReviewFieldOverridesModel
+            
+            # Chuẩn hóa currency trước khi validate
+            currency = args.currency
+            if currency:
+                currency = currency.strip().upper()
+
+            field_overrides = ReviewFieldOverridesModel(
+                material_code=args.material_code,
+                description=args.description,
+                brand=args.brand,
+                unit=args.unit,
+                quantity=args.quantity,
+                unit_price=args.unit_price,
+                currency=currency,
+                amount=args.amount
+            )
+
+        from mep_quotation.review import record_review_decision
+        record_review_decision(
+            package_path=package_path,
+            draft_item_id=args.draft_item_id,
+            decision_type=args.decision,
+            reviewer=args.reviewer,
+            reason=args.reason,
+            field_overrides=field_overrides,
+            overwrite=args.overwrite
+        )
+
+        print(f"Successfully recorded review decision for item '{args.draft_item_id}'.")
+    except Exception as e:
+        print(f"Error recording review decision: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+def handle_list_review(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+
+    try:
+        from mep_quotation.review import list_review_decisions
+        pkg = load_package_json(package_path)
+        
+        manifest = list_review_decisions(package_path)
+        
+        approved_count = 0
+        rejected_count = 0
+        edited_count = 0
+        for dec in manifest.decisions:
+            if dec.decision_type == "approved":
+                approved_count += 1
+            elif dec.decision_type == "rejected":
+                rejected_count += 1
+            elif dec.decision_type == "edited":
+                edited_count += 1
+
+        review_file = package_path / pkg.files.review_decisions
+
+        print("Successfully loaded review decisions statistics.")
+        print(f"  Quotation ID          : {pkg.quotation_id}")
+        print(f"  Decision Count        : {manifest.decision_count}")
+        print(f"  Approved Count        : {approved_count}")
+        print(f"  Rejected Count        : {rejected_count}")
+        print(f"  Edited Count          : {edited_count}")
+        print(f"  Review File Path      : {get_display_path(review_file)}")
+
+    except Exception as e:
+        print(f"Error loading review decisions list: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MEP Quotation Pipeline CLI Tool - Phase 9 Normalized Draft Layer"
+        description="MEP Quotation Pipeline CLI Tool - Phase 10 Human Review / Approval Layer"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Sub-commands")
 
@@ -628,6 +739,37 @@ def main():
     parser_draft.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_draft.add_argument("--overwrite", action="store_true", help="Ghi đè nếu normalized_draft.json đã tồn tại")
     parser_draft.set_defaults(func=handle_build_normalized_draft)
+
+    # Command create-review-file
+    parser_cr_review = subparsers.add_parser("create-review-file", help="Khởi tạo file review_decisions.json rỗng")
+    parser_cr_review.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_cr_review.add_argument("--reviewer", default="human", help="Reviewer mặc định")
+    parser_cr_review.add_argument("--overwrite", action="store_true", help="Ghi đè nếu file review đã tồn tại")
+    parser_cr_review.set_defaults(func=handle_create_review_file)
+
+    # Command record-review
+    parser_rec_review = subparsers.add_parser("record-review", help="Ghi nhận quyết định phê duyệt cho một draft item")
+    parser_rec_review.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_rec_review.add_argument("--draft-item-id", required=True, help="ID draft item cần review")
+    parser_rec_review.add_argument("--decision", required=True, help="Quyết định review (approved | rejected | edited)")
+    parser_rec_review.add_argument("--reviewer", default="human", help="Reviewer dòng này")
+    parser_rec_review.add_argument("--reason", help="Lý do phê duyệt/từ chối/chỉnh sửa")
+    parser_rec_review.add_argument("--overwrite", action="store_true", help="Ghi đè thay thế quyết định cũ")
+    # Override fields
+    parser_rec_review.add_argument("--material-code", help="Edited: Mã vật tư ghi đè")
+    parser_rec_review.add_argument("--description", help="Edited: Mô tả vật tư ghi đè")
+    parser_rec_review.add_argument("--brand", help="Edited: Thương hiệu ghi đè")
+    parser_rec_review.add_argument("--unit", help="Edited: Đơn vị tính ghi đè")
+    parser_rec_review.add_argument("--quantity", type=float, help="Edited: Số lượng ghi đè")
+    parser_rec_review.add_argument("--unit-price", type=float, help="Edited: Đơn giá ghi đè")
+    parser_rec_review.add_argument("--currency", help="Edited: Tiền tệ ghi đè")
+    parser_rec_review.add_argument("--amount", type=float, help="Edited: Thành tiền ghi đè")
+    parser_rec_review.set_defaults(func=handle_record_review)
+
+    # Command list-review
+    parser_lst_review = subparsers.add_parser("list-review", help="Hiển thị thống kê các quyết định rà soát")
+    parser_lst_review.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_lst_review.set_defaults(func=handle_list_review)
 
     args = parser.parse_args()
     args.func(args)

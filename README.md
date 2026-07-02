@@ -112,33 +112,55 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
    python -m mep_quotation.cli.main build-normalized-draft data/suppliers/AUT/2026/2026-06-20_001 --overwrite
    ```
 
-9. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
-   ```bash
-   python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
-   ```
-
-10. **Kiểm Tra Tính Hợp Lệ Của Gói:**
-   ```bash
-   python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-05-20_001
-   ```
-
-11. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
+ 9. **Ghi Nhận Quyết Định Phê Duyệt / Rà Soát (Human Review Decisions Layer):**
+    *Khởi tạo file review trống:*
     ```bash
-    python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
+    python -m mep_quotation.cli.main create-review-file data/suppliers/AUT/2026/2026-06-20_001 --reviewer "human" --overwrite
+    ```
+    *Ghi nhận quyết định phê duyệt (approved):*
+    ```bash
+    python -m mep_quotation.cli.main record-review data/suppliers/AUT/2026/2026-06-20_001 --draft-item-id AUT_20260620_001_DRAFTITEM_0001 --decision approved --reason "Dữ liệu khớp chuẩn"
+    ```
+    *Ghi nhận quyết định từ chối (rejected):*
+    ```bash
+    python -m mep_quotation.cli.main record-review data/suppliers/AUT/2026/2026-06-20_001 --draft-item-id AUT_20260620_001_DRAFTITEM_0002 --decision rejected --reason "Dòng vật tư rác"
+    ```
+    *Ghi nhận quyết định chỉnh sửa (edited) với các trường ghi đè:*
+    ```bash
+    python -m mep_quotation.cli.main record-review data/suppliers/AUT/2026/2026-06-20_001 --draft-item-id AUT_20260620_001_DRAFTITEM_0003 --decision edited --reason "Sai đơn giá thực tế" --unit-price 150000 --currency VND --amount 750000
+    ```
+    *Xem thống kê các quyết định rà soát:*
+    ```bash
+    python -m mep_quotation.cli.main list-review data/suppliers/AUT/2026/2026-06-20_001
     ```
 
-12. **Xây Dựng Lại Chỉ Mục Vật Tư:**
+10. **Tạo Gói Báo Giá Mới (Khởi tạo package rỗng):**
     ```bash
-    python -m mep_quotation.cli.main build-index
-  
-    # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
-    python -m mep_quotation.cli.main build-index --strict
+    python -m mep_quotation.cli.main create-package --supplier AUT --date 2026-05-20
     ```
 
-13. **Tìm Kiếm Vật Tư:**
+11. **Kiểm Tra Tính Hợp Lệ Của Gói:**
     ```bash
-    python -m mep_quotation.cli.main search-material "CV-3X2.5"
+    python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-05-20_001
     ```
+
+12. **Ghi Nhận Chỉnh Sửa Dữ Liệu:**
+     ```bash
+     python -m mep_quotation.cli.main record-correction data/suppliers/AUT/2026/2026-05-20_001 --field "items[0].unit_price" --old 18500 --new 19200 --reason "Supplier revised quotation"
+     ```
+
+13. **Xây Dựng Lại Chỉ Mục Vật Tư:**
+     ```bash
+     python -m mep_quotation.cli.main build-index
+   
+     # Hoặc chạy ở chế độ nghiêm ngặt (dừng và báo lỗi ngay khi có file normalized lỗi):
+     python -m mep_quotation.cli.main build-index --strict
+     ```
+
+14. **Tìm Kiếm Vật Tư:**
+     ```bash
+     python -m mep_quotation.cli.main search-material "CV-3X2.5"
+     ```
 
 ## Chạy Bộ Kiểm Thử (Tests)
 

@@ -30,7 +30,10 @@ from mep_quotation.spec.models import (
     ItemCandidateManifestModel,
     NormalizedDraftEvidenceModel,
     NormalizedDraftItemModel,
-    NormalizedDraftModel
+    NormalizedDraftModel,
+    ReviewFieldOverridesModel,
+    ReviewDecisionModel,
+    ReviewDecisionsFileModel
 )
 from mep_quotation.spec.validators import (
     validate_package_data,
