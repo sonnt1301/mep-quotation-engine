@@ -1,0 +1,4899 @@
+{
+  "candidate_count": 195,
+  "candidates": [
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0001",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo phẳng Φ22",
+      "evidence": {
+        "end_offset": 266,
+        "source_path": "text/quotation.md",
+        "start_offset": 247,
+        "text": "Đèn báo phẳng Φ22 \n"
+      },
+      "line_number": 37,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo phẳng Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0002",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo 220V AC/DC",
+      "evidence": {
+        "end_offset": 339,
+        "source_path": "text/quotation.md",
+        "start_offset": 319,
+        "text": "Đèn báo 220V AC/DC \n"
+      },
+      "line_number": 43,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo 220V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0003",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo 24V AC/DC",
+      "evidence": {
+        "end_offset": 594,
+        "source_path": "text/quotation.md",
+        "start_offset": 576,
+        "text": "Đèn báo 24V AC/DC\n"
+      },
+      "line_number": 72,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo 24V AC/DC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0004",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo 110V AC/DC",
+      "evidence": {
+        "end_offset": 949,
+        "source_path": "text/quotation.md",
+        "start_offset": 930,
+        "text": "Đèn báo 110V AC/DC\n"
+      },
+      "line_number": 101,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo 110V AC/DC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0005",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo UNIBODY 220V AC",
+      "evidence": {
+        "end_offset": 1260,
+        "source_path": "text/quotation.md",
+        "start_offset": 1236,
+        "text": "Đèn báo UNIBODY 220V AC\n"
+      },
+      "line_number": 126,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo UNIBODY 220V AC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0006",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo UNIBODY 24V AC/DC",
+      "evidence": {
+        "end_offset": 1628,
+        "source_path": "text/quotation.md",
+        "start_offset": 1601,
+        "text": "Đèn báo UNIBODY 24V AC/DC \n"
+      },
+      "line_number": 155,
+      "material_code_candidate": null,
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo UNIBODY 24V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0007",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn không đèn Φ22",
+      "evidence": {
+        "end_offset": 2101,
+        "source_path": "text/quotation.md",
+        "start_offset": 2077,
+        "text": "Nút nhấn không đèn Φ22 \n"
+      },
+      "line_number": 199,
+      "material_code_candidate": null,
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn không đèn Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0008",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, không đèn, Φ22",
+      "evidence": {
+        "end_offset": 2195,
+        "source_path": "text/quotation.md",
+        "start_offset": 2165,
+        "text": "Nút nhấn nhả, không đèn, Φ22 \n"
+      },
+      "line_number": 206,
+      "material_code_candidate": null,
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, không đèn, Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0009",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn giữ, không đèn, Φ22",
+      "evidence": {
+        "end_offset": 3506,
+        "source_path": "text/quotation.md",
+        "start_offset": 3477,
+        "text": "Nút nhấn giữ, không đèn, Φ22\n"
+      },
+      "line_number": 369,
+      "material_code_candidate": null,
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn giữ, không đèn, Φ22\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0010",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn có đèn Φ22",
+      "evidence": {
+        "end_offset": 3772,
+        "source_path": "text/quotation.md",
+        "start_offset": 3751,
+        "text": "Nút nhấn có đèn Φ22 \n"
+      },
+      "line_number": 391,
+      "material_code_candidate": null,
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn có đèn Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0011",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, có đèn, 220V AC/DC",
+      "evidence": {
+        "end_offset": 3870,
+        "source_path": "text/quotation.md",
+        "start_offset": 3836,
+        "text": "Nút nhấn nhả, có đèn, 220V AC/DC \n"
+      },
+      "line_number": 398,
+      "material_code_candidate": null,
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, có đèn, 220V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0012",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, có đèn, 24V AC/DC",
+      "evidence": {
+        "end_offset": 4317,
+        "source_path": "text/quotation.md",
+        "start_offset": 4284,
+        "text": "Nút nhấn nhả, có đèn, 24V AC/DC \n"
+      },
+      "line_number": 436,
+      "material_code_candidate": null,
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, có đèn, 24V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0013",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn giữ, có đèn, 220V AC/DC",
+      "evidence": {
+        "end_offset": 4756,
+        "source_path": "text/quotation.md",
+        "start_offset": 4722,
+        "text": "Nút nhấn giữ, có đèn, 220V AC/DC \n"
+      },
+      "line_number": 473,
+      "material_code_candidate": null,
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn giữ, có đèn, 220V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0014",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn giữ, có đèn, 24V AC/DC",
+      "evidence": {
+        "end_offset": 5016,
+        "source_path": "text/quotation.md",
+        "start_offset": 4983,
+        "text": "Nút nhấn giữ, có đèn, 24V AC/DC \n"
+      },
+      "line_number": 496,
+      "material_code_candidate": null,
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn giữ, có đèn, 24V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0015",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn có đèn Φ22",
+      "evidence": {
+        "end_offset": 5343,
+        "source_path": "text/quotation.md",
+        "start_offset": 5322,
+        "text": "Nút nhấn có đèn Φ22 \n"
+      },
+      "line_number": 530,
+      "material_code_candidate": null,
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn có đèn Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0016",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, có đèn, 24V AC/DC",
+      "evidence": {
+        "end_offset": 6727,
+        "source_path": "text/quotation.md",
+        "start_offset": 6695,
+        "text": "Nút nhấn nhả, có đèn, 24V AC/DC\n"
+      },
+      "line_number": 651,
+      "material_code_candidate": null,
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, có đèn, 24V AC/DC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0017",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn giữ, có đèn, 24V AC/DC",
+      "evidence": {
+        "end_offset": 6759,
+        "source_path": "text/quotation.md",
+        "start_offset": 6727,
+        "text": "Nút nhấn giữ, có đèn, 24V AC/DC\n"
+      },
+      "line_number": 652,
+      "material_code_candidate": null,
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn giữ, có đèn, 24V AC/DC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0018",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, có đèn, 220V AC/DC",
+      "evidence": {
+        "end_offset": 6792,
+        "source_path": "text/quotation.md",
+        "start_offset": 6759,
+        "text": "Nút nhấn nhả, có đèn, 220V AC/DC\n"
+      },
+      "line_number": 653,
+      "material_code_candidate": null,
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, có đèn, 220V AC/DC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0019",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn giữ, có đèn, 220V AC/DC",
+      "evidence": {
+        "end_offset": 6826,
+        "source_path": "text/quotation.md",
+        "start_offset": 6792,
+        "text": "Nút nhấn giữ, có đèn, 220V AC/DC \n"
+      },
+      "line_number": 654,
+      "material_code_candidate": null,
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn giữ, có đèn, 220V AC/DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0020",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Công tắc xoay Φ22",
+      "evidence": {
+        "end_offset": 6948,
+        "source_path": "text/quotation.md",
+        "start_offset": 6929,
+        "text": "Công tắc xoay Φ22 \n"
+      },
+      "line_number": 678,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Công tắc xoay Φ22 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0021",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Công tắc xoay",
+      "evidence": {
+        "end_offset": 7028,
+        "source_path": "text/quotation.md",
+        "start_offset": 7013,
+        "text": "Công tắc xoay \n"
+      },
+      "line_number": 685,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Công tắc xoay \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0022",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Công tắc xoay có khóa",
+      "evidence": {
+        "end_offset": 7241,
+        "source_path": "text/quotation.md",
+        "start_offset": 7218,
+        "text": "Công tắc xoay có khóa \n"
+      },
+      "line_number": 702,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Công tắc xoay có khóa \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0023",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Đèn báo, Φ16, loại tròn",
+      "evidence": {
+        "end_offset": 7551,
+        "source_path": "text/quotation.md",
+        "start_offset": 7526,
+        "text": "Đèn báo, Φ16, loại tròn \n"
+      },
+      "line_number": 727,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Đèn báo, Φ16, loại tròn \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0024",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn nhả, không đèn, Φ16, loại tròn",
+      "evidence": {
+        "end_offset": 7755,
+        "source_path": "text/quotation.md",
+        "start_offset": 7714,
+        "text": "Nút nhấn nhả, không đèn, Φ16, loại tròn \n"
+      },
+      "line_number": 743,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn nhả, không đèn, Φ16, loại tròn \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0025",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Nút nhấn có đèn, Φ16, 24VDC, loại tròn",
+      "evidence": {
+        "end_offset": 7969,
+        "source_path": "text/quotation.md",
+        "start_offset": 7929,
+        "text": "Nút nhấn có đèn, Φ16, 24VDC, loại tròn \n"
+      },
+      "line_number": 760,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Nút nhấn có đèn, Φ16, 24VDC, loại tròn \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0026",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Công tắc xoay, Φ16",
+      "evidence": {
+        "end_offset": 8340,
+        "source_path": "text/quotation.md",
+        "start_offset": 8321,
+        "text": "Công tắc xoay, Φ16\n"
+      },
+      "line_number": 792,
+      "material_code_candidate": null,
+      "page_number": 7,
+      "quantity_candidate": null,
+      "raw_line": "Công tắc xoay, Φ16\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0027",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Bóng đèn LED",
+      "evidence": {
+        "end_offset": 8579,
+        "source_path": "text/quotation.md",
+        "start_offset": 8564,
+        "text": "Bóng đèn LED  \n"
+      },
+      "line_number": 818,
+      "material_code_candidate": null,
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "Bóng đèn LED  \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0028",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "LSED-2RN",
+      "evidence": {
+        "end_offset": 8798,
+        "source_path": "text/quotation.md",
+        "start_offset": 8788,
+        "text": "LSED-2RN \n"
+      },
+      "line_number": 844,
+      "material_code_candidate": "LSED-2RN",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "LSED-2RN \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0029",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "LSED-2YN",
+      "evidence": {
+        "end_offset": 8842,
+        "source_path": "text/quotation.md",
+        "start_offset": 8832,
+        "text": "LSED-2YN \n"
+      },
+      "line_number": 849,
+      "material_code_candidate": "LSED-2YN",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "LSED-2YN \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0030",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "LSED-2GN",
+      "evidence": {
+        "end_offset": 8888,
+        "source_path": "text/quotation.md",
+        "start_offset": 8878,
+        "text": "LSED-2GN \n"
+      },
+      "line_number": 854,
+      "material_code_candidate": "LSED-2GN",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "LSED-2GN \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0031",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "LSED-2SN",
+      "evidence": {
+        "end_offset": 8937,
+        "source_path": "text/quotation.md",
+        "start_offset": 8927,
+        "text": "LSED-2SN \n"
+      },
+      "line_number": 859,
+      "material_code_candidate": "LSED-2SN",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "LSED-2SN \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0032",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "YW-EW20",
+      "evidence": {
+        "end_offset": 9103,
+        "source_path": "text/quotation.md",
+        "start_offset": 9094,
+        "text": "YW-EW20 \n"
+      },
+      "line_number": 876,
+      "material_code_candidate": "EW20",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "YW-EW20 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0033",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "YW-EW02",
+      "evidence": {
+        "end_offset": 9151,
+        "source_path": "text/quotation.md",
+        "start_offset": 9142,
+        "text": "YW-EW02 \n"
+      },
+      "line_number": 880,
+      "material_code_candidate": "EW02",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "YW-EW02 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0034",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "YW-EW11",
+      "evidence": {
+        "end_offset": 9199,
+        "source_path": "text/quotation.md",
+        "start_offset": 9190,
+        "text": "YW-EW11 \n"
+      },
+      "line_number": 884,
+      "material_code_candidate": "EW11",
+      "page_number": 8,
+      "quantity_candidate": null,
+      "raw_line": "YW-EW11 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0035",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "5 chân dẹp, có đèn, 12A/24V DC",
+      "evidence": {
+        "end_offset": 9603,
+        "source_path": "text/quotation.md",
+        "start_offset": 9571,
+        "text": "5 chân dẹp, có đèn, 12A/24V DC \n"
+      },
+      "line_number": 928,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "5 chân dẹp, có đèn, 12A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0036",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "5 chân dẹp, có đèn, 12A/24V AC",
+      "evidence": {
+        "end_offset": 9676,
+        "source_path": "text/quotation.md",
+        "start_offset": 9644,
+        "text": "5 chân dẹp, có đèn, 12A/24V AC \n"
+      },
+      "line_number": 932,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "5 chân dẹp, có đèn, 12A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0037",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "5 chân dẹp, có đèn, 12A/110V AC",
+      "evidence": {
+        "end_offset": 9751,
+        "source_path": "text/quotation.md",
+        "start_offset": 9718,
+        "text": "5 chân dẹp, có đèn, 12A/110V AC \n"
+      },
+      "line_number": 936,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "5 chân dẹp, có đèn, 12A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0038",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "5 chân dẹp, có đèn, 12A/230V AC",
+      "evidence": {
+        "end_offset": 9826,
+        "source_path": "text/quotation.md",
+        "start_offset": 9793,
+        "text": "5 chân dẹp, có đèn, 12A/230V AC \n"
+      },
+      "line_number": 940,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "5 chân dẹp, có đèn, 12A/230V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0039",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 8A/24V DC",
+      "evidence": {
+        "end_offset": 9912,
+        "source_path": "text/quotation.md",
+        "start_offset": 9881,
+        "text": "8 chân dẹp, có đèn, 8A/24V DC \n"
+      },
+      "line_number": 946,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 8A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0040",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 8A/24V AC",
+      "evidence": {
+        "end_offset": 9984,
+        "source_path": "text/quotation.md",
+        "start_offset": 9953,
+        "text": "8 chân dẹp, có đèn, 8A/24V AC \n"
+      },
+      "line_number": 950,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 8A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0041",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 8A/110V AC",
+      "evidence": {
+        "end_offset": 10058,
+        "source_path": "text/quotation.md",
+        "start_offset": 10026,
+        "text": "8 chân dẹp, có đèn, 8A/110V AC \n"
+      },
+      "line_number": 954,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 8A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0042",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 8A/230V AC",
+      "evidence": {
+        "end_offset": 10132,
+        "source_path": "text/quotation.md",
+        "start_offset": 10100,
+        "text": "8 chân dẹp, có đèn, 8A/230V AC \n"
+      },
+      "line_number": 958,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 8A/230V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0043",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 5A/24V DC",
+      "evidence": {
+        "end_offset": 10218,
+        "source_path": "text/quotation.md",
+        "start_offset": 10187,
+        "text": "8 chân dẹp, có đèn, 5A/24V DC \n"
+      },
+      "line_number": 964,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 5A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0044",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 5A/24V AC",
+      "evidence": {
+        "end_offset": 10290,
+        "source_path": "text/quotation.md",
+        "start_offset": 10259,
+        "text": "8 chân dẹp, có đèn, 5A/24V AC \n"
+      },
+      "line_number": 968,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 5A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0045",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 5A/115V AC",
+      "evidence": {
+        "end_offset": 10364,
+        "source_path": "text/quotation.md",
+        "start_offset": 10332,
+        "text": "8 chân dẹp, có đèn, 5A/115V AC \n"
+      },
+      "line_number": 972,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 5A/115V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0046",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 5A/230V AC",
+      "evidence": {
+        "end_offset": 10438,
+        "source_path": "text/quotation.md",
+        "start_offset": 10406,
+        "text": "8 chân dẹp, có đèn, 5A/230V AC \n"
+      },
+      "line_number": 976,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 5A/230V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0047",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 3A/24V DC",
+      "evidence": {
+        "end_offset": 10525,
+        "source_path": "text/quotation.md",
+        "start_offset": 10493,
+        "text": "14 chân dẹp, có đèn, 3A/24V DC \n"
+      },
+      "line_number": 982,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 3A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0048",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 3A/24V AC",
+      "evidence": {
+        "end_offset": 10598,
+        "source_path": "text/quotation.md",
+        "start_offset": 10566,
+        "text": "14 chân dẹp, có đèn, 3A/24V AC \n"
+      },
+      "line_number": 986,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 3A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0049",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 3A/115V AC",
+      "evidence": {
+        "end_offset": 10673,
+        "source_path": "text/quotation.md",
+        "start_offset": 10640,
+        "text": "14 chân dẹp, có đèn, 3A/115V AC \n"
+      },
+      "line_number": 990,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 3A/115V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0050",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 3A/230V AC",
+      "evidence": {
+        "end_offset": 10748,
+        "source_path": "text/quotation.md",
+        "start_offset": 10715,
+        "text": "14 chân dẹp, có đèn, 3A/230V AC \n"
+      },
+      "line_number": 994,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 3A/230V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0051",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 10A/24V DC",
+      "evidence": {
+        "end_offset": 10832,
+        "source_path": "text/quotation.md",
+        "start_offset": 10800,
+        "text": "8 chân dẹp, có đèn, 10A/24V DC \n"
+      },
+      "line_number": 1000,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 10A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0052",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 10A/24V AC",
+      "evidence": {
+        "end_offset": 10902,
+        "source_path": "text/quotation.md",
+        "start_offset": 10870,
+        "text": "8 chân dẹp, có đèn, 10A/24V AC \n"
+      },
+      "line_number": 1004,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 10A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0053",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 10A/110V AC",
+      "evidence": {
+        "end_offset": 10974,
+        "source_path": "text/quotation.md",
+        "start_offset": 10941,
+        "text": "8 chân dẹp, có đèn, 10A/110V AC \n"
+      },
+      "line_number": 1008,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 10A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0054",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp, có đèn, 10A/220V AC",
+      "evidence": {
+        "end_offset": 11046,
+        "source_path": "text/quotation.md",
+        "start_offset": 11013,
+        "text": "8 chân dẹp, có đèn, 10A/220V AC \n"
+      },
+      "line_number": 1012,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp, có đèn, 10A/220V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0055",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 6A/24V DC",
+      "evidence": {
+        "end_offset": 11130,
+        "source_path": "text/quotation.md",
+        "start_offset": 11098,
+        "text": "14 chân dẹp, có đèn, 6A/24V DC \n"
+      },
+      "line_number": 1018,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 6A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0056",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 6A/24V AC",
+      "evidence": {
+        "end_offset": 11200,
+        "source_path": "text/quotation.md",
+        "start_offset": 11168,
+        "text": "14 chân dẹp, có đèn, 6A/24V AC \n"
+      },
+      "line_number": 1022,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 6A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0057",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 6A/110V AC",
+      "evidence": {
+        "end_offset": 11272,
+        "source_path": "text/quotation.md",
+        "start_offset": 11239,
+        "text": "14 chân dẹp, có đèn, 6A/110V AC \n"
+      },
+      "line_number": 1026,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 6A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0058",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp, có đèn, 6A/220V AC",
+      "evidence": {
+        "end_offset": 11344,
+        "source_path": "text/quotation.md",
+        "start_offset": 11311,
+        "text": "14 chân dẹp, có đèn, 6A/220V AC \n"
+      },
+      "line_number": 1030,
+      "material_code_candidate": null,
+      "page_number": 9,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp, có đèn, 6A/220V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0059",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH2B-ULDC24",
+      "evidence": {
+        "end_offset": 11545,
+        "source_path": "text/quotation.md",
+        "start_offset": 11532,
+        "text": "RH2B-ULDC24 \n"
+      },
+      "line_number": 1052,
+      "material_code_candidate": "ULDC24",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH2B-ULDC24 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0060",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp lớn, có đèn, 10A/24V DC",
+      "evidence": {
+        "end_offset": 11581,
+        "source_path": "text/quotation.md",
+        "start_offset": 11545,
+        "text": "8 chân dẹp lớn, có đèn, 10A/24V DC \n"
+      },
+      "line_number": 1053,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp lớn, có đèn, 10A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0061",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH2B-ULAC24",
+      "evidence": {
+        "end_offset": 11622,
+        "source_path": "text/quotation.md",
+        "start_offset": 11609,
+        "text": "RH2B-ULAC24 \n"
+      },
+      "line_number": 1056,
+      "material_code_candidate": "ULAC24",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH2B-ULAC24 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0062",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp lớn, có đèn, 10A/24V AC",
+      "evidence": {
+        "end_offset": 11658,
+        "source_path": "text/quotation.md",
+        "start_offset": 11622,
+        "text": "8 chân dẹp lớn, có đèn, 10A/24V AC \n"
+      },
+      "line_number": 1057,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp lớn, có đèn, 10A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0063",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH2B-ULAC110-120",
+      "evidence": {
+        "end_offset": 11704,
+        "source_path": "text/quotation.md",
+        "start_offset": 11686,
+        "text": "RH2B-ULAC110-120 \n"
+      },
+      "line_number": 1060,
+      "material_code_candidate": "ULAC110",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH2B-ULAC110-120 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0064",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp lớn, có đèn, 10A/110V AC",
+      "evidence": {
+        "end_offset": 11741,
+        "source_path": "text/quotation.md",
+        "start_offset": 11704,
+        "text": "8 chân dẹp lớn, có đèn, 10A/110V AC \n"
+      },
+      "line_number": 1061,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp lớn, có đèn, 10A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0065",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH2B-ULAC220-240",
+      "evidence": {
+        "end_offset": 11787,
+        "source_path": "text/quotation.md",
+        "start_offset": 11769,
+        "text": "RH2B-ULAC220-240 \n"
+      },
+      "line_number": 1064,
+      "material_code_candidate": "ULAC220",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH2B-ULAC220-240 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0066",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "8 chân dẹp lớn, có đèn, 10A/220V AC",
+      "evidence": {
+        "end_offset": 11824,
+        "source_path": "text/quotation.md",
+        "start_offset": 11787,
+        "text": "8 chân dẹp lớn, có đèn, 10A/220V AC \n"
+      },
+      "line_number": 1065,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "8 chân dẹp lớn, có đèn, 10A/220V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0067",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH4B-ULDC24",
+      "evidence": {
+        "end_offset": 11879,
+        "source_path": "text/quotation.md",
+        "start_offset": 11866,
+        "text": "RH4B-ULDC24 \n"
+      },
+      "line_number": 1070,
+      "material_code_candidate": "ULDC24",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH4B-ULDC24 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0068",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp lớn, có đèn, 10A/24V DC",
+      "evidence": {
+        "end_offset": 11916,
+        "source_path": "text/quotation.md",
+        "start_offset": 11879,
+        "text": "14 chân dẹp lớn, có đèn, 10A/24V DC \n"
+      },
+      "line_number": 1071,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp lớn, có đèn, 10A/24V DC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0069",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH4B-ULAC24",
+      "evidence": {
+        "end_offset": 11957,
+        "source_path": "text/quotation.md",
+        "start_offset": 11944,
+        "text": "RH4B-ULAC24 \n"
+      },
+      "line_number": 1074,
+      "material_code_candidate": "ULAC24",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH4B-ULAC24 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0070",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp lớn, có đèn, 10A/24V AC",
+      "evidence": {
+        "end_offset": 11994,
+        "source_path": "text/quotation.md",
+        "start_offset": 11957,
+        "text": "14 chân dẹp lớn, có đèn, 10A/24V AC \n"
+      },
+      "line_number": 1075,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp lớn, có đèn, 10A/24V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0071",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH4B-ULAC110",
+      "evidence": {
+        "end_offset": 12036,
+        "source_path": "text/quotation.md",
+        "start_offset": 12022,
+        "text": "RH4B-ULAC110 \n"
+      },
+      "line_number": 1078,
+      "material_code_candidate": "ULAC110",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH4B-ULAC110 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0072",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp lớn, có đèn, 10A/110V AC",
+      "evidence": {
+        "end_offset": 12074,
+        "source_path": "text/quotation.md",
+        "start_offset": 12036,
+        "text": "14 chân dẹp lớn, có đèn, 10A/110V AC \n"
+      },
+      "line_number": 1079,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp lớn, có đèn, 10A/110V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0073",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "RH4B-ULAC220",
+      "evidence": {
+        "end_offset": 12116,
+        "source_path": "text/quotation.md",
+        "start_offset": 12102,
+        "text": "RH4B-ULAC220 \n"
+      },
+      "line_number": 1082,
+      "material_code_candidate": "ULAC220",
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "RH4B-ULAC220 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0074",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "14 chân dẹp lớn, có đèn, 10A/220V AC",
+      "evidence": {
+        "end_offset": 12154,
+        "source_path": "text/quotation.md",
+        "start_offset": 12116,
+        "text": "14 chân dẹp lớn, có đèn, 10A/220V AC \n"
+      },
+      "line_number": 1083,
+      "material_code_candidate": null,
+      "page_number": 10,
+      "quantity_candidate": null,
+      "raw_line": "14 chân dẹp lớn, có đèn, 10A/220V AC \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0075",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "* Truyền thông RS-485, Profibus-",
+      "evidence": {
+        "end_offset": 13658,
+        "source_path": "text/quotation.md",
+        "start_offset": 13625,
+        "text": "* Truyền thông RS-485, Profibus-\n"
+      },
+      "line_number": 1212,
+      "material_code_candidate": "RS-485",
+      "page_number": 12,
+      "quantity_candidate": null,
+      "raw_line": "* Truyền thông RS-485, Profibus-\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0076",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "* Tích hợp sẵn cổng giao tiếp RS-485",
+      "evidence": {
+        "end_offset": 16020,
+        "source_path": "text/quotation.md",
+        "start_offset": 15982,
+        "text": "* Tích hợp sẵn cổng giao tiếp RS-485 \n"
+      },
+      "line_number": 1458,
+      "material_code_candidate": "RS-485",
+      "page_number": 13,
+      "quantity_candidate": null,
+      "raw_line": "* Tích hợp sẵn cổng giao tiếp RS-485 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0077",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "đồng bộ (PMSM)",
+      "evidence": {
+        "end_offset": 16268,
+        "source_path": "text/quotation.md",
+        "start_offset": 16252,
+        "text": "đồng bộ (PMSM) \n"
+      },
+      "line_number": 1471,
+      "material_code_candidate": null,
+      "page_number": 13,
+      "quantity_candidate": null,
+      "raw_line": "đồng bộ (PMSM) \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0078",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "cổng RS-485",
+      "evidence": {
+        "end_offset": 16321,
+        "source_path": "text/quotation.md",
+        "start_offset": 16308,
+        "text": "cổng RS-485 \n"
+      },
+      "line_number": 1474,
+      "material_code_candidate": "RS-485",
+      "page_number": 13,
+      "quantity_candidate": null,
+      "raw_line": "cổng RS-485 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0079",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "* Tích hợp săn RS-485.",
+      "evidence": {
+        "end_offset": 17963,
+        "source_path": "text/quotation.md",
+        "start_offset": 17939,
+        "text": "* Tích hợp săn RS-485. \n"
+      },
+      "line_number": 1646,
+      "material_code_candidate": "RS-485",
+      "page_number": 14,
+      "quantity_candidate": null,
+      "raw_line": "* Tích hợp săn RS-485. \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0080",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "* Tích hợp sẵn bộ hãm tốc",
+      "evidence": {
+        "end_offset": 18106,
+        "source_path": "text/quotation.md",
+        "start_offset": 18079,
+        "text": "* Tích hợp sẵn bộ hãm tốc \n"
+      },
+      "line_number": 1654,
+      "material_code_candidate": null,
+      "page_number": 14,
+      "quantity_candidate": null,
+      "raw_line": "* Tích hợp sẵn bộ hãm tốc \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0081",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "- Tích hợp sẵn bộ lọc nhiễu EMC Filter.",
+      "evidence": {
+        "end_offset": 21112,
+        "source_path": "text/quotation.md",
+        "start_offset": 21071,
+        "text": "- Tích hợp sẵn bộ lọc nhiễu EMC Filter. \n"
+      },
+      "line_number": 2010,
+      "material_code_candidate": null,
+      "page_number": 15,
+      "quantity_candidate": null,
+      "raw_line": "- Tích hợp sẵn bộ lọc nhiễu EMC Filter. \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0082",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "- Tích hợp sẵn cuộn kháng một chiều",
+      "evidence": {
+        "end_offset": 21151,
+        "source_path": "text/quotation.md",
+        "start_offset": 21114,
+        "text": "- Tích hợp sẵn cuộn kháng một chiều \n"
+      },
+      "line_number": 2012,
+      "material_code_candidate": null,
+      "page_number": 15,
+      "quantity_candidate": null,
+      "raw_line": "- Tích hợp sẵn cuộn kháng một chiều \n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0083",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "- Tích hợp 2 cổng truyền thông RS-485.",
+      "evidence": {
+        "end_offset": 21247,
+        "source_path": "text/quotation.md",
+        "start_offset": 21207,
+        "text": "- Tích hợp 2 cổng truyền thông RS-485. \n"
+      },
+      "line_number": 2018,
+      "material_code_candidate": "RS-485",
+      "page_number": 15,
+      "quantity_candidate": null,
+      "raw_line": "- Tích hợp 2 cổng truyền thông RS-485. \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0084",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "FRN18.5AR1M-4A",
+      "evidence": {
+        "end_offset": 21531,
+        "source_path": "text/quotation.md",
+        "start_offset": 21515,
+        "text": "FRN18.5AR1M-4A \n"
+      },
+      "line_number": 2053,
+      "material_code_candidate": "FRN18",
+      "page_number": 15,
+      "quantity_candidate": null,
+      "raw_line": "FRN18.5AR1M-4A \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0085",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ hãm, điện trở hãm",
+      "evidence": {
+        "end_offset": 22421,
+        "source_path": "text/quotation.md",
+        "start_offset": 22399,
+        "text": "Bộ hãm, điện trở hãm \n"
+      },
+      "line_number": 2154,
+      "material_code_candidate": null,
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "Bộ hãm, điện trở hãm \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0086",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU37-4C",
+      "evidence": {
+        "end_offset": 22504,
+        "source_path": "text/quotation.md",
+        "start_offset": 22495,
+        "text": "BU37-4C \n"
+      },
+      "line_number": 2175,
+      "material_code_candidate": "BU37",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU37-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0087",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU37-4C",
+      "evidence": {
+        "end_offset": 22530,
+        "source_path": "text/quotation.md",
+        "start_offset": 22521,
+        "text": "BU37-4C \n"
+      },
+      "line_number": 2181,
+      "material_code_candidate": "BU37",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU37-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0088",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU55-4C",
+      "evidence": {
+        "end_offset": 22556,
+        "source_path": "text/quotation.md",
+        "start_offset": 22547,
+        "text": "BU55-4C \n"
+      },
+      "line_number": 2187,
+      "material_code_candidate": "BU55",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU55-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0089",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU55-4C",
+      "evidence": {
+        "end_offset": 22582,
+        "source_path": "text/quotation.md",
+        "start_offset": 22573,
+        "text": "BU55-4C \n"
+      },
+      "line_number": 2193,
+      "material_code_candidate": "BU55",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU55-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0090",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU90-4C",
+      "evidence": {
+        "end_offset": 22608,
+        "source_path": "text/quotation.md",
+        "start_offset": 22599,
+        "text": "BU90-4C \n"
+      },
+      "line_number": 2199,
+      "material_code_candidate": "BU90",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU90-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0091",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU90-4C",
+      "evidence": {
+        "end_offset": 22634,
+        "source_path": "text/quotation.md",
+        "start_offset": 22625,
+        "text": "BU90-4C \n"
+      },
+      "line_number": 2205,
+      "material_code_candidate": "BU90",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU90-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0092",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU132-4C",
+      "evidence": {
+        "end_offset": 22661,
+        "source_path": "text/quotation.md",
+        "start_offset": 22651,
+        "text": "BU132-4C \n"
+      },
+      "line_number": 2211,
+      "material_code_candidate": "BU132",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU132-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0093",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU132-4C",
+      "evidence": {
+        "end_offset": 22689,
+        "source_path": "text/quotation.md",
+        "start_offset": 22679,
+        "text": "BU132-4C \n"
+      },
+      "line_number": 2217,
+      "material_code_candidate": "BU132",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU132-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0094",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22717,
+        "source_path": "text/quotation.md",
+        "start_offset": 22707,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2223,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0095",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22745,
+        "source_path": "text/quotation.md",
+        "start_offset": 22735,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2229,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0096",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22771,
+        "source_path": "text/quotation.md",
+        "start_offset": 22761,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2234,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0097",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22799,
+        "source_path": "text/quotation.md",
+        "start_offset": 22789,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2240,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0098",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22827,
+        "source_path": "text/quotation.md",
+        "start_offset": 22817,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2246,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0099",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22855,
+        "source_path": "text/quotation.md",
+        "start_offset": 22845,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2252,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0100",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "BU220-4C",
+      "evidence": {
+        "end_offset": 22882,
+        "source_path": "text/quotation.md",
+        "start_offset": 22872,
+        "text": "BU220-4C \n"
+      },
+      "line_number": 2258,
+      "material_code_candidate": "BU220",
+      "page_number": 16,
+      "quantity_candidate": null,
+      "raw_line": "BU220-4C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0101",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Cuộn kháng",
+      "evidence": {
+        "end_offset": 23271,
+        "source_path": "text/quotation.md",
+        "start_offset": 23259,
+        "text": "Cuộn kháng \n"
+      },
+      "line_number": 2288,
+      "material_code_candidate": null,
+      "page_number": 17,
+      "quantity_candidate": null,
+      "raw_line": "Cuộn kháng \n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0102",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "ACL-40C",
+      "evidence": {
+        "end_offset": 23315,
+        "source_path": "text/quotation.md",
+        "start_offset": 23306,
+        "text": "ACL-40C \n"
+      },
+      "line_number": 2291,
+      "material_code_candidate": "ACL-40C",
+      "page_number": 17,
+      "quantity_candidate": null,
+      "raw_line": "ACL-40C \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0103",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "ACL-70B",
+      "evidence": {
+        "end_offset": 23340,
+        "source_path": "text/quotation.md",
+        "start_offset": 23331,
+        "text": "ACL-70B \n"
+      },
+      "line_number": 2297,
+      "material_code_candidate": "ACL-70B",
+      "page_number": 17,
+      "quantity_candidate": null,
+      "raw_line": "ACL-70B \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0104",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "ACL-74B",
+      "evidence": {
+        "end_offset": 23365,
+        "source_path": "text/quotation.md",
+        "start_offset": 23356,
+        "text": "ACL-74B \n"
+      },
+      "line_number": 2303,
+      "material_code_candidate": "ACL-74B",
+      "page_number": 17,
+      "quantity_candidate": null,
+      "raw_line": "ACL-74B \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0105",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "OFL-160-4A",
+      "evidence": {
+        "end_offset": 25248,
+        "source_path": "text/quotation.md",
+        "start_offset": 25236,
+        "text": "OFL-160-4A \n"
+      },
+      "line_number": 2645,
+      "material_code_candidate": "OFL-160",
+      "page_number": 18,
+      "quantity_candidate": null,
+      "raw_line": "OFL-160-4A \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0106",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "OFL-200-4A",
+      "evidence": {
+        "end_offset": 25279,
+        "source_path": "text/quotation.md",
+        "start_offset": 25267,
+        "text": "OFL-200-4A \n"
+      },
+      "line_number": 2651,
+      "material_code_candidate": "OFL-200",
+      "page_number": 18,
+      "quantity_candidate": null,
+      "raw_line": "OFL-200-4A \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0107",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "OFL-220-4A",
+      "evidence": {
+        "end_offset": 25310,
+        "source_path": "text/quotation.md",
+        "start_offset": 25298,
+        "text": "OFL-220-4A \n"
+      },
+      "line_number": 2657,
+      "material_code_candidate": "OFL-220",
+      "page_number": 18,
+      "quantity_candidate": null,
+      "raw_line": "OFL-220-4A \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0108",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "OFL-280-4A",
+      "evidence": {
+        "end_offset": 25341,
+        "source_path": "text/quotation.md",
+        "start_offset": 25329,
+        "text": "OFL-280-4A \n"
+      },
+      "line_number": 2663,
+      "material_code_candidate": "OFL-280",
+      "page_number": 18,
+      "quantity_candidate": null,
+      "raw_line": "OFL-280-4A \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0109",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "MCCB",
+      "evidence": {
+        "end_offset": 25775,
+        "source_path": "text/quotation.md",
+        "start_offset": 25769,
+        "text": "MCCB \n"
+      },
+      "line_number": 2703,
+      "material_code_candidate": null,
+      "page_number": 20,
+      "quantity_candidate": null,
+      "raw_line": "MCCB \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0110",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "50, 60, 63,75,100",
+      "evidence": {
+        "end_offset": 26413,
+        "source_path": "text/quotation.md",
+        "start_offset": 26394,
+        "text": "50, 60, 63,75,100 \n"
+      },
+      "line_number": 2828,
+      "material_code_candidate": null,
+      "page_number": 20,
+      "quantity_candidate": null,
+      "raw_line": "50, 60, 63,75,100 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 6375100.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0111",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "MCCB",
+      "evidence": {
+        "end_offset": 27421,
+        "source_path": "text/quotation.md",
+        "start_offset": 27415,
+        "text": "MCCB \n"
+      },
+      "line_number": 2965,
+      "material_code_candidate": null,
+      "page_number": 21,
+      "quantity_candidate": null,
+      "raw_line": "MCCB \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0112",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ cho MCCB",
+      "evidence": {
+        "end_offset": 31579,
+        "source_path": "text/quotation.md",
+        "start_offset": 31550,
+        "text": "Khối tiếp điểm phụ cho MCCB \n"
+      },
+      "line_number": 3531,
+      "material_code_candidate": null,
+      "page_number": 24,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ cho MCCB \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0113",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm cảnh báo cho MCCB",
+      "evidence": {
+        "end_offset": 31897,
+        "source_path": "text/quotation.md",
+        "start_offset": 31863,
+        "text": "Khối tiếp điểm cảnh báo cho MCCB \n"
+      },
+      "line_number": 3553,
+      "material_code_candidate": null,
+      "page_number": 24,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm cảnh báo cho MCCB \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0114",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Cuộn cắt cho MCCB",
+      "evidence": {
+        "end_offset": 32230,
+        "source_path": "text/quotation.md",
+        "start_offset": 32211,
+        "text": "Cuộn cắt cho MCCB \n"
+      },
+      "line_number": 3575,
+      "material_code_candidate": null,
+      "page_number": 24,
+      "quantity_candidate": null,
+      "raw_line": "Cuộn cắt cho MCCB \n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0115",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "MCB (Dòng cắt tiêu chuẩn)",
+      "evidence": {
+        "end_offset": 33581,
+        "source_path": "text/quotation.md",
+        "start_offset": 33551,
+        "text": "   MCB (Dòng cắt tiêu chuẩn) \n"
+      },
+      "line_number": 3676,
+      "material_code_candidate": null,
+      "page_number": 25,
+      "quantity_candidate": null,
+      "raw_line": "   MCB (Dòng cắt tiêu chuẩn) \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0116",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "MCB (Dòng cắt cao)",
+      "evidence": {
+        "end_offset": 35371,
+        "source_path": "text/quotation.md",
+        "start_offset": 35348,
+        "text": "   MCB (Dòng cắt cao) \n"
+      },
+      "line_number": 3924,
+      "material_code_candidate": null,
+      "page_number": 26,
+      "quantity_candidate": null,
+      "raw_line": "   MCB (Dòng cắt cao) \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0117",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 37874,
+        "source_path": "text/quotation.md",
+        "start_offset": 37852,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4225,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0118",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 37960,
+        "source_path": "text/quotation.md",
+        "start_offset": 37938,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4234,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0119",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38022,
+        "source_path": "text/quotation.md",
+        "start_offset": 38000,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4239,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0120",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38114,
+        "source_path": "text/quotation.md",
+        "start_offset": 38092,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4248,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0121",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38201,
+        "source_path": "text/quotation.md",
+        "start_offset": 38179,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4257,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0122",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38670,
+        "source_path": "text/quotation.md",
+        "start_offset": 38648,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4305,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0123",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38759,
+        "source_path": "text/quotation.md",
+        "start_offset": 38737,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4317,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0124",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38821,
+        "source_path": "text/quotation.md",
+        "start_offset": 38799,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4322,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0125",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 38910,
+        "source_path": "text/quotation.md",
+        "start_offset": 38888,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4331,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0126",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30, 100/300/500/",
+      "evidence": {
+        "end_offset": 39000,
+        "source_path": "text/quotation.md",
+        "start_offset": 38978,
+        "text": "30, 100/300/500/1000 \n"
+      },
+      "line_number": 4343,
+      "material_code_candidate": null,
+      "page_number": 27,
+      "quantity_candidate": null,
+      "raw_line": "30, 100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0127",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39580,
+        "source_path": "text/quotation.md",
+        "start_offset": 39559,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4404,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0128",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39683,
+        "source_path": "text/quotation.md",
+        "start_offset": 39662,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4414,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0129",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39765,
+        "source_path": "text/quotation.md",
+        "start_offset": 39744,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4423,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0130",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39838,
+        "source_path": "text/quotation.md",
+        "start_offset": 39817,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4429,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0131",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39916,
+        "source_path": "text/quotation.md",
+        "start_offset": 39895,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4438,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0132",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 39987,
+        "source_path": "text/quotation.md",
+        "start_offset": 39966,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4446,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0133",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40097,
+        "source_path": "text/quotation.md",
+        "start_offset": 40076,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4453,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0134",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40197,
+        "source_path": "text/quotation.md",
+        "start_offset": 40176,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4463,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0135",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40277,
+        "source_path": "text/quotation.md",
+        "start_offset": 40256,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4470,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0136",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40361,
+        "source_path": "text/quotation.md",
+        "start_offset": 40340,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4477,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0137",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40431,
+        "source_path": "text/quotation.md",
+        "start_offset": 40410,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4485,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0138",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40487,
+        "source_path": "text/quotation.md",
+        "start_offset": 40466,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4490,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0139",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40543,
+        "source_path": "text/quotation.md",
+        "start_offset": 40522,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4495,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0140",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40618,
+        "source_path": "text/quotation.md",
+        "start_offset": 40597,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4503,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0141",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40679,
+        "source_path": "text/quotation.md",
+        "start_offset": 40658,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4508,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0142",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40740,
+        "source_path": "text/quotation.md",
+        "start_offset": 40719,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4513,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0143",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "30,100/300/500/",
+      "evidence": {
+        "end_offset": 40816,
+        "source_path": "text/quotation.md",
+        "start_offset": 40795,
+        "text": "30,100/300/500/1000 \n"
+      },
+      "line_number": 4521,
+      "material_code_candidate": null,
+      "page_number": 28,
+      "quantity_candidate": null,
+      "raw_line": "30,100/300/500/1000 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1000.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0144",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "RCBO (máy cắt chống rò và quá dòng)",
+      "evidence": {
+        "end_offset": 41173,
+        "source_path": "text/quotation.md",
+        "start_offset": 41136,
+        "text": "RCBO (máy cắt chống rò và quá dòng) \n"
+      },
+      "line_number": 4553,
+      "material_code_candidate": null,
+      "page_number": 29,
+      "quantity_candidate": null,
+      "raw_line": "RCBO (máy cắt chống rò và quá dòng) \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0145",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Contactor AC (Công tắc tơ AC) - Điện áp coil 220V",
+      "evidence": {
+        "end_offset": 43705,
+        "source_path": "text/quotation.md",
+        "start_offset": 43654,
+        "text": "Contactor AC (Công tắc tơ AC) - Điện áp coil 220V \n"
+      },
+      "line_number": 4818,
+      "material_code_candidate": null,
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Contactor AC (Công tắc tơ AC) - Điện áp coil 220V \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0146",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-03",
+      "evidence": {
+        "end_offset": 43724,
+        "source_path": "text/quotation.md",
+        "start_offset": 43717,
+        "text": "SC-03 \n"
+      },
+      "line_number": 4823,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-03 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0147",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-0",
+      "evidence": {
+        "end_offset": 43747,
+        "source_path": "text/quotation.md",
+        "start_offset": 43741,
+        "text": "SC-0 \n"
+      },
+      "line_number": 4827,
+      "material_code_candidate": "SC-0",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-0 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0148",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-05",
+      "evidence": {
+        "end_offset": 43772,
+        "source_path": "text/quotation.md",
+        "start_offset": 43765,
+        "text": "SC-05 \n"
+      },
+      "line_number": 4831,
+      "material_code_candidate": "SC-05",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-05 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0149",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-4-0",
+      "evidence": {
+        "end_offset": 43793,
+        "source_path": "text/quotation.md",
+        "start_offset": 43785,
+        "text": "SC-4-0 \n"
+      },
+      "line_number": 4835,
+      "material_code_candidate": "SC-4",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-4-0 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0150",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-4-1",
+      "evidence": {
+        "end_offset": 43809,
+        "source_path": "text/quotation.md",
+        "start_offset": 43801,
+        "text": "SC-4-1 \n"
+      },
+      "line_number": 4838,
+      "material_code_candidate": "SC-4",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-4-1 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0151",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-5-1",
+      "evidence": {
+        "end_offset": 43834,
+        "source_path": "text/quotation.md",
+        "start_offset": 43826,
+        "text": "SC-5-1 \n"
+      },
+      "line_number": 4842,
+      "material_code_candidate": "SC-5",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "SC-5-1 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0152",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Contactor AC/DC (Công tắc tơ AC/DC) - Điện áp coil 220V",
+      "evidence": {
+        "end_offset": 44047,
+        "source_path": "text/quotation.md",
+        "start_offset": 43990,
+        "text": "Contactor AC/DC (Công tắc tơ AC/DC) - Điện áp coil 220V \n"
+      },
+      "line_number": 4867,
+      "material_code_candidate": null,
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Contactor AC/DC (Công tắc tơ AC/DC) - Điện áp coil 220V \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0153",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Phụ kiện Công tắc tơ",
+      "evidence": {
+        "end_offset": 44240,
+        "source_path": "text/quotation.md",
+        "start_offset": 44218,
+        "text": "Phụ kiện Công tắc tơ \n"
+      },
+      "line_number": 4896,
+      "material_code_candidate": null,
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Phụ kiện Công tắc tơ \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0154",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 2NC SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44283,
+        "source_path": "text/quotation.md",
+        "start_offset": 44246,
+        "text": "Khối tiếp điểm phụ 2NC SC-03->SC-N3 \n"
+      },
+      "line_number": 4900,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 2NC SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0155",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44342,
+        "source_path": "text/quotation.md",
+        "start_offset": 44299,
+        "text": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3 \n"
+      },
+      "line_number": 4903,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0156",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 2NO SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44387,
+        "source_path": "text/quotation.md",
+        "start_offset": 44350,
+        "text": "Khối tiếp điểm phụ 2NO SC-03->SC-N3 \n"
+      },
+      "line_number": 4905,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 2NO SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0157",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 2NO + 2NC SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44438,
+        "source_path": "text/quotation.md",
+        "start_offset": 44395,
+        "text": "Khối tiếp điểm phụ 2NO + 2NC SC-03->SC-N3 \n"
+      },
+      "line_number": 4907,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 2NO + 2NC SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0158",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 3NO + 1NC SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44489,
+        "source_path": "text/quotation.md",
+        "start_offset": 44446,
+        "text": "Khối tiếp điểm phụ 3NO + 1NC SC-03->SC-N3 \n"
+      },
+      "line_number": 4909,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 3NO + 1NC SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0159",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 4NO SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44534,
+        "source_path": "text/quotation.md",
+        "start_offset": 44497,
+        "text": "Khối tiếp điểm phụ 4NO SC-03->SC-N3 \n"
+      },
+      "line_number": 4911,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 4NO SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0160",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44585,
+        "source_path": "text/quotation.md",
+        "start_offset": 44542,
+        "text": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3 \n"
+      },
+      "line_number": 4913,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khối tiếp điểm phụ 1NO + 1NC SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0161",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Khóa liên động cơ Khí SC-03->SC-N3",
+      "evidence": {
+        "end_offset": 44681,
+        "source_path": "text/quotation.md",
+        "start_offset": 44645,
+        "text": "Khóa liên động cơ Khí SC-03->SC-N3 \n"
+      },
+      "line_number": 4917,
+      "material_code_candidate": "SC-03",
+      "page_number": 30,
+      "quantity_candidate": null,
+      "raw_line": "Khóa liên động cơ Khí SC-03->SC-N3 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0162",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "TR-0N",
+      "evidence": {
+        "end_offset": 45360,
+        "source_path": "text/quotation.md",
+        "start_offset": 45353,
+        "text": "TR-0N \n"
+      },
+      "line_number": 4989,
+      "material_code_candidate": "TR-0N",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "TR-0N \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0163",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-03",
+      "evidence": {
+        "end_offset": 45367,
+        "source_path": "text/quotation.md",
+        "start_offset": 45360,
+        "text": "SC-03 \n"
+      },
+      "line_number": 4990,
+      "material_code_candidate": "SC-03",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-03 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0164",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-0",
+      "evidence": {
+        "end_offset": 45373,
+        "source_path": "text/quotation.md",
+        "start_offset": 45367,
+        "text": "SC-0 \n"
+      },
+      "line_number": 4991,
+      "material_code_candidate": "SC-0",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-0 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0165",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-05",
+      "evidence": {
+        "end_offset": 45380,
+        "source_path": "text/quotation.md",
+        "start_offset": 45373,
+        "text": "SC-05 \n"
+      },
+      "line_number": 4992,
+      "material_code_candidate": "SC-05",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-05 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0166",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "TR-5-1N",
+      "evidence": {
+        "end_offset": 45536,
+        "source_path": "text/quotation.md",
+        "start_offset": 45527,
+        "text": "TR-5-1N \n"
+      },
+      "line_number": 4997,
+      "material_code_candidate": "TR-5",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "TR-5-1N \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0167",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-4-0",
+      "evidence": {
+        "end_offset": 45544,
+        "source_path": "text/quotation.md",
+        "start_offset": 45536,
+        "text": "SC-4-0 \n"
+      },
+      "line_number": 4998,
+      "material_code_candidate": "SC-4",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-4-0 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0168",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-4-1",
+      "evidence": {
+        "end_offset": 45552,
+        "source_path": "text/quotation.md",
+        "start_offset": 45544,
+        "text": "SC-4-1 \n"
+      },
+      "line_number": 4999,
+      "material_code_candidate": "SC-4",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-4-1 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0169",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "SC-5-1",
+      "evidence": {
+        "end_offset": 45560,
+        "source_path": "text/quotation.md",
+        "start_offset": 45552,
+        "text": "SC-5-1 \n"
+      },
+      "line_number": 5000,
+      "material_code_candidate": "SC-5",
+      "page_number": 31,
+      "quantity_candidate": null,
+      "raw_line": "SC-5-1 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0170",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Motor CB loại tiêu chuẩn",
+      "evidence": {
+        "end_offset": 46379,
+        "source_path": "text/quotation.md",
+        "start_offset": 46353,
+        "text": "Motor CB loại tiêu chuẩn \n"
+      },
+      "line_number": 5072,
+      "material_code_candidate": null,
+      "page_number": 32,
+      "quantity_candidate": null,
+      "raw_line": "Motor CB loại tiêu chuẩn \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0171",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ",
+      "evidence": {
+        "end_offset": 49086,
+        "source_path": "text/quotation.md",
+        "start_offset": 49044,
+        "text": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n"
+      },
+      "line_number": 5323,
+      "material_code_candidate": null,
+      "page_number": 33,
+      "quantity_candidate": null,
+      "raw_line": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0172",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng.",
+      "evidence": {
+        "end_offset": 49191,
+        "source_path": "text/quotation.md",
+        "start_offset": 49127,
+        "text": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng. \n"
+      },
+      "line_number": 5330,
+      "material_code_candidate": null,
+      "page_number": 33,
+      "quantity_candidate": null,
+      "raw_line": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng. \n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0173",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ khóa bao gồm 1 khóa 1 chìa",
+      "evidence": {
+        "end_offset": 50437,
+        "source_path": "text/quotation.md",
+        "start_offset": 50406,
+        "text": "Bộ khóa bao gồm 1 khóa 1 chìa \n"
+      },
+      "line_number": 5442,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ khóa bao gồm 1 khóa 1 chìa \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0174",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ khóa bao g",
+      "evidence": {
+        "end_offset": 50468,
+        "source_path": "text/quotation.md",
+        "start_offset": 50454,
+        "text": "Bộ khóa bao g\n"
+      },
+      "line_number": 5445,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ khóa bao g\n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0175",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "m 2 khóa 1 chìa",
+      "evidence": {
+        "end_offset": 50499,
+        "source_path": "text/quotation.md",
+        "start_offset": 50483,
+        "text": "m 2 khóa 1 chìa\n"
+      },
+      "line_number": 5449,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "m 2 khóa 1 chìa\n",
+      "unit_candidate": "m",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0176",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ khóa bao gồm 3 khóa 2 chìa",
+      "evidence": {
+        "end_offset": 50530,
+        "source_path": "text/quotation.md",
+        "start_offset": 50499,
+        "text": "Bộ khóa bao gồm 3 khóa 2 chìa \n"
+      },
+      "line_number": 5450,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ khóa bao gồm 3 khóa 2 chìa \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0177",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "p BT3-",
+      "evidence": {
+        "end_offset": 50570,
+        "source_path": "text/quotation.md",
+        "start_offset": 50559,
+        "text": "p BT3-1600\n"
+      },
+      "line_number": 5455,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "p BT3-1600\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 1600.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0178",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "Motor nạp BT3-",
+      "evidence": {
+        "end_offset": 50590,
+        "source_path": "text/quotation.md",
+        "start_offset": 50570,
+        "text": "Motor nạp BT3-2500 \n"
+      },
+      "line_number": 5456,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Motor nạp BT3-2500 \n",
+      "unit_candidate": null,
+      "unit_price_candidate": 2500.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0179",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "p BT3-4000,6300",
+      "evidence": {
+        "end_offset": 50626,
+        "source_path": "text/quotation.md",
+        "start_offset": 50610,
+        "text": "p BT3-4000,6300\n"
+      },
+      "line_number": 5461,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "p BT3-4000,6300\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 40006300.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0180",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Khóa liên động 2 ACB bằng cáp",
+      "evidence": {
+        "end_offset": 50657,
+        "source_path": "text/quotation.md",
+        "start_offset": 50626,
+        "text": "Khóa liên động 2 ACB bằng cáp \n"
+      },
+      "line_number": 5462,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Khóa liên động 2 ACB bằng cáp \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0181",
+      "confidence": 0.3,
+      "currency_candidate": null,
+      "description_candidate": "Khóa liên động 3 ACB bằng cáp ( 2500AF, 4000AF,6300AF)",
+      "evidence": {
+        "end_offset": 50767,
+        "source_path": "text/quotation.md",
+        "start_offset": 50711,
+        "text": "Khóa liên động 3 ACB bằng cáp ( 2500AF, 4000AF,6300AF) \n"
+      },
+      "line_number": 5468,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Khóa liên động 3 ACB bằng cáp ( 2500AF, 4000AF,6300AF) \n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.3)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0182",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ đế",
+      "evidence": {
+        "end_offset": 50973,
+        "source_path": "text/quotation.md",
+        "start_offset": 50967,
+        "text": "Bộ đế\n"
+      },
+      "line_number": 5484,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ đế\n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0183",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "m",
+      "evidence": {
+        "end_offset": 50988,
+        "source_path": "text/quotation.md",
+        "start_offset": 50986,
+        "text": "m\n"
+      },
+      "line_number": 5487,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "m\n",
+      "unit_candidate": "m",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0184",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ điều khiển ATS ( Đã bao gồm cáp )",
+      "evidence": {
+        "end_offset": 51026,
+        "source_path": "text/quotation.md",
+        "start_offset": 50988,
+        "text": "Bộ điều khiển ATS ( Đã bao gồm cáp ) \n"
+      },
+      "line_number": 5488,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ điều khiển ATS ( Đã bao gồm cáp ) \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0185",
+      "confidence": 0.55,
+      "currency_candidate": null,
+      "description_candidate": "Bộ nguồn AC220-240V",
+      "evidence": {
+        "end_offset": 51066,
+        "source_path": "text/quotation.md",
+        "start_offset": 51045,
+        "text": "Bộ nguồn AC220-240V \n"
+      },
+      "line_number": 5491,
+      "material_code_candidate": "AC220",
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ nguồn AC220-240V \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0186",
+      "confidence": 0.55,
+      "currency_candidate": null,
+      "description_candidate": "Bộ nguồn AC380-415V",
+      "evidence": {
+        "end_offset": 51103,
+        "source_path": "text/quotation.md",
+        "start_offset": 51082,
+        "text": "Bộ nguồn AC380-415V \n"
+      },
+      "line_number": 5494,
+      "material_code_candidate": "AC380",
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ nguồn AC380-415V \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0187",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "Bộ nguồn DC24V",
+      "evidence": {
+        "end_offset": 51124,
+        "source_path": "text/quotation.md",
+        "start_offset": 51108,
+        "text": "Bộ nguồn DC24V \n"
+      },
+      "line_number": 5496,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "Bộ nguồn DC24V \n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0188",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ",
+      "evidence": {
+        "end_offset": 51193,
+        "source_path": "text/quotation.md",
+        "start_offset": 51151,
+        "text": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n"
+      },
+      "line_number": 5501,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0189",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng.",
+      "evidence": {
+        "end_offset": 51297,
+        "source_path": "text/quotation.md",
+        "start_offset": 51234,
+        "text": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng.\n"
+      },
+      "line_number": 5508,
+      "material_code_candidate": null,
+      "page_number": 34,
+      "quantity_candidate": null,
+      "raw_line": "trên đã bao gồm tiếp điểm phụ, shuntrip, motor nạp, cuộn đóng.\n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0190",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ",
+      "evidence": {
+        "end_offset": 52852,
+        "source_path": "text/quotation.md",
+        "start_offset": 52810,
+        "text": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n"
+      },
+      "line_number": 5646,
+      "material_code_candidate": null,
+      "page_number": 35,
+      "quantity_candidate": null,
+      "raw_line": "* Giá ACB Frame 1600 cần cộng thêm giá Bộ\n",
+      "unit_candidate": "bộ",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0191",
+      "confidence": 0.45,
+      "currency_candidate": null,
+      "description_candidate": "bao gồm tiếp điểm phụ, shuntrip, cuộn đóng.",
+      "evidence": {
+        "end_offset": 52949,
+        "source_path": "text/quotation.md",
+        "start_offset": 52905,
+        "text": "bao gồm tiếp điểm phụ, shuntrip, cuộn đóng.\n"
+      },
+      "line_number": 5657,
+      "material_code_candidate": null,
+      "page_number": 35,
+      "quantity_candidate": null,
+      "raw_line": "bao gồm tiếp điểm phụ, shuntrip, cuộn đóng.\n",
+      "unit_candidate": "cuộn",
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.45)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0192",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "Tel: (024) 3568",
+      "evidence": {
+        "end_offset": 53625,
+        "source_path": "text/quotation.md",
+        "start_offset": 53604,
+        "text": "Tel: (024) 3568 3741\n"
+      },
+      "line_number": 5707,
+      "material_code_candidate": null,
+      "page_number": 36,
+      "quantity_candidate": null,
+      "raw_line": "Tel: (024) 3568 3741\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 3741.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0193",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "Fax: (024) 3568",
+      "evidence": {
+        "end_offset": 53646,
+        "source_path": "text/quotation.md",
+        "start_offset": 53625,
+        "text": "Fax: (024) 3568 3740\n"
+      },
+      "line_number": 5708,
+      "material_code_candidate": null,
+      "page_number": 36,
+      "quantity_candidate": null,
+      "raw_line": "Fax: (024) 3568 3740\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 3740.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0194",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "Tel: (+855) 2322",
+      "evidence": {
+        "end_offset": 53668,
+        "source_path": "text/quotation.md",
+        "start_offset": 53646,
+        "text": "Tel: (+855) 2322 3645\n"
+      },
+      "line_number": 5709,
+      "material_code_candidate": null,
+      "page_number": 36,
+      "quantity_candidate": null,
+      "raw_line": "Tel: (+855) 2322 3645\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 3645.0,
+      "warnings": []
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "HAOPHUONG_20260501_001_LINECAND_0195",
+      "confidence": 0.5,
+      "currency_candidate": "VND",
+      "description_candidate": "Fax: (+855) 8665",
+      "evidence": {
+        "end_offset": 53690,
+        "source_path": "text/quotation.md",
+        "start_offset": 53668,
+        "text": "Fax: (+855) 8665 9166\n"
+      },
+      "line_number": 5710,
+      "material_code_candidate": null,
+      "page_number": 36,
+      "quantity_candidate": null,
+      "raw_line": "Fax: (+855) 8665 9166\n",
+      "unit_candidate": null,
+      "unit_price_candidate": 9166.0,
+      "warnings": []
+    }
+  ],
+  "generated_at": "2026-07-02T09:50:05Z",
+  "parser_name": "rule_based_line_candidate_v1",
+  "parser_version": "0.1.0",
+  "quotation_id": "HAOPHUONG_20260501_001",
+  "schema_version": "1.0",
+  "source_markdown": "text/quotation.md",
+  "source_sha256": "053c3ccf3bdb4a7842de11f1d77de4001b1d1a6c9a7d526e0ad7fa7aff9f3c74",
+  "source_text_manifest": "text/quotation_text.json",
+  "warnings": []
+}

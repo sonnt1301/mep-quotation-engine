@@ -182,6 +182,34 @@ CLI cung cấp các câu lệnh sau để vận hành hệ thống:
      python -m mep_quotation.cli.main search-material "CV-3X2.5"
      ```
 
+## Hướng Dẫn Sử Dụng Giao Diện Rà Soát Báo Giá MEP (Local UI)
+
+Hệ thống cung cấp một giao diện web cục bộ đơn giản giúp nhân sự MEP điều khiển quy trình xử lý và rà soát chất lượng dữ liệu báo giá một cách trực quan.
+
+1. **Khởi chạy ứng dụng (Chỉ dành cho kỹ thuật viên setup):**
+   ```bash
+   python -m streamlit run tools/local_review_app.py --browser.gatherUsageStats false
+   ```
+
+2. **Mở giao diện trên trình duyệt:**
+   Truy cập đường dẫn sau: [http://localhost:8501](http://localhost:8501)
+
+3. **Quy trình làm việc 4 bước dành cho nhân viên báo giá:**
+   * **Bước 1: Chọn báo giá**:
+     * Chọn tải tệp PDF báo giá lên trực tiếp hoặc nhập đường dẫn file PDF trên máy.
+     * Nhập thông số cơ bản: Mã nhà cung cấp, Ngày báo giá, Số thứ tự báo giá.
+   * **Bước 2: Xử lý báo giá**:
+     * Bấm nút **Xử lý báo giá** ở Sidebar. Hệ thống sẽ tự động phân tích và tạo bản nháp dữ liệu.
+   * **Bước 3: Rà soát dữ liệu**:
+     * Bảng dữ liệu nháp sẽ hiển thị. Bạn chọn từng dòng vật tư cần rà soát ở bộ chọn.
+     * Đối chiếu với văn bản gốc hiển thị bên cạnh và đưa ra quyết định: **Chấp nhận**, **Từ chối** hoặc **Chỉnh sửa** (cho phép ghi đè mô tả, đơn vị, đơn giá, số lượng...).
+     * Bấm nút **Lưu quyết định** để ghi nhận kết quả.
+   * **Bước 4: Xuất kết quả**:
+     * Khi đã rà soát xong ít nhất một dòng, bấm nút **Xuất Excel** ở chân trang.
+     * Hệ thống tự động biên dịch, chuẩn hóa và chuẩn bị tệp Excel. Sau khi xuất thành công, nút **Tải file Excel báo giá** xuất hiện để bạn tải tệp Excel hoàn chỉnh về máy sử dụng.
+
+*Lưu ý: Đối với lập trình viên hoặc khi cần sửa lỗi sâu, bạn có thể tích chọn **Hiển thị chế độ nâng cao** ở cuối Sidebar để mở khóa các tính năng kỹ thuật nâng cao (Ghi đè, Xem log chi tiết, Chạy từng bước đơn lẻ, Kiểm tra toàn vẹn).*
+
 ## Chạy Bộ Kiểm Thử (Tests)
 
 Chạy tất cả các test cases bằng `pytest`:

@@ -1,42 +1,34 @@
-# Báo Cáo Nghiệm Thu Phase 12 – Excel Export Layer
+# Báo Cáo Nghiệm Thu Phase 13 – Local Pipeline Orchestrator / Human Review UI
 
-Báo cáo tóm tắt quá trình triển khai, kết quả chạy kiểm thử tự động và thủ công cho Phase 12.
+Báo cáo tóm tắt quá trình triển khai, kết quả chạy kiểm thử tự động và kết quả chạy thử nghiệm thực tế (Smoke Test) cho Phase 13 sau khi cải tiến giao diện người dùng (UX) hướng tới nghiệp vụ MEP.
 
-## Kết quả đạt bộ
+## Kết quả đạt được
 
-1. **Spec & Models**:
-   * Cập nhật mô hình [models.py (D:/mep_quotation_pipeline/mep_quotation/spec/models.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py) bổ sung đường dẫn xuất Excel `excel_export` và `excel_export_manifest` vào `FilePathsModel`.
-   * Định nghĩa 3 models mới: `ExcelExportSheetModel`, `ExcelExportContextModel`, và `ExcelExportManifestModel` được tích hợp serialize `exported_at` và thắt chặt extra fields (`extra="forbid"`).
-   * Đăng ký và xuất bản đồng bộ các model này tại [__init__.py (D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py).
+1. **Giao Diện Đơn Giản Mặc Định (Simple Mode UX)**:
+   * **Không hiển thị thuật ngữ kỹ thuật**: Loại bỏ hoàn toàn các thuật ngữ của nhà phát triển như: `CLI`, `stdout`, `stderr`, `Phase 2/3/4...`, `overwrite`, `timeout`, `Run Selected Step`, `Validate Package` và `normalized.json` khỏi màn hình mặc định.
+   * **Bố cục 4 bước dễ hiểu**:
+     * **Bước 1: Chọn báo giá**: Chọn tệp PDF, Mã nhà cung cấp, Ngày báo giá và Số thứ tự báo giá.
+     * **Bước 2: Xử lý**: Chỉ có một nút **Xử lý báo giá** duy nhất để chạy toàn bộ pipeline đến Phase 9. Nếu xử lý thành công, hệ thống tự động chạy ngầm khởi tạo file rà soát decisions trống (nếu chưa tồn tại).
+     * **Bước 3: Rà soát dữ liệu**: Hiển thị bảng nháp và bộ chọn dòng vật tư. Các quyết định hiển thị tiếng Việt tự nhiên: **Chấp nhận** (approved), **Từ chối** (rejected), **Chỉnh sửa** (edited).
+     * **Bước 4: Xuất kết quả**: Chỉ có một nút **Xuất Excel** duy nhất. Khi bấm, UI tự động chạy Phase 11 (`export-normalized`) trước rồi chạy Phase 12 (`export-excel`) ngầm, sau đó hiển thị nút **Tải file Excel báo giá**.
 
-2. **Xây Dựng Excel Workbook (workbook_builder.py)**:
-   * Dựng workbook Excel bằng thư viện `openpyxl` với 4 sheet có cấu trúc rõ ràng:
-     * **Sheet 1: Summary**: Chứa các siêu dữ liệu báo giá (Quotation ID, Supplier Code, Quotation Date, Currency, Item Count, Source Normalized Path/SHA256, Exported At, Exporter Name, Exporter Version, và thống kê tóm tắt review). Currency được đối chiếu tự động (nếu duy nhất thì ghi nhận, nếu nhiều thì ghi `"MULTIPLE"`, nếu không có thì để trống).
-     * **Sheet 2: Items**: Ghi nhận toàn bộ items chính thức. Giữ đúng kiểu dữ liệu số (numeric) cho `quantity`, `unit_price`, `amount`, `confidence`, và `page_number`. Cố định dòng tiêu đề (freeze pane A2), bật bộ lọc (auto filter) và tự động căn chỉnh độ rộng cột thông minh (auto-width).
-     * **Sheet 3: Warnings**: Ghi nhận cảnh báo cấp file và cấp item rõ ràng theo dạng danh sách (`level`, `item_id`, `code`, `message`).
-     * **Sheet 4: Trace**: Ghi nhận thông tin truy vết (`item_id`, `source_draft_item_id`, `source_review_decision_id`, `page_number`, `evidence_text`).
-   * **Chống Formula Injection**: Tất cả các ô dạng text bắt đầu bằng `=`, `+`, `-`, `@` đều được chèn dấu nháy đơn `'` ở đầu để đảm bảo an toàn tuyệt đối.
-   * **Lọc ký tự XML Excel-illegal**: Lọc sạch các ký tự điều khiển ASCII < 32 (ngoại trừ `\n`, `\r`, `\t`) trước khi ghi để tránh lỗi hỏng tệp Excel.
+2. **Chế Độ Nâng Cao (Advanced Mode UX)**:
+   * Tích chọn checkbox **Hiển thị chế độ nâng cao** ở chân Sidebar mới hiển thị:
+     * Các checkbox ghi đè dữ liệu trung gian, quyết định rà soát, dữ liệu chuẩn, tệp Excel.
+     * Cấu hình thời gian chờ xử lý và Thư mục dự án.
+     * Các tính năng gỡ lỗi: Chạy riêng từng bước, Kiểm tra toàn vẹn gói, Tải lại gói báo giá.
+     * Chi tiết nhật ký chạy CLI (Stdout/Stderr) và các tabs xem Artifacts trung gian.
 
-3. **Điều Phối Xuất Bản & An Toàn (export_service.py)**:
-   * Tự động tạo thư mục `exports/` nếu chưa tồn tại.
-   * Kiểm duyệt `item_count`: Đối chiếu `normalized.item_count` phi-zero với kích thước `len(normalized.items)` thực tế để ngăn lệch dòng.
-   * Cơ chế cản ghi đè khi `overwrite=False` (fail rõ ràng nếu tệp Excel hoặc manifest đã có trên đĩa).
-   * Cơ chế ghi tệp tin an toàn (Atomic Write): Ghi ra file `.tmp` rồi rename nguyên tử qua `os.replace` (thay thế nguyên tử thật sự).
-   * Đọc load kiểm thử lại workbook sau khi ghi thành công để validate cấu trúc sheet và số lượng dòng dữ liệu khớp chính xác.
-   * Cập nhật an toàn `package.json` và ghi nhật ký logs audit đầy đủ.
-   * Nếu gặp lỗi ghi `package.json`, ném lỗi RuntimeError rõ ràng, ghi log event `excel_export_failed` và bảo vệ dữ liệu Phase trước không bị sửa đổi.
+3. **Cải tiến thông điệp báo lỗi tiếng Việt**:
+   * "Không xử lý được PDF. Vui lòng kiểm tra file đầu vào."
+   * "Chưa có dữ liệu nháp để rà soát. Vui lòng chọn tệp PDF và bấm 'Xử lý báo giá' ở Sidebar."
+   * "Cần rà soát ít nhất một dòng trước khi xuất Excel."
 
-4. **Kiểm Định Chéo Toàn Gói Sâu (validate_package_integrity)**:
-   * Cập nhật hàm `validate_package_integrity` tại [integrity.py (D:/mep_quotation_pipeline/mep_quotation/package/integrity.py)](file:///D:/mep_quotation_pipeline/mep_quotation/package/integrity.py) thực thi kiểm định sâu tệp Excel manifest nếu tệp này có trên đĩa (đối chiếu SHA256 của normalized.json, quotation.xlsx, kiểm tra sheet_count và thứ tự sheet names).
+4. **Tài liệu hướng dẫn**:
+   * Cập nhật [README.md (D:/mep_quotation_pipeline/README.md)](file:///D:/mep_quotation_pipeline/README.md) hướng dẫn quy trình 4 bước đơn giản, thân thiện với nhân sự báo giá.
 
-5. **CLI Subcommand**:
-   * Đăng ký subcommand `export-excel` tại CLI [main.py (D:/mep_quotation_pipeline/mep_quotation/cli/main.py)](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py).
-
-6. **Schema & Tests**:
-   * Sinh mới tệp schema `excel_export_manifest.schema.json` đồng bộ và Deterministic.
-   * Viết suite tests đầy đủ [test_excel_export.py (D:/mep_quotation_pipeline/tests/test_excel_export.py)](file:///D:/mep_quotation_pipeline/tests/test_excel_export.py).
-   * Vượt qua toàn bộ **136/136 tests** tự động của hệ thống (100% passed).
+5. **Bộ Kiểm Thử Hoàn Chỉnh**:
+   * Hệ thống vượt qua toàn bộ **140/140 tests** tự động của pytest (`140 passed in 11.42s`).
 
 ---
 
@@ -44,64 +36,19 @@ Báo cáo tóm tắt quá trình triển khai, kết quả chạy kiểm thử t
 
 Chạy tất cả các test cases bằng `pytest`:
 ```bash
-python -m pytest -v
+python -m pytest -q
 ```
 Kết quả thực tế:
 ```text
-tests/test_excel_export.py::test_export_excel_success PASSED
-tests/test_excel_export.py::test_export_excel_overwrite_rule PASSED
-tests/test_excel_export.py::test_export_excel_mismatch_item_count PASSED
-tests/test_excel_export.py::test_export_excel_package_json_update_fail PASSED
-tests/test_excel_export.py::test_export_excel_missing_exports_dir_success PASSED
-
-============================ 136 passed in 10.11s =============================
+........................................................................ [ 51%]
+....................................................................     [100%]
+140 passed in 11.42s
 ```
 
 ---
 
-## Kiểm thử thủ công trên gói thực tế
+## Kết quả thử nghiệm thủ công trên UI (Smoke Test)
 
-Chạy trên gói `data/suppliers/AUT/2026/2026-06-20_001`:
-
-1. **Thực hiện xuất Excel**:
-   ```bash
-   python -m mep_quotation.cli.main export-excel data/suppliers/AUT/2026/2026-06-20_001 --overwrite
-   ```
-   *Kết quả in*:
-   ```text
-   Successfully exported official Excel quotation.
-     Quotation ID          : AUT_20260620_001
-     Supplier Code         : AUT
-     Quotation Date        : 2026-06-20
-     Item Count            : 1
-     Excel Export Path     : data/suppliers/AUT/2026/2026-06-20_001/exports/quotation.xlsx
-     Manifest JSON Path    : data/suppliers/AUT/2026/2026-06-20_001/exports/export_manifest.json
-     Sheet Count           : 4
-     Source Normalized SHA256 : cd4ddf1412f7f9a4f612f7aba207c73693ab5a4d5324de12fde6fadef6a78bbd
-     Export File SHA256    : fe3efb2de3fc614e1ae56a9ede04712b52e114f718daf4b3dbf54207fe8197cb
-   ```
-
-2. **Xác thực toàn vẹn gói**:
-   ```bash
-   python -m mep_quotation.cli.main validate-package data/suppliers/AUT/2026/2026-06-20_001
-   ```
-   *Kết quả in*:
-   ```text
-   Package is valid.
-     Quotation ID : AUT_20260620_001
-     Supplier     : AUT
-     Items Count  : 1
-     Corrections  : 0
-   ```
-
-3. **Nhật ký Audit Log (logs/processing.log.jsonl)**:
-   ```json
-   {"details": {"overwrite": true}, "event": "excel_export_started", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:38Z"}
-   {"details": {}, "event": "excel_workbook_built", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:39Z"}
-   {"details": {"path": "exports/quotation.xlsx"}, "event": "excel_workbook_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:40Z"}
-   {"details": {}, "event": "excel_workbook_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:42Z"}
-   {"details": {"path": "exports/export_manifest.json"}, "event": "excel_export_manifest_written", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:43Z"}
-   {"details": {"excel_path": "exports/quotation.xlsx", "manifest_path": "exports/export_manifest.json"}, "event": "excel_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-02T07:21:46Z"}
-   ```
-
-Toàn bộ tiến trình diễn ra hoàn hảo, dữ liệu liên kết chéo của 12 phases được thắt chặt và kiểm định toàn vẹn sâu sắc.
+* Máy chủ Streamlit khởi chạy thành công tại: [http://localhost:8501](http://localhost:8501).
+* Màn hình mặc định hiển thị đúng quy trình 4 bước sạch đẹp, không chứa bất kỳ thuật ngữ kỹ thuật nào.
+* Quy trình xử lý báo giá, lưu quyết định rà soát (Chấp nhận/Chỉnh sửa), tự động chạy xuất bản và tải file Excel báo giá hoạt động trơn tru.

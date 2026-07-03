@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-07-02T09:50:06Z",
+  "decision_count": 0,
+  "decisions": [],
+  "quotation_id": "HAOPHUONG_20260501_001",
+  "reviewer": "human",
+  "schema_version": "1.0",
+  "source_normalized_draft": "normalized/normalized_draft.json",
+  "source_sha256": "783181d8dcf2a06f886e9c1c08cfba17c37bfe7de5fb9d9adfab44c4c4596fcb",
+  "updated_at": "2026-07-02T09:50:06Z",
+  "warnings": []
+}
