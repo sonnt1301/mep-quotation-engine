@@ -1,0 +1,49 @@
+{"details": {"pdf_file_name": "original.pdf"}, "event": "pdf_import_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T08:59:58Z"}
+{"details": {}, "event": "pdf_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T08:59:58Z"}
+{"details": {}, "event": "pdf_copied", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T08:59:58Z"}
+{"details": {}, "event": "pdf_metadata_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T08:59:58Z"}
+{"details": {}, "event": "pdf_import_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T08:59:58Z"}
+{"details": {"dpi": 150, "image_format": "png", "overwrite": true}, "event": "pdf_page_preparation_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:04Z"}
+{"details": {"dpi": 150, "image_format": "png", "output_dir": "source/pages", "page_count": 8}, "event": "pdf_page_rasterized", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:05Z"}
+{"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:05Z"}
+{"details": {"page_count": 8}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:05Z"}
+{"details": {"overwrite": true, "pdf_path": "source/original.pdf"}, "event": "pdf_text_extraction_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:09Z"}
+{"details": {"extraction_engine": "pymupdf", "extraction_engine_version": "1.27.2.2", "page_count": 8, "pages_with_text": 8, "total_characters": 24246}, "event": "pdf_text_extracted", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:09Z"}
+{"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:09Z"}
+{"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24246}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:09Z"}
+{"details": {"overwrite": true, "source_raw_text": "source/raw_text.json"}, "event": "text_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:13Z"}
+{"details": {"page_count": 8, "pages_with_text": 8, "total_characters": 24246}, "event": "text_assembled", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:13Z"}
+{"details": {"markdown_path": "text/quotation.md"}, "event": "quotation_markdown_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:13Z"}
+{"details": {"manifest_path": "text/quotation_text.json"}, "event": "quotation_text_manifest_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:13Z"}
+{"details": {"page_count": 8, "quotation_id": "AUT_20260620_002", "total_characters": 24246}, "event": "text_assembly_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:13Z"}
+{"details": {"overwrite": true, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:17Z"}
+{"details": {"total_lines_scanned": 2071}, "event": "line_parser_lines_scanned", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:17Z"}
+{"details": {"candidate_count": 287}, "event": "line_candidates_extracted", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:17Z"}
+{"details": {"line_candidates_path": "parsed/line_candidates.json"}, "event": "line_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:17Z"}
+{"details": {"candidate_count": 287}, "event": "line_parser_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:17Z"}
+{"details": {"max_line_gap_for_price": 6, "overwrite": true}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:23Z"}
+{"details": {"row_count": 287}, "event": "row_candidates_assembled", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:23Z"}
+{"details": {"row_candidates_path": "parsed/row_candidates.json"}, "event": "row_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:23Z"}
+{"details": {"row_count": 287}, "event": "row_assembly_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:23Z"}
+{"details": {"overwrite": true}, "event": "item_candidate_build_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:29Z"}
+{"details": {"item_count": 287}, "event": "item_candidates_built", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:29Z"}
+{"details": {"item_candidates_path": "parsed/item_candidates.json"}, "event": "item_candidates_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:29Z"}
+{"details": {"item_count": 287}, "event": "item_candidate_build_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:29Z"}
+{"details": {"overwrite": true}, "event": "normalized_draft_build_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:33Z"}
+{"details": {"item_count": 287, "review_required_count": 264}, "event": "normalized_draft_built", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:33Z"}
+{"details": {"normalized_draft_path": "normalized/normalized_draft.json"}, "event": "normalized_draft_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:33Z"}
+{"details": {"item_count": 287, "review_required_count": 264}, "event": "normalized_draft_build_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:34Z"}
+{"details": {"overwrite": true, "reviewer": "human"}, "event": "review_file_created", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:39Z"}
+{"details": {"decision_id": "AUT_20260620_002_REVIEW_0001", "decision_type": "edited", "draft_item_id": "AUT_20260620_002_DRAFTITEM_0001", "reviewer": "tester"}, "event": "review_decision_recorded", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:51Z"}
+{"details": {"overwrite": true}, "event": "normalized_export_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:56Z"}
+{"details": {"exported_item_count": 1}, "event": "normalized_export_built", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:56Z"}
+{"details": {"export_path": "normalized/normalized.json"}, "event": "normalized_export_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:56Z"}
+{"details": {"export_summary": {"approved_count": 0, "draft_item_count": 287, "edited_count": 1, "exported_item_count": 1, "rejected_count": 0, "unreviewed_count": 286}}, "event": "normalized_export_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:00:56Z"}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_export_started","quotation_id":"AUT_20260620_002","details":{"overwrite":true}}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_workbook_built","quotation_id":"AUT_20260620_002","details":{}}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_workbook_written","quotation_id":"AUT_20260620_002","details":{"path":"exports/quotation.xlsx"}}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_002","details":{}}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_002","details":{"path":"exports/export_manifest.json"}}
+{"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_002","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:01:09Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:06:14Z"}

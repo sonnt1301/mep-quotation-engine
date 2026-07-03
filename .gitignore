@@ -31,3 +31,6 @@ htmlcov/
 
 # Generated index (nếu sau này muốn sinh lại)
 data/indexes/material_index.json
+
+# Streamlit temp uploads
+temp_uploads/

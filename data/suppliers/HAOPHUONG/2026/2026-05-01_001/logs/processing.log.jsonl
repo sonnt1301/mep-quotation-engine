@@ -1,0 +1,37 @@
+{"details": {"pdf_file_name": "B_ng_Gi__T_ng_H_p_2026-V17_T5.pdf"}, "event": "pdf_import_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:00Z"}
+{"details": {}, "event": "pdf_validated", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:00Z"}
+{"details": {}, "event": "pdf_copied", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:00Z"}
+{"details": {}, "event": "pdf_metadata_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:00Z"}
+{"details": {}, "event": "pdf_import_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:00Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:01Z"}
+{"details": {"dpi": 150, "image_format": "png", "overwrite": false}, "event": "pdf_page_preparation_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:01Z"}
+{"details": {"dpi": 150, "image_format": "png", "output_dir": "source/pages", "page_count": 36}, "event": "pdf_page_rasterized", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"page_count": 36}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"overwrite": false, "pdf_path": "source/original.pdf"}, "event": "pdf_text_extraction_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"extraction_engine": "pymupdf", "extraction_engine_version": "1.27.2.2", "page_count": 36, "pages_with_text": 35, "total_characters": 52879}, "event": "pdf_text_extracted", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"page_count": 36, "pages_with_text": 35, "total_characters": 52879}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:04Z"}
+{"details": {"overwrite": false, "source_raw_text": "source/raw_text.json"}, "event": "text_assembly_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"page_count": 36, "pages_with_text": 35, "total_characters": 52879}, "event": "text_assembled", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"markdown_path": "text/quotation.md"}, "event": "quotation_markdown_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"manifest_path": "text/quotation_text.json"}, "event": "quotation_text_manifest_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"page_count": 36, "quotation_id": "HAOPHUONG_20260501_001", "total_characters": 52879}, "event": "text_assembly_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"overwrite": false, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"total_lines_scanned": 5711}, "event": "line_parser_lines_scanned", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"candidate_count": 195}, "event": "line_candidates_extracted", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"line_candidates_path": "parsed/line_candidates.json"}, "event": "line_candidates_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"candidate_count": 195}, "event": "line_parser_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"max_line_gap_for_price": 6, "overwrite": false}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"row_count": 195}, "event": "row_candidates_assembled", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"row_candidates_path": "parsed/row_candidates.json"}, "event": "row_candidates_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"row_count": 195}, "event": "row_assembly_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:05Z"}
+{"details": {"overwrite": false}, "event": "item_candidate_build_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"item_count": 195}, "event": "item_candidates_built", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"item_candidates_path": "parsed/item_candidates.json"}, "event": "item_candidates_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"item_count": 195}, "event": "item_candidate_build_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"overwrite": false}, "event": "normalized_draft_build_started", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"item_count": 195, "review_required_count": 102}, "event": "normalized_draft_built", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"normalized_draft_path": "normalized/normalized_draft.json"}, "event": "normalized_draft_written", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"item_count": 195, "review_required_count": 102}, "event": "normalized_draft_build_completed", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}
+{"details": {"overwrite": false, "reviewer": "human"}, "event": "review_file_created", "level": "INFO", "quotation_id": "HAOPHUONG_20260501_001", "timestamp": "2026-07-02T09:50:06Z"}

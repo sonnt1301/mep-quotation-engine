@@ -1,0 +1,335 @@
+{
+  "dpi": 150,
+  "generated_at": "2026-07-02T09:50:04Z",
+  "image_format": "png",
+  "page_count": 36,
+  "pages": [
+    {
+      "file_size": 1459980,
+      "height": 1754,
+      "image_path": "source/pages/page_0001.png",
+      "page_number": 1,
+      "rotation": 0,
+      "sha256": "8a504e9d57657c85102fc7009696ad5e5db68cbcc87a6ac427bfe43e6b9398b8",
+      "width": 1241
+    },
+    {
+      "file_size": 2026283,
+      "height": 1754,
+      "image_path": "source/pages/page_0002.png",
+      "page_number": 2,
+      "rotation": 0,
+      "sha256": "fa79f041525d929f68d1bacd76d11ec027b129d450f3de5aacc4cca47d9df876",
+      "width": 1241
+    },
+    {
+      "file_size": 391182,
+      "height": 1754,
+      "image_path": "source/pages/page_0003.png",
+      "page_number": 3,
+      "rotation": 0,
+      "sha256": "4bb56252edbc0ca94fe1a9f7d9d124e50c38762a5ee4912ed8b69ca4f62aa44d",
+      "width": 1241
+    },
+    {
+      "file_size": 394000,
+      "height": 1754,
+      "image_path": "source/pages/page_0004.png",
+      "page_number": 4,
+      "rotation": 0,
+      "sha256": "adceec18d5b967edbde21d432ce036af46acd32c07b72638a07ac46bdef85b19",
+      "width": 1241
+    },
+    {
+      "file_size": 357095,
+      "height": 1754,
+      "image_path": "source/pages/page_0005.png",
+      "page_number": 5,
+      "rotation": 0,
+      "sha256": "7288da05dd3740bde70b392e410ac02d5906ec7d4e4d6fa0d7d98bdd633e7424",
+      "width": 1241
+    },
+    {
+      "file_size": 380706,
+      "height": 1754,
+      "image_path": "source/pages/page_0006.png",
+      "page_number": 6,
+      "rotation": 0,
+      "sha256": "d50d5ae40a5b6dcba695a0860548cf1d0aa4f7fa774bd27b3922913e4572abd7",
+      "width": 1241
+    },
+    {
+      "file_size": 309889,
+      "height": 1754,
+      "image_path": "source/pages/page_0007.png",
+      "page_number": 7,
+      "rotation": 0,
+      "sha256": "c5734368dde49d5ade9020c50598bc6979fd4768c5470afa6c74ae967c8bac23",
+      "width": 1241
+    },
+    {
+      "file_size": 306606,
+      "height": 1754,
+      "image_path": "source/pages/page_0008.png",
+      "page_number": 8,
+      "rotation": 0,
+      "sha256": "92b0faa20c13b8a9c928a9d7de4a4d5154f90ce592bda6dd9fd42d01357944c8",
+      "width": 1241
+    },
+    {
+      "file_size": 388896,
+      "height": 1754,
+      "image_path": "source/pages/page_0009.png",
+      "page_number": 9,
+      "rotation": 0,
+      "sha256": "e8e57059c22b04cdfca3574b4fe701bfac6095bfa911650648027b257449ce75",
+      "width": 1241
+    },
+    {
+      "file_size": 339324,
+      "height": 1754,
+      "image_path": "source/pages/page_0010.png",
+      "page_number": 10,
+      "rotation": 0,
+      "sha256": "ef44b1a7d99403664b2afed0a45eb7e2cb57a8debe7fd6e251b7b6058fa02d0f",
+      "width": 1241
+    },
+    {
+      "file_size": 1494919,
+      "height": 1754,
+      "image_path": "source/pages/page_0011.png",
+      "page_number": 11,
+      "rotation": 0,
+      "sha256": "f826317c2f151723f9fa4675b4fc1a239558a5e17a22a5a8045f3734b6aceb0b",
+      "width": 1241
+    },
+    {
+      "file_size": 372782,
+      "height": 1754,
+      "image_path": "source/pages/page_0012.png",
+      "page_number": 12,
+      "rotation": 0,
+      "sha256": "d94b1b4f74f1b710d9f5bedf19d8cd9cf8d73a6f554964218186f20dd42d78e7",
+      "width": 1241
+    },
+    {
+      "file_size": 296503,
+      "height": 1754,
+      "image_path": "source/pages/page_0013.png",
+      "page_number": 13,
+      "rotation": 0,
+      "sha256": "c46fdcf3e536d28bebf0efb3822fb68e12b13427c88df1c2c6672cbef3842a4f",
+      "width": 1241
+    },
+    {
+      "file_size": 418079,
+      "height": 1754,
+      "image_path": "source/pages/page_0014.png",
+      "page_number": 14,
+      "rotation": 0,
+      "sha256": "08af99cac616b0d10cc26b7c1846d70db5226c06eec727cd7128fa889b2ef2e6",
+      "width": 1241
+    },
+    {
+      "file_size": 294257,
+      "height": 1754,
+      "image_path": "source/pages/page_0015.png",
+      "page_number": 15,
+      "rotation": 0,
+      "sha256": "4187e5ad6cc444ef5d4fa2bd586fd061761a58e68d88de689a10ee6ec954f627",
+      "width": 1241
+    },
+    {
+      "file_size": 262272,
+      "height": 1754,
+      "image_path": "source/pages/page_0016.png",
+      "page_number": 16,
+      "rotation": 0,
+      "sha256": "aa60c37a67f5536f1070330cc879956544f4bb458b8c525a2c5223c0f4b6781e",
+      "width": 1241
+    },
+    {
+      "file_size": 235796,
+      "height": 1754,
+      "image_path": "source/pages/page_0017.png",
+      "page_number": 17,
+      "rotation": 0,
+      "sha256": "21ed1d5324ccb8803eee91f16fc172a89b5f2417b2ca128afc72ee5c6e0df14b",
+      "width": 1241
+    },
+    {
+      "file_size": 233573,
+      "height": 1754,
+      "image_path": "source/pages/page_0018.png",
+      "page_number": 18,
+      "rotation": 0,
+      "sha256": "31a7bec45f31dd880f5968c56f030c1ba7abe367f1b02015256175ce5ff46cca",
+      "width": 1241
+    },
+    {
+      "file_size": 2314611,
+      "height": 1754,
+      "image_path": "source/pages/page_0019.png",
+      "page_number": 19,
+      "rotation": 0,
+      "sha256": "64f758e47eb7423d35a3b8f34dcfc3da1b637a828bbd4fd9c29d547fb87701d5",
+      "width": 1240
+    },
+    {
+      "file_size": 259387,
+      "height": 1754,
+      "image_path": "source/pages/page_0020.png",
+      "page_number": 20,
+      "rotation": 0,
+      "sha256": "290140b5d43d21ae016915e165f103682dc0c113ea3285e768e140c3b20d7a4d",
+      "width": 1241
+    },
+    {
+      "file_size": 238895,
+      "height": 1754,
+      "image_path": "source/pages/page_0021.png",
+      "page_number": 21,
+      "rotation": 0,
+      "sha256": "163b4aead8e00109b4af5424febd0e2963358017768d966e91e3224439f4fbec",
+      "width": 1241
+    },
+    {
+      "file_size": 233603,
+      "height": 1754,
+      "image_path": "source/pages/page_0022.png",
+      "page_number": 22,
+      "rotation": 0,
+      "sha256": "c9e3570f7e7b1ae78dcb7aa66611918a09fca37ab2b0dbd9e59629f9d6557b1d",
+      "width": 1241
+    },
+    {
+      "file_size": 396500,
+      "height": 1754,
+      "image_path": "source/pages/page_0023.png",
+      "page_number": 23,
+      "rotation": 0,
+      "sha256": "7b518cd6c7339df47349b81b75705b7d4622f86e9d228d3fb6b3405f1c19e7d2",
+      "width": 1241
+    },
+    {
+      "file_size": 291650,
+      "height": 1754,
+      "image_path": "source/pages/page_0024.png",
+      "page_number": 24,
+      "rotation": 0,
+      "sha256": "a201e2c826aef070489fc63a170849f3272c28eec6e113250c2a2b2e3f5f35ff",
+      "width": 1241
+    },
+    {
+      "file_size": 391526,
+      "height": 1754,
+      "image_path": "source/pages/page_0025.png",
+      "page_number": 25,
+      "rotation": 0,
+      "sha256": "df84d1a952b971c2aa4ef0d140cae07bdb9fb9e97bf87d6b160618c54b54bb57",
+      "width": 1241
+    },
+    {
+      "file_size": 368796,
+      "height": 1754,
+      "image_path": "source/pages/page_0026.png",
+      "page_number": 26,
+      "rotation": 0,
+      "sha256": "a685471453ee5475766a18018506f7b1dca8744fea7dd5a2637e692f1a03c405",
+      "width": 1241
+    },
+    {
+      "file_size": 286102,
+      "height": 1754,
+      "image_path": "source/pages/page_0027.png",
+      "page_number": 27,
+      "rotation": 0,
+      "sha256": "939854dc2337fab340d541602dc636a474ce77edfc230cc907cd9decd364ff4b",
+      "width": 1241
+    },
+    {
+      "file_size": 305068,
+      "height": 1754,
+      "image_path": "source/pages/page_0028.png",
+      "page_number": 28,
+      "rotation": 0,
+      "sha256": "e53d4af59918990660da2f07ef934ee20076ec5bf259e30b508ec7488a16bb61",
+      "width": 1241
+    },
+    {
+      "file_size": 406505,
+      "height": 1754,
+      "image_path": "source/pages/page_0029.png",
+      "page_number": 29,
+      "rotation": 0,
+      "sha256": "c9a70a29c38ed28b96253165f2480ed8cada756a5278119b731522f901142211",
+      "width": 1241
+    },
+    {
+      "file_size": 343540,
+      "height": 1754,
+      "image_path": "source/pages/page_0030.png",
+      "page_number": 30,
+      "rotation": 0,
+      "sha256": "11fb1cc9dedea14ae7fe705154d6a04bfd4af76fa80e06bf9f2ce030e74b8bd1",
+      "width": 1241
+    },
+    {
+      "file_size": 245190,
+      "height": 1754,
+      "image_path": "source/pages/page_0031.png",
+      "page_number": 31,
+      "rotation": 0,
+      "sha256": "977ac11a13eb85a2ec68f5c598ff772b4599e1091b2818b93f0a0d62926571ec",
+      "width": 1241
+    },
+    {
+      "file_size": 233513,
+      "height": 1754,
+      "image_path": "source/pages/page_0032.png",
+      "page_number": 32,
+      "rotation": 0,
+      "sha256": "3964aad487976ac0df413543924fc54864284aef99dba923d7d7d457c1c3db21",
+      "width": 1241
+    },
+    {
+      "file_size": 559521,
+      "height": 1754,
+      "image_path": "source/pages/page_0033.png",
+      "page_number": 33,
+      "rotation": 0,
+      "sha256": "69d336ed6b3878b12300cb5e99bc0fb1ec11366fe541fabce288655ece61deb5",
+      "width": 1241
+    },
+    {
+      "file_size": 362225,
+      "height": 1754,
+      "image_path": "source/pages/page_0034.png",
+      "page_number": 34,
+      "rotation": 0,
+      "sha256": "e143e32646f7a478bcbe821eee7adeeb0ba2bd8cfd898184b3f7a3752de26309",
+      "width": 1241
+    },
+    {
+      "file_size": 368442,
+      "height": 1754,
+      "image_path": "source/pages/page_0035.png",
+      "page_number": 35,
+      "rotation": 0,
+      "sha256": "3c61dffc3098c0391105f1679946a9ea7e31ce40e66978c828c5e7a9cc32e904",
+      "width": 1241
+    },
+    {
+      "file_size": 1414073,
+      "height": 1755,
+      "image_path": "source/pages/page_0036.png",
+      "page_number": 36,
+      "rotation": 0,
+      "sha256": "eee4a0b61f9a5b22ed3daf13ae3bb51a87656a9cb8d73f9e27c1bf4f6efb8970",
+      "width": 1241
+    }
+  ],
+  "quotation_id": "HAOPHUONG_20260501_001",
+  "schema_version": "1.0",
+  "source_pdf": "source/original.pdf"
+}

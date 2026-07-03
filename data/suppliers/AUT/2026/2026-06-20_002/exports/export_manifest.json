@@ -1,0 +1,33 @@
+{
+  "export_file": "exports/quotation.xlsx",
+  "export_file_sha256": "c1b5a16ad0f39f36fddf2e3801e804cfd8d93eb44bc3fc1fbbc538fa8940fcfc",
+  "exported_at": "2026-07-02T09:01:01Z",
+  "exporter_name": "openpyxl_excel_exporter",
+  "exporter_version": "1.0",
+  "quotation_date": "2026-06-20",
+  "quotation_id": "AUT_20260620_002",
+  "schema_version": "1.0",
+  "sheet_count": 4,
+  "sheets": [
+    {
+      "name": "Summary",
+      "row_count": 16
+    },
+    {
+      "name": "Items",
+      "row_count": 1
+    },
+    {
+      "name": "Warnings",
+      "row_count": 0
+    },
+    {
+      "name": "Trace",
+      "row_count": 1
+    }
+  ],
+  "source_normalized": "normalized/normalized.json",
+  "source_normalized_sha256": "df4657f5be4998c6afd30cb8931a17be5269e3f6863d69e355f9770f1c5f20a1",
+  "supplier_code": "AUT",
+  "warnings": []
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-02T09:00:13Z",
+  "markdown_path": "text/quotation.md",
+  "page_count": 8,
+  "pages": [
+    {
+      "character_count": 2820,
+      "end_offset": 2967,
+      "has_text": true,
+      "page_number": 1,
+      "start_offset": 147
+    },
+    {
+      "character_count": 2517,
+      "end_offset": 5502,
+      "has_text": true,
+      "page_number": 2,
+      "start_offset": 2985
+    },
+    {
+      "character_count": 2915,
+      "end_offset": 8435,
+      "has_text": true,
+      "page_number": 3,
+      "start_offset": 5520
+    },
+    {
+      "character_count": 3256,
+      "end_offset": 11709,
+      "has_text": true,
+      "page_number": 4,
+      "start_offset": 8453
+    },
+    {
+      "character_count": 2855,
+      "end_offset": 14582,
+      "has_text": true,
+      "page_number": 5,
+      "start_offset": 11727
+    },
+    {
+      "character_count": 2767,
+      "end_offset": 17367,
+      "has_text": true,
+      "page_number": 6,
+      "start_offset": 14600
+    },
+    {
+      "character_count": 3885,
+      "end_offset": 21270,
+      "has_text": true,
+      "page_number": 7,
+      "start_offset": 17385
+    },
+    {
+      "character_count": 3231,
+      "end_offset": 24519,
+      "has_text": true,
+      "page_number": 8,
+      "start_offset": 21288
+    }
+  ],
+  "pages_with_text": 8,
+  "quotation_id": "AUT_20260620_002",
+  "schema_version": "1.0",
+  "source_raw_text": "source/raw_text.json",
+  "source_sha256": "b82440aab746c1d5c304ba7d712279c632de7e9273992051b67dc18e52afb423",
+  "total_characters": 24246
+}
