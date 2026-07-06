@@ -37,7 +37,10 @@ from mep_quotation.spec.models import (
     ExportSummaryModel,
     ExcelExportSheetModel,
     ExcelExportContextModel,
-    ExcelExportManifestModel
+    ExcelExportManifestModel,
+    SourceProfileModel,
+    SourceRole,
+    RecommendedNextAction
 )
 from mep_quotation.spec.validators import (
     validate_package_data,

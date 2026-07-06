@@ -1,54 +1,50 @@
-# Báo Cáo Nghiệm Thu Phase 13 – Local Pipeline Orchestrator / Human Review UI
+# Tài Liệu Nghiệm Thu Walkthrough – Phase 14 (Source Profiling Gate)
 
-Báo cáo tóm tắt quá trình triển khai, kết quả chạy kiểm thử tự động và kết quả chạy thử nghiệm thực tế (Smoke Test) cho Phase 13 sau khi cải tiến giao diện người dùng (UX) hướng tới nghiệp vụ MEP.
-
-## Kết quả đạt được
-
-1. **Giao Diện Đơn Giản Mặc Định (Simple Mode UX)**:
-   * **Không hiển thị thuật ngữ kỹ thuật**: Loại bỏ hoàn toàn các thuật ngữ của nhà phát triển như: `CLI`, `stdout`, `stderr`, `Phase 2/3/4...`, `overwrite`, `timeout`, `Run Selected Step`, `Validate Package` và `normalized.json` khỏi màn hình mặc định.
-   * **Bố cục 4 bước dễ hiểu**:
-     * **Bước 1: Chọn báo giá**: Chọn tệp PDF, Mã nhà cung cấp, Ngày báo giá và Số thứ tự báo giá.
-     * **Bước 2: Xử lý**: Chỉ có một nút **Xử lý báo giá** duy nhất để chạy toàn bộ pipeline đến Phase 9. Nếu xử lý thành công, hệ thống tự động chạy ngầm khởi tạo file rà soát decisions trống (nếu chưa tồn tại).
-     * **Bước 3: Rà soát dữ liệu**: Hiển thị bảng nháp và bộ chọn dòng vật tư. Các quyết định hiển thị tiếng Việt tự nhiên: **Chấp nhận** (approved), **Từ chối** (rejected), **Chỉnh sửa** (edited).
-     * **Bước 4: Xuất kết quả**: Chỉ có một nút **Xuất Excel** duy nhất. Khi bấm, UI tự động chạy Phase 11 (`export-normalized`) trước rồi chạy Phase 12 (`export-excel`) ngầm, sau đó hiển thị nút **Tải file Excel báo giá**.
-
-2. **Chế Độ Nâng Cao (Advanced Mode UX)**:
-   * Tích chọn checkbox **Hiển thị chế độ nâng cao** ở chân Sidebar mới hiển thị:
-     * Các checkbox ghi đè dữ liệu trung gian, quyết định rà soát, dữ liệu chuẩn, tệp Excel.
-     * Cấu hình thời gian chờ xử lý và Thư mục dự án.
-     * Các tính năng gỡ lỗi: Chạy riêng từng bước, Kiểm tra toàn vẹn gói, Tải lại gói báo giá.
-     * Chi tiết nhật ký chạy CLI (Stdout/Stderr) và các tabs xem Artifacts trung gian.
-
-3. **Cải tiến thông điệp báo lỗi tiếng Việt**:
-   * "Không xử lý được PDF. Vui lòng kiểm tra file đầu vào."
-   * "Chưa có dữ liệu nháp để rà soát. Vui lòng chọn tệp PDF và bấm 'Xử lý báo giá' ở Sidebar."
-   * "Cần rà soát ít nhất một dòng trước khi xuất Excel."
-
-4. **Tài liệu hướng dẫn**:
-   * Cập nhật [README.md (D:/mep_quotation_pipeline/README.md)](file:///D:/mep_quotation_pipeline/README.md) hướng dẫn quy trình 4 bước đơn giản, thân thiện với nhân sự báo giá.
-
-5. **Bộ Kiểm Thử Hoàn Chỉnh**:
-   * Hệ thống vượt qua toàn bộ **140/140 tests** tự động của pytest (`140 passed in 11.42s`).
+Tài liệu này tóm tắt kết quả triển khai và kết quả kiểm định chất lượng của Phase 14, bao gồm cả các cải tiến sửa lỗi mới nhất.
 
 ---
 
-## Xác nhận kiểm thử tự động (Pytest)
+## Các Thay Đổi Đã Thực Hiện
 
-Chạy tất cả các test cases bằng `pytest`:
+### 1. Mô hình Pydantic & JSON Schema (spec)
+* **Tệp chỉnh sửa**: [models.py (D:/mep_quotation_pipeline/mep_quotation/spec/models.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py) và [__init__.py (D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py)](file:///D:/mep_quotation_pipeline/mep_quotation/spec/__init__.py)
+* **Kết quả**: Thêm các enums `SourceRole`, `RecommendedNextAction` và các mô hình `SourceProfileModel`, `TechnicalReadabilityModel`, `SourceDateCandidateModel`. Cập nhật `FilePathsModel` với trường `source_profile`.
+* **Đồng bộ hóa**: Chạy kịch bản `generate_schemas.py` và sinh thành công JSON Schema cho `source_profile.schema.json`.
+
+### 2. Sửa Phạm Vi Định Dạng WEBP (webp scope)
+* **Tệp chỉnh sửa**: [profiler.py (D:/mep_quotation_pipeline/mep_quotation/intake/profiler.py)](file:///D:/mep_quotation_pipeline/mep_quotation/intake/profiler.py)
+* **Kết quả**: 
+  * Tách định dạng `.webp` khỏi nhóm `image` deep profiling để không đọc Pillow / không deep read.
+  * Chuyển `.webp` vào nhóm limited support cùng `.xls`, `.xlsm`, `.csv`. 
+  * Đặt `is_supported_file_type = False`, gán warning `limited_support` và `recommended_next_action = RecommendedNextAction.unsupported_file_type`.
+
+### 3. Sửa Atomic Write thành Atomic Replace thực sự
+* **Tệp chỉnh sửa**: [main.py (D:/mep_quotation_pipeline/mep_quotation/cli/main.py)](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py)
+* **Kết quả**: Sử dụng lệnh đổi tên nguyên tử `os.replace` để thay thế file thay vì sử dụng `os.remove` trước. Áp dụng cho cả tệp `source_profile.json` và cập nhật `package.json`.
+
+### 4. Tích Hợp Kiểm Định & Tương Thích Ngược
+* **Tệp chỉnh sửa**: [integrity.py (D:/mep_quotation_pipeline/mep_quotation/package/integrity.py)](file:///D:/mep_quotation_pipeline/mep_quotation/package/integrity.py)
+* **Kết quả**:
+  * Kiểm định chéo: xác thực cấu trúc `SourceProfileModel`, đối chiếu `quotation_id`, kiểm định SHA256 file nguồn.
+  * Tương thích ngược: pass bình thường nếu package cũ (Phase 1-13) chưa chạy profiling và chưa khai báo. Báo lỗi nghiêm trọng nếu có khai báo trong metadata nhưng file thực tế bị mất mát trên đĩa.
+
+### 5. Tích Hợp UI
+* **Tệp chỉnh sửa**: [local_review_app.py (D:/mep_quotation_pipeline/tools/local_review_app.py)](file:///D:/mep_quotation_pipeline/tools/local_review_app.py)
+* **Kết quả**: Thêm tab **Hồ sơ nguồn (Source Profile)** hiển thị chi tiết và trực quan các kết quả phân tích trong mục Artifacts Viewer nâng cao.
+
+---
+
+## Kết Quả Kiểm Thử (Verification Results)
+
+### 1. Bộ kiểm thử tự động
+* **Tệp chỉnh sửa**: [test_profile_source.py (D:/mep_quotation_pipeline/tests/test_profile_source.py)](file:///D:/mep_quotation_pipeline/tests/test_profile_source.py)
+* **Mô tả bổ sung**:
+  * **Test tệp WEBP**: Thêm test case cho `original.webp` xác nhận hệ thống không thực hiện deep profiling, gán `is_supported = False` và ghi nhận warning `limited_support` cũng như `recommended_next_action` không phải `run_image_ocr_pipeline_later`.
+  * **Test CLI overwrite**: Kiểm thử verify tệp `.json` sinh ra là tệp JSON hợp lệ và không để lại file `.tmp` thừa sau khi thực hiện atomic overwrite.
+
+### 2. Kết quả chạy pytest
+Tất cả các bài kiểm thử đã vượt qua thành công:
 ```bash
-python -m pytest -q
+============================ 148 passed in 11.29s =============================
 ```
-Kết quả thực tế:
-```text
-........................................................................ [ 51%]
-....................................................................     [100%]
-140 passed in 11.42s
-```
-
----
-
-## Kết quả thử nghiệm thủ công trên UI (Smoke Test)
-
-* Máy chủ Streamlit khởi chạy thành công tại: [http://localhost:8501](http://localhost:8501).
-* Màn hình mặc định hiển thị đúng quy trình 4 bước sạch đẹp, không chứa bất kỳ thuật ngữ kỹ thuật nào.
-* Quy trình xử lý báo giá, lưu quyết định rà soát (Chấp nhận/Chỉnh sửa), tự động chạy xuất bản và tải file Excel báo giá hoạt động trơn tru.
+Mã nguồn hoạt động ổn định và đạt tiêu chuẩn nghiệm thu tuyệt đối.

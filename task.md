@@ -1,66 +1,33 @@
-# Danh Sách Công Việc MEP Quotation Pipeline Phase 13 – Local Pipeline Orchestrator / Human Review UI
+# Danh sách công việc triển khai Phase 14
 
-## Component 1 – Cấu Hình & Dependencies
-
-- [x] Cài đặt thư viện `streamlit>=1.36.0` trong [pyproject.toml (D:/mep_quotation_pipeline/pyproject.toml)](file:///D:/mep_quotation_pipeline/pyproject.toml)
-- [x] Bổ sung thư mục `temp_uploads/` vào [.gitignore (D:/mep_quotation_pipeline/.gitignore)](file:///D:/mep_quotation_pipeline/.gitignore)
-
-## Component 2 – UI Helper Module (tools/ui_helpers.py)
-
-- [x] Triển khai hàm `run_cli_command(args, timeout)`:
-  - [x] Gọi CLI thông qua subprocess với `shell=False`
-  - [x] Thiết lập thư mục làm việc `cwd` tại dự án root
-  - [x] Bắt giữ stdout/stderr đầy đủ
-  - [x] Có cơ chế timeout cấu hình được và đánh dấu fail nếu xảy ra timeout
-- [x] Triển khai hàm `safe_load_json(path)`:
-  - [x] Tự động catch lỗi nếu file không tồn tại hoặc lỗi JSON để tránh làm crash giao diện
-- [x] Triển khai hàm lọc tên tệp tin tải lên (sanitize filename) để loại bỏ các ký tự nguy hiểm
-- [x] Triển khai bộ giải quyết đường dẫn artifact (Artifact Path Resolver):
-  - [x] Ưu tiên đọc đường dẫn của từng artifact từ package.json / package.files / FilePathsModel
-  - [x] Chỉ sử dụng đường dẫn quy ước (fallback) khi package metadata thiếu field đó
-  - [x] Đảm bảo Artifact Viewer không hardcode cứng các đường dẫn như source/raw_text.json, parsed/*.json, text/*.md mà lấy động từ resolver
-
-## Component 3 – local_review_app Module (tools/local_review_app.py)
-
-- [x] Khởi tạo cấu trúc dữ liệu `PipelineStepStatus` (BaseModel) lưu trữ chi tiết trạng thái từng phase
-- [x] Thiết kế giao diện chính:
-  - [x] **Sidebar**:
-    - [x] Nhập đường dẫn project root (mặc định D:\mep_quotation_pipeline)
-    - [x] Bộ chọn PDF (đường dẫn local hoặc Streamlit file uploader an toàn)
-    - [x] Thông số: supplier, date, seq
-    - [x] 4 checkboxes Overwrite độc lập
-    - [x] Các nút chạy pipeline, refresh và validate
-  - [x] **Pipeline Status Table**:
-    - [x] Bảng trạng thái trực quan hiển thị pass/fail, stdout/stderr của từng bước
-  - [x] **Human Review UI**:
-    - [x] Hiển thị bảng các draft items từ `normalized_draft.json`
-    - [x] Chọn 1 dòng và mở form chi tiết cho phép Approve/Reject/Edit
-    - [x] Nút Save Decision ghi nhận quyết định qua CLI `record-review` của Phase 10
-  - [x] **Artifacts Viewer (Tabs)**:
-    - [x] Read-only view hiển thị nội dung các tệp tin trung gian và tệp tin kết quả
-    - [x] Tích hợp page selector cho PDF Pages và Raw Text
-    - [x] Nút tải file Excel `quotation.xlsx` sau khi export thành công
-- [x] Triển khai logic `Run Pipeline to Draft`:
-  - [x] Tự động chạy tuần tự Phase 2 đến Phase 9, dừng sau Phase 9
-- [x] Triển khai logic `Run Selected Step`:
-  - [x] Chỉ chạy duy nhất bước được chọn
-  - [x] Kiểm tra sự tồn tại của tệp tin đầu vào (input artifact) trước khi chạy, ném lỗi rõ ràng nếu thiếu
-
-## Component 4 – Unit Tests
-
-- [x] Tạo tệp kiểm thử [test_ui_app.py (D:/mep_quotation_pipeline/tests/test_ui_app.py)](file:///D:/mep_quotation_pipeline/tests/test_ui_app.py) bao phủ:
-  - [x] `safe_load_json` (khi mất file và khi JSON lỗi)
-  - [x] `run_cli_command` (capture stdout/stderr, timeout, exit code)
-  - [x] sanitize filename uploader
-  - [x] Trích xuất bảng review từ draft
-
-## Component 5 – Hướng dẫn sử dụng
-
-- [x] Cập nhật [README.md (D:/mep_quotation_pipeline/README.md)](file:///D:/mep_quotation_pipeline/README.md) mục `Local Pipeline Orchestrator / Human Review UI`
-- [x] Cập nhật [walkthrough.md (D:/mep_quotation_pipeline/walkthrough.md)](file:///D:/mep_quotation_pipeline/walkthrough.md) sau khi hoàn tất
-
-## Verification Bắt Buộc
-
-- [x] `python scripts/generate_schemas.py` sinh đủ 14 schemas thành công
-- [x] `python -m pytest -q` đạt 100% passed (tất cả các tests cũ và mới đều passed)
-- [x] Thực hiện Manual Acceptance Test trên UI thật với tệp PDF thật
+- `[x]` Cấu trúc & Định nghĩa các mô hình dữ liệu Pydantic mới trong [spec/models.py](file:///D:/mep_quotation_pipeline/mep_quotation/spec/models.py)
+  - `[x]` Tạo enums: `SourceRole`, `RecommendedNextAction`
+  - `[x]` Tạo models: `SourceDateCandidateModel`, `TechnicalReadabilityModel`, `SourceProfileModel`
+  - `[x]` Cập nhật `FilePathsModel` thêm trường `source_profile`
+- `[x]` Triển khai logic phân tích nguồn chi tiết trong [intake/profiler.py](file:///D:/mep_quotation_pipeline/mep_quotation/intake/profiler.py)
+  - `[x]` Phân giải tệp nguồn (Source Resolver Logic): ưu tiên `package.files.source_pdf` -> scan `source/original.*` duy nhất -> fail nếu không tìm thấy hoặc có nhiều file nguồn
+  - `[x]` Deep profiling cho PDF (pymupdf probe text, page count, density, requires_ocr)
+  - `[x]` Deep profiling cho XLSX (openpyxl sheet count, formula/header check)
+  - `[x]` Deep profiling cho JPG/JPEG/PNG (Pillow width/height, requires_ocr)
+  - `[x]` Limited support cho XLS, XLSM, CSV, WEBP (chỉ detect extension, ghi warning, không deep read)
+  - `[x]` Trích xuất candidate dates dùng regex và gán confidence
+  - `[x]` Nhận diện candidate roles bằng từ khóa rule-based và gán confidence
+- `[x]` Cấu hình CLI Command `profile-source` trong [cli/main.py](file:///D:/mep_quotation_pipeline/mep_quotation/cli/main.py)
+  - `[x]` Thêm sub-command và tham số `--overwrite`
+  - `[x]` Thực hiện profiling, chặn ghi đè nếu không có `--overwrite`
+  - `[x]` Ghi tệp `source_profile.json` bằng phương thức atomic write an toàn
+  - `[x]` Cập nhật đường dẫn `source_profile` vào `package.json`
+  - `[x]` Ghi nhận Audit logs sự kiện đầy đủ
+- `[x]` Cập nhật bộ kiểm định [package/integrity.py](file:///D:/mep_quotation_pipeline/mep_quotation/package/integrity.py)
+  - `[x]` Thêm kiểm tra `source_profile` trong hàm `validate_package_integrity`
+  - `[x]` Validate cấu trúc qua Pydantic model và so sánh SHA256 với file nguồn thực tế
+- `[x]` Tích hợp hiển thị Source Profile trên Streamlit UI [tools/local_review_app.py](file:///D:/mep_quotation_pipeline/tools/local_review_app.py)
+  - `[x]` Thêm tab hiển thị Hồ sơ nguồn trực quan
+- `[x]` Xây dựng bộ test [tests/test_profile_source.py](file:///D:/mep_quotation_pipeline/tests/test_profile_source.py)
+  - `[x]` Viết unit test cho models, PDF/Excel/Image profiling, CLI và kiểm định package
+  - `[x]` Test backward compatibility: package Phase 1-13 chưa có source/source_profile.json và chưa khai báo source_profile vẫn validate_package_integrity pass.
+- `[x]` Chạy kiểm định và nghiệm nghiệm thu (Verification)
+  - `[x]` Chạy `generate_schemas.py` và sinh schema JSON mới
+  - `[x]` Chạy toàn bộ pytest suite của dự án để đảm bảo không bị lỗi hồi quy (regression)
+  - `[x]` Tiến hành manual smoke test trên package `AUT_20260620_002`
+- `[x]` Đồng bộ hóa tất cả các tài liệu rà soát (implementation_plan.md, task.md, walkthrough.md) sang dự án root

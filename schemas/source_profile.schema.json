@@ -1,0 +1,310 @@
+{
+  "$defs": {
+    "RecommendedNextAction": {
+      "enum": [
+        "run_pdf_native_pipeline",
+        "run_pdf_ocr_pipeline_later",
+        "run_excel_intake_pipeline_later",
+        "run_image_ocr_pipeline_later",
+        "manual_profile_required",
+        "reject_or_hold",
+        "unsupported_file_type"
+      ],
+      "title": "RecommendedNextAction",
+      "type": "string"
+    },
+    "SourceDateCandidateModel": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "description": "Độ tự tin phát hiện (0.0 - 1.0)",
+          "title": "Confidence",
+          "type": "number"
+        },
+        "date": {
+          "description": "Ngày tháng phát hiện định dạng YYYY-MM-DD",
+          "title": "Date",
+          "type": "string"
+        },
+        "date_type": {
+          "description": "Loại ngày phát hiện (quotation_date_candidate, effective_date_candidate, v.v.)",
+          "title": "Date Type",
+          "type": "string"
+        },
+        "evidence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đoạn văn bản chứa minh chứng gốc",
+          "title": "Evidence"
+        },
+        "source": {
+          "description": "Nguồn phát hiện, ví dụ text_probe, file_metadata",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "date_type",
+        "source",
+        "confidence"
+      ],
+      "title": "SourceDateCandidateModel",
+      "type": "object"
+    },
+    "SourceRole": {
+      "enum": [
+        "supplier_quotation_candidate",
+        "supplier_price_list_candidate",
+        "supplier_catalog_candidate",
+        "boq_candidate",
+        "purchase_order_candidate",
+        "technical_datasheet_candidate",
+        "mixed_document_candidate",
+        "unknown_document"
+      ],
+      "title": "SourceRole",
+      "type": "string"
+    },
+    "TechnicalReadabilityModel": {
+      "additionalProperties": false,
+      "properties": {
+        "has_native_text": {
+          "description": "Tệp tin có lớp văn bản gốc hay không",
+          "title": "Has Native Text",
+          "type": "boolean"
+        },
+        "image_height": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Chiều cao ảnh (nếu là ảnh)",
+          "title": "Image Height"
+        },
+        "image_width": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Chiều rộng ảnh (nếu là ảnh)",
+          "title": "Image Width"
+        },
+        "is_scanned_candidate": {
+          "description": "Có khả năng là file quét scan ảnh hay không",
+          "title": "Is Scanned Candidate",
+          "type": "boolean"
+        },
+        "is_supported_file_type": {
+          "description": "Định dạng tệp tin có hỗ trợ hay không",
+          "title": "Is Supported File Type",
+          "type": "boolean"
+        },
+        "native_text_probe_char_count": {
+          "description": "Số ký tự đọc thử trong probe text",
+          "title": "Native Text Probe Char Count",
+          "type": "integer"
+        },
+        "page_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số trang (đối với PDF)",
+          "title": "Page Count"
+        },
+        "requires_ocr": {
+          "description": "Có yêu cầu OCR hay không",
+          "title": "Requires Ocr",
+          "type": "boolean"
+        },
+        "sheet_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Số lượng sheets (đối với Excel)",
+          "title": "Sheet Count"
+        },
+        "text_density_level": {
+          "description": "Mức độ mật độ chữ (none | low | medium | high)",
+          "title": "Text Density Level",
+          "type": "string"
+        }
+      },
+      "required": [
+        "is_supported_file_type",
+        "has_native_text",
+        "native_text_probe_char_count",
+        "text_density_level",
+        "is_scanned_candidate",
+        "requires_ocr"
+      ],
+      "title": "TechnicalReadabilityModel",
+      "type": "object"
+    },
+    "WarningModel": {
+      "properties": {
+        "code": {
+          "description": "Mã cảnh báo kỹ thuật",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Nội dung chi tiết cảnh báo",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "WarningModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "description": "Thời điểm tạo",
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "date_candidates": {
+      "description": "Danh sách các ứng viên ngày tháng",
+      "items": {
+        "$ref": "#/$defs/SourceDateCandidateModel"
+      },
+      "title": "Date Candidates",
+      "type": "array"
+    },
+    "detected_file_type": {
+      "description": "Loại file phát hiện được (pdf, excel_xlsx, image, v.v.)",
+      "title": "Detected File Type",
+      "type": "string"
+    },
+    "detected_mime_type": {
+      "description": "Mime type phát hiện được",
+      "title": "Detected Mime Type",
+      "type": "string"
+    },
+    "file_extension": {
+      "description": "Phần mở rộng của file nguồn (ví dụ .pdf, .xlsx)",
+      "title": "File Extension",
+      "type": "string"
+    },
+    "file_name": {
+      "description": "Tên file nguồn",
+      "title": "File Name",
+      "type": "string"
+    },
+    "file_size_bytes": {
+      "description": "Dung lượng file tính bằng bytes",
+      "title": "File Size Bytes",
+      "type": "integer"
+    },
+    "quotation_id": {
+      "description": "ID báo giá liên kết",
+      "title": "Quotation Id",
+      "type": "string"
+    },
+    "recommended_next_action": {
+      "$ref": "#/$defs/RecommendedNextAction",
+      "description": "Khuyến nghị hành động tiếp theo"
+    },
+    "requires_human_profile_review": {
+      "default": false,
+      "description": "Có yêu cầu con người rà soát hồ sơ hay không",
+      "title": "Requires Human Profile Review",
+      "type": "boolean"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "description": "Phiên bản schema hồ sơ nguồn",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_file": {
+      "description": "Đường dẫn tương đối tới file nguồn từ package root",
+      "title": "Source File",
+      "type": "string"
+    },
+    "source_role": {
+      "$ref": "#/$defs/SourceRole",
+      "description": "Vai trò tài liệu phát hiện được"
+    },
+    "source_role_confidence": {
+      "description": "Độ tự tin của vai trò tài liệu",
+      "title": "Source Role Confidence",
+      "type": "number"
+    },
+    "source_sha256": {
+      "description": "Mã băm SHA256 của file nguồn",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "technical_readability": {
+      "$ref": "#/$defs/TechnicalReadabilityModel",
+      "description": "Khả năng đọc kỹ thuật"
+    },
+    "updated_at": {
+      "description": "Thời điểm cập nhật",
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "warnings": {
+      "description": "Danh sách các cảnh báo",
+      "items": {
+        "$ref": "#/$defs/WarningModel"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quotation_id",
+    "source_file",
+    "source_sha256",
+    "file_name",
+    "file_extension",
+    "detected_file_type",
+    "detected_mime_type",
+    "file_size_bytes",
+    "source_role",
+    "source_role_confidence",
+    "technical_readability",
+    "recommended_next_action"
+  ],
+  "title": "SourceProfileModel",
+  "type": "object"
+}
