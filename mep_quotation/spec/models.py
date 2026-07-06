@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 from typing import List, Optional, Any, Dict
 from pydantic import BaseModel, Field, field_serializer, model_validator, ConfigDict
 import re
+from enum import Enum
 
 # Helper to serialize datetime to ISO 8601 UTC format ending with Z
 def serialize_dt(dt: Optional[datetime]) -> Optional[str]:
@@ -47,6 +48,7 @@ class FilePathsModel(BaseModel):
     logs_jsonl: str = Field(..., description="Đường dẫn file nhật ký log JSONL, tương đối")
     excel_export: Optional[str] = Field("exports/quotation.xlsx", description="Đường dẫn file Excel xuất bản, tương đối từ package root")
     excel_export_manifest: Optional[str] = Field("exports/export_manifest.json", description="Đường dẫn file manifest Excel xuất bản, tương đối từ package root")
+    source_profile: Optional[str] = Field(None, description="Đường dẫn file profile nguồn JSON, tương đối từ package root")
 
 
 
@@ -681,6 +683,80 @@ class ExcelExportManifestModel(BaseModel):
 
     @field_serializer("exported_at")
     def serialize_exported_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+
+class SourceRole(str, Enum):
+    supplier_quotation_candidate = "supplier_quotation_candidate"
+    supplier_price_list_candidate = "supplier_price_list_candidate"
+    supplier_catalog_candidate = "supplier_catalog_candidate"
+    boq_candidate = "boq_candidate"
+    purchase_order_candidate = "purchase_order_candidate"
+    technical_datasheet_candidate = "technical_datasheet_candidate"
+    mixed_document_candidate = "mixed_document_candidate"
+    unknown_document = "unknown_document"
+
+
+class RecommendedNextAction(str, Enum):
+    run_pdf_native_pipeline = "run_pdf_native_pipeline"
+    run_pdf_ocr_pipeline_later = "run_pdf_ocr_pipeline_later"
+    run_excel_intake_pipeline_later = "run_excel_intake_pipeline_later"
+    run_image_ocr_pipeline_later = "run_image_ocr_pipeline_later"
+    manual_profile_required = "manual_profile_required"
+    reject_or_hold = "reject_or_hold"
+    unsupported_file_type = "unsupported_file_type"
+
+
+class SourceDateCandidateModel(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    date: str = Field(..., description="Ngày tháng phát hiện định dạng YYYY-MM-DD")
+    date_type: str = Field(..., description="Loại ngày phát hiện (quotation_date_candidate, effective_date_candidate, v.v.)")
+    source: str = Field(..., description="Nguồn phát hiện, ví dụ text_probe, file_metadata")
+    confidence: float = Field(..., description="Độ tự tin phát hiện (0.0 - 1.0)")
+    evidence: Optional[str] = Field(None, description="Đoạn văn bản chứa minh chứng gốc")
+
+
+class TechnicalReadabilityModel(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    is_supported_file_type: bool = Field(..., description="Định dạng tệp tin có hỗ trợ hay không")
+    has_native_text: bool = Field(..., description="Tệp tin có lớp văn bản gốc hay không")
+    native_text_probe_char_count: int = Field(..., description="Số ký tự đọc thử trong probe text")
+    text_density_level: str = Field(..., description="Mức độ mật độ chữ (none | low | medium | high)")
+    is_scanned_candidate: bool = Field(..., description="Có khả năng là file quét scan ảnh hay không")
+    requires_ocr: bool = Field(..., description="Có yêu cầu OCR hay không")
+    page_count: Optional[int] = Field(None, description="Số trang (đối với PDF)")
+    sheet_count: Optional[int] = Field(None, description="Số lượng sheets (đối với Excel)")
+    image_width: Optional[int] = Field(None, description="Chiều rộng ảnh (nếu là ảnh)")
+    image_height: Optional[int] = Field(None, description="Chiều cao ảnh (nếu là ảnh)")
+
+
+class SourceProfileModel(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    schema_version: str = Field("1.0", description="Phiên bản schema hồ sơ nguồn")
+    quotation_id: str = Field(..., description="ID báo giá liên kết")
+    source_file: str = Field(..., description="Đường dẫn tương đối tới file nguồn từ package root")
+    source_sha256: str = Field(..., description="Mã băm SHA256 của file nguồn")
+    file_name: str = Field(..., description="Tên file nguồn")
+    file_extension: str = Field(..., description="Phần mở rộng của file nguồn (ví dụ .pdf, .xlsx)")
+    detected_file_type: str = Field(..., description="Loại file phát hiện được (pdf, excel_xlsx, image, v.v.)")
+    detected_mime_type: str = Field(..., description="Mime type phát hiện được")
+    file_size_bytes: int = Field(..., description="Dung lượng file tính bằng bytes")
+    source_role: SourceRole = Field(..., description="Vai trò tài liệu phát hiện được")
+    source_role_confidence: float = Field(..., description="Độ tự tin của vai trò tài liệu")
+    technical_readability: TechnicalReadabilityModel = Field(..., description="Khả năng đọc kỹ thuật")
+    date_candidates: List[SourceDateCandidateModel] = Field(default_factory=list, description="Danh sách các ứng viên ngày tháng")
+    recommended_next_action: RecommendedNextAction = Field(..., description="Khuyến nghị hành động tiếp theo")
+    requires_human_profile_review: bool = Field(False, description="Có yêu cầu con người rà soát hồ sơ hay không")
+    warnings: List[WarningModel] = Field(default_factory=list, description="Danh sách các cảnh báo")
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Thời điểm tạo")
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Thời điểm cập nhật")
+
+    @field_serializer("created_at")
+    def serialize_created_at(self, dt: datetime) -> str:
+        return serialize_dt(dt)
+
+    @field_serializer("updated_at")
+    def serialize_updated_at(self, dt: datetime) -> str:
         return serialize_dt(dt)
 
 

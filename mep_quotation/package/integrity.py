@@ -244,6 +244,53 @@ def validate_package_integrity(package_path: Path) -> None:
             if sheet_names != expected_names:
                 raise ValueError(f"Excel integrity failed: expected sheet names {expected_names}, but got {sheet_names}")
 
+    # 10. Kiểm duyệt source_profile.json
+    has_source_profile_declared = False
+    source_profile_rel_path = "source/source_profile.json"
+    if hasattr(pkg.files, "source_profile") and pkg.files.source_profile:
+        has_source_profile_declared = True
+        source_profile_rel_path = pkg.files.source_profile
+
+    source_profile_path = package_path / source_profile_rel_path
+
+    if source_profile_path.exists():
+        from mep_quotation.spec.models import SourceProfileModel
+        from mep_quotation.pdf.checksum import calculate_sha256
+        
+        with open(source_profile_path, "r", encoding="utf-8") as f:
+            try:
+                profile_data = json.load(f)
+                profile = SourceProfileModel.model_validate(profile_data)
+            except Exception as e:
+                raise ValueError(f"Integrity check failed: Invalid source_profile.json format: {e}")
+
+        # Đối chiếu quotation_id
+        if profile.quotation_id != pkg.quotation_id:
+            raise ValueError(
+                f"Integrity check failed: source_profile.quotation_id '{profile.quotation_id}' "
+                f"does not match package.quotation_id '{pkg.quotation_id}'"
+            )
+
+        # Đối chiếu tệp nguồn tồn tại
+        source_file_path = package_path / profile.source_file
+        if not source_file_path.exists():
+            raise ValueError(f"Integrity check failed: Source file does not exist: {profile.source_file}")
+
+        # Đối chiếu SHA256
+        actual_source_sha = calculate_sha256(source_file_path)
+        if profile.source_sha256 != actual_source_sha:
+            raise ValueError(
+                f"Integrity check failed: source_profile.source_sha256 '{profile.source_sha256}' "
+                f"does not match actual source file sha256 '{actual_source_sha}'"
+            )
+    else:
+        # Nếu không tồn tại mà package metadata có khai báo -> lỗi mất mát file
+        if has_source_profile_declared:
+            raise ValueError(
+                f"Integrity check failed: source_profile is declared in package metadata ({source_profile_rel_path}) "
+                f"but the file does not exist on disk."
+            )
+
 
 
 

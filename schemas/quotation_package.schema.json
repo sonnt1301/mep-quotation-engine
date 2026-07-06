@@ -113,6 +113,19 @@
           "title": "Source Pdf",
           "type": "string"
         },
+        "source_profile": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Đường dẫn file profile nguồn JSON, tương đối từ package root",
+          "title": "Source Profile"
+        },
         "text_manifest": {
           "default": "text/quotation_text.json",
           "description": "Đường dẫn file manifest text assembly JSON, tương đối từ package root",

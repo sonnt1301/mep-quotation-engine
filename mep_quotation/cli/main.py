@@ -647,6 +647,132 @@ def handle_list_review(args):
         sys.exit(1)
 
 
+def handle_profile_source(args):
+    package_path = Path(args.package_path)
+    if not package_path.is_absolute():
+        package_path = project_root / package_path
+        
+    try:
+        # 1. Đọc package.json
+        pkg = load_package_json(package_path)
+    except Exception as e:
+        print(f"Error loading package.json: {e}", file=sys.stderr)
+        sys.exit(1)
+        
+    quotation_id = pkg.quotation_id
+    
+    # Ghi log sự kiện bắt đầu
+    from datetime import datetime, timezone
+    log_event(
+        package_path=package_path,
+        level="INFO",
+        event="source_profile_started",
+        quotation_id=quotation_id,
+        details={}
+    )
+    
+    # 2. Định vị file hồ sơ nguồn đích
+    profile_file_path = package_path / "source" / "source_profile.json"
+    
+    # Kiểm tra chặn ghi đè nếu --overwrite=False
+    if profile_file_path.exists() and not args.overwrite:
+        msg = f"Tệp hồ sơ nguồn đã tồn tại tại {get_display_path(profile_file_path)}. Vui lòng truyền --overwrite để ghi đè."
+        log_event(
+            package_path=package_path,
+            level="ERROR",
+            event="source_profile_failed",
+            quotation_id=quotation_id,
+            details={"error": msg}
+        )
+        print(f"Error: {msg}", file=sys.stderr)
+        sys.exit(1)
+        
+    try:
+        # 3. Phân tích file nguồn (profiling)
+        from mep_quotation.intake.profiler import profile_source_file
+        
+        # Bắt đầu phân tích kỹ thuật
+        profile = profile_source_file(package_path, pkg)
+        
+        log_event(
+            package_path=package_path,
+            level="INFO",
+            event="source_profile_probe_completed",
+            quotation_id=quotation_id,
+            details={"source_file": profile.source_file, "file_type": profile.detected_file_type}
+        )
+        
+        # 4. Ghi nguyên tử (Atomic Write) tệp hồ sơ nguồn
+        source_dir = package_path / "source"
+        source_dir.mkdir(parents=True, exist_ok=True)
+        
+        tmp_file_path = profile_file_path.with_suffix(".tmp")
+        profile_data = json.loads(profile.model_dump_json())
+        with open(tmp_file_path, "w", encoding="utf-8") as f:
+            json.dump(profile_data, f, indent=2, ensure_ascii=False)
+            
+        os.replace(tmp_file_path, profile_file_path)
+        
+        log_event(
+            package_path=package_path,
+            level="INFO",
+            event="source_profile_written",
+            quotation_id=quotation_id,
+            details={"profile_path": "source/source_profile.json"}
+        )
+        
+        # 5. Cập nhật package.json bổ sung trường source_profile
+        package_json_path = package_path / "package.json"
+        with open(package_json_path, "r", encoding="utf-8") as f:
+            pkg_raw = json.load(f)
+            
+        if "files" not in pkg_raw:
+            pkg_raw["files"] = {}
+        pkg_raw["files"]["source_profile"] = "source/source_profile.json"
+        pkg_raw["updated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        
+        pkg_tmp_path = package_json_path.with_suffix(".tmp")
+        with open(pkg_tmp_path, "w", encoding="utf-8") as f:
+            json.dump(pkg_raw, f, indent=2, ensure_ascii=False)
+        os.replace(pkg_tmp_path, package_json_path)
+        
+        # Log success event
+        log_event(
+            package_path=package_path,
+            level="INFO",
+            event="source_profile_completed",
+            quotation_id=quotation_id,
+            details={
+                "source_role": profile.source_role.value,
+                "recommended_action": profile.recommended_next_action.value
+            }
+        )
+        
+        # In kết quả trực quan
+        print("Successfully profiled source file.")
+        print(f"  Quotation ID           : {profile.quotation_id}")
+        print(f"  Source File            : {profile.source_file}")
+        print(f"  Detected File Type     : {profile.detected_file_type}")
+        print(f"  Source Role            : {profile.source_role.value}")
+        print(f"  Source Role Confidence : {profile.source_role_confidence}")
+        print(f"  Recommended Next Action: {profile.recommended_next_action.value}")
+        print(f"  Requires OCR           : {profile.technical_readability.requires_ocr}")
+        print(f"  Requires Profile Review: {profile.requires_human_profile_review}")
+        print(f"  Source Profile Path    : source/source_profile.json")
+        print(f"  Warnings Count         : {len(profile.warnings)}")
+        
+    except Exception as e:
+        log_event(
+            package_path=package_path,
+            level="ERROR",
+            event="source_profile_failed",
+            quotation_id=quotation_id,
+            details={"error": str(e)}
+        )
+        print(f"Error profiling source: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def handle_export_normalized(args):
     package_path = Path(args.package_path)
     if not package_path.is_absolute():
@@ -853,6 +979,12 @@ def main():
     parser_exp_excel.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
     parser_exp_excel.add_argument("--overwrite", action="store_true", help="Ghi đè nếu quotation.xlsx hoặc export_manifest.json đã tồn tại")
     parser_exp_excel.set_defaults(func=handle_export_excel)
+
+    # Command profile-source
+    parser_profile = subparsers.add_parser("profile-source", help="Phân tích đặc trưng kỹ thuật và nghiệp vụ của tệp nguồn")
+    parser_profile.add_argument("package_path", help="Đường dẫn đến thư mục gói báo giá")
+    parser_profile.add_argument("--overwrite", action="store_true", help="Ghi đè nếu source_profile.json đã tồn tại")
+    parser_profile.set_defaults(func=handle_profile_source)
 
 
     args = parser.parse_args()

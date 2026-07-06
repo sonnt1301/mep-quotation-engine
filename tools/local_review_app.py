@@ -613,8 +613,9 @@ if show_advanced:
     st.markdown("---")
     st.subheader("🔍 Trình xem các tệp tin Artifacts (Read-Only)")
     
-    tab_pkg, tab_pdf, tab_raw, tab_md, tab_line, tab_row, tab_item, tab_draft, tab_rev, tab_final, tab_excel_manifest = st.tabs([
+    tab_pkg, tab_profile, tab_pdf, tab_raw, tab_md, tab_line, tab_row, tab_item, tab_draft, tab_rev, tab_final, tab_excel_manifest = st.tabs([
         "package.json",
+        "Hồ sơ nguồn (Source Profile)",
         "Ảnh trang PDF (PDF Pages)",
         "Văn bản thô (Raw Text)",
         "Văn bản Markdown (Assembled Text)",
@@ -639,7 +640,57 @@ if show_advanced:
             
     with tab_pkg:
         render_json_tab(package_path / "package.json" if package_path else None)
+
+    with tab_profile:
+        st.markdown("**Hồ sơ phân tích nguồn (Source Profile):**")
+        profile_rel_path = "source/source_profile.json"
+        # Thử lấy động từ package.json nếu có khai báo
+        pkg_json_file = package_path / "package.json" if package_path else None
+        if pkg_json_file and pkg_json_file.exists():
+            pkg_data, _ = safe_load_json(pkg_json_file)
+            if pkg_data and "files" in pkg_data and "source_profile" in pkg_data["files"]:
+                profile_rel_path = pkg_data["files"]["source_profile"]
         
+        profile_path = package_path / profile_rel_path if package_path else None
+        if profile_path and profile_path.exists():
+            profile_data, err = safe_load_json(profile_path)
+            if err:
+                st.error(err)
+            else:
+                col_p1, col_p2 = st.columns(2)
+                with col_p1:
+                    st.markdown(f"- **Tên file**: `{profile_data.get('file_name')}`")
+                    st.markdown(f"- **Định dạng**: `{profile_data.get('detected_file_type')}`")
+                    st.markdown(f"- **Mime Type**: `{profile_data.get('detected_mime_type')}`")
+                    st.markdown(f"- **Dung lượng**: `{profile_data.get('file_size_bytes')} bytes`")
+                    st.markdown(f"- **Vai trò đề xuất**: `{profile_data.get('source_role')}` (Độ tự tin: `{profile_data.get('source_role_confidence')}`)")
+                    st.markdown(f"- **Hành động tiếp theo**: `{profile_data.get('recommended_next_action')}`")
+                    st.markdown(f"- **Cần OCR**: `{profile_data.get('technical_readability', {}).get('requires_ocr')}`")
+                    st.markdown(f"- **Cần rà soát thủ công**: `{profile_data.get('requires_human_profile_review')}`")
+                
+                with col_p2:
+                    st.markdown("**Ứng viên ngày tháng phát hiện:**")
+                    dates = profile_data.get('date_candidates', [])
+                    if dates:
+                        df_dates = pd.DataFrame(dates)
+                        st.dataframe(df_dates, use_container_width=True)
+                    else:
+                        st.write("Không phát hiện ngày tháng nào.")
+
+                    st.markdown("**Các cảnh báo rủi ro (Warnings):**")
+                    warns = profile_data.get('warnings', [])
+                    if warns:
+                        df_warns = pd.DataFrame(warns)
+                        st.dataframe(df_warns, use_container_width=True)
+                    else:
+                        st.success("Không có cảnh báo nào.")
+                        
+                st.markdown("---")
+                st.markdown("**Dữ liệu JSON thô:**")
+                st.json(profile_data)
+        else:
+            st.info("Chưa có hồ sơ nguồn. Vui lòng chạy phân tích nguồn.")
+            
     with tab_pdf:
         manifest_path = artifact_paths.get("page_manifest")
         if manifest_path and manifest_path.exists():
