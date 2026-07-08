@@ -1,0 +1,88 @@
+{
+  "profile_id": "chint_profile_v1",
+  "supplier_code": "CHINT",
+  "profile_version": "1.0",
+  "status": "feasibility",
+  "source_type": "pdf",
+  "description": "Cấu hình bóc tách MEP cho nhà cung cấp Chint phiên bản v1",
+  "global_rules": {
+    "currency": "VND",
+    "default_unit": "cái",
+    "min_unit_price": 1,
+    "reject_year_as_price": true
+  },
+  "validation": {
+    "allowed_material_code_prefixes": [
+      "NXM",
+      "NM1",
+      "NXC",
+      "NXR",
+      "F4",
+      "F5",
+      "NCF1"
+    ],
+    "min_fallback_length": 5,
+    "reject_description_price_noise": true,
+    "allow_ampere_list_patterns": [
+      "\\b\\d{1,3}(?:,\\d{3})+\\s*A\\b",
+      "\\b\\d{1,3}(?:,\\d{3})+\\b"
+    ]
+  },
+  "material_code_patterns": [
+    "^([A-Z0-9~\\-]+)$"
+  ],
+  "layouts": [
+    {
+      "layout_name": "chint_mccb_nxm_nm1",
+      "pages": [3],
+      "product_family": "MCCB Chint",
+      "parser_type": "coordinate_column_profiler",
+      "row_detection": {
+        "min_y": 140.0,
+        "max_y": 700.0,
+        "row_tolerance": 3.0
+      },
+      "columns": {
+        "ma": [315.0, 385.0],
+        "in_a": [200.0, 262.0],
+        "icu": [263.0, 310.0],
+        "gia": [440.0, 510.0]
+      },
+      "special_rules": []
+    },
+    {
+      "layout_name": "chint_contactor_nxc",
+      "pages": [4],
+      "product_family": "Contactor Chint",
+      "parser_type": "coordinate_column_profiler",
+      "row_detection": {
+        "min_y": 140.0,
+        "max_y": 700.0,
+        "row_tolerance": 3.0
+      },
+      "columns": {
+        "ma": [450.0, 500.0],
+        "in_a": [220.0, 270.0],
+        "gia": [510.0, 560.0]
+      },
+      "special_rules": []
+    },
+    {
+      "layout_name": "chint_thermal_relay_nxr",
+      "pages": [5],
+      "product_family": "Rơ le nhiệt Chint",
+      "parser_type": "coordinate_column_profiler",
+      "row_detection": {
+        "min_y": 140.0,
+        "max_y": 700.0,
+        "row_tolerance": 3.0
+      },
+      "columns": {
+        "ma": [460.0, 510.0],
+        "in_a": [180.0, 370.0],
+        "gia": [510.0, 560.0]
+      },
+      "special_rules": []
+    }
+  ]
+}

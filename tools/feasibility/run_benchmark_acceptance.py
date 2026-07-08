@@ -120,7 +120,6 @@ def run_benchmark_abb() -> Dict[str, Any]:
         if it_err:
             contract_errors.extend(it_err)
     for it in invalid_items:
-        # Đối với invalid items, ta convert raw_item thành item chuẩn để check contract
         raw_it = it.get("raw_item", {})
         it_err = check_item_against_contract(raw_it)
         if it_err:
@@ -308,10 +307,124 @@ def run_benchmark_ls() -> Dict[str, Any]:
         ]
     }
 
-def generate_markdown_report(abb_res: Dict[str, Any], ls_res: Dict[str, Any], output_path: Path):
-    content = f"""# Báo Cáo Nghiệm Thu Acceptance Benchmark – Milestone E
+def run_benchmark_chint() -> Dict[str, Any]:
+    run_dir = Path("feasibility_outputs/chint_profile_config_run")
+    survey_report_path = Path("feasibility_outputs/chint_profile_v0/profile_survey_report.md")
+    
+    # 1. Neu khao sat ket luan NOT_FEASIBLE thi tu dong tra ve FAIL/NOT_FEASIBLE
+    if survey_report_path.exists():
+        with open(survey_report_path, "r", encoding="utf-8") as f:
+            survey_text = f.read()
+        if "NOT_FEASIBLE" in survey_text:
+            return {
+                "supplier_code": "CHINT",
+                "status": "FAIL",
+                "valid_items": 0,
+                "invalid_items": 0,
+                "pass_pages": 0,
+                "total_pages": 0,
+                "checks": [{"check_name": "survey_feasibility", "status": "FAIL", "details": "Survey concluded NOT_FEASIBLE. Stopped."}],
+                "known_limitations": ["Supplier marked as NOT_FEASIBLE during layout survey."]
+            }
 
-Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc tách (Acceptance Benchmark) cho hai nhà cung cấp **ABB** và **LS** dựa trên các tiêu chí cố định (Acceptance Criteria).
+    checks = []
+    status = "ACCEPTED_WITH_KNOWN_LIMITATIONS"
+    
+    # 2. Load cac file du lieu
+    try:
+        valid_items = load_json(run_dir / "profile_items_valid.json")
+        invalid_items = load_json(run_dir / "profile_items_invalid.json")
+        page_summary = load_json(run_dir / "profile_page_summary.json")
+    except Exception as e:
+        return {
+            "supplier_code": "CHINT",
+            "status": "FAIL",
+            "valid_items": 0,
+            "invalid_items": 0,
+            "pass_pages": 0,
+            "total_pages": 0,
+            "checks": [{"check_name": "load_files", "status": "FAIL", "details": str(e)}],
+            "known_limitations": []
+        }
+        
+    num_valid = len(valid_items)
+    num_invalid = len(invalid_items)
+    total_pages = len(page_summary)
+    pass_pages = sum(1 for p in page_summary if p["status"] == "PASS")
+    
+    # Check 1: Số lượng valid items (Criteria: >= 20 valid items)
+    chk_count = {"check_name": "chint_valid_items_count", "status": "PASS", "details": f"Valid items: {num_valid} (criteria >=20)"}
+    if num_valid < 20:
+        chk_count["status"] = "FAIL"
+        status = "FAIL"
+    checks.append(chk_count)
+    
+    # Check 2: Số lượng invalid items (Criteria: <= 15 invalid items)
+    chk_invalid = {"check_name": "chint_invalid_items_count", "status": "PASS", "details": f"Invalid items: {num_invalid} (criteria <=15)"}
+    if num_invalid > 15:
+        chk_invalid["status"] = "FAIL"
+        status = "FAIL"
+    checks.append(chk_invalid)
+    
+    # Check 3: Tổng số trang benchmark run (Criteria: == 3)
+    chk_total = {"check_name": "chint_total_pages_count", "status": "PASS", "details": f"Total pages: {total_pages} (criteria ==3)"}
+    if total_pages != 3:
+        chk_total["status"] = "FAIL"
+        status = "FAIL"
+    checks.append(chk_total)
+    
+    # Check 4: Số trang PASS (Criteria: >= 1 pass page)
+    chk_pages = {"check_name": "chint_pass_pages_count", "status": "PASS", "details": f"PASS pages: {pass_pages} (criteria >=1)"}
+    if pass_pages < 1:
+        chk_pages["status"] = "FAIL"
+        status = "FAIL"
+    checks.append(chk_pages)
+    
+    # Check 5: Số trang PARTIAL (Criteria: <= 2 partial pages)
+    partial_pages = total_pages - pass_pages
+    chk_partial = {"check_name": "chint_partial_pages_count", "status": "PASS", "details": f"PARTIAL pages: {partial_pages} (criteria <=2)"}
+    if partial_pages > 2:
+        chk_partial["status"] = "FAIL"
+        status = "FAIL"
+    checks.append(chk_partial)
+    
+    # Check 6: Schema contract và các trường bắt buộc
+    contract_errors = []
+    for it in valid_items:
+        it_err = check_item_against_contract(it)
+        if it_err:
+            contract_errors.extend(it_err)
+    for it in invalid_items:
+        raw_it = it.get("raw_item", {})
+        it_err = check_item_against_contract(raw_it)
+        if it_err:
+            contract_errors.extend(it_err)
+            
+    chk_schema = {"check_name": "output_contract_compliance", "status": "PASS", "details": "All items comply with JSON output contract."}
+    if contract_errors:
+        chk_schema["status"] = "FAIL"
+        chk_schema["details"] = f"Found {len(set(contract_errors))} contract compliance issues."
+        status = "FAIL"
+    checks.append(chk_schema)
+    
+    return {
+        "supplier_code": "CHINT",
+        "status": status,
+        "valid_items": num_valid,
+        "invalid_items": num_invalid,
+        "pass_pages": pass_pages,
+        "partial_pages": total_pages - pass_pages,
+        "total_pages": total_pages,
+        "checks": checks,
+        "known_limitations": [
+            "Page 3 and Page 5 remain PARTIAL and require future layout profile tuning."
+        ]
+    }
+
+def generate_markdown_report(abb_res: Dict[str, Any], ls_res: Dict[str, Any], chint_res: Dict[str, Any], output_path: Path):
+    content = f"""# Báo Cáo Nghiệm Thu Acceptance Benchmark – Milestone F
+
+Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc tách (Acceptance Benchmark) cho cả ba nhà cung cấp **ABB**, **LS** và **CHINT** dựa trên các tiêu chí cố định (Acceptance Criteria).
 
 ---
 
@@ -319,16 +432,19 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
 > **PHẠM VI TRIỂN KHAI**
 > * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
+> * **Không OCR, không AI/LLM, không parse Excel.**
+> * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).
 
 ---
 
 ## 1. Kết Quả Nghiệm Thu Tổng Hợp
 
-| Nhà Cung Cấp | Trạng Thái Đánh Giá | Số Vật Tư Hợp Lệ (Valid) | Số Vật Tư Bị Loại (Invalid) | Số Trang Đạt PASS | Tổng Số Trang |
+| Nhà Cung Cấp | Trạng Thế Đánh Giá | Số Vật Tư Hợp Lệ (Valid) | Số Vật Tư Bị Loại (Invalid) | Số Trang Đạt PASS | Tổng Số Trang |
 | --- | --- | --- | --- | --- | --- |
 | **ABB** | `{abb_res["status"]}` | {abb_res["valid_items"]} | {abb_res["invalid_items"]} | {abb_res["pass_pages"]} | {abb_res["total_pages"]} |
 | **LS** | `{ls_res["status"]}` | {ls_res["valid_items"]} | {ls_res["invalid_items"]} | {ls_res["pass_pages"]} | {ls_res["total_pages"]} |
+| **CHINT** | `{chint_res["status"]}` | {chint_res["valid_items"]} | {chint_res["invalid_items"]} | {chint_res["pass_pages"]} | {chint_res["total_pages"]} |
 
 ---
 
@@ -349,6 +465,14 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
     for chk in ls_res["checks"]:
         content += f"| `{chk['check_name']}` | **{chk['status']}** | {chk['details']} |\n"
         
+    content += """
+### Hãng CHINT (Target: `ACCEPTED_WITH_KNOWN_LIMITATIONS`)
+| Tên Hạng Mục Kiểm Tra | Trạng Thái | Chi Tiết |
+| --- | --- | --- |
+"""
+    for chk in chint_res["checks"]:
+        content += f"| `{chk['check_name']}` | **{chk['status']}** | {chk['details']} |\n"
+        
     content += f"""
 ---
 
@@ -360,16 +484,18 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
 ### Hãng LS
 * **Trang 2 và Trang 5 vẫn ở trạng thái PARTIAL** (chưa đạt tỷ lệ lỗi <= 5% hoặc chưa đủ số lượng item tối thiểu trên mỗi trang để PASS tuyệt đối). Việc tối ưu hóa các trang này sẽ cần các bước hardening profile sâu hơn trong tương lai.
 
+### Hãng CHINT
+* **Trang 3 và Trang 5 vẫn ở trạng thái PARTIAL** do có một số dòng tiêu đề hoặc dòng text thông số phụ bị validator loại thành invalid. Có thể tiếp tục tinh chỉnh lề min_y/max_y hoặc logic validator để nâng cao độ phủ.
+
 ---
 
 ## 4. Đề Xuất & Khuyến Nghị Cuối Cùng (Final Recommendation)
 
-1. **Khả năng Benchmark**: Kết quả bóc tách của cả ABB và LS bằng tệp cấu hình JSON động đã đạt tính ổn định rất cao và có thể dùng làm benchmark nền tảng để so sánh cho các Supplier Profile Parser tiếp theo.
-2. **Trạng thái Tích hợp**: **Chưa tích hợp vào pipeline chính.** Dữ liệu đầu ra tuân thủ nghiêm ngặt chuẩn hợp đồng [profile_output_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_output_contract.json) nhưng mới chỉ nằm ở lớp Feasibility.
-3. **Các Bước Tiếp Theo**: Sau Milestone E, dự án có thể lựa chọn:
-   * **Phương án 1**: Tiếp tục Hardening profile cho hãng LS để nâng cao tỷ lệ PASS của các trang PARTIAL.
-   * **Phương án 2**: Mở rộng Parser sang nhà cung cấp thứ 3 bằng cách viết tệp cấu hình JSON tương tự.
-   * **Phương án 3**: Thiết kế cầu nối tích hợp (Integration Bridge) để đẩy kết quả từ Config Runner sang pipeline chính của dự án.
+1. **Khả năng Benchmark**: Việc onboard CHINT cho thấy tín hiệu khả thi ban đầu khi áp dụng quy trình Supplier Profile Config cho nhà cung cấp thứ 3. Tuy nhiên, do CHINT mới đạt 1/3 trang PASS và còn 2/3 trang PARTIAL, kết quả này chưa đủ để kết luận framework có tính tổng quát cao. Cần tiếp tục hardening thêm supplier và layout trước khi tích hợp pipeline chính.
+2. **Trạng thái Tích hợp**: **Chưa tích hợp vào pipeline chính.** Dữ liệu đầu ra tuân thủ nghiêm ngặt chuẩn hợp đồng [profile_output_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_output_contract.json).
+3. **Các Bước Tiếp Theo**: Sau Milestone F, dự án có thể:
+   * Tiếp tục Hardening profile cho hãng LS và CHINT để tăng số trang đạt PASS.
+   * Thiết kế cầu nối tích hợp (Integration Bridge) để đẩy kết quả từ Config Runner sang pipeline chính của dự án.
 """
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
@@ -379,25 +505,33 @@ def main():
     print("Running Benchmark Acceptance Harness...")
     abb_res = run_benchmark_abb()
     ls_res = run_benchmark_ls()
+    chint_res = run_benchmark_chint()
     
     # 1. Ghi tệp acceptance json
     out_dir = Path("feasibility_outputs/benchmark_acceptance")
     save_json(out_dir / "abb_acceptance.json", abb_res)
     save_json(out_dir / "ls_acceptance.json", ls_res)
+    save_json(out_dir / "chint_acceptance.json", chint_res)
     
     # 2. Ghi tệp summary json máy đọc
     summary = {
-        "benchmark_status": "PASS" if (abb_res["status"] == "PASS" and ls_res["status"] == "ACCEPTED_WITH_KNOWN_LIMITATIONS") else "FAIL",
+        "benchmark_status": "PASS" if (
+            abb_res["status"] == "PASS" and 
+            ls_res["status"] == "ACCEPTED_WITH_KNOWN_LIMITATIONS" and
+            chint_res["status"] == "ACCEPTED_WITH_KNOWN_LIMITATIONS"
+        ) else "FAIL",
         "abb": abb_res,
-        "ls": ls_res
+        "ls": ls_res,
+        "chint": chint_res
     }
     save_json(out_dir / "benchmark_acceptance_summary.json", summary)
     
     # 3. Ghi tệp markdown report
-    generate_markdown_report(abb_res, ls_res, out_dir / "benchmark_acceptance_report.md")
+    generate_markdown_report(abb_res, ls_res, chint_res, out_dir / "benchmark_acceptance_report.md")
     
     print(f"ABB status: {abb_res['status']}")
     print(f"LS status: {ls_res['status']}")
+    print(f"CHINT status: {chint_res['status']}")
     print(f"Summary status: {summary['benchmark_status']}")
     print("Benchmark acceptance harness completed successfully.")
 

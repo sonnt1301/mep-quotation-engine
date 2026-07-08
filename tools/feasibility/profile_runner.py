@@ -976,4 +976,65 @@ def parse_page_from_config(
                 else:
                     skipped += 1
                     
+        # --- 4. chint_mccb_nxm_nm1, chint_contactor_nxc, chint_thermal_relay_nxr ---
+        elif layout_name in ["chint_mccb_nxm_nm1", "chint_contactor_nxc", "chint_thermal_relay_nxr"]:
+            cols = defaultdict(list)
+            for w in line_words:
+                x0 = w["x0"]
+                t = w["text"].strip()
+                if not t: continue
+                
+                # Nạp dải cột từ JSON config
+                x_ma_min, x_ma_max = cols_config["ma"]
+                x_in_min, x_in_max = cols_config["in_a"]
+                x_gia_min, x_gia_max = cols_config["gia"]
+                x_icu_min, x_icu_max = cols_config.get("icu", [0.0, 0.0])
+                
+                if x_ma_min <= x0 <= x_ma_max:
+                    cols["ma"].append(t)
+                elif x_in_min <= x0 <= x_in_max:
+                    cols["in_a"].append(t)
+                elif x_icu_min <= x0 <= x_icu_max and "icu" in cols_config:
+                    cols["icu"].append(t)
+                elif x_gia_min <= x0 <= x_gia_max:
+                    cols["gia"].append(t)
+                    
+            ma_str = "".join(cols["ma"]).strip()
+            in_a_str = "".join(cols["in_a"]).strip()
+            icu_str = "".join(cols["icu"]).strip() if "icu" in cols_config else ""
+            gia_str = "".join(cols["gia"]).strip()
+            
+            c_price = clean_price(gia_str)
+            if c_price > 0 and ma_str != "":
+                raw_detected += 1
+                
+                # Trích xuất số cực (pole) nếu có trong mã hàng hoặc mặc định
+                pole = "3P"
+                if "4P" in ma_str.upper():
+                    pole = "4P"
+                elif "2P" in ma_str.upper():
+                    pole = "2P"
+                elif "1P" in ma_str.upper():
+                    pole = "1P"
+                
+                extracted_items.append(ExtractedItem(
+                    source_page=page_num, supplier_code=supplier_code,
+                    layout_name=layout_name,
+                    product_family=pf,
+                    type=ma_str,
+                    pole=pole,
+                    rated_current=in_a_str,
+                    breaking_capacity=icu_str,
+                    material_code=ma_str,
+                    description=f"{pf} {ma_str} {pole} {in_a_str} {icu_str}".strip(),
+                    unit=global_rules.get("default_unit", "cái"),
+                    unit_price=c_price,
+                    currency=global_rules.get("currency", "VND"),
+                    confidence=0.9,
+                    extraction_method="coordinate_column_profiler",
+                    evidence_text=evidence_text
+                ))
+            else:
+                skipped += 1
+                
     return extracted_items, pf, layout_name, raw_detected, skipped

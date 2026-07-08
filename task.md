@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS Profile Hardening & Milestone C & Milestone D & Milestone E
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone F (v2)
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -25,7 +25,7 @@
 - `[x]` Xây dựng tệp unit tests `test_profile_config_loader.py` và kiểm chứng các ca thành công/thất bại
 - `[x]` Chạy kiểm thử pytest toàn dự án đạt 158/158 tests passed thành công
 
-## Milestone D – Supplier Profile Config Integration / Config Runner v2 (Đã hoàn thành)
+## Milestone D – Supplier Profile Config Integration / Config Runner (Đã hoàn thành)
 - `[x]` Tạo module bóc tách tổng quát `profile_runner.py` nạp hoàn toàn từ cấu hình JSON
 - `[x]` Cập nhật hàm check prefix và format hỗ trợ luật fallback (chữ + số) trong `profile_runner.py`
 - `[x]` Sửa đổi logic trích xuất đơn giá LS: chỉ lọc ra các price token hợp lệ tối thiểu và lấy token giá cuối cùng, không ghép dính ampere list (MT-225, ABN104C, ABS203C, EBS204C)
@@ -41,23 +41,32 @@
 ## Milestone E – Supplier Profile Output Contract / Benchmark Acceptance Harness (Đã hoàn thành)
 - `[x]` Tạo tệp mô tả contract đầu ra chuẩn cho extracted items tại `tools/feasibility/profile_output_contract.json`
 - `[x]` Sửa đổi `ExtractedItem` và bộ bóc tách để tích hợp đầy đủ trường `supplier_code` theo contract
-- `[x]` Tạo kịch bản chạy acceptance benchmark nghiệm thu tự động tại `tools/feasibility/run_benchmark_acceptance.py`
-- `[x]` Thực thi và kiểm định:
-  - ABB đạt status = `PASS`
-  - LS đạt status = `ACCEPTED_WITH_KNOWN_LIMITATIONS`
-  - Không còn dòng LS nào lệch `unit_price` > 10x baseline v1
-- `[x]` Sinh thư mục nghiệm thu `feasibility_outputs/benchmark_acceptance/` chứa:
-  - `benchmark_acceptance_summary.json` (Tổng hợp máy đọc được)
-  - `benchmark_acceptance_report.md` (Báo cáo con người đọc được)
-  - `abb_acceptance.json` (Acceptance ABB)
-  - `ls_acceptance.json` (Acceptance LS)
-- `[x]` Thêm unit tests trong `tests/test_benchmark_acceptance.py`
-- `[x]` Chạy toàn bộ pytest suite đảm bảoPassed: **168/168 passed**
-- `[x]` Đồng bộ các tệp tài liệu dự án gốc tại project root
+- `[x]` Tạo kịch bản chạy acceptance benchmark nghiệm tự động tại `tools/feasibility/run_benchmark_acceptance.py`
+- `[x]` Thực thi và kiểm định ABB (PASS) và LS (ACCEPTED_WITH_KNOWN_LIMITATIONS) thành công
+- `[x]` Sinh thư mục nghiệm thu `feasibility_outputs/benchmark_acceptance/` chứa các tệp JSON và Markdown report
+- `[x]` Thêm unit tests và chạy toàn suite `pytest` vượt qua 168/168 passed thành công
+
+## Milestone F – Third Supplier Profile Onboarding / Benchmark Expansion v2 (Đã hoàn thành)
+- `[x]` Khảo sát tệp PDF Chint thật sự tồn tại tại: `F:\00.HVC\Bang gia\Bang gia VT Tu dien\Chint\Bảng giá Chint 1-3-2023 ck 50.pdf`
+- `[x]` Viết báo cáo khảo sát layout `feasibility_outputs/chint_profile_v0/profile_survey_report.md` kết luận `FEASIBLE`
+- `[x]` Tạo tệp cấu hình lựa chọn trang benchmark `feasibility_outputs/chint_profile_v0/profile_page_selection.json` (Trang 3, 4, 5)
+- `[x]` Tạo tệp cấu hình layout riêng biệt `tools/feasibility/profile_configs/chint_profile_v1.json` tuân thủ JSON Schema
+- `[x]` Cập nhật runner chung `profile_runner.py` để hỗ trợ bóc tách các layout Chint mà không làm ảnh hưởng (regression) tới ABB/LS
+- `[x]` Thực thi chạy bóc tách config-run cho Chint và xuất kết quả ra `feasibility_outputs/chint_profile_config_run/` tuân thủ Output Contract
+- `[x]` Cập nhật Acceptance Harness `run_benchmark_acceptance.py` đồng bộ criteria Hướng B cho Chint:
+  - `valid_items` >= 20, `invalid_items` <= 15
+  - `total_pages` = 3, `pass_pages` >= 1, `partial_pages` <= 2
+  - `known_limitations` bắt buộc ghi nhận Page 3 và Page 5 là PARTIAL
+  - Đánh giá trạng thái nghiệm thu của Chint đạt **`ACCEPTED_WITH_KNOWN_LIMITATIONS`** (mức thấp)
+- `[x]` Thêm/cập nhật unit tests trong `tests/test_benchmark_acceptance.py`
+- `[x]` Chạy toàn bộ pytest suite đảm bảoPassed: **169/169 passed**
+- `[x]` Đồng bộ hóa tất cả các tài liệu root tại project root
 
 ---
-> [warning]
+> [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
 > * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
+> * **Không OCR, không AI/LLM, không parse Excel.**
+> * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).

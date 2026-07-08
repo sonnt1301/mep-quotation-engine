@@ -1,0 +1,44 @@
+{
+  "supplier_code": "CHINT",
+  "status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+  "valid_items": 45,
+  "invalid_items": 6,
+  "pass_pages": 1,
+  "partial_pages": 2,
+  "total_pages": 3,
+  "checks": [
+    {
+      "check_name": "chint_valid_items_count",
+      "status": "PASS",
+      "details": "Valid items: 45 (criteria >=20)"
+    },
+    {
+      "check_name": "chint_invalid_items_count",
+      "status": "PASS",
+      "details": "Invalid items: 6 (criteria <=15)"
+    },
+    {
+      "check_name": "chint_total_pages_count",
+      "status": "PASS",
+      "details": "Total pages: 3 (criteria ==3)"
+    },
+    {
+      "check_name": "chint_pass_pages_count",
+      "status": "PASS",
+      "details": "PASS pages: 1 (criteria >=1)"
+    },
+    {
+      "check_name": "chint_partial_pages_count",
+      "status": "PASS",
+      "details": "PARTIAL pages: 2 (criteria <=2)"
+    },
+    {
+      "check_name": "output_contract_compliance",
+      "status": "PASS",
+      "details": "All items comply with JSON output contract."
+    }
+  ],
+  "known_limitations": [
+    "Page 3 and Page 5 remain PARTIAL and require future layout profile tuning."
+  ]
+}
