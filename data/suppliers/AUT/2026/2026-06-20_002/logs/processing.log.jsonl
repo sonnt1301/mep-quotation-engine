@@ -47,3 +47,14 @@
 {"timestamp":"2026-07-02T09:01:01Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_002","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:01:09Z"}
 {"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-02T09:06:14Z"}
+{"details": {}, "event": "source_profile_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:06:38Z"}
+{"details": {"file_type": "pdf", "source_file": "source/original.pdf"}, "event": "source_profile_probe_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:06:39Z"}
+{"details": {"profile_path": "source/source_profile.json"}, "event": "source_profile_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:06:39Z"}
+{"details": {"recommended_action": "run_pdf_native_pipeline", "source_role": "supplier_price_list_candidate"}, "event": "source_profile_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:06:39Z"}
+{"details": {}, "event": "source_profile_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:08:59Z"}
+{"details": {"error": "Tệp hồ sơ nguồn đã tồn tại tại data/suppliers/AUT/2026/2026-06-20_002/source/source_profile.json. Vui lòng truyền --overwrite để ghi đè."}, "event": "source_profile_failed", "level": "ERROR", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:08:59Z"}
+{"details": {}, "event": "source_profile_started", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:11:46Z"}
+{"details": {"file_type": "pdf", "source_file": "source/original.pdf"}, "event": "source_profile_probe_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:11:46Z"}
+{"details": {"profile_path": "source/source_profile.json"}, "event": "source_profile_written", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:11:46Z"}
+{"details": {"recommended_action": "run_pdf_native_pipeline", "source_role": "supplier_price_list_candidate"}, "event": "source_profile_completed", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T04:11:46Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_002", "timestamp": "2026-07-06T05:04:08Z"}

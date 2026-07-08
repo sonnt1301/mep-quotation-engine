@@ -1,0 +1,37 @@
+{"details": {"pdf_file_name": "BG_ABB_FULL.pdf"}, "event": "pdf_import_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {}, "event": "pdf_validated", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {}, "event": "pdf_copied", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {}, "event": "pdf_metadata_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {}, "event": "pdf_import_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {"dpi": 150, "image_format": "png", "overwrite": false}, "event": "pdf_page_preparation_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:20Z"}
+{"details": {"dpi": 150, "image_format": "png", "output_dir": "source/pages", "page_count": 139}, "event": "pdf_page_rasterized", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:28Z"}
+{"details": {"manifest_path": "source/page_manifest.json"}, "event": "pdf_page_manifest_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:28Z"}
+{"details": {"page_count": 139}, "event": "pdf_page_preparation_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:28Z"}
+{"details": {"overwrite": false, "pdf_path": "source/original.pdf"}, "event": "pdf_text_extraction_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:28Z"}
+{"details": {"extraction_engine": "pymupdf", "extraction_engine_version": "1.27.2.2", "page_count": 139, "pages_with_text": 137, "total_characters": 260653}, "event": "pdf_text_extracted", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"raw_text_path": "source/raw_text.json"}, "event": "raw_text_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"page_count": 139, "pages_with_text": 137, "total_characters": 260653}, "event": "pdf_text_extraction_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"overwrite": false, "source_raw_text": "source/raw_text.json"}, "event": "text_assembly_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"page_count": 139, "pages_with_text": 137, "total_characters": 260653}, "event": "text_assembled", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"markdown_path": "text/quotation.md"}, "event": "quotation_markdown_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"manifest_path": "text/quotation_text.json"}, "event": "quotation_text_manifest_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"page_count": 139, "quotation_id": "ABB_20200101_001", "total_characters": 260653}, "event": "text_assembly_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"overwrite": false, "source_markdown": "text/quotation.md"}, "event": "line_parser_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:29Z"}
+{"details": {"total_lines_scanned": 20553}, "event": "line_parser_lines_scanned", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"candidate_count": 1878}, "event": "line_candidates_extracted", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"line_candidates_path": "parsed/line_candidates.json"}, "event": "line_candidates_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"candidate_count": 1878}, "event": "line_parser_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"max_line_gap_for_price": 6, "overwrite": false}, "event": "row_assembly_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"row_count": 1878}, "event": "row_candidates_assembled", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"row_candidates_path": "parsed/row_candidates.json"}, "event": "row_candidates_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:30Z"}
+{"details": {"row_count": 1878}, "event": "row_assembly_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"overwrite": false}, "event": "item_candidate_build_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"item_count": 1878}, "event": "item_candidates_built", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"item_candidates_path": "parsed/item_candidates.json"}, "event": "item_candidates_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"item_count": 1878}, "event": "item_candidate_build_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"overwrite": false}, "event": "normalized_draft_build_started", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"item_count": 1878, "review_required_count": 1273}, "event": "normalized_draft_built", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"normalized_draft_path": "normalized/normalized_draft.json"}, "event": "normalized_draft_written", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:31Z"}
+{"details": {"item_count": 1878, "review_required_count": 1273}, "event": "normalized_draft_build_completed", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:32Z"}
+{"details": {"overwrite": false, "reviewer": "human"}, "event": "review_file_created", "level": "INFO", "quotation_id": "ABB_20200101_001", "timestamp": "2026-07-06T06:38:32Z"}

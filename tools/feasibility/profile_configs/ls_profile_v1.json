@@ -1,0 +1,54 @@
+{
+  "profile_id": "ls_profile_v1",
+  "supplier_code": "LS",
+  "profile_version": "1.0",
+  "status": "feasibility",
+  "source_type": "pdf",
+  "description": "Cấu hình bóc tách và kiểm định MEP cho nhà cung cấp LS phiên bản v1",
+  "global_rules": {
+    "currency": "VND",
+    "default_unit": "cái",
+    "min_unit_price": 1,
+    "reject_year_as_price": true
+  },
+  "material_code_patterns": [
+    "^([A-Z]{2,}\\d+[A-Z]*|\\d{2,}[A-Z]{2,}\\w*|SHT.*|UVT.*|AX.*|AL.*)$"
+  ],
+  "layouts": [
+    {
+      "layout_name": "split_half_left_right",
+      "pages": [1, 2, 3, 4, 5],
+      "product_family": "MCCB/ELCB/Contactor LS",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "left": {
+          "ma": [35.0, 120.0],
+          "in_a": [121.0, 215.0],
+          "icu": [216.0, 260.0],
+          "gia": [261.0, 315.0]
+        },
+        "right": {
+          "ma": [291.0, 385.0],
+          "in_a": [386.0, 480.0],
+          "icu": [481.0, 515.0],
+          "gia": [516.0, 580.0]
+        }
+      },
+      "row_detection": {
+        "min_y": 70.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": []
+    }
+  ],
+  "validation": {
+    "allowed_material_code_prefixes": [
+      "ABN", "ABS", "EBS", "EBN", "LA", "LB", "LC", "MC", "MT", "GMP", "BK", "AN", "AS", "TS", "32GR", "32K", "EBE", "UA", "UR", "AR", "MW", "SJ", "SN", "SH", "SR", "SHT", "UVT", "AX", "AL", "MOP", "MI", "IB", "DH", "EH"
+    ],
+    "allow_ampere_list_patterns": [
+      "\\b\\d{1,3}(?:,\\d{1,3})+A\\b"
+    ],
+    "reject_description_price_noise": true
+  }
+}

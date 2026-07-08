@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import re
 from pathlib import Path
 from datetime import datetime, timezone
 import streamlit as st
@@ -17,6 +18,17 @@ from tools.ui_helpers import (
     safe_load_json,
     run_cli_command,
     resolve_artifact_paths
+)
+from tools.review_ui_helpers import (
+    safe_number,
+    classify_draft_item,
+    format_warnings_vietnamese,
+    get_dashboard_stats,
+    filter_and_sort_items,
+    diagnose_read_results,
+    resolve_item_evidence,
+    build_review_command,
+    build_export_preview_rows
 )
 from mep_quotation.package.paths import get_package_dir, generate_quotation_id
 from pydantic import BaseModel, Field
@@ -38,10 +50,44 @@ class PipelineStepStatusModel(BaseModel):
 
 # Thiết lập cấu hình trang
 st.set_page_config(
-    page_title="Hệ thống xử lý báo giá MEP",
+    page_title="Hệ thống rà soát báo giá MEP trực quan",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Custom premium styling
+st.markdown("""
+<style>
+    .metric-card {
+        background-color: #f8fafc;
+        border-radius: 8px;
+        padding: 15px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .metric-card h3 {
+        margin: 0;
+        font-size: 13px;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .metric-card p {
+        margin: 5px 0 0 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: #0f172a;
+    }
+    .warning-box {
+        background-color: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Khởi tạo st.session_state
 if "pipeline_status" not in st.session_state:
@@ -132,10 +178,6 @@ PIPELINE_STEPS = {
     }
 }
 
-# Tiêu đề giao diện chính
-st.title("🏗️ Hệ thống xử lý & Rà soát báo giá MEP")
-st.markdown("Hỗ trợ tự động hóa chuyển đổi PDF báo giá thành bảng Excel chuẩn hóa phục vụ báo giá.")
-
 # --- SIDEBAR: CHỌN BÁO GIÁ ---
 st.sidebar.header("📂 Chọn báo giá")
 
@@ -163,7 +205,7 @@ quotation_date = quotation_date_val.strftime("%Y-%m-%d")
 seq = st.sidebar.number_input("Số thứ tự báo giá", min_value=1, value=1, step=1)
 max_size_mb = 50
 
-# --- CHẾ ĐỘ NÂNG CAO (Mặc định ẩn) ---
+# --- CHẾ ĐỘ NÂNG CAO ---
 st.sidebar.markdown("---")
 show_advanced = st.sidebar.checkbox("Hiển thị chế độ nâng cao", value=False)
 
@@ -174,7 +216,12 @@ overwrite_excel = False
 timeout_sec = 600
 project_root = PROJECT_ROOT
 
-if show_advanced:
+# Chế độ xử lý đơn giản cho người dùng thường
+process_mode = "Sử dụng dữ liệu cũ nếu đã có"
+if not show_advanced:
+    process_mode = st.sidebar.radio("Chế độ xử lý dữ liệu", ["Sử dụng dữ liệu cũ nếu đã có", "Xử lý mới hoàn toàn (Ghi đè)"])
+    overwrite_intermediate = (process_mode == "Xử lý mới hoàn toàn (Ghi đè)")
+else:
     st.sidebar.subheader("⚙️ Cấu Hình Nâng Cao")
     project_root_input = st.sidebar.text_input("Thư mục dự án", str(PROJECT_ROOT))
     project_root = Path(project_root_input).resolve()
@@ -235,11 +282,12 @@ def run_single_step(step_id: str) -> bool:
         command.append(str(package_path))
     elif step_id in ["create-review-file", "export-normalized", "export-excel"]:
         command.append(str(package_path))
-        if step_id == "create-review-file" and overwrite_review_decisions:
+        if step_id == "create-review-file" and (overwrite_review_decisions or not show_advanced):
+            if show_advanced and overwrite_review_decisions:
+                command.append("--overwrite")
+        elif step_id == "export-normalized" and (overwrite_normalized or not show_advanced):
             command.append("--overwrite")
-        elif step_id == "export-normalized" and overwrite_normalized:
-            command.append("--overwrite")
-        elif step_id == "export-excel" and overwrite_excel:
+        elif step_id == "export-excel" and (overwrite_excel or not show_advanced):
             command.append("--overwrite")
     else:
         command.append(str(package_path))
@@ -257,22 +305,18 @@ def run_single_step(step_id: str) -> bool:
     
     if code == 0:
         st.session_state.pipeline_status[step_id] = {
-            "status": "pass",
-            "stdout": stdout,
-            "stderr": stderr
+            "status": "pass", "stdout": stdout, "stderr": stderr
         }
         return True
     else:
         st.session_state.pipeline_status[step_id] = {
-            "status": "fail",
-            "stdout": stdout,
-            "stderr": stderr,
+            "status": "fail", "stdout": stdout, "stderr": stderr,
             "error": stderr or f"CLI exited with code {code}"
         }
         return False
 
 # --- SIDEBAR ACTIONS ---
-st.sidebar.subheader("⚙️ Xử lý")
+st.sidebar.subheader("⚙️ Hành động")
 
 if st.sidebar.button("Xử lý báo giá", use_container_width=True):
     st.session_state.pipeline_status = {}
@@ -287,22 +331,41 @@ if st.sidebar.button("Xử lý báo giá", use_container_width=True):
     
     success = True
     for step in steps_to_run:
+        if not overwrite_intermediate:
+            if step == "import-pdf" and artifact_paths.get("source_pdf") and artifact_paths["source_pdf"].exists():
+                continue
+            if step == "validate-package":
+                continue
+            if step == "prepare-pages" and artifact_paths.get("page_manifest") and artifact_paths["page_manifest"].exists():
+                continue
+            if step == "extract-text" and artifact_paths.get("raw_text") and artifact_paths["raw_text"].exists():
+                continue
+            if step == "assemble-text" and artifact_paths.get("text_markdown") and artifact_paths["text_markdown"].exists():
+                continue
+            if step == "parse-line-candidates" and artifact_paths.get("line_candidates") and artifact_paths["line_candidates"].exists():
+                continue
+            if step == "assemble-rows" and artifact_paths.get("row_candidates") and artifact_paths["row_candidates"].exists():
+                continue
+            if step == "build-item-candidates" and artifact_paths.get("item_candidates") and artifact_paths["item_candidates"].exists():
+                continue
+            if step == "build-normalized-draft" and artifact_paths.get("normalized_draft") and artifact_paths["normalized_draft"].exists():
+                continue
+
         ok, missing = check_inputs_exist(step)
         if not ok:
-            st.session_state.processing_error = "Không xử lý được PDF. Vui lòng kiểm tra file đầu vào và cấu hình."
+            st.session_state.processing_error = f"Thiếu đầu vào cho bước {step}: {', '.join(missing)}. Vui lòng kiểm tra cấu hình."
             success = False
             break
             
         step_ok = run_single_step(step)
         artifact_paths = resolve_artifact_paths(package_path)
         if not step_ok:
-            st.session_state.processing_error = "Không xử lý được PDF. Vui lòng kiểm tra file đầu vào."
+            st.session_state.processing_error = f"Lỗi thực thi bước {step}. Vui lòng kiểm tra log kỹ thuật."
             success = False
             break
             
     if success:
         st.session_state.processing_msg = "Xử lý báo giá thành công! Dữ liệu nháp đã sẵn sàng để rà soát."
-        # Tự động khởi tạo review decisions trống nếu chưa có
         review_file = artifact_paths.get("review_decisions")
         if review_file and not review_file.exists():
             run_single_step("create-review-file")
@@ -356,226 +419,446 @@ if show_advanced:
         else:
             st.sidebar.error("Kiểm định package thất bại!")
 
-# --- MAIN AREA: STATUS MESSAGE ---
-if st.session_state.processing_msg:
-    st.success(st.session_state.processing_msg)
-if st.session_state.processing_error:
-    st.error(st.session_state.processing_error)
-
-# --- MAIN AREA: ADVANCED PIPELINE STATUS ---
-if show_advanced:
-    st.subheader("📋 Trạng thái xử lý Pipeline")
-    status_data = []
-    for s_id, s_info in PIPELINE_STEPS.items():
-        step_status = st.session_state.pipeline_status.get(s_id, {"status": "pending"})
-        status_icon = "⚪ Đang chờ (Pending)"
-        if step_status["status"] == "running":
-            status_icon = "🔵 Đang chạy (Running)"
-        elif step_status["status"] == "pass":
-            status_icon = "🟢 Thành công (Pass)"
-        elif step_status["status"] == "fail":
-            status_icon = "🔴 Thất bại (Fail)"
-            
-        status_data.append({
-            "Phân loại (Phase/Check)": s_info["phase"],
-            "Tên bước (Step Name)": s_info["name"],
-            "Trạng thái (Status)": status_icon,
-            "Chi tiết lỗi (Error Details)": step_status.get("error", "")
-        })
-    df_status = pd.DataFrame(status_data)
-    st.dataframe(df_status, use_container_width=True)
-    
-    with st.expander("🔍 Xem nhật ký chạy xử lý cuối cùng (Stdout/Stderr)"):
-        col_out1, col_out2 = st.columns(2)
-        with col_out1:
-            st.markdown("**Đầu ra chuẩn (Stdout Output):**")
-            st.text(st.session_state.last_stdout)
-        with col_out2:
-            st.markdown("**Đầu ra lỗi (Stderr Output):**")
-            st.text(st.session_state.last_stderr)
-
-# --- MAIN AREA: HUMAN REVIEW SECTION ---
-st.markdown("---")
-st.subheader("🕵️ Rà soát dữ liệu báo giá")
-
+# --- LOAD DATA FOR DASHBOARD AND REVIEW ---
 draft_path = artifact_paths.get("normalized_draft")
 review_path = artifact_paths.get("review_decisions")
+profile_path = package_path / "source" / "source_profile.json" if package_path else None
 
 draft_data = None
 review_data = None
+profile_data = None
 
 if draft_path and draft_path.exists():
-    draft_data, err_d = safe_load_json(draft_path)
+    draft_data, _ = safe_load_json(draft_path)
 if review_path and review_path.exists():
-    review_data, err_r = safe_load_json(review_path)
+    review_data, _ = safe_load_json(review_path)
+if profile_path and profile_path.exists():
+    profile_data, _ = safe_load_json(profile_path)
 
+# --- REGION 2: DASHBOARD THỐNG KÊ ---
 if draft_data and "items" in draft_data and len(draft_data["items"]) > 0:
-    items_list = draft_data["items"]
+    st.subheader("📊 Dashboard kết quả đọc báo giá")
     
-    # Map decision
     decision_map = {}
     if review_data and "decisions" in review_data:
         for dec in review_data["decisions"]:
             decision_map[dec["draft_item_id"]] = dec
             
+    stats = get_dashboard_stats(draft_data["items"], decision_map)
+    
+    m1, m2, m3, m4, m5, m6 = st.columns(6)
+    with m1:
+        st.markdown(f'<div class="metric-card"><h3>Tổng số dòng nháp</h3><p>{stats["total"]}</p></div>', unsafe_allow_html=True)
+    with m2:
+        st.markdown(f'<div class="metric-card"><h3>Có thể là vật tư</h3><p style="color:#16a34a;">{stats["likely_item"]}</p></div>', unsafe_allow_html=True)
+    with m3:
+        st.markdown(f'<div class="metric-card"><h3>Vật tư yếu/khuyết</h3><p style="color:#f59e0b;">{stats["weak_item"]}</p></div>', unsafe_allow_html=True)
+    with m4:
+        st.markdown(f'<div class="metric-card"><h3>Nghi rác / Tiêu đề</h3><p style="color:#64748b;">{stats["noise_or_title"]}</p></div>', unsafe_allow_html=True)
+    with m5:
+        st.markdown(f'<div class="metric-card"><h3>Đã duyệt (Approve/Edit)</h3><p style="color:#16a34a;">{stats["approved"] + stats["edited"]}</p></div>', unsafe_allow_html=True)
+    with m6:
+        st.markdown(f'<div class="metric-card"><h3>Sẽ xuất Excel</h3><p style="color:#0284c7;">{stats["exportable"]}</p></div>', unsafe_allow_html=True)
+
+    if profile_data:
+        with st.expander("📄 Thông tin hồ sơ tệp tin nguồn (Source Profile)"):
+            c_pf1, c_pf2 = st.columns(2)
+            with c_pf1:
+                st.markdown(f"- **Định dạng file**: `{profile_data.get('detected_file_type')}` ({profile_data.get('file_extension')})")
+                st.markdown(f"- **Mime Type**: `{profile_data.get('detected_mime_type')}`")
+                st.markdown(f"- **Dung lượng**: `{profile_data.get('file_size_bytes') / 1024 / 1024:.2f} MB`")
+                st.markdown(f"- **Vai trò đề xuất**: `{profile_data.get('source_role')}` (Độ tự tin: `{profile_data.get('source_role_confidence')}`)")
+            with c_pf2:
+                st.markdown(f"- **Khuyến nghị tiếp theo**: `{profile_data.get('recommended_next_action')}`")
+                st.markdown(f"- **Yêu cầu rà soát hồ sơ**: `{profile_data.get('requires_human_profile_review')}`")
+                st.markdown(f"- **Số trang / Sheets**: `{profile_data.get('technical_readability', {}).get('page_count') or profile_data.get('technical_readability', {}).get('sheet_count') or 1}`")
+                st.markdown(f"- **Có Text gốc (Native)**: `{profile_data.get('technical_readability', {}).get('has_native_text')}`")
+            
+            if profile_data.get("technical_readability", {}).get("requires_ocr"):
+                st.markdown("""
+                <div class="warning-box">
+                    <strong>⚠️ Cảnh báo OCR:</strong> Tệp tin nguồn được nhận diện là dạng quét ảnh (Scanned PDF/Image). 
+                    Hệ thống cần chạy OCR để trích xuất đầy đủ dữ liệu. Dữ liệu đọc hiện tại có thể bị thiếu sót.
+                </div>
+                """, unsafe_allow_html=True)
+
+# --- REGION 3 & 4: REVIEW TABLE & DETAILED EVIDENCE VIEW ---
+st.markdown("---")
+st.subheader("🕵️ Rà soát và Duyệt báo giá")
+
+if draft_data and "items" in draft_data and len(draft_data["items"]) > 0:
+    items_list = draft_data["items"]
+    
+    col_filter, col_sort, col_checkbox = st.columns([2, 2, 2])
+    with col_filter:
+        filter_type = st.selectbox(
+            "Filter bộ lọc dữ liệu",
+            ["Tất cả", "Chưa rà soát", "Đã chấp nhận", "Đã chỉnh sửa", "Đã từ chối", "Thiếu đơn giá", "Thiếu đơn vị", "Thiếu số lượng", "Độ tin cậy thấp", "Có cảnh báo", "Có giá"]
+        )
+    with col_sort:
+        sort_by = st.selectbox(
+            "Sắp xếp dòng hiển thị",
+            ["Thứ tự xuất hiện", "Độ tin cậy tăng dần", "Có giá trước", "Chưa rà soát trước"]
+        )
+    with col_checkbox:
+        # Checkbox kiểm soát hiển thị dòng bị ẩn theo heuristics
+        st.write("") # Dịch chuyển dọc cho thẳng hàng
+        st.write("")
+        show_hidden = st.checkbox("Hiển thị dòng bị ẩn / dòng nghi ngờ không phải vật tư", value=False)
+
+    filtered_items = filter_and_sort_items(items_list, decision_map, filter_type, sort_by, show_hidden=show_hidden)
+    
     table_rows = []
-    for item in items_list:
+    for idx, item in enumerate(filtered_items):
         d_id = item.get("draft_item_id")
         dec = decision_map.get(d_id, {})
         status_eng = dec.get("decision_type", "unreviewed")
         
-        # Việt hóa trạng thái hiển thị
-        status_vie = "Chưa rà soát"
+        status_vie = "⚪ Chưa rà soát"
         if status_eng == "approved":
-            status_vie = "Chấp nhận"
+            status_vie = "🟢 Chấp nhận"
         elif status_eng == "rejected":
-            status_vie = "Từ chối"
+            status_vie = "🔴 Từ chối"
         elif status_eng == "edited":
-            status_vie = "Chỉnh sửa"
+            status_vie = "🟡 Chỉnh sửa"
+            
+        cls = classify_draft_item(item)
+        cls_vie = "Vật tư tốt"
+        if cls == "likely_item":
+            cls_vie = "🟢 Vật tư tốt"
+        elif cls == "weak_item":
+            cls_vie = "🟡 Vật tư yếu"
+        elif cls == "incomplete_candidate":
+            cls_vie = "🔵 Chờ bổ sung"
+        elif cls == "title_or_header":
+            cls_vie = "⚪ Tiêu đề/Bảng"
+        elif cls == "section_or_note":
+            cls_vie = "📝 Ghi chú/Cộng"
+        elif cls == "rejected_noise":
+            cls_vie = "❌ Rác/Trống"
+
+        # Dịch warnings sang Tiếng Việt thân thiện
+        raw_warns = item.get("warnings", [])
+        vie_warns = ", ".join(format_warnings_vietnamese(raw_warns)) if raw_warns else "Bình thường"
             
         table_rows.append({
-            "Mã nháp": d_id,
+            "STT": idx + 1,
             "Mô tả": item.get("description", ""),
             "Đơn vị": item.get("unit", ""),
             "Số lượng": item.get("quantity", 0.0),
             "Đơn giá": item.get("unit_price", 0.0),
             "Thành tiền": item.get("amount", 0.0),
-            "Tiền tệ": item.get("currency", ""),
-            "Độ tin cậy (%)": f"{item.get('confidence', 0.0)*100:.1f}%",
-            "Trạng thái": status_vie,
-            "Người thực hiện": dec.get("reviewer", "")
+            "Phân loại dòng": cls_vie,
+            "Cảnh báo": vie_warns,
+            "Trạng thái": status_vie
         })
         
     df_items = pd.DataFrame(table_rows)
-    st.markdown("**Các dòng nháp cần rà soát:**")
-    st.dataframe(df_items, use_container_width=True)
-    
-    st.markdown("### Thực hiện quyết định rà soát")
-    item_ids = [row["Mã nháp"] for row in table_rows]
-    selected_id = st.selectbox("Chọn dòng vật tư cần rà soát (Mã nháp)", item_ids)
-    
-    selected_item = next((it for it in items_list if it.get("draft_item_id") == selected_id), None)
-    
-    if selected_item:
-        existing_dec = decision_map.get(selected_id, {})
+    st.markdown(f"**Danh sách dòng đang lọc ({len(filtered_items)} dòng):**")
+    st.dataframe(df_items, use_container_width=True, hide_index=True)
+
+    option_map = {}
+    for idx, item in enumerate(filtered_items):
+        d_id = item.get("draft_item_id")
+        dec = decision_map.get(d_id, {})
+        status_icon = "⚪"
+        if dec.get("decision_type") == "approved": status_icon = "🟢"
+        elif dec.get("decision_type") == "rejected": status_icon = "🔴"
+        elif dec.get("decision_type") == "edited": status_icon = "🟡"
         
-        col_rev1, col_rev2 = st.columns(2)
+        label = f"{status_icon} Dòng {idx+1}: {item.get('description', '')[:50]}... ({d_id})"
+        option_map[label] = d_id
+
+    if option_map:
+        default_idx = 0
+        if st.session_state.selected_draft_item_id in option_map.values():
+            default_idx = list(option_map.values()).index(st.session_state.selected_draft_item_id)
+            
+        selected_label = st.selectbox("Chọn dòng vật tư để xem bằng chứng và chỉnh sửa:", list(option_map.keys()), index=default_idx)
+        selected_id = option_map[selected_label]
+        st.session_state.selected_draft_item_id = selected_id
         
-        with col_rev1:
-            st.markdown(f"**Thông tin gốc của dòng vật tư: {selected_id}**")
-            st.markdown(f"- **Mô tả**: {selected_item.get('description')}")
-            st.markdown(f"- **Đơn vị**: {selected_item.get('unit')}")
-            st.markdown(f"- **Số lượng**: {selected_item.get('quantity')}")
-            st.markdown(f"- **Đơn giá**: {selected_item.get('unit_price')}")
-            st.markdown(f"- **Thành tiền**: {selected_item.get('amount')}")
-            st.markdown(f"- **Tiền tệ**: {selected_item.get('currency')}")
-            st.text_area("Văn bản gốc làm bằng chứng (Đọc hiểu)", selected_item.get("evidence_text", ""), disabled=True)
-            st.text_area("Các cảnh báo hệ thống", str(selected_item.get("warnings", [])), disabled=True)
+        selected_item = next((it for it in items_list if it.get("draft_item_id") == selected_id), None)
+        
+        if selected_item:
+            existing_dec = decision_map.get(selected_id, {})
             
-        with col_rev2:
-            st.markdown("**Thiết lập rà soát**")
+            # --- LAYOUT HAI CỘT BẮT BUỘC ---
+            col_left, col_right = st.columns([6, 5])
             
-            # Map ngược nhãn hiển thị sang backend enum
-            existing_type_eng = existing_dec.get("decision_type", "approved")
-            default_index = 0
-            if existing_type_eng == "rejected":
-                default_index = 1
-            elif existing_type_eng == "edited":
-                default_index = 2
+            # --- CỘT TRÁI: EVIDENCE VIEWER ---
+            with col_left:
+                st.subheader("🔍 Bằng chứng trực quan (Evidence)")
                 
-            decision_label = st.selectbox(
-                "Quyết định rà soát",
-                ["Chấp nhận", "Từ chối", "Chỉnh sửa"],
-                index=default_index
-            )
-            
-            # Chuyển đổi nhãn sang backend enum
-            decision_type = "approved"
-            if decision_label == "Từ chối":
-                decision_type = "rejected"
-            elif decision_label == "Chỉnh sửa":
-                decision_type = "edited"
+                # Phân giải bằng chứng từ helper
+                img_path, resolved_page_num, text_evidence = resolve_item_evidence(selected_item, package_path, artifact_paths)
                 
-            reviewer = st.text_input("Người rà soát", existing_dec.get("reviewer", "tester"))
-            reason = st.text_area("Lý do rà soát (Bắt buộc nếu Từ chối hoặc Chỉnh sửa)", existing_dec.get("reason", ""))
-            
-            field_overrides = {}
-            if decision_type == "edited":
-                st.markdown("⚙️ **Nhập các trường ghi đè giá trị:**")
+                # A. Chọn trang PDF trước khi render ảnh
+                pages_dir = package_path / "source" / "pages"
+                all_pages_on_disk = []
+                if pages_dir.exists() and pages_dir.is_dir():
+                    all_pages_on_disk = sorted([int(re.search(r"page_(\d+)\.png", p.name).group(1)) for p in pages_dir.glob("page_*.png") if re.search(r"page_(\d+)\.png", p.name)])
+
+                selected_page_key = f"page_sel_{selected_id}"
+                if selected_page_key not in st.session_state:
+                    st.session_state[selected_page_key] = resolved_page_num or (all_pages_on_disk[0] if all_pages_on_disk else 1)
+
+                current_page_selection = st.session_state[selected_page_key]
+                if all_pages_on_disk and current_page_selection not in all_pages_on_disk:
+                    current_page_selection = all_pages_on_disk[0]
+                    st.session_state[selected_page_key] = current_page_selection
+
+                st.markdown(f"**📷 Định vị trang PDF: Trang `{current_page_selection}`**")
+                
+                # Render Selectbox Chọn Trang Trước
+                if all_pages_on_disk:
+                    curr_select_idx = all_pages_on_disk.index(current_page_selection) if current_page_selection in all_pages_on_disk else 0
+                    manual_page = st.selectbox("Chọn trang hiển thị ảnh gốc", all_pages_on_disk, index=curr_select_idx)
+                    
+                    if manual_page != current_page_selection:
+                        st.session_state[selected_page_key] = manual_page
+                        current_page_selection = manual_page
+                        
+                    img_path = pages_dir / f"page_{current_page_selection:04d}.png"
+                
+                # Render ảnh trang PDF
+                pdf_root_file = artifact_paths.get("source_pdf")
+                if pdf_root_file and pdf_root_file.exists() and (not pages_dir.exists() or len(list(pages_dir.glob("page_*.png"))) == 0):
+                    st.warning("⚠️ Thư mục ảnh trang PDF trống hoặc chưa được kết xuất.")
+                    if st.button("📷 Tạo ảnh trang PDF (Prepare Pages)", use_container_width=True):
+                        st.info("Đang chạy kết xuất ảnh từ PDF...")
+                        run_single_step("prepare-pages")
+                        st.rerun()
+                
+                if img_path and img_path.exists():
+                    try:
+                        image = Image.open(img_path)
+                        st.image(image, caption=f"Trang {current_page_selection} - Đối chiếu hình ảnh gốc", use_container_width=True)
+                    except Exception as e:
+                        st.error(f"Lỗi hiển thị ảnh trang: {e}")
+                else:
+                    st.info("Không tìm thấy ảnh trang PDF gốc trên đĩa.")
+                    
+                if pdf_root_file and pdf_root_file.exists():
+                    pdf_absolute_path = pdf_root_file.resolve().as_uri()
+                    st.markdown(f"[📥 Mở tệp PDF gốc trực tiếp trong trình duyệt]({pdf_absolute_path})")
+
+                # B. Text Evidence gốc
+                st.markdown("**📝 Văn bản trích xuất gốc (Text Evidence):**")
+                st.text_area("Bằng chứng chữ thô", text_evidence, height=180, disabled=True)
+                
+                # Hiển thị cảnh báo Việt hóa thân thiện dưới dạng text thông báo
+                item_warns = selected_item.get("warnings", [])
+                if item_warns:
+                    vie_item_warns = format_warnings_vietnamese(item_warns)
+                    st.warning(f"⚠️ Cảnh báo dòng vật tư: {', '.join(vie_item_warns)}")
+                    
+            # --- CỘT PHẢI: REVIEW FORM ---
+            with col_right:
+                st.subheader("✏️ Hiệu chỉnh & Phê duyệt (Review)")
+                
                 old_overrides = existing_dec.get("field_overrides", {})
                 
-                over_desc = st.text_input("Mô tả ghi đè", old_overrides.get("description") or selected_item.get("description") or "")
-                over_brand = st.text_input("Thương hiệu ghi đè", old_overrides.get("brand") or selected_item.get("brand") or "")
-                over_unit = st.text_input("Đơn vị ghi đè", old_overrides.get("unit") or selected_item.get("unit") or "")
+                rev_desc = st.text_area("Mô tả vật tư", old_overrides.get("description") or selected_item.get("description") or "", height=80)
+                rev_brand = st.text_input("Thương hiệu", old_overrides.get("brand") or selected_item.get("brand") or "")
+                rev_unit = st.text_input("Đơn vị tính", old_overrides.get("unit") or selected_item.get("unit") or "")
                 
-                over_qty = st.number_input("Số lượng ghi đè", value=float(old_overrides.get("quantity") or selected_item.get("quantity") or 0.0))
-                over_price = st.number_input("Đơn giá ghi đè", value=float(old_overrides.get("unit_price") or selected_item.get("unit_price") or 0.0))
-                over_amt = st.number_input("Thành tiền ghi đè", value=float(old_overrides.get("amount") or selected_item.get("amount") or 0.0))
-                over_curr = st.selectbox("Tiền tệ ghi đè", ["VND", "USD", ""], index=["VND", "USD", ""].index(old_overrides.get("currency") or selected_item.get("currency") or ""))
+                c_form1, c_form2 = st.columns(2)
+                with c_form1:
+                    saved_qty = old_overrides.get("quantity") if old_overrides.get("quantity") is not None else selected_item.get("quantity")
+                    rev_qty = st.number_input("Số lượng", value=safe_number(saved_qty, 0.0), format="%.4f")
+                    
+                    saved_price = old_overrides.get("unit_price") if old_overrides.get("unit_price") is not None else selected_item.get("unit_price")
+                    rev_price = st.number_input("Đơn giá", value=safe_number(saved_price, 0.0), format="%.2f")
+                with c_form2:
+                    auto_amt = rev_qty * rev_price
+                    saved_amt = old_overrides.get("amount") if old_overrides.get("amount") is not None else selected_item.get("amount")
+                    rev_amt = st.number_input("Thành tiền", value=safe_number(saved_amt, auto_amt), format="%.2f")
+                    
+                    currencies = ["VND", "USD", ""]
+                    default_curr_idx = 0
+                    saved_curr = old_overrides.get("currency") or selected_item.get("currency") or "VND"
+                    if saved_curr in currencies:
+                        default_curr_idx = currencies.index(saved_curr)
+                    rev_curr = st.selectbox("Tiền tệ", currencies, index=default_curr_idx)
+
+                st.markdown("---")
                 
-            if st.button("Lưu quyết định"):
-                if decision_type in ["rejected", "edited"] and not reason.strip():
-                    st.error("Lỗi: Quyết định 'Từ chối' hoặc 'Chỉnh sửa' bắt buộc phải nhập lý do.")
-                else:
-                    cmd = ["python", "-m", "mep_quotation.cli.main", "record-review", str(package_path),
-                           "--draft-item-id", selected_id,
-                           "--decision", decision_type,
-                           "--reviewer", reviewer,
-                           "--reason", reason]
-                           
-                    if overwrite_review_decisions:
-                        cmd.append("--overwrite")
+                auto_advance = st.checkbox("Tự động chuyển sang dòng chưa rà soát tiếp theo sau khi lưu", value=True)
+                
+                st.markdown("**Ý kiến và Quyết định:**")
+                reviewer_name = st.text_input("Người rà soát (Reviewer)", existing_dec.get("reviewer", "tester"))
+                
+                reason_val = st.text_area("Lý do chỉnh sửa / Từ chối (Bắt buộc với Chỉnh sửa hoặc Từ chối thủ công)", existing_dec.get("reason", ""))
+                
+                quick_rejections = [
+                    "Chọn lý do nhanh...",
+                    "Dòng tiêu đề, không phải vật tư",
+                    "Thiếu giá",
+                    "Dữ liệu đọc sai",
+                    "Dòng ghi chú",
+                    "Trùng dòng khác",
+                    "Không thuộc phạm vi báo giá"
+                ]
+                selected_quick = st.selectbox("Gợi ý lý do từ chối nhanh:", quick_rejections)
+                if selected_quick != "Chọn lý do nhanh..." and not reason_val:
+                    reason_val = selected_quick
+                
+                # Xử lý lưu quyết định rà soát
+                def save_decision(decision_type: str, reason_text: str, overrides: dict = None):
+                    # Guardrail: Bắt buộc lý do cho edited và rejected (trừ nút Không phải vật tư tự động)
+                    if decision_type in ["rejected", "edited"] and not reason_text.strip():
+                        st.error("Lỗi: Quyết định 'Từ chối' hoặc 'Chỉnh sửa' bắt buộc phải nhập lý do.")
+                        return
+                    
+                    # 1. Phát hiện và tự động tạo file review_decisions.json nếu thiếu, kiểm tra chặt chẽ exit code
+                    review_file_path = artifact_paths.get("review_decisions")
+                    if review_file_path and not review_file_path.exists():
+                        success_init = run_single_step("create-review-file")
+                        if not success_init:
+                            step_status = st.session_state.pipeline_status.get("create-review-file", {})
+                            err_msg = step_status.get("error", "Lỗi không xác định khi tạo file rà soát")
+                            st.error(f"Lỗi nghiêm trọng: Không thể khởi tạo tệp rà soát review_decisions.json. Chi tiết: {err_msg}")
+                            return
                         
-                    if decision_type == "edited":
-                        if over_desc:
-                            cmd.extend(["--description", over_desc])
-                        if over_brand:
-                            cmd.extend(["--brand", over_brand])
-                        if over_unit:
-                            cmd.extend(["--unit", over_unit])
-                        if over_qty is not None:
-                            cmd.extend(["--quantity", str(over_qty)])
-                        if over_price is not None:
-                            cmd.extend(["--unit-price", str(over_price)])
-                        if over_curr:
-                            cmd.extend(["--currency", over_curr])
-                        if over_amt is not None:
-                            cmd.extend(["--amount", str(over_amt)])
-                            
+                    # 2. Xây dựng command CLI qua helper
+                    cmd = build_review_command(
+                        package_path=package_path,
+                        draft_item_id=selected_id,
+                        decision_type=decision_type,
+                        reviewer=reviewer_name,
+                        reason=reason_text,
+                        field_overrides=overrides
+                    )
+                    
                     code, stdout, stderr = run_cli_command(cmd, timeout=timeout_sec)
                     if code == 0:
-                        st.success("Lưu quyết định rà soát thành công!")
+                        st.toast(f"Lưu quyết định {decision_type.upper()} thành công!")
+                        
+                        if auto_advance:
+                            item_ids_list = [item.get("draft_item_id") for item in filtered_items]
+                            try:
+                                current_idx = item_ids_list.index(selected_id)
+                                next_id = None
+                                for idx_n in range(current_idx + 1, len(item_ids_list)):
+                                    target_id = item_ids_list[idx_n]
+                                    dec_type = decision_map.get(target_id, {}).get("decision_type", "unreviewed")
+                                    if dec_type == "unreviewed":
+                                        next_id = target_id
+                                        break
+                                if next_id is None:
+                                    for idx_n in range(0, current_idx):
+                                        target_id = item_ids_list[idx_n]
+                                        dec_type = decision_map.get(target_id, {}).get("decision_type", "unreviewed")
+                                        if dec_type == "unreviewed":
+                                            next_id = target_id
+                                            break
+                                if next_id:
+                                    st.session_state.selected_draft_item_id = next_id
+                            except ValueError:
+                                pass
+                                
                         st.rerun()
                     else:
                         st.error(f"Lưu quyết định thất bại: {stderr}")
+
+                # Render 4 nút bấm rà soát
+                b_c1, b_c2, b_c3 = st.columns(3)
+                with b_c1:
+                    if st.button("🟢 Chấp nhận dòng", use_container_width=True):
+                        save_decision("approved", reason_val or "Chấp nhận thông tin gốc")
+                with b_c2:
+                    if st.button("🟡 Chỉnh sửa & Chấp nhận", use_container_width=True):
+                        overrides_data = {
+                            "description": rev_desc,
+                            "brand": rev_brand,
+                            "unit": rev_unit,
+                            "quantity": rev_qty,
+                            "unit_price": rev_price,
+                            "currency": rev_curr,
+                            "amount": rev_amt
+                        }
+                        save_decision("edited", reason_val, overrides=overrides_data)
+                with b_c3:
+                    if st.button("🔴 Từ chối dòng", use_container_width=True):
+                        save_decision("rejected", reason_val)
+
+                # Nút quyết định nhanh "Không phải vật tư" dạng nút lớn riêng biệt
+                st.markdown("")
+                if st.button("🚫 Không phải vật tư (Loại bỏ nhanh)", use_container_width=True, type="secondary"):
+                    save_decision("rejected", "Không phải dòng vật tư")
+                        
 else:
     st.info("Chưa có dữ liệu nháp để rà soát. Vui lòng chọn tệp PDF và bấm 'Xử lý báo giá' ở Sidebar.")
 
-# --- MAIN AREA: EXPORT SECTION ---
+# --- REGION 5: CHẨN ĐOÁN KẾT QUẢ ĐỌC ---
+if draft_data and "items" in draft_data and len(draft_data["items"]) > 0:
+    st.markdown("---")
+    st.subheader("🩺 Chẩn đoán kết quả đọc dữ liệu")
+    
+    diagnose_groups = diagnose_read_results(draft_data["items"], decision_map)
+    
+    diag_tab1, diag_tab2, diag_tab3 = st.tabs([
+        f"🟢 Đọc tốt ({len(diagnose_groups['good'])} dòng)",
+        f"🟡 Thiếu dữ liệu ({len(diagnose_groups['missing_data'])} dòng)",
+        f"🔴 Nghi ngờ rác/tiêu đề ({len(diagnose_groups['suspected_trash'])} dòng)"
+    ])
+    
+    with diag_tab1:
+        st.markdown("**Các dòng có vẻ được nhận diện chính xác và đầy đủ thông tin:**")
+        if diagnose_groups["good"]:
+            st.dataframe(pd.DataFrame([{
+                "Mã nháp": it.get("draft_item_id"), "Mô tả": it.get("description"), "Đơn vị": it.get("unit"),
+                "Số lượng": it.get("quantity"), "Đơn giá": it.get("unit_price"), "Độ tin cậy": f"{it.get('confidence',0.0)*100:.1f}%"
+            } for it in diagnose_groups["good"]]), use_container_width=True, hide_index=True)
+        else:
+            st.write("Không có dòng nào.")
+            
+    with diag_tab2:
+        st.markdown("**Các dòng bị khuyết thiếu một số trường quan trọng (đơn vị, số lượng, giá) hoặc độ tin cậy thấp:**")
+        if diagnose_groups["missing_data"]:
+            st.dataframe(pd.DataFrame([{
+                "Mã nháp": it.get("draft_item_id"), "Mô tả": it.get("description"), "Đơn vị": it.get("unit"),
+                "Số lượng": it.get("quantity"), "Đơn giá": it.get("unit_price")
+            } for it in diagnose_groups["missing_data"]]), use_container_width=True, hide_index=True)
+        else:
+            st.write("Không có dòng nào.")
+            
+    with diag_tab3:
+        st.markdown("**Các dòng nghi là tiêu đề bảng biểu, thông tin rác hoặc dòng trống không phải vật tư:**")
+        if diagnose_groups["suspected_trash"]:
+            st.dataframe(pd.DataFrame([{
+                "Mã nháp": it.get("draft_item_id"), "Mô tả": it.get("description"), "Đơn vị": it.get("unit"),
+                "Số lượng": it.get("quantity"), "Đơn giá": it.get("unit_price")
+            } for it in diagnose_groups["suspected_trash"]]), use_container_width=True, hide_index=True)
+        else:
+            st.write("Không có dòng nào.")
+
+# --- REGION 6: EXPORT PREVIEW ---
 st.markdown("---")
-st.subheader("📤 Xuất kết quả báo giá")
+st.subheader("📤 Xem trước kết quả xuất bản (Export Preview)")
 
-# Kiểm tra xem có bất kỳ quyết định rà soát nào hợp lệ chưa
-has_decisions = False
-if review_data and "decisions" in review_data and len(review_data["decisions"]) > 0:
-    # Có ít nhất 1 dòng được approve hoặc edited
-    has_decisions = any(d.get("decision_type") in ["approved", "edited"] for d in review_data["decisions"])
+preview_rows = build_export_preview_rows(draft_data["items"], decision_map) if (draft_data and "items" in draft_data) else []
 
-if st.button("Xuất Excel", use_container_width=True):
-    if not has_decisions:
-        st.error("Cần rà soát ít nhất một dòng trước khi xuất Excel.")
-    else:
-        # Tự động xuất Normalized Final trước
+if preview_rows:
+    df_preview = pd.DataFrame(preview_rows)
+    st.markdown(f"**Các dòng sẽ được xuất Excel ({len(preview_rows)} dòng):**")
+    st.dataframe(df_preview, use_container_width=True, hide_index=True)
+    
+    rejected_count = sum(1 for d in decision_map.values() if d.get("decision_type") == "rejected")
+    unreviewed_count = len(draft_data["items"]) - len(preview_rows) - rejected_count
+    
+    st.info(f"💡 Thống kê xuất bản: Sẽ xuất `{len(preview_rows)}` dòng | Loại bỏ `{rejected_count}` dòng bị từ chối | `{unreviewed_count}` dòng chưa rà soát sẽ không được xuất.")
+    
+    if st.button("Xuất Excel", use_container_width=True):
         ok_norm, missing_norm = check_inputs_exist("export-normalized")
         if not ok_norm:
             st.error("Không thể xuất dữ liệu chuẩn. Thiếu file đầu vào.")
         else:
-            # Chạy Phase 11
             cmd_norm = ["python", "-m", "mep_quotation.cli.main", "export-normalized", str(package_path), "--overwrite"]
             code_n, stdout_n, stderr_n = run_cli_command(cmd_norm, timeout=timeout_sec)
             
             if code_n == 0:
-                # Chạy Phase 12 Excel Export
                 artifact_paths = resolve_artifact_paths(package_path)
                 ok_excel, missing_excel = check_inputs_exist("export-excel")
                 if not ok_excel:
@@ -586,29 +869,29 @@ if st.button("Xuất Excel", use_container_width=True):
                     artifact_paths = resolve_artifact_paths(package_path)
                     
                     if code_e == 0:
-                        st.success("Xuất Excel thành công! Tệp tin Excel báo giá đã sẵn sàng để tải xuống.")
+                        st.success("Xuất Excel thành công!")
                         st.rerun()
                     else:
                         st.error(f"Xuất Excel thất bại: {stderr_e}")
             else:
                 st.error(f"Xử lý chuẩn hóa thất bại trước khi xuất Excel: {stderr_n}")
+else:
+    st.warning("⚠️ Chưa có dòng vật tư nào được duyệt (Chấp nhận hoặc Chỉnh sửa) để xuất Excel.")
 
-# Nút tải file Excel
+# Nút tải file Excel chính
 excel_file_path = artifact_paths.get("excel_export")
 if excel_file_path and excel_file_path.exists():
     with open(excel_file_path, "rb") as f:
         excel_bytes = f.read()
     st.download_button(
-        label="📥 Tải file Excel báo giá",
+        label="📥 Tải file Excel báo giá chính thức",
         data=excel_bytes,
         file_name=f"{quotation_id}.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         use_container_width=True
     )
-else:
-    st.info("Tệp Excel báo giá chưa được sinh ra.")
 
-# --- MAIN AREA: ARTIFACTS VIEWER TABS (Nâng cao) ---
+# --- REGION 7: ADVANCED ARTIFACT VIEWER ---
 if show_advanced:
     st.markdown("---")
     st.subheader("🔍 Trình xem các tệp tin Artifacts (Read-Only)")
@@ -642,54 +925,7 @@ if show_advanced:
         render_json_tab(package_path / "package.json" if package_path else None)
 
     with tab_profile:
-        st.markdown("**Hồ sơ phân tích nguồn (Source Profile):**")
-        profile_rel_path = "source/source_profile.json"
-        # Thử lấy động từ package.json nếu có khai báo
-        pkg_json_file = package_path / "package.json" if package_path else None
-        if pkg_json_file and pkg_json_file.exists():
-            pkg_data, _ = safe_load_json(pkg_json_file)
-            if pkg_data and "files" in pkg_data and "source_profile" in pkg_data["files"]:
-                profile_rel_path = pkg_data["files"]["source_profile"]
-        
-        profile_path = package_path / profile_rel_path if package_path else None
-        if profile_path and profile_path.exists():
-            profile_data, err = safe_load_json(profile_path)
-            if err:
-                st.error(err)
-            else:
-                col_p1, col_p2 = st.columns(2)
-                with col_p1:
-                    st.markdown(f"- **Tên file**: `{profile_data.get('file_name')}`")
-                    st.markdown(f"- **Định dạng**: `{profile_data.get('detected_file_type')}`")
-                    st.markdown(f"- **Mime Type**: `{profile_data.get('detected_mime_type')}`")
-                    st.markdown(f"- **Dung lượng**: `{profile_data.get('file_size_bytes')} bytes`")
-                    st.markdown(f"- **Vai trò đề xuất**: `{profile_data.get('source_role')}` (Độ tự tin: `{profile_data.get('source_role_confidence')}`)")
-                    st.markdown(f"- **Hành động tiếp theo**: `{profile_data.get('recommended_next_action')}`")
-                    st.markdown(f"- **Cần OCR**: `{profile_data.get('technical_readability', {}).get('requires_ocr')}`")
-                    st.markdown(f"- **Cần rà soát thủ công**: `{profile_data.get('requires_human_profile_review')}`")
-                
-                with col_p2:
-                    st.markdown("**Ứng viên ngày tháng phát hiện:**")
-                    dates = profile_data.get('date_candidates', [])
-                    if dates:
-                        df_dates = pd.DataFrame(dates)
-                        st.dataframe(df_dates, use_container_width=True)
-                    else:
-                        st.write("Không phát hiện ngày tháng nào.")
-
-                    st.markdown("**Các cảnh báo rủi ro (Warnings):**")
-                    warns = profile_data.get('warnings', [])
-                    if warns:
-                        df_warns = pd.DataFrame(warns)
-                        st.dataframe(df_warns, use_container_width=True)
-                    else:
-                        st.success("Không có cảnh báo nào.")
-                        
-                st.markdown("---")
-                st.markdown("**Dữ liệu JSON thô:**")
-                st.json(profile_data)
-        else:
-            st.info("Chưa có hồ sơ nguồn. Vui lòng chạy phân tích nguồn.")
+        render_json_tab(profile_path)
             
     with tab_pdf:
         manifest_path = artifact_paths.get("page_manifest")
@@ -698,19 +934,19 @@ if show_advanced:
             if manifest_data and "pages" in manifest_data:
                 pages = manifest_data["pages"]
                 page_numbers = [p["page_number"] for p in pages]
-                selected_page_num = st.selectbox("Chọn trang xem ảnh", page_numbers)
+                selected_page_num = st.selectbox("Chọn trang xem ảnh (Advanced)", page_numbers)
                 
                 page_info = next((p for p in pages if p["page_number"] == selected_page_num), None)
                 if page_info:
-                    img_path = package_path / page_info["image_path"]
-                    if img_path.exists():
+                    img_path_adv = package_path / page_info["image_path"]
+                    if img_path_adv.exists():
                         try:
-                            image = Image.open(img_path)
+                            image = Image.open(img_path_adv)
                             st.image(image, caption=f"Trang {selected_page_num}", use_container_width=True)
                         except Exception as e:
                             st.error(f"Lỗi load ảnh: {e}")
                     else:
-                        st.write(f"Không tìm thấy ảnh tại: {img_path}")
+                        st.write(f"Không tìm thấy ảnh tại: {img_path_adv}")
             else:
                 st.write("Không tìm thấy thông tin trang trong page_manifest.json.")
         else:
@@ -723,14 +959,11 @@ if show_advanced:
             if raw_data and "pages" in raw_data:
                 pages = raw_data["pages"]
                 page_nums = [p["page_number"] for p in pages]
-                selected_raw_page = st.selectbox("Chọn trang xem văn bản thô", page_nums)
+                selected_raw_page = st.selectbox("Chọn trang xem văn bản thô (Advanced)", page_nums)
                 
                 raw_page_info = next((p for p in pages if p["page_number"] == selected_raw_page), None)
                 if raw_page_info:
-                    st.markdown(f"**Has Text:** `{raw_page_info.get('has_text')}` | **Char Count:** `{raw_page_info.get('character_count')}`")
-                    st.text_area("Văn bản thô", raw_page_info.get("text", ""), height=400)
-            else:
-                st.write("Không tìm thấy thông tin trang trong raw_text.json.")
+                    st.text_area("Văn bản thô (Advanced)", raw_page_info.get("text", ""), height=400)
         else:
             st.write("Tệp tin raw_text.json chưa được sinh ra.")
             
@@ -739,7 +972,7 @@ if show_advanced:
         if md_path and md_path.exists():
             with open(md_path, "r", encoding="utf-8") as f:
                 md_content = f.read()
-            st.text_area("Markdown Content", md_content, height=400)
+            st.text_area("Markdown Content (Advanced)", md_content, height=400)
         else:
             st.write("Tệp tin Markdown chưa được sinh ra.")
             

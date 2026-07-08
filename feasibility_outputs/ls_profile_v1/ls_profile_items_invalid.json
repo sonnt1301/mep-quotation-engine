@@ -1,0 +1,572 @@
+[
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Cuộn đóng ngắt",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "CUỘN",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Cuộn đóng ngắt In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 930000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cuộn đóng ngắt SHT for ABN100c~ABH250c 930,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Under Vol. Trip",
+      "pole": "3P",
+      "rated_current": "for ABN403c~803c",
+      "breaking_capacity": "",
+      "material_code": "UNDER",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Under Vol. Trip In=for ABN403c~803c",
+      "unit": "cái",
+      "unit_price": 1380000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Under Vol. Trip UVT for ABN403c~803c 1,380,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Tiếp điểm phụ",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "TIẾP",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Tiếp điểm phụ In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 365000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tiếp điểm phụ AX for ABN100c~ABH250c 365,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Auxiliary switch",
+      "pole": "3P",
+      "rated_current": "for ABN403c~803c",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Auxiliary switch In=for ABN403c~803c",
+      "unit": "cái",
+      "unit_price": 550000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch AX for ABN403c~803c 550,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "()",
+      "pole": "3P",
+      "rated_current": "for ABS1003b~1204b",
+      "breaking_capacity": "",
+      "material_code": "AX",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) (AX) In=for ABS1003b~1204b",
+      "unit": "cái",
+      "unit_price": 575000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(AX) AX for ABS1003b~1204b 575,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "()",
+      "pole": "3P",
+      "rated_current": "for ABS1003b~1204b",
+      "breaking_capacity": "",
+      "material_code": "AL",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) (AL) In=for ABS1003b~1204b",
+      "unit": "cái",
+      "unit_price": 575000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(AL) AL for ABS1003b~1204b 575,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "và AX",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "AL",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) AL và AX In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 770000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AL và AX AL/AX for ABN100c~ABH250c 770,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Tấm chắn pha:",
+      "pole": "3P",
+      "rated_current": "for ABS103c~ABN/S203c",
+      "breaking_capacity": "",
+      "material_code": "TẤM",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Tấm chắn pha: In=for ABS103c~ABN/S203c",
+      "unit": "cái",
+      "unit_price": 22000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tấm chắn pha: IB-23 for ABS103c~ABN/S203c 22,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Insulation barrier",
+      "pole": "3P",
+      "rated_current": "for ABN/S403c",
+      "breaking_capacity": "",
+      "material_code": "INSULATION",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Insulation barrier In=for ABN/S403c",
+      "unit": "cái",
+      "unit_price": 37600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Insulation barrier B-43B for ABN/S403c 37,600",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Thanh cái Busbar",
+      "pole": "4P",
+      "rated_current": "for ABN/S803c",
+      "breaking_capacity": "",
+      "material_code": "THANH",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Thanh cái Busbar In=for ABN/S803c",
+      "unit": "cái",
+      "unit_price": 3000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Thanh cái Busbar for ABN/S803c 3,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Auxiliary switch: AX for",
+      "pole": "3P",
+      "rated_current": "LA/LC",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "Thiết bị LS Auxiliary switch: AX for In=LA/LC",
+      "unit": "cái",
+      "unit_price": 300000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch: AX for LA/LC 300,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Auxiliary switch: AX for",
+      "pole": "3P",
+      "rated_current": "LB",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "Thiết bị LS Auxiliary switch: AX for In=LB",
+      "unit": "cái",
+      "unit_price": 354000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch: AX for LB 354,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 4,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 4,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "MC-6a~40a",
+      "breaking_capacity": "",
+      "material_code": "AC-9",
+      "description": "Thiết bị LS AC-9 In=MC-6a~40a",
+      "unit": "cái",
+      "unit_price": 520000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AC-9 MC-6a~40a 520,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Bộ bảo vệ thấp",
+      "pole": "3P",
+      "rated_current": "áp UVT coil",
+      "breaking_capacity": "",
+      "material_code": "BỘ",
+      "description": "PHỤ KIỆN ACB Bộ bảo vệ thấp In=áp UVT coil",
+      "unit": "cái",
+      "unit_price": 2700000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Bộ bảo vệ thấp áp UVT coil 2,700,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Khóa liên động",
+      "pole": "3P",
+      "rated_current": "2-way (dùng cho 2",
+      "breaking_capacity": "ACB)",
+      "material_code": "KHÓA",
+      "description": "PHỤ KIỆN ACB Khóa liên động In=2-way (dùng cho 2 Icu=ACB)",
+      "unit": "cái",
+      "unit_price": 12000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Khóa liên động 2-way (dùng cho 2 ACB) 12,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "(Mechanical Interlock)",
+      "pole": "3P",
+      "rated_current": "3-way (dùng cho 3",
+      "breaking_capacity": "ACB)",
+      "material_code": "MECHANICAL",
+      "description": "PHỤ KIỆN ACB (Mechanical Interlock) In=3-way (dùng cho 3 Icu=ACB)",
+      "unit": "cái",
+      "unit_price": 22000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(Mechanical Interlock) 3-way (dùng cho 3 ACB) 22,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Tấm chắn pha",
+      "pole": "3P",
+      "rated_current": "IB for ACB 630A~6300A",
+      "breaking_capacity": "",
+      "material_code": "TẤM",
+      "description": "PHỤ KIỆN ACB Tấm chắn pha In=IB for ACB 630A~6300A",
+      "unit": "cái",
+      "unit_price": 600000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tấm chắn pha IB for ACB 630A~6300A 600,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Cuộn đóng",
+      "pole": "3P",
+      "rated_current": "Closing coil for ACB",
+      "breaking_capacity": "",
+      "material_code": "CUỘN",
+      "description": "PHỤ KIỆN ACB Cuộn đóng In=Closing coil for ACB",
+      "unit": "cái",
+      "unit_price": 1960000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cuộn đóng Closing coil for ACB 1,960,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Mô tơ nạp",
+      "pole": "3P",
+      "rated_current": "Motor",
+      "breaking_capacity": "",
+      "material_code": "MÔ",
+      "description": "PHỤ KIỆN ACB Mô tơ nạp In=Motor",
+      "unit": "cái",
+      "unit_price": 7200000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Mô tơ nạp Motor 7,200,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  }
+]

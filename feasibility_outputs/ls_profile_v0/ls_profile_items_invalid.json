@@ -1,0 +1,2314 @@
+[
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao điện ELCB 4 cực loại khối chống rò điện",
+      "type": "EBS104c 15,20,30,40,50,60,75,100,125A",
+      "pole": "4P",
+      "rated_current": "125A",
+      "breaking_capacity": "37",
+      "material_code": "EBS104C",
+      "description": "Cầu dao điện ELCB 4 cực loại khối chống rò điện EBS104c 15,20,30,40,50,60,75,100,125A Icu=37",
+      "unit": "cái",
+      "unit_price": 4700000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "EBS104c 15,20,30,40,50,60,75,100,125A 37 4,700,000",
+      "validation_status": "invalid",
+      "errors": [
+        "description_contains_price_with_A",
+        "description_contains_large_price_noise"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "description_contains_price_with_A",
+      "description_contains_large_price_noise"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Cuộn đóng ngắt",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "CUỘN",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Cuộn đóng ngắt In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 930000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cuộn đóng ngắt SHT for ABN100c~ABH250c 930,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Under Vol. Trip",
+      "pole": "3P",
+      "rated_current": "for ABN403c~803c",
+      "breaking_capacity": "",
+      "material_code": "UNDER",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Under Vol. Trip In=for ABN403c~803c",
+      "unit": "cái",
+      "unit_price": 1380000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Under Vol. Trip UVT for ABN403c~803c 1,380,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Tiếp điểm phụ",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "TIẾP",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Tiếp điểm phụ In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 365000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tiếp điểm phụ AX for ABN100c~ABH250c 365,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Auxiliary switch",
+      "pole": "3P",
+      "rated_current": "for ABN403c~803c",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Auxiliary switch In=for ABN403c~803c",
+      "unit": "cái",
+      "unit_price": 550000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch AX for ABN403c~803c 550,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "()",
+      "pole": "3P",
+      "rated_current": "for ABS1003b~1204b",
+      "breaking_capacity": "",
+      "material_code": "AX",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) (AX) In=for ABS1003b~1204b",
+      "unit": "cái",
+      "unit_price": 575000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(AX) AX for ABS1003b~1204b 575,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "()",
+      "pole": "3P",
+      "rated_current": "for ABS1003b~1204b",
+      "breaking_capacity": "",
+      "material_code": "AL",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) (AL) In=for ABS1003b~1204b",
+      "unit": "cái",
+      "unit_price": 575000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(AL) AL for ABS1003b~1204b 575,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "và AX",
+      "pole": "3P",
+      "rated_current": "for ABN100c~ABH250c",
+      "breaking_capacity": "",
+      "material_code": "AL",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) AL và AX In=for ABN100c~ABH250c",
+      "unit": "cái",
+      "unit_price": 770000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AL và AX AL/AX for ABN100c~ABH250c 770,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Tấm chắn pha:",
+      "pole": "3P",
+      "rated_current": "for ABS103c~ABN/S203c",
+      "breaking_capacity": "",
+      "material_code": "TẤM",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Tấm chắn pha: In=for ABS103c~ABN/S203c",
+      "unit": "cái",
+      "unit_price": 22000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tấm chắn pha: IB-23 for ABS103c~ABN/S203c 22,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Insulation barrier",
+      "pole": "3P",
+      "rated_current": "for ABN/S403c",
+      "breaking_capacity": "",
+      "material_code": "INSULATION",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Insulation barrier In=for ABN/S403c",
+      "unit": "cái",
+      "unit_price": 37600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Insulation barrier B-43B for ABN/S403c 37,600",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 2,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 2,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB)",
+      "type": "Thanh cái Busbar",
+      "pole": "4P",
+      "rated_current": "for ABN/S803c",
+      "breaking_capacity": "",
+      "material_code": "THANH",
+      "description": "PHỤ KIỆN CẦU DAO ĐIỆN (MCCB) Thanh cái Busbar In=for ABN/S803c",
+      "unit": "cái",
+      "unit_price": 3000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Thanh cái Busbar for ABN/S803c 3,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "3-6-10-16-20-25-32A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=3-6-10-16-20-25-32A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 596000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB63N 1P+N 3-6-10-16-20-25-32A 6KA 596,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "40-50-63A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=40-50-63A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 638000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB63N 1P+N 40-50-63A 6KA 638,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "6-10-16-20-25-32A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=6-10-16-20-25-32A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 1080000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB40NN 1P+N 6-10-16-20-25-32A 6KA 1,080,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "40A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=40A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 1160000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB40NN 1P+N 40A 6KA 1,160,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "6-10-16-20-25-32A",
+      "breaking_capacity": "10KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=6-10-16-20-25-32A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1260000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB50HW 1P+N 6-10-16-20-25-32A 10KA 1,260,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "40-50A",
+      "breaking_capacity": "10KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=40-50A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1260000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB50HW 1P+N 40-50A 10KA 1,260,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "6-10-16-20-25-32A",
+      "breaking_capacity": "10KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=6-10-16-20-25-32A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 5500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB63HW 3P+N 6-10-16-20-25-32A 10KA 5,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "40-63A",
+      "breaking_capacity": "10KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=40-63A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 5500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LB63HW 3P+N 40-63A 10KA 5,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "16-25-32-40-50A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=16-25-32-40-50A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 880000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC63N 1P+N 16-25-32-40-50A 6KA 880,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "63A",
+      "breaking_capacity": "6KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=63A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 910000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC63N 1P+N 63A 6KA 910,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "16-25-32-40-50A",
+      "breaking_capacity": "6KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=16-25-32-40-50A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 1260000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC63N 3P+N 16-25-32-40-50A 6KA 1,260,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "63A",
+      "breaking_capacity": "6KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=63A Icu=6KA",
+      "unit": "cái",
+      "unit_price": 1380000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC63N 3P+N 63A 6KA 1,380,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "16-25-32-40A",
+      "breaking_capacity": "10KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=16-25-32-40A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1090000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 1P+N 16-25-32-40A 10KA 1,090,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "50-63A",
+      "breaking_capacity": "10KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=50-63A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1180000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 1P+N 50-63A 10KA 1,180,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "1P+N",
+      "pole": "1P",
+      "rated_current": "80-100A",
+      "breaking_capacity": "10KA",
+      "material_code": "1PN",
+      "description": "Thiết bị LS 1P+N In=80-100A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1380000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 1P+N 80-100A 10KA 1,380,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "25-32-40A",
+      "breaking_capacity": "10KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=25-32-40A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1550000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 3P+N 25-32-40A 10KA 1,550,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "50-63A",
+      "breaking_capacity": "10KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=50-63A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 1760000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 3P+N 50-63A 10KA 1,760,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "3P+N",
+      "pole": "3P",
+      "rated_current": "80-100A",
+      "breaking_capacity": "10KA",
+      "material_code": "3PN",
+      "description": "Thiết bị LS 3P+N In=80-100A Icu=10KA",
+      "unit": "cái",
+      "unit_price": 2090000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "LC100H 3P+N 80-100A 10KA 2,090,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "2P",
+      "rated_current": "385V",
+      "breaking_capacity": "10KV",
+      "material_code": "2P",
+      "description": "Thiết bị LS 2P In=385V Icu=10KV",
+      "unit": "cái",
+      "unit_price": 1750000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK05S-T3 2P 385V 10KV 1,750,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "4P",
+      "rated_current": "385V",
+      "breaking_capacity": "10KV",
+      "material_code": "4P",
+      "description": "Thiết bị LS 4P In=385V Icu=10KV",
+      "unit": "cái",
+      "unit_price": 3440000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK05S-T3 4P 385V 10KV 3,440,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "2P",
+      "rated_current": "385V",
+      "breaking_capacity": "20KA",
+      "material_code": "2P",
+      "description": "Thiết bị LS 2P In=385V Icu=20KA",
+      "unit": "cái",
+      "unit_price": 1920000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK10S-T2 2P 385V 20KA 1,920,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "385V",
+      "breaking_capacity": "20KA",
+      "material_code": "3P",
+      "description": "Thiết bị LS 3P In=385V Icu=20KA",
+      "unit": "cái",
+      "unit_price": 2200000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK10S-T2 3P 385V 20KA 2,200,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "4P",
+      "rated_current": "385V",
+      "breaking_capacity": "20KA",
+      "material_code": "4P",
+      "description": "Thiết bị LS 4P In=385V Icu=20KA",
+      "unit": "cái",
+      "unit_price": 3750000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK10S-T2 4P 385V 20KA 3,750,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "2P",
+      "rated_current": "385V",
+      "breaking_capacity": "40KA",
+      "material_code": "2P",
+      "description": "Thiết bị LS 2P In=385V Icu=40KA",
+      "unit": "cái",
+      "unit_price": 2160000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK20S-T2 2P 385V 40KA 2,160,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "385V",
+      "breaking_capacity": "40KA",
+      "material_code": "3P",
+      "description": "Thiết bị LS 3P In=385V Icu=40KA",
+      "unit": "cái",
+      "unit_price": 2520000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK20S-T2 3P 385V 40KA 2,520,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "4P",
+      "rated_current": "385V",
+      "breaking_capacity": "40KA",
+      "material_code": "4P",
+      "description": "Thiết bị LS 4P In=385V Icu=40KA",
+      "unit": "cái",
+      "unit_price": 5200000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK20S-T2 4P 385V 40KA 5,200,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "2P",
+      "rated_current": "385V",
+      "breaking_capacity": "60KA",
+      "material_code": "2P",
+      "description": "Thiết bị LS 2P In=385V Icu=60KA",
+      "unit": "cái",
+      "unit_price": 2520000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK30S-T2 2P 385V 60KA 2,520,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Auxiliary switch: AX for",
+      "pole": "3P",
+      "rated_current": "LA/LC",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "Thiết bị LS Auxiliary switch: AX for In=LA/LC",
+      "unit": "cái",
+      "unit_price": 300000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch: AX for LA/LC 300,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "385V",
+      "breaking_capacity": "60KA",
+      "material_code": "3P",
+      "description": "Thiết bị LS 3P In=385V Icu=60KA",
+      "unit": "cái",
+      "unit_price": 3100000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK30S-T2 3P 385V 60KA 3,100,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "4P",
+      "rated_current": "385V",
+      "breaking_capacity": "60KA",
+      "material_code": "4P",
+      "description": "Thiết bị LS 4P In=385V Icu=60KA",
+      "unit": "cái",
+      "unit_price": 5650000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK30S-T2 4P 385V 60KA 5,650,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "1P",
+      "rated_current": "385V",
+      "breaking_capacity": "80KA",
+      "material_code": "1P",
+      "description": "Thiết bị LS 1P In=385V Icu=80KA",
+      "unit": "cái",
+      "unit_price": 2300000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK40S-T2 1P 385V 80KA 2,300,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Auxiliary switch: AX for",
+      "pole": "3P",
+      "rated_current": "LB",
+      "breaking_capacity": "",
+      "material_code": "AUXILIARY",
+      "description": "Thiết bị LS Auxiliary switch: AX for In=LB",
+      "unit": "cái",
+      "unit_price": 354000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Auxiliary switch: AX for LB 354,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "2P",
+      "rated_current": "385V",
+      "breaking_capacity": "80KA",
+      "material_code": "2P",
+      "description": "Thiết bị LS 2P In=385V Icu=80KA",
+      "unit": "cái",
+      "unit_price": 2760000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK40S-T2 2P 385V 80KA 2,760,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "385V",
+      "breaking_capacity": "80KA",
+      "material_code": "3P",
+      "description": "Thiết bị LS 3P In=385V Icu=80KA",
+      "unit": "cái",
+      "unit_price": 4400000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK40S-T2 3P 385V 80KA 4,400,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 3,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "4P",
+      "rated_current": "385V",
+      "breaking_capacity": "80KA",
+      "material_code": "4P",
+      "description": "Thiết bị LS 4P In=385V Icu=80KA",
+      "unit": "cái",
+      "unit_price": 6800000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "BK40S-T2 4P 385V 80KA 6,800,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 4,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 4,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "Thiết bị LS",
+      "pole": "3P",
+      "rated_current": "MC-6a~40a",
+      "breaking_capacity": "",
+      "material_code": "AC-9",
+      "description": "Thiết bị LS AC-9 In=MC-6a~40a",
+      "unit": "cái",
+      "unit_price": 520000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AC-9 MC-6a~40a 520,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 630A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 630A 65",
+      "unit": "cái",
+      "unit_price": 40000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-06D3-06H NH5 without ACC 630A 65 40,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 800A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 800A 65",
+      "unit": "cái",
+      "unit_price": 46500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-08D3-08H NH5 without ACC 800A 65 46,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1000A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1000A 65",
+      "unit": "cái",
+      "unit_price": 48000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-10D3-10H NH5 without ACC 1000A 65 48,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1250A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1250A 65",
+      "unit": "cái",
+      "unit_price": 51600000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-13D3-13H NH5 without ACC 1250A 65 51,600,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1600A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1600A 65",
+      "unit": "cái",
+      "unit_price": 58500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-16D3-16H NH5 without ACC 1600A 65 58,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 2000A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 2000A 85",
+      "unit": "cái",
+      "unit_price": 80500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-20E3-20H NH5 without ACC 2000A 85 80,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 2500A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 2500A 85",
+      "unit": "cái",
+      "unit_price": 118000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-25E3-25H NH5 without ACC 2500A 85 118,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 3200A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 3200A 85",
+      "unit": "cái",
+      "unit_price": 138000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-32E3-32H NH5 without ACC 3200A 85 138,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 4000A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 4000A 85",
+      "unit": "cái",
+      "unit_price": 249000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-40E3-40V NH5 without ACC 4000A 85 249,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 4000A 100",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 4000A 100",
+      "unit": "cái",
+      "unit_price": 255000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-40F3-40H NH5 without ACC 4000A 100 255,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 5000A 100",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 5000A 100",
+      "unit": "cái",
+      "unit_price": 258000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-50F3-50H NH5 without ACC 5000A 100 258,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 6300A 120",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 6300A 120",
+      "unit": "cái",
+      "unit_price": 438000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-63G3-63H NH5 without ACC 6300A 120 438,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 630A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 630A 65",
+      "unit": "cái",
+      "unit_price": 49500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-06D4-06H NH5 without ACC 630A 65 49,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 800A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 800A 65",
+      "unit": "cái",
+      "unit_price": 56000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-08D4-08H NH5 without ACC 800A 65 56,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1000A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1000A 65",
+      "unit": "cái",
+      "unit_price": 58000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-10D4-10H NH5 without ACC 1000A 65 58,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1250A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1250A 65",
+      "unit": "cái",
+      "unit_price": 61000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-13D4-13H NH5 without ACC 1250A 65 61,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 1600A 65",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 1600A 65",
+      "unit": "cái",
+      "unit_price": 67500000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AN-16D4-16H NH5 without ACC 1600A 65 67,500,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 2000A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 2000A 85",
+      "unit": "cái",
+      "unit_price": 100800000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-20E4-20H NH5 without ACC 2000A 85 100,800,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 2500A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 2500A 85",
+      "unit": "cái",
+      "unit_price": 142000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-25E4-25H NH5 without ACC 2500A 85 142,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 3200A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 3200A 85",
+      "unit": "cái",
+      "unit_price": 171000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-32E4-32H NH5 without ACC 3200A 85 171,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 4000A 85",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 4000A 85",
+      "unit": "cái",
+      "unit_price": 299000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-40E4-40V NH5 without ACC 4000A 85 299,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 4000A 100",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 4000A 100",
+      "unit": "cái",
+      "unit_price": 318000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-40F4-40H NH5 without ACC 4000A 100 318,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 5000A 100",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 5000A 100",
+      "unit": "cái",
+      "unit_price": 329000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-50F4-50H NH5 without ACC 5000A 100 329,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "Thiết bị LS",
+      "type": "without",
+      "pole": "3P",
+      "rated_current": "ACC 6300A 120",
+      "breaking_capacity": "",
+      "material_code": "NH5",
+      "description": "Thiết bị LS NH5 without In=ACC 6300A 120",
+      "unit": "cái",
+      "unit_price": 576000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AS-63G4-63H NH5 without ACC 6300A 120 576,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Bộ bảo vệ thấp",
+      "pole": "3P",
+      "rated_current": "áp UVT coil",
+      "breaking_capacity": "",
+      "material_code": "BỘ",
+      "description": "PHỤ KIỆN ACB Bộ bảo vệ thấp In=áp UVT coil",
+      "unit": "cái",
+      "unit_price": 2700000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Bộ bảo vệ thấp áp UVT coil 2,700,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Khóa liên động",
+      "pole": "3P",
+      "rated_current": "2-way (dùng cho 2",
+      "breaking_capacity": "ACB)",
+      "material_code": "KHÓA",
+      "description": "PHỤ KIỆN ACB Khóa liên động In=2-way (dùng cho 2 Icu=ACB)",
+      "unit": "cái",
+      "unit_price": 12000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Khóa liên động 2-way (dùng cho 2 ACB) 12,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "(Mechanical Interlock)",
+      "pole": "3P",
+      "rated_current": "3-way (dùng cho 3",
+      "breaking_capacity": "ACB)",
+      "material_code": "MECHANICAL",
+      "description": "PHỤ KIỆN ACB (Mechanical Interlock) In=3-way (dùng cho 3 Icu=ACB)",
+      "unit": "cái",
+      "unit_price": 22000000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(Mechanical Interlock) 3-way (dùng cho 3 ACB) 22,000,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Tấm chắn pha",
+      "pole": "3P",
+      "rated_current": "IB for ACB 630A~6300A",
+      "breaking_capacity": "",
+      "material_code": "TẤM",
+      "description": "PHỤ KIỆN ACB Tấm chắn pha In=IB for ACB 630A~6300A",
+      "unit": "cái",
+      "unit_price": 600000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Tấm chắn pha IB for ACB 630A~6300A 600,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Cuộn đóng",
+      "pole": "3P",
+      "rated_current": "Closing coil for ACB",
+      "breaking_capacity": "",
+      "material_code": "CUỘN",
+      "description": "PHỤ KIỆN ACB Cuộn đóng In=Closing coil for ACB",
+      "unit": "cái",
+      "unit_price": 1960000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cuộn đóng Closing coil for ACB 1,960,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 5,
+    "raw_item": {
+      "source_supplier": "LS",
+      "source_page": 5,
+      "layout_name": "split_half_left_right",
+      "product_family": "PHỤ KIỆN ACB",
+      "type": "Mô tơ nạp",
+      "pole": "3P",
+      "rated_current": "Motor",
+      "breaking_capacity": "",
+      "material_code": "MÔ",
+      "description": "PHỤ KIỆN ACB Mô tơ nạp In=Motor",
+      "unit": "cái",
+      "unit_price": 7200000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Mô tơ nạp Motor 7,200,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  }
+]

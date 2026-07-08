@@ -106,3 +106,4 @@
 {"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_workbook_validated","quotation_id":"AUT_20260620_001","details":{}}
 {"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_export_manifest_written","quotation_id":"AUT_20260620_001","details":{"path":"exports/export_manifest.json"}}
 {"timestamp":"2026-07-02T07:39:47Z","level":"INFO","event":"excel_export_completed","quotation_id":"AUT_20260620_001","details":{"excel_path":"exports/quotation.xlsx","manifest_path":"exports/export_manifest.json"}}
+{"details": {"status": "valid"}, "event": "package_validated", "level": "INFO", "quotation_id": "AUT_20260620_001", "timestamp": "2026-07-06T05:05:50Z"}
