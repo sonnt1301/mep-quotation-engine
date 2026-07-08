@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS Profile Hardening v1 & Milestone C
+# Danh sách công việc ABB + LS Profile Hardening v1 & Milestone C & Milestone D (v2)
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -24,3 +24,23 @@
 - `[x]` Viết tệp hướng dẫn `README.md` chi tiết cấu hình và cảnh báo feasibility
 - `[x]` Xây dựng tệp unit tests `test_profile_config_loader.py` và kiểm chứng các ca thành công/thất bại
 - `[x]` Chạy kiểm thử pytest toàn dự án đạt 158/158 tests passed thành công
+
+## Milestone D – Supplier Profile Config Integration / Config Runner v2 (Đã hoàn thành)
+- `[x]` Tạo module bóc tách tổng quát `profile_runner.py` nạp hoàn toàn từ cấu hình JSON
+- `[x]` Cập nhật hàm check prefix và format hỗ trợ luật fallback (chữ + số) trong `profile_runner.py`
+- `[x]` Sửa đổi logic trích xuất đơn giá LS: chỉ lọc ra các price token hợp lệ tối thiểu và lấy token giá cuối cùng, không ghép dính ampere list (MT-225, ABN104C, ABS203C, EBS204C)
+- `[x]` Gộp logic tách từ chứa khoảng trắng `" "` của LS và tách giá tiền dính chữ của ABB vào hàm `split_merged_words_by_coordinates`
+- `[x]` Tạo kịch bản chạy chính `run_profile_from_config.py` hỗ trợ các tham số `--profile`, `--version` và `--config`
+- `[x]` Thực thi chạy bóc tách config-run cho hãng ABB và xuất kết quả ra thư mục `abb_profile_config_run/`
+- `[x]` Thực thi chạy bóc tách config-run cho hãng LS và xuất kết quả ra thư mục `ls_profile_config_run/`
+- `[x]` So sánh delta tự động kết quả bóc tách config-run với baseline v1 cho cả 2 hãng
+- `[x]` Xác minh giá trị đơn giá LS không lệch quá 10 lần so với baseline v1 trên cùng cặp (source_page, material_code)
+- `[x]` Xây dựng unit tests `test_profile_runner.py` bổ sung các regression tests cho đơn giá LS (ABN104C, ABS203C, EBS204C, EBN404C) và bảo vệ các giá lớn hợp lệ (AS-25E3-25H, AS-63G3-63H)
+- `[x]` Chạy bộ kiểm thử pytest toàn dự án đạt 163/163 tests passed thành công
+
+---
+> [!WARNING]
+> **PHẠM VI TRIỂN KHAI**
+> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
+> * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
+> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).
