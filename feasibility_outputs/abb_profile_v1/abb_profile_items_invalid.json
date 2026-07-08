@@ -1,0 +1,57 @@
+[
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "63",
+      "breaking_capacity": "50KA",
+      "material_code": "XT263",
+      "description": "Cầu dao tự động dạng khối XT2 3P 63A 50KA",
+      "unit": "cái",
+      "unit_price": 3,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Ekip M-LRIU XT2 63 3 1SDA067353R1 12,444,000 XT2 63 3 1SDA067358R1 14,642,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_cannot_be_technical_spec"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "mục",
+      "pole": "độngP",
+      "rated_current": "bảovệ",
+      "breaking_capacity": "36KA",
+      "material_code": "CƠĐƯỢCCẤUTHÀNH",
+      "description": "Cầu dao tự động dạng khối mục độngP bảovệA 36KA",
+      "unit": "cái",
+      "unit_price": 2,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "mục đích bảo vệ động cơ được cấu thành từ 2 bộ phận (1) &(2) Breaking capacity at 415VAC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  }
+]

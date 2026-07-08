@@ -18,7 +18,8 @@
     "row_candidates": "parsed/row_candidates.json",
     "source_pdf": "source/original.pdf",
     "text_manifest": "text/quotation_text.json",
-    "text_markdown": "text/quotation.md"
+    "text_markdown": "text/quotation.md",
+    "source_profile": "source/source_profile.json"
   },
   "quotation_date": "2026-06-20",
   "quotation_id": "AUT_20260620_002",
@@ -27,7 +28,7 @@
     "code": "AUT",
     "name": "AUT"
   },
-  "updated_at": "2026-07-02T09:01:01Z",
+  "updated_at": "2026-07-06T04:11:46Z",
   "versions": {
     "llm": null,
     "parser_version": null,

@@ -1,0 +1,220 @@
+[
+  {
+    "page": 18,
+    "status": "PASS",
+    "items_count": 96,
+    "valid_items_count": 92,
+    "invalid_items_count": 4,
+    "invalid_ratio": 4.2,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Cầu dao tự động dạng khối - MCCB Tmax"
+    ]
+  },
+  {
+    "page": 19,
+    "status": "PASS",
+    "items_count": 96,
+    "valid_items_count": 92,
+    "invalid_items_count": 4,
+    "invalid_ratio": 4.2,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Cầu dao tự động dạng khối - MCCB Tmax"
+    ]
+  },
+  {
+    "page": 20,
+    "status": "PARTIAL",
+    "items_count": 74,
+    "valid_items_count": 54,
+    "invalid_items_count": 20,
+    "invalid_ratio": 27.0,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_too_long_merged",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Cầu dao tự động dạng khối - MCCB T6-T7-T7M"
+    ]
+  },
+  {
+    "page": 21,
+    "status": "PARTIAL",
+    "items_count": 80,
+    "valid_items_count": 50,
+    "invalid_items_count": 30,
+    "invalid_ratio": 37.5,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "unit_price_cannot_be_technical_spec",
+      "rated_current_cannot_contain_material_code"
+    ],
+    "detected_table_type": "three_cutoff_groups_page21",
+    "notes": [
+      "Product family: Cầu dao tự động dạng khối"
+    ]
+  },
+  {
+    "page": 32,
+    "status": "PARTIAL",
+    "items_count": 104,
+    "valid_items_count": 98,
+    "invalid_items_count": 6,
+    "invalid_ratio": 5.8,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Máy cắt không khí ACB - Loại Emax2"
+    ]
+  },
+  {
+    "page": 33,
+    "status": "PARTIAL",
+    "items_count": 66,
+    "valid_items_count": 30,
+    "invalid_items_count": 36,
+    "invalid_ratio": 54.5,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Máy cắt không khí ACB - Loại Emax2"
+    ]
+  },
+  {
+    "page": 34,
+    "status": "PARTIAL",
+    "items_count": 44,
+    "valid_items_count": 38,
+    "invalid_items_count": 6,
+    "invalid_ratio": 13.6,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "double_column_3p_4p",
+    "notes": [
+      "Product family: Máy cắt không khí ACB - Loại Emax2"
+    ]
+  },
+  {
+    "page": 41,
+    "status": "PARTIAL",
+    "items_count": 46,
+    "valid_items_count": 8,
+    "invalid_items_count": 38,
+    "invalid_ratio": 82.6,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_too_long_merged"
+    ],
+    "detected_table_type": "single_column_right",
+    "notes": [
+      "Product family: Cầu dao cắt tải OT - 3P"
+    ]
+  },
+  {
+    "page": 42,
+    "status": "PARTIAL",
+    "items_count": 46,
+    "valid_items_count": 8,
+    "invalid_items_count": 38,
+    "invalid_ratio": 82.6,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_too_long_merged"
+    ],
+    "detected_table_type": "single_column_right",
+    "notes": [
+      "Product family: Cầu dao cắt tải OT - 4P"
+    ]
+  },
+  {
+    "page": 52,
+    "status": "PARTIAL",
+    "items_count": 87,
+    "valid_items_count": 68,
+    "invalid_items_count": 19,
+    "invalid_ratio": 21.8,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "type_cannot_be_price",
+      "unit_price_zero_or_negative",
+      "material_code_empty"
+    ],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: Cầu dao tự động khởi động động cơ"
+    ]
+  },
+  {
+    "page": 53,
+    "status": "PARTIAL",
+    "items_count": 49,
+    "valid_items_count": 46,
+    "invalid_items_count": 3,
+    "invalid_ratio": 6.1,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative",
+      "material_code_too_long_merged"
+    ],
+    "detected_table_type": "single_column_right",
+    "notes": [
+      "Product family: Công tắc tơ 3P dạng khối - Loại AF"
+    ]
+  },
+  {
+    "page": 54,
+    "status": "PASS",
+    "items_count": 49,
+    "valid_items_count": 48,
+    "invalid_items_count": 1,
+    "invalid_ratio": 2.0,
+    "errors_sample": [
+      "unit_price_zero_or_negative"
+    ],
+    "detected_table_type": "single_column_right",
+    "notes": [
+      "Product family: Công tắc tơ 3P dạng khối - Loại AF"
+    ]
+  },
+  {
+    "page": 61,
+    "status": "PASS",
+    "items_count": 49,
+    "valid_items_count": 49,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "single_column_right",
+    "notes": [
+      "Product family: Công tắc tơ 3P dạng khối - Loại AX"
+    ]
+  }
+]

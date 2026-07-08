@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SupplierProfileConfig",
+  "type": "object",
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "supplier_code": {
+      "type": "string"
+    },
+    "profile_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["feasibility", "candidate", "production"]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["pdf", "excel", "csv"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "global_rules": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "default_unit": {
+          "type": "string"
+        },
+        "min_unit_price": {
+          "type": "integer"
+        },
+        "reject_year_as_price": {
+          "type": "boolean"
+        }
+      },
+      "required": ["currency", "default_unit", "min_unit_price"]
+    },
+    "material_code_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "layouts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "layout_name": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "product_family": {
+            "type": "string"
+          },
+          "parser_type": {
+            "type": "string",
+            "enum": ["coordinate_column_profiler", "split_half_left_right", "generic"]
+          },
+          "columns": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                }
+              ]
+            }
+          },
+          "row_detection": {
+            "type": "object",
+            "properties": {
+              "min_y": {
+                "type": "number"
+              },
+              "max_y": {
+                "type": "number"
+              },
+              "row_tolerance": {
+                "type": "number"
+              }
+            }
+          },
+          "special_rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["layout_name", "pages", "parser_type"]
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "allowed_material_code_prefixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allow_ampere_list_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reject_description_price_noise": {
+          "type": "boolean"
+        }
+      },
+      "required": ["allowed_material_code_prefixes"]
+    }
+  },
+  "required": [
+    "profile_id",
+    "supplier_code",
+    "profile_version",
+    "status",
+    "source_type",
+    "global_rules",
+    "material_code_patterns",
+    "layouts",
+    "validation"
+  ]
+}

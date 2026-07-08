@@ -1,0 +1,5644 @@
+[
+  {
+    "source_page": 18,
+    "raw_item": {
+      "source_page": 18,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 18,
+    "raw_item": {
+      "source_page": 18,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 18,
+    "raw_item": {
+      "source_page": 18,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 18,
+    "raw_item": {
+      "source_page": 18,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 19,
+    "raw_item": {
+      "source_page": 19,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 19,
+    "raw_item": {
+      "source_page": 19,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 19,
+    "raw_item": {
+      "source_page": 19,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 19,
+    "raw_item": {
+      "source_page": 19,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB Tmax",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB Tmax  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "SẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "T7L",
+      "pole": "4P",
+      "rated_current": "1250",
+      "breaking_capacity": "120KA",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M T7L 4P 1250A 120KA",
+      "unit": "cái",
+      "unit_price": 91236000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 1SDA062930R1 70,180,800 1SDA062938R1 91,236,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "T7L",
+      "pole": "4P",
+      "rated_current": "1600",
+      "breaking_capacity": "120KA",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M T7L 4P 1600A 120KA",
+      "unit": "cái",
+      "unit_price": 131121600,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 1SDA063058R1 100,860,000 1SDA063066R1 131,121,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vệvàbảo",
+      "pole": "3P",
+      "rated_current": "vệdòng",
+      "breaking_capacity": "Cácbộngắt",
+      "material_code": "BẰNGĐIỆNTỬTUÂN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vệvàbảo 3P vệdòngA Cácbộngắt",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Các bộ ngắt bảo vệ và bảo vệ dòng rò bằng điện tử tuân theo tiêu chuẩn tương thích điện từ IEC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vệvàbảo",
+      "pole": "4P",
+      "rated_current": "vệdòng",
+      "breaking_capacity": "Cácbộngắt",
+      "material_code": "TƯƠNGTHÍCHĐIỆN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vệvàbảo 4P vệdòngA Cácbộngắt",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Các bộ ngắt bảo vệ và bảo vệ dòng rò bằng điện tử tuân theo tiêu chuẩn tương thích điện từ IEC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "cácbộbảo",
+      "pole": "3P",
+      "rated_current": "vệđiệntử",
+      "breaking_capacity": "Hoạtđộngcủa",
+      "material_code": "TRÊNKHÔNGCHỊUSỰTÁC",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M cácbộbảo 3P vệđiệntửA Hoạtđộngcủa",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Hoạt động của các bộ bảo vệ điện tử trên không chịu sự tác động do các nhiễu loạn của các thiết bị",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "cácbộbảo",
+      "pole": "4P",
+      "rated_current": "vệđiệntử",
+      "breaking_capacity": "Hoạtđộngcủa",
+      "material_code": "NHIỄULOẠNCỦA",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M cácbộbảo 4P vệđiệntửA Hoạtđộngcủa",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Hoạt động của các bộ bảo vệ điện tử trên không chịu sự tác động do các nhiễu loạn của các thiết bị",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "cácnhiễu",
+      "pole": "3P",
+      "rated_current": "loạntrong",
+      "breaking_capacity": "điệntửcũng",
+      "material_code": "KHÔNGKHÍVÀCÁCHIỆN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M cácnhiễu 3P loạntrongA điệntửcũng",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "điện tử cũng như các nhiễu loạn trong không khí và các hiện tượng phóng điện lân cận",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "cácnhiễu",
+      "pole": "4P",
+      "rated_current": "loạntrong",
+      "breaking_capacity": "điệntửcũng",
+      "material_code": "ĐIỆNLÂNCẬN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M cácnhiễu 4P loạntrongA điệntửcũng",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "điện tử cũng như các nhiễu loạn trong không khí và các hiện tượng phóng điện lân cận",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vàcácphụ",
+      "pole": "3P",
+      "rated_current": "kiệnđược",
+      "breaking_capacity": "Cầudaotựđộng",
+      "material_code": "NHIỆTĐỚIHÓATUÂN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vàcácphụ 3P kiệnđượcA Cầudaotựđộng",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao tự động và các phụ kiện được nhiệt đới hóa tuân theo tiêu chuẩn IEC IEC 60068-2-30 nhờ",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vàcácphụ",
+      "pole": "4P",
+      "rated_current": "kiệnđược",
+      "breaking_capacity": "Cầudaotựđộng",
+      "material_code": "IECIEC60068-2-30",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vàcácphụ 4P kiệnđượcA Cầudaotựđộng",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao tự động và các phụ kiện được nhiệt đới hóa tuân theo tiêu chuẩn IEC IEC 60068-2-30 nhờ",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "được",
+      "pole": "3P",
+      "rated_current": "từnhựa",
+      "breaking_capacity": "-Vỏhộpcách",
+      "material_code": "TỔNGHỢPVÀGIACỐ",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M được 3P từnhựaA -Vỏhộpcách",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Vỏ hộp cách điện được làm từ nhựa tổng hợp và gia cố thêm bằng sợi thủy tinh",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "được",
+      "pole": "4P",
+      "rated_current": "từnhựa",
+      "breaking_capacity": "-Vỏhộpcách",
+      "material_code": "THỦYTINH",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M được 4P từnhựaA -Vỏhộpcách",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Vỏ hộp cách điện được làm từ nhựa tổng hợp và gia cố thêm bằng sợi thủy tinh",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "mòncho",
+      "pole": "3P",
+      "rated_current": "cácphần",
+      "breaking_capacity": "-Xửlýchống",
+      "material_code": "LOẠICHÍNH",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M mòncho 3P cácphầnA -Xửlýchống",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Xử lý chống ăn mòn cho các phần kim loại chính",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "mòncho",
+      "pole": "4P",
+      "rated_current": "cácphần",
+      "breaking_capacity": "-Xửlýchống",
+      "material_code": "",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M mòncho 4P cácphầnA -Xửlýchống",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Xử lý chống ăn mòn cho các phần kim loại chính",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vệchống",
+      "pole": "3P",
+      "rated_current": "ngưngtụ",
+      "breaking_capacity": "-Ứngdụngbảo",
+      "material_code": "CHOBỘBẢOVỆQUÁ",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vệchống 3P ngưngtụA -Ứngdụngbảo",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Ứng dụng bảo vệ chống ngưng tụ nước cho bộ bảo vệ quá tải và các phụ kiện liên quan",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 20,
+    "raw_item": {
+      "source_page": 20,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M",
+      "type": "vệchống",
+      "pole": "4P",
+      "rated_current": "ngưngtụ",
+      "breaking_capacity": "-Ứngdụngbảo",
+      "material_code": "KIỆNLIÊNQUAN",
+      "description": "Cầu dao tự động dạng khối - MCCB T6-T7-T7M vệchống 4P ngưngtụA -Ứngdụngbảo",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Ứng dụng bảo vệ chống ngưng tụ nước cho bộ bảo vệ quá tải và các phụ kiện liên quan",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "3P",
+      "rated_current": "MF/MA*",
+      "breaking_capacity": "36KA",
+      "material_code": "N(36KA)",
+      "description": "Cầu dao tự động dạng khối Trip 3P MF/MA*A 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm Trip Unit: MF/MA* N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "3P",
+      "rated_current": "MF/MA*",
+      "breaking_capacity": "50KA",
+      "material_code": "S(50KA)",
+      "description": "Cầu dao tự động dạng khối Trip 3P MF/MA*A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm Trip Unit: MF/MA* N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "3P",
+      "rated_current": "MF/MA*",
+      "breaking_capacity": "70KA",
+      "material_code": "H(70KA)",
+      "description": "Cầu dao tự động dạng khối Trip 3P MF/MA*A 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm Trip Unit: MF/MA* N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "3P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "36KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame 3P In(A)PolesA 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "3P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "50KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame 3P In(A)PolesA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "3P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "70KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame 3P In(A)PolesA 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "IP",
+      "rated_current": "Ekip",
+      "breaking_capacity": "36KA",
+      "material_code": "N(36KA)",
+      "description": "Cầu dao tự động dạng khối Trip IP EkipA 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Trip Unit: Ekip I N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "IP",
+      "rated_current": "Ekip",
+      "breaking_capacity": "50KA",
+      "material_code": "S(50KA)",
+      "description": "Cầu dao tự động dạng khối Trip IP EkipA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Trip Unit: Ekip I N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Trip",
+      "pole": "IP",
+      "rated_current": "Ekip",
+      "breaking_capacity": "70KA",
+      "material_code": "H(70KA)",
+      "description": "Cầu dao tự động dạng khối Trip IP EkipA 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Trip Unit: Ekip I N (36KA) S (50KA) H (70KA)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "IP",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "36KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame IP In(A)PolesA 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "IP",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "50KA",
+      "material_code": "MÃSẢNPHẨMDỰ",
+      "description": "Cầu dao tự động dạng khối Frame IP In(A)PolesA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "IP",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "70KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame IP In(A)PolesA 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "IP",
+      "rated_current": "20",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA067829R1",
+      "description": "Cầu dao tự động dạng khối Frame IP 20A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "20 1SDA067086R1 18,832,800 1SDA067829R1 1SDA067886R1 19,509,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "IP",
+      "rated_current": "32",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA067830R1",
+      "description": "Cầu dao tự động dạng khối Frame IP 32A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "32 1SDA067087R1 18,832,800 1SDA067830R1 1SDA067887R1 19,509,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "52",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA067831R1",
+      "description": "Cầu dao tự động dạng khối XT2 3P 52A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "XT2 52 3 1SDA067088R1 18,832,800 1SDA067831R1 1SDA067888R1 19,509,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "100",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA067832R1",
+      "description": "Cầu dao tự động dạng khối XT2 3P 100A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "100 1SDA067089R1 18,832,800 1SDA067832R1 1SDA067889R1 19,509,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "160",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA067809R1",
+      "description": "Cầu dao tự động dạng khối XT2 3P 160A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160 1SDA067063R1 16,795,200 1SDA067809R1 1SDA067866R1 17,474,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT4",
+      "pole": "3P",
+      "rated_current": "250",
+      "breaking_capacity": "50KA",
+      "material_code": "1SDA068480R1",
+      "description": "Cầu dao tự động dạng khối XT4 3P 250A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "XT4 250 1SDA068131R1 16,236,000 1SDA068480R1 1SDA068520R1 19,641,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "(1)P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "36KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame (1)P In(A)PolesA 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Frame In (A) Poles Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "(1)P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "50KA",
+      "material_code": "FRAMEIN(A)",
+      "description": "Cầu dao tự động dạng khối Frame (1)P In(A)PolesA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Frame In (A) Poles Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "(1)P",
+      "rated_current": "In(A)Poles",
+      "breaking_capacity": "70KA",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động dạng khối Frame (1)P In(A)PolesA 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Frame In(A)Poles Mã sản phẩm Dự toán VND Frame In (A) Poles Mã sản phẩm Dự toán VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "Frame",
+      "pole": "(1)P",
+      "rated_current": "25",
+      "breaking_capacity": "50KA",
+      "material_code": "25",
+      "description": "Cầu dao tự động dạng khối Frame (1)P 25A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "25 1SDA067352R1 12,444,000 25 1SDA067357R1 14,642,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "rated_current_cannot_contain_material_code",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "63",
+      "breaking_capacity": "50KA",
+      "material_code": "XT263",
+      "description": "Cầu dao tự động dạng khối XT2 3P 63A 50KA",
+      "unit": "cái",
+      "unit_price": 3,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Ekip M-LRIU XT2 63 3 1SDA067353R1 12,444,000 XT2 63 3 1SDA067358R1 14,642,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_cannot_be_technical_spec"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "100",
+      "breaking_capacity": "50KA",
+      "material_code": "100",
+      "description": "Cầu dao tự động dạng khối XT2 3P 100A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "100 1SDA067354R1 12,444,000 100 1SDA067359R1 14,642,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "rated_current_cannot_contain_material_code",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "XT2",
+      "pole": "3P",
+      "rated_current": "160",
+      "breaking_capacity": "50KA",
+      "material_code": "160",
+      "description": "Cầu dao tự động dạng khối XT2 3P 160A 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160 1SDA067355R1 13,824,000 160 1SDA068036R1 26,404,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "rated_current_cannot_contain_material_code",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "MCCB",
+      "pole": "TripđiệnP",
+      "rated_current": "sửdụng",
+      "breaking_capacity": "36KA",
+      "material_code": "TỬM-LIUVÀM-LRIU",
+      "description": "Cầu dao tự động dạng khối MCCB TripđiệnP sửdụngA 36KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MCCB sử dụng Trip điện tử M-LIU và M-LRIU chuyên biệt cho",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "MCCB",
+      "pole": "TripđiệnP",
+      "rated_current": "sửdụng",
+      "breaking_capacity": "50KA",
+      "material_code": "CHO",
+      "description": "Cầu dao tự động dạng khối MCCB TripđiệnP sửdụngA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MCCB sử dụng Trip điện tử M-LIU và M-LRIU chuyên biệt cho",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "mục",
+      "pole": "độngP",
+      "rated_current": "bảovệ",
+      "breaking_capacity": "36KA",
+      "material_code": "CƠĐƯỢCCẤUTHÀNH",
+      "description": "Cầu dao tự động dạng khối mục độngP bảovệA 36KA",
+      "unit": "cái",
+      "unit_price": 2,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "mục đích bảo vệ động cơ được cấu thành từ 2 bộ phận (1) &(2) Breaking capacity at 415VAC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "mục",
+      "pole": "độngP",
+      "rated_current": "bảovệ",
+      "breaking_capacity": "50KA",
+      "material_code": "(1)&(2)BREAKING",
+      "description": "Cầu dao tự động dạng khối mục độngP bảovệA 50KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "mục đích bảo vệ động cơ được cấu thành từ 2 bộ phận (1) &(2) Breaking capacity at 415VAC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 21,
+    "raw_item": {
+      "source_page": 21,
+      "layout_name": "three_cutoff_groups_page21",
+      "product_family": "Cầu dao tự động dạng khối",
+      "type": "mục",
+      "pole": "độngP",
+      "rated_current": "bảovệ",
+      "breaking_capacity": "70KA",
+      "material_code": "AT415VAC",
+      "description": "Cầu dao tự động dạng khối mục độngP bảovệA 70KA",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.94,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "mục đích bảo vệ động cơ được cấu thành từ 2 bộ phận (1) &(2) Breaking capacity at 415VAC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "Loạicốđịnh",
+      "pole": "3P",
+      "rated_current": "(Fixedtype)",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 Loạicốđịnh 3P (Fixedtype)A EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại cố định (Fixed type)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 32,
+    "raw_item": {
+      "source_page": 32,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "Loạicốđịnh",
+      "pole": "4P",
+      "rated_current": "(Fixedtype)",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 Loạicốđịnh 4P (Fixedtype)A EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại cố định (Fixed type)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "SẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "diđộng",
+      "pole": "3P",
+      "rated_current": "(Withdrawable",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "TYPE)",
+      "description": "Máy cắt không khí ACB - Loại Emax2 diđộng 3P (WithdrawableA EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại di động (Withdrawable ty pe)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "diđộng",
+      "pole": "4P",
+      "rated_current": "(Withdrawable",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 diđộng 4P (WithdrawableA EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại di động (Withdrawable ty pe)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2B",
+      "pole": "4P",
+      "rated_current": "630",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2B 4P 630A 42KA",
+      "unit": "cái",
+      "unit_price": 148860000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "42KA E1.2B 630 MP 1SDA072051R1 120,532,800 1SDA072681R1 148,860,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2B",
+      "pole": "4P",
+      "rated_current": "800",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2B 4P 800A 42KA",
+      "unit": "cái",
+      "unit_price": 153465600,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800 MP 1SDA072091R1 124,262,400 1SDA072721R1 153,465,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2B",
+      "pole": "4P",
+      "rated_current": "1000",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2B 4P 1000A 42KA",
+      "unit": "cái",
+      "unit_price": 155738400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 MP 1SDA072131R1 126,103,200 1SDA072761R1 155,738,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2B",
+      "pole": "4P",
+      "rated_current": "1250",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2B 4P 1250A 42KA",
+      "unit": "cái",
+      "unit_price": 151790400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 MP 1SDA072171R1 122,908,800 1SDA072801R1 151,790,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2B",
+      "pole": "4P",
+      "rated_current": "1600",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2B 4P 1600A 42KA",
+      "unit": "cái",
+      "unit_price": 151692000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 MP 1SDA072211R1 122,827,200 1SDA072841R1 151,692,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2B",
+      "pole": "4P",
+      "rated_current": "2000",
+      "breaking_capacity": "42KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2B 4P 2000A 42KA",
+      "unit": "cái",
+      "unit_price": 224908800,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "E2.2B 2000 MP 1SDA072371R1 182,112,000 1SDA073001R1 224,908,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2C",
+      "pole": "4P",
+      "rated_current": "630",
+      "breaking_capacity": "50KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2C 4P 630A 50KA",
+      "unit": "cái",
+      "unit_price": 157790400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "50KA E1.2C 630 MP 1SDA072061R1 127,766,400 1SDA072691R1 157,790,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2C",
+      "pole": "4P",
+      "rated_current": "800",
+      "breaking_capacity": "50KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2C 4P 800A 50KA",
+      "unit": "cái",
+      "unit_price": 162672000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800 MP 1SDA072101R1 131,719,200 1SDA072731R1 162,672,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2C",
+      "pole": "4P",
+      "rated_current": "1000",
+      "breaking_capacity": "50KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2C 4P 1000A 50KA",
+      "unit": "cái",
+      "unit_price": 165081600,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 MP 1SDA072141R1 133,668,000 1SDA072771R1 165,081,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2C",
+      "pole": "4P",
+      "rated_current": "1250",
+      "breaking_capacity": "50KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2C 4P 1250A 50KA",
+      "unit": "cái",
+      "unit_price": 160898400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MP 1250 MP 1SDA072181R1 130,281,600 1SDA072811R1 160,898,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2C",
+      "pole": "4P",
+      "rated_current": "1600",
+      "breaking_capacity": "50KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2C 4P 1600A 50KA",
+      "unit": "cái",
+      "unit_price": 160795200,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 MP 1SDA072221R1 130,197,600 1SDA072851R1 160,795,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "250",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 250A 66KA",
+      "unit": "cái",
+      "unit_price": 168144000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "66KA E1.2N 250 MP 1SDA072041R1 136,147,200 1SDA072671R1 168,144,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "630",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 630A 66KA",
+      "unit": "cái",
+      "unit_price": 175149600,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "630 MP 1SDA072071R1 141,820,800 1SDA072701R1 175,149,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "800",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 800A 66KA",
+      "unit": "cái",
+      "unit_price": 180564000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800 MP 1SDA072111R1 146,208,000 1SDA072741R1 180,564,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "1000",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 1000A 66KA",
+      "unit": "cái",
+      "unit_price": 183240000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 MP 1SDA072151R1 148,372,800 1SDA072781R1 183,240,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "1250",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 1250A 66KA",
+      "unit": "cái",
+      "unit_price": 178598400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 MP 1SDA072191R1 144,612,000 1SDA072821R1 178,598,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E1.2N",
+      "pole": "4P",
+      "rated_current": "1600",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E1.2N 4P 1600A 66KA",
+      "unit": "cái",
+      "unit_price": 178480800,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 MP 1SDA072231R1 144,520,800 1SDA072861R1 178,480,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2N",
+      "pole": "4P",
+      "rated_current": "2000",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2N 4P 2000A 66KA",
+      "unit": "cái",
+      "unit_price": 288345600,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "E2.2N 2000 MP 1SDA072381R1 233,476,800 1SDA073011R1 288,345,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2N",
+      "pole": "4P",
+      "rated_current": "2500",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2N 4P 2500A 66KA",
+      "unit": "cái",
+      "unit_price": 314294400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500 MP 1SDA072411R1 254,491,200 1SDA073041R1 314,294,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E4.2N",
+      "pole": "4P",
+      "rated_current": "3200",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E4.2N 4P 3200A 66KA",
+      "unit": "cái",
+      "unit_price": 334082400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "E4.2N 3200 MP 1SDA072491R1 270,511,200 1SDA073121R1 334,082,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E4.2N",
+      "pole": "4P",
+      "rated_current": "4000",
+      "breaking_capacity": "66KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E4.2N 4P 4000A 66KA",
+      "unit": "cái",
+      "unit_price": 457692000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "4000 MP 1SDA072541R1 370,600,800 1SDA073171R1 457,692,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "250",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 250A 85KA",
+      "unit": "cái",
+      "unit_price": 208416000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "85KA E2.2S 250 MP 1SDA073648R1 168,758,400 1SDA073658R1 208,416,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "800",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 800A 85KA",
+      "unit": "cái",
+      "unit_price": 214864800,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800 MP 1SDA072251R1 173,978,400 1SDA072881R1 214,864,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "1000",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 1000A 85KA",
+      "unit": "cái",
+      "unit_price": 225604800,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 MP 1SDA072281R1 182,676,000 1SDA072911R1 225,604,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "1250",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 1250A 85KA",
+      "unit": "cái",
+      "unit_price": 227412000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 MP 1SDA072311R1 184,140,000 1SDA072941R1 227,412,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "1600",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 1600A 85KA",
+      "unit": "cái",
+      "unit_price": 259420800,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 MP 1SDA072351R1 210,055,200 1SDA072981R1 259,420,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "2000",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 2000A 85KA",
+      "unit": "cái",
+      "unit_price": 303523200,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2000 MP 1SDA072391R1 245,767,200 1SDA073021R1 303,523,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E2.2S",
+      "pole": "4P",
+      "rated_current": "2500",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E2.2S 4P 2500A 85KA",
+      "unit": "cái",
+      "unit_price": 330840000,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500 MP 1SDA072421R1 267,885,600 1SDA073051R1 330,840,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E4.2S",
+      "pole": "4P",
+      "rated_current": "3200",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E4.2S 4P 3200A 85KA",
+      "unit": "cái",
+      "unit_price": 390878400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "E4.2S 3200 MP 1SDA072501R1 316,497,600 1SDA073131R1 390,878,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 33,
+    "raw_item": {
+      "source_page": 33,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "E4.2S",
+      "pole": "4P",
+      "rated_current": "4000",
+      "breaking_capacity": "85KA",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 E4.2S 4P 4000A 85KA",
+      "unit": "cái",
+      "unit_price": 535502400,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "4000 MP 1SDA072551R1 433,603,200 1SDA073181R1 535,502,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "mứcIn",
+      "breaking_capacity": "(KA)",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P mứcInA (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(KA) mức In Mã sản phẩm Dự toán Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  3P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "",
+      "pole": "4P",
+      "rated_current": "(A)",
+      "breaking_capacity": "(KA)",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2  4P (A)A (KA)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(A) VND VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "diđộng",
+      "pole": "3P",
+      "rated_current": "(Withdrawable",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "TYPE)",
+      "description": "Máy cắt không khí ACB - Loại Emax2 diđộng 3P (WithdrawableA EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại di động (Withdrawable ty pe)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 34,
+    "raw_item": {
+      "source_page": 34,
+      "layout_name": "double_column_3p_4p",
+      "product_family": "Máy cắt không khí ACB - Loại Emax2",
+      "type": "diđộng",
+      "pole": "4P",
+      "rated_current": "(Withdrawable",
+      "breaking_capacity": "EmaxACB",
+      "material_code": "",
+      "description": "Máy cắt không khí ACB - Loại Emax2 diđộng 4P (WithdrawableA EmaxACB",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.95,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Emax ACB - Loại di động (Withdrawable ty pe)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "DòngđịnhmứcMãsảnphẩm",
+      "description": "Cầu dao cắt tải OT - 3P Sản phẩm Ith",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm Ith Dòng định mức Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "AC22/AC23,400V",
+      "description": "Cầu dao cắt tải OT - 3P (mở)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(mở) AC22/AC23, 400V VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "trênDIN-Rail35mm(tayvặnvàtrụcđặt",
+      "description": "Cầu dao cắt tải OT - 3P OT16…125E: Thao tác bằng tay, có thể gắn",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT16…125E: Thao tác bằng tay, có thể gắn trên DIN-Rail 35mm (tay vặn và trục đặt riêng)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "dạngpistonmàuđenvàtrục(*),IP65",
+      "description": "Cầu dao cắt tải OT - 3P OT200…800: Thao tác tay, bao gồm tay vặn",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT200…800: Thao tác tay, bao gồm tay vặn dạng piston màu đen và trục(*), IP65",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "160/160OT160G03P",
+      "description": "Cầu dao cắt tải OT - 3P 160",
+      "unit": "cái",
+      "unit_price": 5292000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160 160/160 OT160G03P 5,292,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "200/200OT200E03P",
+      "description": "Cầu dao cắt tải OT - 3P 200",
+      "unit": "cái",
+      "unit_price": 6933600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "200 200/200 OT200E03P 6,933,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "250/250OT250E03P",
+      "description": "Cầu dao cắt tải OT - 3P 250",
+      "unit": "cái",
+      "unit_price": 8361600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "250 250/250 OT250E03P 8,361,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "315/315OT315E03P",
+      "description": "Cầu dao cắt tải OT - 3P OT 63- 80F3 315",
+      "unit": "cái",
+      "unit_price": 10120800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT 63- 80F3 315 315/315 OT315E03P 10,120,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "400/400OT400E03P",
+      "description": "Cầu dao cắt tải OT - 3P 400",
+      "unit": "cái",
+      "unit_price": 11827200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "400 400/400 OT400E03P 11,827,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "630/630OT630E03P",
+      "description": "Cầu dao cắt tải OT - 3P 630",
+      "unit": "cái",
+      "unit_price": 19274400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "630 630/630 OT630E03P 19,274,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "800/800OT800E03P",
+      "description": "Cầu dao cắt tải OT - 3P 800",
+      "unit": "cái",
+      "unit_price": 28538400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800 800/800 OT800E03P 28,538,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "Tayvặnmàuđen,trục(*),IP65",
+      "description": "Cầu dao cắt tải OT - 3P OT1000…2500: Thao tác bằng tay, bao gồm",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT1000…2500: Thao tác bằng tay, bao gồm Tay vặn màu đen, trục(*), IP65",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1000/1000OT160G03P",
+      "description": "Cầu dao cắt tải OT - 3P 1000",
+      "unit": "cái",
+      "unit_price": 43432800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 1000/1000 OT160G03P 43,432,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1250/1250OT1250E03P",
+      "description": "Cầu dao cắt tải OT - 3P 1250",
+      "unit": "cái",
+      "unit_price": 57770400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 1250/1250 OT1250E03P 57,770,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1600/1250OT1600E03P",
+      "description": "Cầu dao cắt tải OT - 3P 1600",
+      "unit": "cái",
+      "unit_price": 73912800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 1600/1250 OT1600E03P 73,912,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2000/-OT2000E03P",
+      "description": "Cầu dao cắt tải OT - 3P 2000",
+      "unit": "cái",
+      "unit_price": 108816000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2000 2000/- OT2000E03P 108,816,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2500/-OT2500E03P",
+      "description": "Cầu dao cắt tải OT - 3P 2500",
+      "unit": "cái",
+      "unit_price": 128037600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500 2500/- OT2500E03P 128,037,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "3200/3200OT3200E03P",
+      "description": "Cầu dao cắt tải OT - 3P 3200",
+      "unit": "cái",
+      "unit_price": 139548000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "3200 3200/3200 OT3200E03P 139,548,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "3800/3800OT4000E03P",
+      "description": "Cầu dao cắt tải OT - 3P 3800",
+      "unit": "cái",
+      "unit_price": 192492000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "3800 3800/3800 OT4000E03P 192,492,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "ápđiềukhiểnUe:cósẵn",
+      "description": "Cầu dao cắt tải OT - 3P OTM160…2500: Thao tác bằng động cơ, điện",
+      "unit": "cái",
+      "unit_price": 220240,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OTM160…2500: Thao tác bằng động cơ, điện áp điều khiển Ue: 220-240Vac, có sẵn tay vặn",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "160/160OTM160E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 37411200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160/160 OTM160E3M230C 37,411,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "200/200OTM200E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P OT 200-250E03",
+      "unit": "cái",
+      "unit_price": 40588800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT 200-250E03 200/200 OTM200E3M230C 40,588,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "315/315OTM315E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 49922400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "315/315 OTM315E3M230C 49,922,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "400/400OTM400E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 54580800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "400/400 OTM400E3M230C 54,580,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "630/630OTM630E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 70279200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "630/630 OTM630E3M230C 70,279,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "800/800OTM800E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 78002400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800/800 OTM800E3M230C 78,002,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1000/1000OTM1000E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 93924000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000/1000 OTM1000E3M230C 93,924,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1250/1250OTM1250E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 101995200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250/1250 OTM1250E3M230C 101,995,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1600/1250OTM1600E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 121104000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600/1250 OTM1600E3M230C 121,104,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2000/2000OTM2000E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 234134400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2000/2000 OTM2000E3M230C 234,134,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2500/2500OTM2500E3M230C",
+      "description": "Cầu dao cắt tải OT - 3P",
+      "unit": "cái",
+      "unit_price": 259262400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500/2500 OTM2500E3M230C 259,262,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "TrụcTayvặn",
+      "description": "Cầu dao cắt tải OT - 3P Cầu dao loại",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao loại Trục Tay vặn Bộ bu lông kèm theo",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X185OHB95J12",
+      "description": "Cầu dao cắt tải OT - 3P OT315…400_P",
+      "unit": "cái",
+      "unit_price": 1030,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT315…400_P OXP12X185 OHB95J12 M10x30",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X185OHB125J12",
+      "description": "Cầu dao cắt tải OT - 3P OT630…800_P",
+      "unit": "cái",
+      "unit_price": 1240,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT630…800_P OXP12X185 OHB125J12 M12x40",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 3P OT1000…1250_P",
+      "unit": "cái",
+      "unit_price": 1250,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT1000…1250_P OXP12X280 OHB274J12 M12x50",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 3P OT1600_P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT1600_P OXP12X280 OHB274J12 M12X60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 3P OT2000…2500_P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT2000…2500_P OXP12X280 OHB274J12 M12X60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 41,
+    "raw_item": {
+      "source_page": 41,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 3P",
+      "type": "Cầu dao cắt tải OT - 3P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 3P OT3200…4000P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT3200…4000P OXP12X280 OHB274J12 M12x60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "DòngđịnhmứcMãsảnphẩm",
+      "description": "Cầu dao cắt tải OT - 4P Sản phẩm Ith",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm Ith Dòng định mức Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "AC22/AC23,400V",
+      "description": "Cầu dao cắt tải OT - 4P (mở)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "(mở) AC22/AC23, 400V VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "(tayvặnvàtrụcnốidàiđặtriêng)",
+      "description": "Cầu dao cắt tải OT - 4P Cầu dao cắt tải gắn trên DIN-Rail",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao cắt tải OT16…125, gắn trên DIN-Rail (tay vặn và trục nối dài đặt riêng)",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "vặndạngpistonvàtrục(*),IP65",
+      "description": "Cầu dao cắt tải OT - 4P Cầu dao cắt tải bao gồm tay",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao cắt tải OT200…800, bao gồm tay vặn dạng piston và trục(*), IP65",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "160/160OT160G04P",
+      "description": "Cầu dao cắt tải OT - 4P 160",
+      "unit": "cái",
+      "unit_price": 7044000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160 160/160 OT160G04P 7,044,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "200/200OT200E04P",
+      "description": "Cầu dao cắt tải OT - 4P 200",
+      "unit": "cái",
+      "unit_price": 8637600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "200 200/200 OT200E04P 8,637,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "250/250OT250E04P",
+      "description": "Cầu dao cắt tải OT - 4P 250",
+      "unit": "cái",
+      "unit_price": 9888000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "250 250/250 OT250E04P 9,888,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "315/315OT315E04P",
+      "description": "Cầu dao cắt tải OT - 4P 315",
+      "unit": "cái",
+      "unit_price": 11659200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "315 315/315 OT315E04P 11,659,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "400/400OT400E04P",
+      "description": "Cầu dao cắt tải OT - 4P 400",
+      "unit": "cái",
+      "unit_price": 13420800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "400 400/400 OT400E04P 13,420,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "630/630OT630E04P",
+      "description": "Cầu dao cắt tải OT - 4P 630",
+      "unit": "cái",
+      "unit_price": 22963200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "630 630/630 OT630E04P 22,963,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "800/800OT800E04P",
+      "description": "Cầu dao cắt tải OT - 4P OT200-250E04 800",
+      "unit": "cái",
+      "unit_price": 34111200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT200-250E04 800 800/800 OT800E04P 34,111,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "tayvặnmàuđenvàtrục(*),IP65",
+      "description": "Cầu dao cắt tải OT - 4P Cầu dao cắt tải bao gồm",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao cắt tải OT1000…2500, bao gồm tay vặn màu đen và trục(*), IP65",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1000/1000OT1000E04P",
+      "description": "Cầu dao cắt tải OT - 4P 1000",
+      "unit": "cái",
+      "unit_price": 48439200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000 1000/1000 OT1000E04P 48,439,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1250/1250OT1250E04P",
+      "description": "Cầu dao cắt tải OT - 4P 1250",
+      "unit": "cái",
+      "unit_price": 63900000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250 1250/1250 OT1250E04P 63,900,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1600/1250OT1600E04P",
+      "description": "Cầu dao cắt tải OT - 4P 1600",
+      "unit": "cái",
+      "unit_price": 79488000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600 1600/1250 OT1600E04P 79,488,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2000/-OT2000E04P",
+      "description": "Cầu dao cắt tải OT - 4P 2000",
+      "unit": "cái",
+      "unit_price": 115070400,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2000 2000/- OT2000E04P 115,070,400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2500/-OT2500E04P",
+      "description": "Cầu dao cắt tải OT - 4P 2500",
+      "unit": "cái",
+      "unit_price": 134292000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500 2500/- OT2500E04P 134,292,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "3200/3200OT3200E04P",
+      "description": "Cầu dao cắt tải OT - 4P 3200",
+      "unit": "cái",
+      "unit_price": 173059200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "3200 3200/3200 OT3200E04P 173,059,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "3800/3800OT4000E04P",
+      "description": "Cầu dao cắt tải OT - 4P 3800",
+      "unit": "cái",
+      "unit_price": 238857600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "3800 3800/3800 OT4000E04P 238,857,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "ápđiềukhiểnUe:cósẵn",
+      "description": "Cầu dao cắt tải OT - 4P OTM160…2500: thao tác bằng động cơ, điện",
+      "unit": "cái",
+      "unit_price": 220240,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OTM160…2500: thao tác bằng động cơ, điện áp điều khiển Ue: 220-240Vac, có sẵn tay vặn",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "160/160OTM160E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 43555200,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "160/160 OTM160E4M230C 43,555,200",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "200/200OTM200E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 47188800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "200/200 OTM200E4M230C 47,188,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "315/315OTM315E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 58104000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "315/315 OTM315E4M230C 58,104,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "400/400OTM400E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 63564000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "400/400 OTM400E4M230C 63,564,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "630/630OTM630E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 81760800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "630/630 OTM630E4M230C 81,760,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "800/800OTM800E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 90744000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "800/800 OTM800E4M230C 90,744,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1000/1000OTM1000E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 112797600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1000/1000 OTM1000E4M230C 112,797,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1250/1250OTM1250E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 122352000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1250/1250 OTM1250E4M230C 122,352,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1600/1250OTM1600E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 145329600,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "1600/1250 OTM1600E4M230C 145,329,600",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2000/2000OTM2000E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 267568800,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2000/2000 OTM2000E4M230C 267,568,800",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "2500/2500OTM2500E4M230C",
+      "description": "Cầu dao cắt tải OT - 4P",
+      "unit": "cái",
+      "unit_price": 296220000,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "2500/2500 OTM2500E4M230C 296,220,000",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "TrụcTayvặn",
+      "description": "Cầu dao cắt tải OT - 4P Cầu dao loại",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Cầu dao loại Trục Tay vặn Bộ bu lông kèm theo",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X185OHB95J12",
+      "description": "Cầu dao cắt tải OT - 4P OT315…400_P",
+      "unit": "cái",
+      "unit_price": 1030,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT315…400_P OXP12X185 OHB95J12 M10x30",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X185OHB125J12",
+      "description": "Cầu dao cắt tải OT - 4P OT630…800_P",
+      "unit": "cái",
+      "unit_price": 1240,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT630…800_P OXP12X185 OHB125J12 M12x40",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 4P OT1000…1250_P",
+      "unit": "cái",
+      "unit_price": 1250,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT1000…1250_P OXP12X280 OHB274J12 M12x50",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 4P OT1600_P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT1600_P OXP12X280 OHB274J12 M12X60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 4P OT2000…2500_P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT2000…2500_P OXP12X280 OHB274J12 M12X60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 42,
+    "raw_item": {
+      "source_page": 42,
+      "layout_name": "single_column_right",
+      "product_family": "Cầu dao cắt tải OT - 4P",
+      "type": "Cầu dao cắt tải OT - 4P",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "OXP12X280OHB274J12",
+      "description": "Cầu dao cắt tải OT - 4P OT3200…4000P",
+      "unit": "cái",
+      "unit_price": 1260,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "OT3200…4000P OXP12X280 OHB274J12 M12x60",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "KhảLoại",
+      "pole": "3P",
+      "rated_current": "SảnPhẩmDòng",
+      "breaking_capacity": "định",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Cầu dao tự động khởi động động cơ KhảLoại SảnPhẩmDòngA định",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản Phẩm Dòng định Khả Loại Mã sản phẩm Dự toán Phụ kiện dùng cho MS116, MS132 & MS165",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "choMS116,",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "MS132&MS165",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ choMS116, Phụ kiện dùng toán",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản Phẩm Dòng định Khả Loại Mã sản phẩm Dự toán Phụ kiện dùng cho MS116, MS132 & MS165",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "type_cannot_be_price",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "năng",
+      "pole": "3P",
+      "rated_current": "mức",
+      "breaking_capacity": "(A)",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ năng mứcA (A)",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "mức (A) năng VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "Loại",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "MÃSẢNPHẨM",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ Loại Vị trí Tiếp điểm",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Vị trí Tiếp điểm Loại Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS116",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS116A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS116 VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS116",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS116A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS116",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS132",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS132A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS132",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "báotín",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "HIỆUTRIP",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ báotín Tiếp điểm",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "6.03...10.0 50 MS116 - 10 1SAM250000R1010 1,171,700 Tiếp điểm báo tín hiệu trip",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "bảovệ",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ bảovệ Cuộn",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "25.0...32.0 10 MS116 - 32 1SAM250000R1015 2,350,800 Cuộn bảo vệ",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS165",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS165A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS165 Điện áp ĐK Loại Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "ĐKLoại",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "MÃSẢN",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ ĐKLoại Điện áp",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS165 Điện áp ĐK Loại Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS132",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS132A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS132 Cuộn cắt",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "cắt",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ cắt Cuộn",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS132 Cuộn cắt",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "giámsát",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "THẤPÁP",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ giámsát Thiết",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "0.63...1.00 100 MS132-1.0 1SAM350000R1005 1,400,600 Thiết bị giám sát thấp áp",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS497",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS497A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS497",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "HKF1-11",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  HKF1-11A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "HKF1-11",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "cầu3pha",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "CHOMS116VÀMS132",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ cầu3pha Thanh",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "6.30...10.0 100 MS132-10 1SAM350000R1010 1,659,100 Thanh cầu 3 pha cho MS116 và MS132",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Phụ kiện Cầu dao tự động khởi động động cơ",
+      "type": "Loại",
+      "pole": "",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "MÃSẢN",
+      "description": "Phụ kiện Cầu dao tự động khởi động động cơ Loại Số lượng",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "8.00...12.0 100 MS132-12 1SAM350000R1012 1,659,100 Số lượng Loại Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 52,
+    "raw_item": {
+      "source_page": 52,
+      "layout_name": "split_half_left_right",
+      "product_family": "Cầu dao tự động khởi động động cơ",
+      "type": "",
+      "pole": "3P",
+      "rated_current": "MS165",
+      "breaking_capacity": "",
+      "material_code": "",
+      "description": "Cầu dao tự động khởi động động cơ  MS165A",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "MS165 2 PS1-2-1-65 1SAM201906R1112 388,900",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_empty",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 53,
+    "raw_item": {
+      "source_page": 53,
+      "layout_name": "single_column_right",
+      "product_family": "Công tắc tơ 3P dạng khối - Loại AF",
+      "type": "Công tắc tơ 3P dạng khối - Loại AF",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "TiếpđiểmLoạiMãsảnphẩm",
+      "description": "Công tắc tơ 3P dạng khối - Loại AF Sản phẩm P (kW) I (A) I (A) Điện áp ĐK",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Sản phẩm P (kW) I (A) I (A) Điện áp ĐK Tiếp điểm Loại Mã sản phẩm Dự toán",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_too_long_merged",
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 53,
+    "raw_item": {
+      "source_page": 53,
+      "layout_name": "single_column_right",
+      "product_family": "Công tắc tơ 3P dạng khối - Loại AF",
+      "type": "Công tắc tơ 3P dạng khối - Loại AF",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "phụ",
+      "description": "Công tắc tơ 3P dạng khối - Loại AF 400 V AC-3 θ≤ 40 °C Uc",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "400 V AC-3 θ≤ 40 °C Uc phụ VND",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 53,
+    "raw_item": {
+      "source_page": 53,
+      "layout_name": "single_column_right",
+      "product_family": "Công tắc tơ 3P dạng khối - Loại AF",
+      "type": "Công tắc tơ 3P dạng khối - Loại AF",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "NONC",
+      "description": "Công tắc tơ 3P dạng khối - Loại AF AC-3 V 50/60 Hz V DC",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "AC-3 V 50/60 Hz V DC NO NC",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_format",
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 54,
+    "raw_item": {
+      "source_page": 54,
+      "layout_name": "single_column_right",
+      "product_family": "Công tắc tơ 3P dạng khối - Loại AF",
+      "type": "00AF96-30-00-14",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "",
+      "material_code": "1SBL407001R1400",
+      "description": "Công tắc tơ 3P dạng khối - Loại AF 250...500 250...500 00AF96-30-00-14",
+      "unit": "cái",
+      "unit_price": 0,
+      "currency": "VND",
+      "confidence": 0.92,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "250...500 250...500 0 0 AF96-30-00-14 1SBL407001R1400",
+      "validation_status": "valid",
+      "errors": [],
+      "warnings": []
+    },
+    "errors": [
+      "unit_price_zero_or_negative"
+    ],
+    "warnings": []
+  }
+]

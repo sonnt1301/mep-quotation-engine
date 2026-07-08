@@ -1,0 +1,131 @@
+{
+  "profile_id": "abb_profile_v1",
+  "supplier_code": "ABB",
+  "profile_version": "1.0",
+  "status": "feasibility",
+  "source_type": "pdf",
+  "description": "Cấu hình bóc tách và kiểm định MEP cho nhà cung cấp ABB phiên bản v1",
+  "global_rules": {
+    "currency": "VND",
+    "default_unit": "cái",
+    "min_unit_price": 1,
+    "reject_year_as_price": true
+  },
+  "material_code_patterns": [
+    "^(1SDA\\d{6}R\\d+|1SBL\\d{6}R\\d+|1SAM\\d{6}R\\d+|1SFL\\d{6}R\\d+|OT\\d+.*|OTM\\d+.*|OXP\\d+.*|OETL\\d+.*)$"
+  ],
+  "layouts": [
+    {
+      "layout_name": "double_column_3p_4p",
+      "pages": [18, 19, 20, 32, 33, 34, 54],
+      "product_family": "MCCB/ACB Tmax/Emax",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "khi_nang_cat": [150.0, 200.0],
+        "loai": [210.0, 250.0],
+        "in_a": [255.0, 290.0],
+        "ma_3p": [300.0, 380.0],
+        "gia_3p": [381.0, 435.0],
+        "ma_4p": [440.0, 505.0],
+        "gia_4p": [506.0, 570.0]
+      },
+      "row_detection": {
+        "min_y": 240.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": [
+        "clean_acb_mp_fp_prefixes"
+      ]
+    },
+    {
+      "layout_name": "three_cutoff_groups_page21",
+      "pages": [21],
+      "product_family": "Tmax XT Trip Unit",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "loai": [140.0, 160.0],
+        "in_a": [165.0, 195.0],
+        "poles": [196.0, 215.0],
+        "ma_36": [220.0, 280.0],
+        "gia_36": [281.0, 332.0],
+        "ma_50": [333.0, 395.0],
+        "gia_50": [396.0, 442.0],
+        "ma_70": [443.0, 505.0],
+        "gia_70": [506.0, 560.0]
+      },
+      "row_detection": {
+        "min_y": 240.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": []
+    },
+    {
+      "layout_name": "split_half_left_right",
+      "pages": [52, 53],
+      "product_family": "Motor Starter MS116/132",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "in_a": [40.0, 120.0],
+        "khi_nang_cat": [121.0, 150.0],
+        "loai": [151.0, 200.0],
+        "ma_3p": [201.0, 270.0],
+        "gia_3p": [271.0, 311.0],
+        "vi_tri": [312.0, 335.0],
+        "tiep_diem": [336.0, 385.0],
+        "loai_r": [386.0, 425.0],
+        "ma_r": [426.0, 500.0],
+        "gia_r": [501.0, 570.0]
+      },
+      "row_detection": {
+        "min_y": 240.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": []
+    },
+    {
+      "layout_name": "single_column_right",
+      "pages": [61],
+      "product_family": "AX Contactor",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "desc_left": [0.0, 319.9],
+        "ma": [320.0, 470.0],
+        "gia": [471.0, 570.0]
+      },
+      "row_detection": {
+        "min_y": 240.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": []
+    },
+    {
+      "layout_name": "four_columns_ot_page41",
+      "pages": [41, 42],
+      "product_family": "Switch-disconnector OT",
+      "parser_type": "coordinate_column_profiler",
+      "columns": {
+        "ith": [150.0, 319.9],
+        "in_a": [320.0, 419.9],
+        "ma": [420.0, 499.9],
+        "gia": [500.0, 580.0]
+      },
+      "row_detection": {
+        "min_y": 240.0,
+        "max_y": 820.0,
+        "row_tolerance": 3.0
+      },
+      "special_rules": []
+    }
+  ],
+  "validation": {
+    "allowed_material_code_prefixes": [
+      "1SDA", "1SAM", "1SBL", "1SFL", "OT", "OTM", "AX", "HK", "SK", "AA", "UA", "E1", "E2", "E4", "OXP", "OETL"
+    ],
+    "allow_ampere_list_patterns": [],
+    "reject_description_price_noise": true
+  }
+}

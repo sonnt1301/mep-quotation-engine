@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-07-06T06:38:32Z",
+  "decision_count": 0,
+  "decisions": [],
+  "quotation_id": "ABB_20200101_001",
+  "reviewer": "human",
+  "schema_version": "1.0",
+  "source_normalized_draft": "normalized/normalized_draft.json",
+  "source_sha256": "3ec974aca592b511ad2b88f73543f0747ae614af8d2bb6613fbd9bae8d41838f",
+  "updated_at": "2026-07-06T06:38:32Z",
+  "warnings": []
+}

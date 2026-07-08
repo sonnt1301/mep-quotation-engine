@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "quotation_id": "AUT_20260620_002",
+  "source_file": "source/original.pdf",
+  "source_sha256": "44b94a9d1ab42bb49ce91f619b12eab3093c1b88035c550b274f577def260b21",
+  "file_name": "original.pdf",
+  "file_extension": ".pdf",
+  "detected_file_type": "pdf",
+  "detected_mime_type": "application/pdf",
+  "file_size_bytes": 453530,
+  "source_role": "supplier_price_list_candidate",
+  "source_role_confidence": 0.9,
+  "technical_readability": {
+    "is_supported_file_type": true,
+    "has_native_text": true,
+    "native_text_probe_char_count": 8253,
+    "text_density_level": "high",
+    "is_scanned_candidate": false,
+    "requires_ocr": false,
+    "page_count": 8,
+    "sheet_count": null,
+    "image_width": null,
+    "image_height": null
+  },
+  "date_candidates": [
+    {
+      "date": "2026-04-15",
+      "date_type": "effective_date_candidate",
+      "source": "text_probe",
+      "confidence": 0.8,
+      "evidence": "THIẾT BỊ ĐIỆN NHÃN HIỆU LS (VNĐ) (Áp dụng từ ngày 15-04-2026) Tên hàng In (A) Icu(KA) Giá bán Tên hàng In (A)"
+    }
+  ],
+  "recommended_next_action": "run_pdf_native_pipeline",
+  "requires_human_profile_review": false,
+  "warnings": [
+    {
+      "code": "missing_quotation_date",
+      "message": "Không phát hiện được ngày báo giá rõ ràng từ nội dung."
+    }
+  ],
+  "created_at": "2026-07-06T04:11:46Z",
+  "updated_at": "2026-07-06T04:11:46Z"
+}
