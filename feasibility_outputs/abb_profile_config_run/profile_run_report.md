@@ -20,7 +20,7 @@
 | 32 | PASS | 104 | 6 | 98 | 98 | 0 | 0.0% | None |
 | 33 | PASS | 66 | 36 | 30 | 30 | 0 | 0.0% | None |
 | 34 | PASS | 44 | 6 | 38 | 38 | 0 | 0.0% | None |
-| 21 | PASS | 87 | 35 | 52 | 50 | 2 | 3.8% | material_code_invalid_prefix, material_code_invalid_format |
+| 21 | PASS | 87 | 35 | 52 | 50 | 2 | 3.8% | material_code_invalid_format, material_code_invalid_prefix |
 | 52 | PASS | 87 | 19 | 68 | 68 | 0 | 0.0% | None |
 | 53 | PASS | 49 | 3 | 46 | 46 | 0 | 0.0% | None |
 | 54 | PASS | 50 | 2 | 48 | 48 | 0 | 0.0% | None |

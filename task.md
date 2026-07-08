@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS Profile Hardening v1 & Milestone C & Milestone D (v2)
+# Danh sách công việc ABB + LS Profile Hardening & Milestone C & Milestone D & Milestone E
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -38,8 +38,25 @@
 - `[x]` Xây dựng unit tests `test_profile_runner.py` bổ sung các regression tests cho đơn giá LS (ABN104C, ABS203C, EBS204C, EBN404C) và bảo vệ các giá lớn hợp lệ (AS-25E3-25H, AS-63G3-63H)
 - `[x]` Chạy bộ kiểm thử pytest toàn dự án đạt 163/163 tests passed thành công
 
+## Milestone E – Supplier Profile Output Contract / Benchmark Acceptance Harness (Đã hoàn thành)
+- `[x]` Tạo tệp mô tả contract đầu ra chuẩn cho extracted items tại `tools/feasibility/profile_output_contract.json`
+- `[x]` Sửa đổi `ExtractedItem` và bộ bóc tách để tích hợp đầy đủ trường `supplier_code` theo contract
+- `[x]` Tạo kịch bản chạy acceptance benchmark nghiệm thu tự động tại `tools/feasibility/run_benchmark_acceptance.py`
+- `[x]` Thực thi và kiểm định:
+  - ABB đạt status = `PASS`
+  - LS đạt status = `ACCEPTED_WITH_KNOWN_LIMITATIONS`
+  - Không còn dòng LS nào lệch `unit_price` > 10x baseline v1
+- `[x]` Sinh thư mục nghiệm thu `feasibility_outputs/benchmark_acceptance/` chứa:
+  - `benchmark_acceptance_summary.json` (Tổng hợp máy đọc được)
+  - `benchmark_acceptance_report.md` (Báo cáo con người đọc được)
+  - `abb_acceptance.json` (Acceptance ABB)
+  - `ls_acceptance.json` (Acceptance LS)
+- `[x]` Thêm unit tests trong `tests/test_benchmark_acceptance.py`
+- `[x]` Chạy toàn bộ pytest suite đảm bảoPassed: **168/168 passed**
+- `[x]` Đồng bộ các tệp tài liệu dự án gốc tại project root
+
 ---
-> [!WARNING]
+> [warning]
 > **PHẠM VI TRIỂN KHAI**
 > * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**

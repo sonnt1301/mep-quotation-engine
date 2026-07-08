@@ -99,8 +99,8 @@
     "invalid_items_count": 2,
     "invalid_ratio": 3.8,
     "errors_sample": [
-      "material_code_invalid_prefix",
-      "material_code_invalid_format"
+      "material_code_invalid_format",
+      "material_code_invalid_prefix"
     ],
     "detected_table_type": "three_cutoff_groups_page21",
     "notes": [

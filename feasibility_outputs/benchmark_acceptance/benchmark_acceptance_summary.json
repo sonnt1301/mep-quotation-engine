@@ -1,0 +1,79 @@
+{
+  "benchmark_status": "PASS",
+  "abb": {
+    "supplier_code": "ABB",
+    "status": "PASS",
+    "valid_items": 743,
+    "invalid_items": 2,
+    "pass_pages": 13,
+    "partial_pages": 0,
+    "total_pages": 13,
+    "checks": [
+      {
+        "check_name": "abb_exact_count_match",
+        "status": "PASS",
+        "details": "Valid: 743/743, Invalid: 2/2"
+      },
+      {
+        "check_name": "abb_pass_pages_match",
+        "status": "PASS",
+        "details": "PASS pages: 13/13"
+      },
+      {
+        "check_name": "output_contract_compliance",
+        "status": "PASS",
+        "details": "All items comply with JSON output contract."
+      },
+      {
+        "check_name": "abb_exact_baseline_alignment",
+        "status": "PASS",
+        "details": "100% match with baseline v1 items."
+      }
+    ],
+    "known_limitations": []
+  },
+  "ls": {
+    "supplier_code": "LS",
+    "status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+    "valid_items": 284,
+    "invalid_items": 16,
+    "pass_pages": 3,
+    "partial_pages": 2,
+    "total_pages": 5,
+    "checks": [
+      {
+        "check_name": "ls_minimum_count_match",
+        "status": "PASS",
+        "details": "Valid: 284 (criteria >=282), Invalid: 16 (criteria <=19)"
+      },
+      {
+        "check_name": "ls_minimum_pass_pages",
+        "status": "PASS",
+        "details": "PASS pages: 3 (criteria >=3)"
+      },
+      {
+        "check_name": "output_contract_compliance",
+        "status": "PASS",
+        "details": "All items comply with JSON output contract."
+      },
+      {
+        "check_name": "ls_no_10x_price_mismatch",
+        "status": "PASS",
+        "details": "No LS items deviate >10x from baseline v1."
+      },
+      {
+        "check_name": "ls_price_regression_protection",
+        "status": "PASS",
+        "details": "All LS price regressions passed."
+      },
+      {
+        "check_name": "ls_large_price_protection",
+        "status": "PASS",
+        "details": "All large LS prices protected."
+      }
+    ],
+    "known_limitations": [
+      "Page 2 and page 5 remain PARTIAL and require future profile hardening."
+    ]
+  }
+}

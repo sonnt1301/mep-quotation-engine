@@ -1,6 +1,6 @@
-# Kế Hoạch Triển Khai – Milestone D – Supplier Profile Config Integration (Sửa đổi & Tối ưu hóa LS v2)
+# Kế Hoạch Triển Khai – Milestone E – Supplier Profile Output Contract / Benchmark Acceptance Harness
 
-Kế hoạch này tập trung khắc phục hoàn toàn lỗi ghép dính danh sách định mức ampere vào đơn giá (`unit_price`) của hãng LS, tinh chỉnh bộ lọc đơn giá thông minh, thiết lập các bài kiểm thử hồi quy và đối chiếu delta chặt chẽ.
+Kế hoạch này thiết lập khung chuẩn hóa đầu ra dữ liệu (Output Contract) và xây dựng bộ kiểm định nghiệm thu tự động (Benchmark Acceptance Harness) cho các parser profile.
 
 ---
 
@@ -12,45 +12,57 @@ Kế hoạch này tập trung khắc phục hoàn toàn lỗi ghép dính danh s
 
 ---
 
-## 1. Các Thay Đổi Kỹ Thuật Chi Tiết
+## 1. Thiết Kế Các Thành Phần Kỹ Thuật
 
-### Bộ lọc Price Token hợp lệ tối thiểu
-Hàm lọc price token hợp lệ tối thiểu sẽ được xây dựng để kiểm tra một token `t`:
-- Không chứa chữ `A` hoặc `a` (loại trừ các thông số dòng định mức dạng `2500A`, `4000A`).
-- Không phải danh sách định mức: nhận diện qua việc chứa nhiều dấu phẩy (như `15,20,30,40...`) hoặc là chuỗi số phân tách bằng dấu phẩy nhưng các số đều nhỏ hơn `1000` và phần tử cuối không phải là `"000"`.
-- Không phải thông số kỹ thuật đơn lẻ hay số nhỏ như `85`, `100` (loại bỏ qua việc kiểm tra giá trị thực tế sau khi parse hoặc định dạng).
-- Phải thỏa mãn định dạng:
-  - Dạng số có phân tách hàng nghìn bằng dấu phẩy (ví dụ: `1,850,000`).
-  - Hoặc số nguyên `>= 1000` (đã loại bỏ ký tự nhiễu).
+### A. Supplier Profile Output Contract
+Tạo tệp mô tả contract đầu ra chuẩn cho các extracted items:
+* [profile_output_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_output_contract.json)
+Quy định kiểu dữ liệu và định dạng bắt buộc cho một extracted item tối thiểu (ví dụ: `supplier_code`, `source_page`, `material_code`, `unit_price` > 0, `currency` = "VND", `validation_status` = "valid" hoặc "invalid"...).
 
-### Trích xuất Đơn Giá cuối cùng hợp lệ
-Trong `profile_runner.py` của LS:
-- Đối với `cols["gia"]`, ta không ghép dính mù quáng toàn bộ và cũng không chỉ lấy phần tử cuối cùng `cols["gia"][-1]`.
-- Thay vào đó, ta duyệt qua tất cả các token đã thu thập được trong `cols["gia"]`, lọc ra danh sách các price token hợp lệ (thỏa mãn Bộ lọc Price Token ở trên), sau đó lấy **price token cuối cùng hợp lệ** trong danh sách đó làm đơn giá chính thức.
+### B. Benchmark Acceptance Harness
+Tạo tệp Python:
+* [run_benchmark_acceptance.py](file:///D:/mep_quotation_pipeline/tools/feasibility/run_benchmark_acceptance.py)
+Bộ công cụ này tự động đọc output config-run của ABB/LS và đối chiếu với bộ chỉ tiêu acceptance cứng:
+
+#### ABB Acceptance Criteria (Trạng thái mong muốn: `PASS`)
+- `valid_items` = 743, `invalid_items` = 2
+- `pass_pages` = 13, `total_pages` = 13
+- Không có valid item nào thiếu `material_code`.
+- Không có valid item nào `unit_price` <= 0.
+- Không có valid item nào thiếu `evidence_text`.
+- Khớp baseline v1 theo (`source_page`, `material_code`, `unit_price`).
+
+#### LS Acceptance Criteria (Trạng thái mong muốn: `ACCEPTED_WITH_KNOWN_LIMITATIONS`)
+- `valid_items` >= 282, `invalid_items` <= 19
+- `pass_pages` >= 3, `total_pages` = 5
+- Không có valid item nào thiếu `material_code`.
+- Không có valid item nào `unit_price` <= 0.
+- Không có valid item nào thiếu `evidence_text`.
+- Không còn dòng nào có `unit_price` lệch quá 10 lần baseline v1 trên cùng cặp (`source_page`, `material_code`).
+- Kiểm tra các regression price bắt buộc: `ABN104C` = 1850000, `ABS203C` = 3350000, `EBS204C` = 9500000, `EBN404C` = 16600000.
+- Bảo vệ các giá lớn hợp lệ ở trang 5: `AS-25E3-25H` (135,000,000 hoặc 118,000,000) và `AS-63G3-63H` (460,000,000 hoặc 438,000,000).
+
+### C. Acceptance Output Files
+Tạo thư mục mới:
+* `feasibility_outputs/benchmark_acceptance/`
+Trong đó có:
+* `benchmark_acceptance_summary.json` (Tổng hợp máy đọc được)
+* `benchmark_acceptance_report.md` (Báo cáo con người đọc được, ghi rõ scope, known limitations, checks table...)
+* `abb_acceptance.json` (Acceptance của ABB với status = `PASS`)
+* `ls_acceptance.json` (Acceptance của LS với status = `ACCEPTED_WITH_KNOWN_LIMITATIONS`)
 
 ---
 
-## 2. Kiểm Thử Hồi Quy (Regression Tests)
+## 2. Kịch Bản Thực Hiện & Kiểm Thử
 
-Thêm các ca kiểm thử hồi quy bắt buộc trong `tests/test_profile_runner.py` để xác minh đơn giá cho các vật tư LS trọng điểm:
-- `ABN104C`: `unit_price` phải bằng `1850000` (Không được ghép dính `751001850000`).
-- `ABS203C`: `unit_price` phải bằng `3350000` (Không được ghép dính `1251501752002252503350000`).
-- `EBS204C`: `unit_price` phải bằng `9500000` (Không được ghép dính `1251501752002252509500000`).
-- `EBN404C`: `unit_price` phải bằng `16600000`.
-- Bảo vệ các mã hàng giá trị lớn, không được loại nhầm hoặc parse sai giá:
-  - `AS-25E3-25H` (hoặc model ACB tương đương ở trang 3): đơn giá đúng trong khoảng trăm triệu (ví dụ `135,000,000` hoặc tương đương theo báo giá).
-  - `AS-63G3-63H` (hoặc model ACB tương đương ở trang 3): đơn giá đúng trong khoảng trăm triệu (ví dụ `460,000,000` hoặc tương đương theo báo giá).
-
----
-
-## 3. Xác Minh Delta và Ngưỡng Chấp Nhận
-
-1. Thực hiện chạy bóc tách hai hãng:
+1. Xây dựng tệp JSON Contract [profile_output_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_output_contract.json).
+2. Xây dựng kịch bản chạy benchmark [run_benchmark_acceptance.py](file:///D:/mep_quotation_pipeline/tools/feasibility/run_benchmark_acceptance.py).
+3. Thực thi bóc tách và chạy acceptance benchmark:
    ```powershell
    python tools/feasibility/run_profile_from_config.py --profile ABB --version v1
    python tools/feasibility/run_profile_from_config.py --profile LS --version v1
+   python tools/feasibility/run_benchmark_acceptance.py
    ```
-2. So sánh đối chiếu delta của LS dựa trên cặp khóa `(source_page, material_code)`:
-   - **Tuyệt đối không được còn dòng nào có `unit_price` lệch quá 10 lần so với baseline v1.**
-   - Nếu còn dù chỉ một dòng lệch giá quá 10 lần, Milestone D sẽ được coi là **FAIL**.
-3. Đảm bảo toàn bộ suite kiểm thử `pytest` đạt kết quả **Passed** thành công.
+4. Kiểm tra các báo cáo kết xuất trong `feasibility_outputs/benchmark_acceptance/`.
+5. Bổ sung unit tests trong `tests/test_benchmark_acceptance.py`.
+6. Chạy toàn bộ pytest suite đảm bảo **163+ passed**.

@@ -32,6 +32,7 @@ class ExtractedItem:
         confidence: float,
         extraction_method: str,
         evidence_text: str,
+        supplier_code: str = "",
         validation_status: str = "unchecked",
         errors: List[str] = None,
         warnings: List[str] = None
@@ -51,12 +52,14 @@ class ExtractedItem:
         self.confidence = confidence
         self.extraction_method = extraction_method
         self.evidence_text = evidence_text
+        self.supplier_code = supplier_code
         self.validation_status = validation_status
         self.errors = errors or []
         self.warnings = warnings or []
 
     def to_dict(self) -> Dict[str, Any]:
         return {
+            "supplier_code": self.supplier_code,
             "source_page": self.source_page,
             "layout_name": self.layout_name,
             "product_family": self.product_family,
@@ -295,7 +298,8 @@ def parse_page_from_config(
     page_num: int, 
     layout: Dict[str, Any], 
     global_rules: Dict[str, Any], 
-    validation: Dict[str, Any]
+    validation: Dict[str, Any],
+    supplier_code: str = ""
 ) -> Tuple[List[ExtractedItem], str, str, int, int]:
     
     layout_name = layout["layout_name"]
@@ -407,7 +411,7 @@ def parse_page_from_config(
                 c_gia_3p = clean_price(gia_3p)
                 if c_gia_3p > 0 and c_ma_3p != "":
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=loai_current,
@@ -435,7 +439,7 @@ def parse_page_from_config(
                 c_gia_4p = clean_price(gia_4p)
                 if c_gia_4p > 0 and c_ma_4p != "":
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=loai_current,
@@ -512,7 +516,7 @@ def parse_page_from_config(
                 c_ma_36_clean = clean_code(c_ma_36)
                 if c_ma_36_clean and c_gia_36 > 0:
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=loai_current or model_36,
@@ -540,7 +544,7 @@ def parse_page_from_config(
                 c_ma_50_clean = clean_code(c_ma_50)
                 if c_ma_50_clean and c_gia_50 > 0:
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=loai_current or model_50,
@@ -568,7 +572,7 @@ def parse_page_from_config(
                 c_ma_70_clean = clean_code(c_ma_70)
                 if c_ma_70_clean and c_gia_70 > 0:
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=loai_current or model_70,
@@ -712,7 +716,7 @@ def parse_page_from_config(
                             rated_current = in_match.group(1)
                             
                     item = ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf_curr,
                         type=model or pf_curr,
@@ -811,7 +815,7 @@ def parse_page_from_config(
                     c_gia_3p = clean_price(gia_3p)
                     if c_gia_3p > 0 and c_ma_3p != "":
                         extracted_items.append(ExtractedItem(
-                            source_page=page_num,
+                            source_page=page_num, supplier_code=supplier_code,
                             layout_name=layout_name,
                             product_family=pf,
                             type=loai or model_left,
@@ -836,7 +840,7 @@ def parse_page_from_config(
                     if c_gia_r > 0 and c_ma_r != "":
                         final_model_right = loai_r or model_right
                         extracted_items.append(ExtractedItem(
-                            source_page=page_num,
+                            source_page=page_num, supplier_code=supplier_code,
                             layout_name=layout_name,
                             product_family=f"Phụ kiện {pf}",
                             type=final_model_right,
@@ -894,7 +898,7 @@ def parse_page_from_config(
                     if in_match: rated_current = in_match.group(1)
                     
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=model or pf,
@@ -953,7 +957,7 @@ def parse_page_from_config(
                     desc = f"{pf} {clean_ma} Ith={ith} In={in_a}".strip()
                     
                     extracted_items.append(ExtractedItem(
-                        source_page=page_num,
+                        source_page=page_num, supplier_code=supplier_code,
                         layout_name=layout_name,
                         product_family=pf,
                         type=clean_ma,

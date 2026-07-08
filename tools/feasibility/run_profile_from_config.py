@@ -256,7 +256,7 @@ def main():
                 
                 try:
                     raw_items, pf, l_name, raw_detected, skipped = parse_page_from_config(
-                        page, page_num, layout, global_rules, validation
+                        page, page_num, layout, global_rules, validation, supplier_code
                     )
                     
                     page_valid_items = []
