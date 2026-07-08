@@ -17,7 +17,7 @@
   "layouts": [
     {
       "layout_name": "double_column_3p_4p",
-      "pages": [18, 19, 20, 32, 33, 34, 54],
+      "pages": [18, 19, 20, 32, 33, 34],
       "product_family": "MCCB/ACB Tmax/Emax",
       "parser_type": "coordinate_column_profiler",
       "columns": {
@@ -63,7 +63,7 @@
     },
     {
       "layout_name": "split_half_left_right",
-      "pages": [52, 53],
+      "pages": [52],
       "product_family": "Motor Starter MS116/132",
       "parser_type": "coordinate_column_profiler",
       "columns": {
@@ -87,7 +87,7 @@
     },
     {
       "layout_name": "single_column_right",
-      "pages": [61],
+      "pages": [53, 54, 61],
       "product_family": "AX Contactor",
       "parser_type": "coordinate_column_profiler",
       "columns": {
@@ -126,6 +126,7 @@
       "1SDA", "1SAM", "1SBL", "1SFL", "OT", "OTM", "AX", "HK", "SK", "AA", "UA", "E1", "E2", "E4", "OXP", "OETL"
     ],
     "allow_ampere_list_patterns": [],
-    "reject_description_price_noise": true
+    "reject_description_price_noise": true,
+    "min_fallback_length": 6
   }
 }

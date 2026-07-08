@@ -1,0 +1,88 @@
+[
+  {
+    "page": 1,
+    "status": "PASS",
+    "raw_detected_rows": 72,
+    "skipped_before_validation": 5,
+    "validation_input_count": 67,
+    "valid_items_count": 67,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: MCCB/ELCB/Contactor LS"
+    ]
+  },
+  {
+    "page": 2,
+    "status": "PARTIAL",
+    "raw_detected_rows": 70,
+    "skipped_before_validation": 28,
+    "validation_input_count": 42,
+    "valid_items_count": 36,
+    "invalid_items_count": 6,
+    "invalid_ratio": 14.3,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "material_code_invalid_prefix"
+    ],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: MCCB/ELCB/Contactor LS"
+    ]
+  },
+  {
+    "page": 3,
+    "status": "PASS",
+    "raw_detected_rows": 79,
+    "skipped_before_validation": 8,
+    "validation_input_count": 71,
+    "valid_items_count": 69,
+    "invalid_items_count": 2,
+    "invalid_ratio": 2.8,
+    "errors_sample": [
+      "material_code_invalid_prefix"
+    ],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: MCCB/ELCB/Contactor LS"
+    ]
+  },
+  {
+    "page": 4,
+    "status": "PASS",
+    "raw_detected_rows": 84,
+    "skipped_before_validation": 20,
+    "validation_input_count": 64,
+    "valid_items_count": 62,
+    "invalid_items_count": 2,
+    "invalid_ratio": 3.1,
+    "errors_sample": [
+      "description_contains_price_noise",
+      "material_code_invalid_prefix"
+    ],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: MCCB/ELCB/Contactor LS"
+    ]
+  },
+  {
+    "page": 5,
+    "status": "PARTIAL",
+    "raw_detected_rows": 64,
+    "skipped_before_validation": 8,
+    "validation_input_count": 56,
+    "valid_items_count": 50,
+    "invalid_items_count": 6,
+    "invalid_ratio": 10.7,
+    "errors_sample": [
+      "material_code_invalid_format",
+      "material_code_invalid_prefix"
+    ],
+    "detected_table_type": "split_half_left_right",
+    "notes": [
+      "Product family: MCCB/ELCB/Contactor LS"
+    ]
+  }
+]

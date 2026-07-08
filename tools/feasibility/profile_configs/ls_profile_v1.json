@@ -12,7 +12,7 @@
     "reject_year_as_price": true
   },
   "material_code_patterns": [
-    "^([A-Z]{2,}\\d+[A-Z]*|\\d{2,}[A-Z]{2,}\\w*|SHT.*|UVT.*|AX.*|AL.*)$"
+    "^([A-Z0-9~\\-]+)$"
   ],
   "layouts": [
     {
@@ -47,8 +47,9 @@
       "ABN", "ABS", "EBS", "EBN", "LA", "LB", "LC", "MC", "MT", "GMP", "BK", "AN", "AS", "TS", "32GR", "32K", "EBE", "UA", "UR", "AR", "MW", "SJ", "SN", "SH", "SR", "SHT", "UVT", "AX", "AL", "MOP", "MI", "IB", "DH", "EH"
     ],
     "allow_ampere_list_patterns": [
-      "\\b\\d{1,3}(?:,\\d{1,3})+A\\b"
+      "\\b\\d{1,3}(?:,\\d{1,3})+\\s*A\\b"
     ],
-    "reject_description_price_noise": true
+    "reject_description_price_noise": true,
+    "min_fallback_length": 5
   }
 }
