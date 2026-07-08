@@ -1,0 +1,23 @@
+[
+  {
+    "page": 3,
+    "layout_name": "chint_mccb_nxm_nm1",
+    "reason": "Trang chứa MCCB loại NXM và NM1, đại diện cho bảng đơn giá dọc thẳng hàng có 4 cột chính",
+    "risks": "Dải dòng định mức dính nhau ở đầu dòng (ví dụ: '2563' thay vì '25, 63')",
+    "expected_columns": ["rated_current", "breaking_capacity", "material_code", "unit_price"]
+  },
+  {
+    "page": 4,
+    "layout_name": "chint_contactor_nxc",
+    "reason": "Trang chứa Contactor loại NXC, đại diện cho layout contactor 3 cực với các thông số kích thước",
+    "risks": "Có nhiều cột thông số phụ dễ bị nhầm tọa độ",
+    "expected_columns": ["rated_current", "material_code", "unit_price"]
+  },
+  {
+    "page": 5,
+    "layout_name": "chint_thermal_relay_nxr",
+    "reason": "Trang chứa Rơ le nhiệt loại NXR, đại diện cho layout rơ le nhiệt đi kèm",
+    "risks": "Dải bảo vệ ampere chứa dấu phẩy và gạch ngang (ví dụ: '0.1-0.16')",
+    "expected_columns": ["rated_current", "material_code", "unit_price"]
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SupplierProfileOutputContract",
+  "description": "Schema mô tả cấu trúc dữ liệu đầu ra chuẩn của một extracted item từ Supplier Profile Parser",
+  "type": "object",
+  "properties": {
+    "supplier_code": {
+      "type": "string"
+    },
+    "source_page": {
+      "type": "integer"
+    },
+    "layout_name": {
+      "type": "string"
+    },
+    "product_family": {
+      "type": "string"
+    },
+    "material_code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "unit_price": {
+      "type": "integer"
+    },
+    "currency": {
+      "type": "string",
+      "enum": ["VND"]
+    },
+    "rated_current": {
+      "type": "string"
+    },
+    "breaking_capacity": {
+      "type": "string"
+    },
+    "pole": {
+      "type": "string"
+    },
+    "evidence_text": {
+      "type": "string"
+    },
+    "extraction_method": {
+      "type": "string",
+      "enum": ["coordinate_column_profiler"]
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": ["valid", "invalid"]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "supplier_code",
+    "source_page",
+    "layout_name",
+    "product_family",
+    "material_code",
+    "description",
+    "unit",
+    "unit_price",
+    "currency",
+    "rated_current",
+    "breaking_capacity",
+    "pole",
+    "evidence_text",
+    "extraction_method",
+    "validation_status",
+    "warnings",
+    "errors"
+  ]
+}

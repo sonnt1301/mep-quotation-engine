@@ -1,0 +1,32 @@
+{
+  "supplier_code": "ABB",
+  "status": "PASS",
+  "valid_items": 743,
+  "invalid_items": 2,
+  "pass_pages": 13,
+  "partial_pages": 0,
+  "total_pages": 13,
+  "checks": [
+    {
+      "check_name": "abb_exact_count_match",
+      "status": "PASS",
+      "details": "Valid: 743/743, Invalid: 2/2"
+    },
+    {
+      "check_name": "abb_pass_pages_match",
+      "status": "PASS",
+      "details": "PASS pages: 13/13"
+    },
+    {
+      "check_name": "output_contract_compliance",
+      "status": "PASS",
+      "details": "All items comply with JSON output contract."
+    },
+    {
+      "check_name": "abb_exact_baseline_alignment",
+      "status": "PASS",
+      "details": "100% match with baseline v1 items."
+    }
+  ],
+  "known_limitations": []
+}

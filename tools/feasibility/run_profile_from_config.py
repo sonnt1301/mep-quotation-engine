@@ -25,6 +25,20 @@ PDF_PATHS = {
     "LS": Path("F:/00.HVC/Bang gia/LS/Bang gia LS ap dung ngay 15-04-2026.pdf")
 }
 
+# Dò tìm file CHINT động
+chint_pdf = None
+for p in [Path("F:/00.HVC/Bang gia/Bang gia VT Tu dien/Chint"), Path("F:/00.HVC/Bang gia/Bang gia VT Tu dien - Copy/Chint")]:
+    if p.exists():
+        for f in p.glob("*.pdf"):
+            if "1-3-2023" in f.name:
+                chint_pdf = f
+                break
+    if chint_pdf:
+        break
+if chint_pdf:
+    PDF_PATHS["CHINT"] = chint_pdf
+
+
 def export_xlsx(
     valid_items: List[Dict[str, Any]], 
     invalid_items: List[Dict[str, Any]], 
@@ -196,7 +210,7 @@ Báo cáo này so sánh kết quả thực thi bóc tách tự động nạp t�
 
 def main():
     parser = argparse.ArgumentParser(description="Chạy bóc tách Supplier Profile từ file cấu hình JSON.")
-    parser.add_argument("--profile", type=str, choices=["ABB", "LS"], help="Tên nhà cung cấp (ABB hoặc LS)")
+    parser.add_argument("--profile", type=str, choices=["ABB", "LS", "CHINT"], help="Tên nhà cung cấp (ABB, LS hoặc CHINT)")
     parser.add_argument("--version", type=str, default="v1", help="Phiên bản cấu hình (mặc định: v1)")
     parser.add_argument("--config", type=str, help="Đường dẫn trực tiếp tới tệp cấu hình JSON")
     
@@ -232,7 +246,7 @@ def main():
         print(f"Error: PDF file not found at {pdf_path}")
         return
         
-    print(f"Processing PDF: {pdf_path}")
+    print(f"Processing PDF: {pdf_path.name.encode('ascii', 'ignore').decode('ascii')}")
     
     valid_extracted_items = []
     invalid_extracted_items = []
@@ -256,7 +270,7 @@ def main():
                 
                 try:
                     raw_items, pf, l_name, raw_detected, skipped = parse_page_from_config(
-                        page, page_num, layout, global_rules, validation
+                        page, page_num, layout, global_rules, validation, supplier_code
                     )
                     
                     page_valid_items = []
