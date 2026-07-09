@@ -20,7 +20,7 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
 | --- | --- | --- | --- | --- | --- |
 | **ABB** | `PASS` | 743 | 2 | 13 | 13 |
 | **LS** | `ACCEPTED_WITH_KNOWN_LIMITATIONS` | 284 | 16 | 3 | 5 |
-| **CHINT** | `ACCEPTED_WITH_KNOWN_LIMITATIONS` | 45 | 6 | 1 | 3 |
+| **CHINT** | `ACCEPTED_WITH_KNOWN_LIMITATIONS` | 45 | 0 | 2 | 3 |
 
 ---
 
@@ -48,10 +48,10 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
 | Tên Hạng Mục Kiểm Tra | Trạng Thái | Chi Tiết |
 | --- | --- | --- |
 | `chint_valid_items_count` | **PASS** | Valid items: 45 (criteria >=20) |
-| `chint_invalid_items_count` | **PASS** | Invalid items: 6 (criteria <=15) |
+| `chint_invalid_items_count` | **PASS** | Invalid items: 0 (criteria <=15) |
 | `chint_total_pages_count` | **PASS** | Total pages: 3 (criteria ==3) |
-| `chint_pass_pages_count` | **PASS** | PASS pages: 1 (criteria >=1) |
-| `chint_partial_pages_count` | **PASS** | PARTIAL pages: 2 (criteria <=2) |
+| `chint_pass_pages_count` | **PASS** | PASS pages: 2 (criteria >=1) |
+| `chint_partial_pages_count` | **PASS** | PARTIAL pages: 1 (criteria <=2) |
 | `output_contract_compliance` | **PASS** | All items comply with JSON output contract. |
 
 ---

@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone F (v2)
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone H
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -46,21 +46,37 @@
 - `[x]` Sinh thư mục nghiệm thu `feasibility_outputs/benchmark_acceptance/` chứa các tệp JSON và Markdown report
 - `[x]` Thêm unit tests và chạy toàn suite `pytest` vượt qua 168/168 passed thành công
 
-## Milestone F – Third Supplier Profile Onboarding / Benchmark Expansion v2 (Đã hoàn thành)
+## Milestone F – Third Supplier Profile Onboarding / Benchmark Expansion (Đã hoàn thành)
 - `[x]` Khảo sát tệp PDF Chint thật sự tồn tại tại: `F:\00.HVC\Bang gia\Bang gia VT Tu dien\Chint\Bảng giá Chint 1-3-2023 ck 50.pdf`
 - `[x]` Viết báo cáo khảo sát layout `feasibility_outputs/chint_profile_v0/profile_survey_report.md` kết luận `FEASIBLE`
 - `[x]` Tạo tệp cấu hình lựa chọn trang benchmark `feasibility_outputs/chint_profile_v0/profile_page_selection.json` (Trang 3, 4, 5)
 - `[x]` Tạo tệp cấu hình layout riêng biệt `tools/feasibility/profile_configs/chint_profile_v1.json` tuân thủ JSON Schema
 - `[x]` Cập nhật runner chung `profile_runner.py` để hỗ trợ bóc tách các layout Chint mà không làm ảnh hưởng (regression) tới ABB/LS
 - `[x]` Thực thi chạy bóc tách config-run cho Chint và xuất kết quả ra `feasibility_outputs/chint_profile_config_run/` tuân thủ Output Contract
-- `[x]` Cập nhật Acceptance Harness `run_benchmark_acceptance.py` đồng bộ criteria Hướng B cho Chint:
-  - `valid_items` >= 20, `invalid_items` <= 15
-  - `total_pages` = 3, `pass_pages` >= 1, `partial_pages` <= 2
-  - `known_limitations` bắt buộc ghi nhận Page 3 và Page 5 là PARTIAL
-  - Đánh giá trạng thái nghiệm thu của Chint đạt **`ACCEPTED_WITH_KNOWN_LIMITATIONS`** (mức thấp)
+- `[x]` Cập nhật Acceptance Harness `run_benchmark_acceptance.py` đồng bộ criteria Hướng B cho Chint
 - `[x]` Thêm/cập nhật unit tests trong `tests/test_benchmark_acceptance.py`
 - `[x]` Chạy toàn bộ pytest suite đảm bảoPassed: **169/169 passed**
 - `[x]` Đồng bộ hóa tất cả các tài liệu root tại project root
+
+## Milestone G – Profile Quality Hardening / Raise Partial Pages (Đã hoàn thành)
+- `[x]` Phân tích nguyên nhân sâu (Root Cause) của các trang PARTIAL: LS page 2, LS page 5, CHINT page 3, CHINT page 5
+- `[x]` Sinh tệp kết quả phân tích kỹ thuật:
+  - `feasibility_outputs/profile_hardening_g/partial_page_analysis.md`
+  - `feasibility_outputs/profile_hardening_g/partial_page_analysis.json`
+- `[x]` Hardening parser trong `profile_runner.py`: bổ sung các từ khóa tiếng Việt đặc trưng của tiêu đề bảng vào bộ lọc rác đầu vào
+- `[x]` Nâng thành công CHINT Page 3 từ PARTIAL lên PASS (0 invalid items)
+- `[x]` Giữ nguyên Known Limitations cho LS Page 2, LS Page 5 và CHINT Page 5 để bảo vệ tính ổn định của parser
+- `[x]` Chạy lại benchmark acceptance và unit tests pytest (169/169 passed)
+- `[x]` Đồng bộ các tệp tài liệu báo cáo nghiệm thu tại project root
+
+## Milestone H – Profile Run Manifest / Integration-Ready Packaging (Đã hoàn thành)
+- `[x]` Định nghĩa contract manifest máy đọc: `tools/feasibility/profile_run_manifest_contract.json`
+- `[x]` Phát triển script xuất manifest: `tools/feasibility/export_profile_run_manifest.py`
+- `[x]` Đóng gói đầu ra Feasibility thành manifest JSON và Markdown tại `feasibility_outputs/profile_run_manifest/`
+- `[x]` Đặt ready_for_main_pipeline = False trong manifest để chuẩn bị tích hợp an toàn
+- `[x]` Xây dựng unit test bảo vệ manifest: `tests/test_profile_run_manifest.py` và loại trừ các cụm từ overclaim
+- `[x]` Chạy kiểm chứng thành công và Passed 170/170 tests
+- `[x]` Đồng bộ toàn bộ tài liệu root tại project root
 
 ---
 > [!WARNING]
@@ -69,4 +85,4 @@
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
 > * **Không OCR, không AI/LLM, không parse Excel.**
 > * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
-> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).
+> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).

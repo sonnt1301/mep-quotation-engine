@@ -1,0 +1,62 @@
+{
+  "analysis_timestamp": "2026-07-09T09:30:00Z",
+  "milestone": "Milestone G",
+  "partial_pages": [
+    {
+      "supplier_code": "LS",
+      "page": 2,
+      "status": "PARTIAL",
+      "valid_count": 36,
+      "invalid_count": 6,
+      "invalid_ratio": 14.3,
+      "error_sample_evidence": "Cuộn đóng ngắt SHT for ABN100c~ABH250c 930,000",
+      "extracted_material_code": "CUỘN",
+      "root_cause": "Dải cột 'ma' bên trái kết thúc ở 120.0, trong khi các mã phụ kiện viết tắt (SHT, UVT, AX, AL) bắt đầu từ 120.8 nên bị đẩy sang cột 'in_a'. Parser fallback lấy token đầu tiên của mô tả làm material_code, dẫn đến lỗi validation.",
+      "confidence": "HIGH",
+      "should_modify_parser_or_config": false,
+      "justification_for_keeping_known_limitation": "Các dòng phụ kiện (accessories) có cấu trúc chồng lấn phức tạp với MCCB chính trên cùng layout split_half_left_right. Việc nới rộng cột 'ma' quá mức dễ gây lỗi nhận diện sai dòng định mức của các trang MCCB chính. Do đó giữ nguyên known limitation để bảo vệ tính ổn định cho thiết bị chính."
+    },
+    {
+      "supplier_code": "LS",
+      "page": 5,
+      "status": "PARTIAL",
+      "valid_count": 50,
+      "invalid_count": 6,
+      "invalid_ratio": 10.7,
+      "error_sample_evidence": "Bộ bảo vệ thấp áp UVT coil 2,700,000",
+      "extracted_material_code": "BỘ",
+      "root_cause": "Các phụ kiện ACB có mô tả dài khiến mã viết tắt (UVT, IB, Motor) bị đẩy sang cột 'in_a'. Parser fallback lấy token đầu tiên của mô tả dẫn đến sai material_code.",
+      "confidence": "HIGH",
+      "should_modify_parser_or_config": false,
+      "justification_for_keeping_known_limitation": "Cấu trúc phụ kiện ACB không đồng nhất và phức tạp. Giữ known limitation để tránh gây regression cho phần bóc tách ACB chính hoạt động rất tốt ở trên."
+    },
+    {
+      "supplier_code": "CHINT",
+      "page": 3,
+      "status": "PARTIAL",
+      "valid_count": 15,
+      "invalid_count": 6,
+      "invalid_ratio": 28.6,
+      "error_sample_evidence": "Iđm (A) Icu (kA) Mã 2P 3P 4P",
+      "extracted_material_code": "MÃ",
+      "root_cause": "Các dòng tiêu đề phụ và ghi chú của bảng NM1 (nằm ở nửa dưới trang 3) lọt vào vùng quét Y [140.0, 700.0] nên bị bóc tách nhầm thành sản phẩm.",
+      "confidence": "HIGH",
+      "should_modify_parser_or_config": true,
+      "action_taken": "Bổ sung các từ khóa tiếng Việt đặc trưng của tiêu đề bảng ('tiêu chuẩn:', 'định mức:', 'số pha:', 'đơn giá', 'iđm (a)') vào bộ lọc rác đầu vào của parser."
+    },
+    {
+      "supplier_code": "CHINT",
+      "page": 5,
+      "status": "PARTIAL",
+      "valid_count": 7,
+      "invalid_count": 0,
+      "invalid_ratio": 0.0,
+      "error_sample_evidence": "Không có dòng lỗi (0 invalid)",
+      "extracted_material_code": "N/A",
+      "root_cause": "Số lượng sản phẩm rơ le nhiệt thực tế trên trang chỉ có 7 dòng hợp lệ, không đủ ngưỡng tối thiểu >= 10 dòng để đạt trạng thái PASS.",
+      "confidence": "HIGH",
+      "should_modify_parser_or_config": false,
+      "justification_for_keeping_known_limitation": "Không có dòng hợp lệ nào bị bỏ sót hay skip oan. Không được hạ ngưỡng threshold (10 dòng) để làm đẹp báo cáo. Giữ known limitation là hoàn toàn hợp lệ."
+    }
+  ]
+}

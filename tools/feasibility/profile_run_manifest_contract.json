@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileRunManifest",
+  "type": "OBJECT",
+  "properties": {
+    "manifest_version": {
+      "type": "STRING",
+      "description": "Phiên bản của manifest"
+    },
+    "generated_at": {
+      "type": "STRING",
+      "description": "Thời gian sinh manifest (ISO 8601)"
+    },
+    "phase": {
+      "type": "STRING",
+      "description": "Giai đoạn dự án hiện tại"
+    },
+    "benchmark_status": {
+      "type": "STRING",
+      "enum": ["PASS", "FAIL"],
+      "description": "Trạng thái tổng thể của benchmark acceptance"
+    },
+    "suppliers": {
+      "type": "ARRAY",
+      "items": {
+        "type": "OBJECT",
+        "properties": {
+          "supplier_code": {
+            "type": "STRING",
+            "description": "Mã nhà cung cấp (ví dụ: ABB, LS, CHINT)"
+          },
+          "profile_status": {
+            "type": "STRING",
+            "enum": ["PASS", "ACCEPTED_WITH_KNOWN_LIMITATIONS", "FAIL"],
+            "description": "Trạng thái của profile nhà cung cấp"
+          },
+          "valid_items_count": {
+            "type": "INTEGER",
+            "minimum": 0,
+            "description": "Số lượng vật tư hợp lệ trích xuất được"
+          },
+          "invalid_items_count": {
+            "type": "INTEGER",
+            "minimum": 0,
+            "description": "Số lượng vật tư không hợp lệ bị validator loại bỏ"
+          },
+          "pass_pages": {
+            "type": "INTEGER",
+            "minimum": 0,
+            "description": "Số lượng trang đạt trạng thái PASS"
+          },
+          "partial_pages": {
+            "type": "INTEGER",
+            "minimum": 0,
+            "description": "Số lượng trang ở trạng thái PARTIAL"
+          },
+          "total_pages": {
+            "type": "INTEGER",
+            "minimum": 0,
+            "description": "Tổng số trang benchmark được chạy"
+          },
+          "known_limitations": {
+            "type": "ARRAY",
+            "items": {
+              "type": "STRING"
+            },
+            "description": "Các giới hạn kỹ thuật đã biết và được chấp nhận đối với nhà cung cấp"
+          },
+          "output_files": {
+            "type": "OBJECT",
+            "properties": {
+              "valid_items_json": { "type": "STRING" },
+              "invalid_items_json": { "type": "STRING" },
+              "page_summary_json": { "type": "STRING" },
+              "items_xlsx": { "type": "STRING" }
+            },
+            "required": ["valid_items_json", "invalid_items_json", "page_summary_json", "items_xlsx"]
+          },
+          "source_profile_config": {
+            "type": "STRING",
+            "description": "Đường dẫn tới tệp cấu hình JSON gốc"
+          },
+          "acceptance_file": {
+            "type": "STRING",
+            "description": "Đường dẫn tới tệp kết quả acceptance json của nhà cung cấp"
+          },
+          "hardening_notes": {
+            "type": "STRING",
+            "description": "Ghi chú tinh chỉnh chất lượng trong Milestone G"
+          }
+        },
+        "required": [
+          "supplier_code",
+          "profile_status",
+          "valid_items_count",
+          "invalid_items_count",
+          "pass_pages",
+          "partial_pages",
+          "total_pages",
+          "known_limitations",
+          "output_files",
+          "source_profile_config",
+          "acceptance_file"
+        ]
+      }
+    },
+    "integration_readiness": {
+      "type": "OBJECT",
+      "properties": {
+        "ready_for_main_pipeline": {
+          "type": "BOOLEAN",
+          "description": "Trạng thái sẵn sàng tích hợp trực tiếp vào main pipeline của dự án"
+        },
+        "reason": {
+          "type": "STRING",
+          "description": "Lý do kỹ thuật cho trạng thái trên"
+        },
+        "required_next_phase": {
+          "type": "STRING",
+          "description": "Các công việc bắt buộc phải triển khai ở phase tiếp theo"
+        }
+      },
+      "required": ["ready_for_main_pipeline", "reason", "required_next_phase"]
+    },
+    "non_goals": {
+      "type": "ARRAY",
+      "items": {
+        "type": "STRING"
+      },
+      "description": "Các ranh giới loại trừ kỹ thuật, các mục tiêu phi sản phẩm ở phase hiện tại"
+    }
+  },
+  "required": ["manifest_version", "generated_at", "phase", "benchmark_status", "suppliers", "integration_readiness", "non_goals"]
+}

@@ -1,0 +1,83 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-07-09T15:06:03.261845Z",
+  "phase": "Feasibility Reset",
+  "benchmark_status": "PASS",
+  "suppliers": [
+    {
+      "supplier_code": "ABB",
+      "profile_status": "PASS",
+      "valid_items_count": 743,
+      "invalid_items_count": 2,
+      "pass_pages": 13,
+      "partial_pages": 0,
+      "total_pages": 13,
+      "known_limitations": [],
+      "output_files": {
+        "valid_items_json": "feasibility_outputs/abb_profile_config_run/profile_items_valid.json",
+        "invalid_items_json": "feasibility_outputs/abb_profile_config_run/profile_items_invalid.json",
+        "page_summary_json": "feasibility_outputs/abb_profile_config_run/profile_page_summary.json",
+        "items_xlsx": "feasibility_outputs/abb_profile_config_run/profile_items.xlsx"
+      },
+      "source_profile_config": "tools/feasibility/profile_configs/abb_profile_v1.json",
+      "acceptance_file": "feasibility_outputs/benchmark_acceptance/abb_acceptance.json",
+      "hardening_notes": "N/A - Bóc tách chính xác 100% các dòng dữ liệu thiết bị."
+    },
+    {
+      "supplier_code": "LS",
+      "profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "valid_items_count": 284,
+      "invalid_items_count": 16,
+      "pass_pages": 3,
+      "partial_pages": 2,
+      "total_pages": 5,
+      "known_limitations": [
+        "Trang 2, 5 vẫn ở trạng thái PARTIAL và cần tiếp tục tinh chỉnh trong tương lai.",
+        "Các dòng phụ kiện (accessories) bị chồng lấn tọa độ với layout MCCB chính trên cùng layout split_half_left_right, chưa harden để tránh regression cho thiết bị chính."
+      ],
+      "output_files": {
+        "valid_items_json": "feasibility_outputs/ls_profile_config_run/profile_items_valid.json",
+        "invalid_items_json": "feasibility_outputs/ls_profile_config_run/profile_items_invalid.json",
+        "page_summary_json": "feasibility_outputs/ls_profile_config_run/profile_page_summary.json",
+        "items_xlsx": "feasibility_outputs/ls_profile_config_run/profile_items.xlsx"
+      },
+      "source_profile_config": "tools/feasibility/profile_configs/ls_profile_v1.json",
+      "acceptance_file": "feasibility_outputs/benchmark_acceptance/ls_acceptance.json",
+      "hardening_notes": "Giữ nguyên known limitation cho phụ kiện MCCB (Trang 2) và phụ kiện ACB (Trang 5) để tránh regression cho thiết bị chính."
+    },
+    {
+      "supplier_code": "CHINT",
+      "profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "valid_items_count": 45,
+      "invalid_items_count": 0,
+      "pass_pages": 2,
+      "partial_pages": 1,
+      "total_pages": 3,
+      "known_limitations": [
+        "Trang 5 vẫn ở trạng thái PARTIAL và cần tiếp tục tinh chỉnh trong tương lai.",
+        "Trang 5 rơ le nhiệt chỉ có 7 dòng thiết bị hợp lệ thực tế, thấp hơn ngưỡng PASS tối thiểu (10 dòng); không hạ tiêu chí threshold để làm đẹp báo cáo."
+      ],
+      "output_files": {
+        "valid_items_json": "feasibility_outputs/chint_profile_config_run/profile_items_valid.json",
+        "invalid_items_json": "feasibility_outputs/chint_profile_config_run/profile_items_invalid.json",
+        "page_summary_json": "feasibility_outputs/chint_profile_config_run/profile_page_summary.json",
+        "items_xlsx": "feasibility_outputs/chint_profile_config_run/profile_items.xlsx"
+      },
+      "source_profile_config": "tools/feasibility/profile_configs/chint_profile_v1.json",
+      "acceptance_file": "feasibility_outputs/benchmark_acceptance/chint_acceptance.json",
+      "hardening_notes": "Bổ sung bộ lọc tiêu đề rác tiếng Việt ('tiêu chuẩn:', 'định mức:', 'số pha:', 'đơn giá', 'iđm (a)', 'icu:') giúp nâng chất lượng Trang 3 từ PARTIAL lên PASS (0% lỗi)."
+    }
+  ],
+  "integration_readiness": {
+    "ready_for_main_pipeline": false,
+    "reason": "Vẫn còn các giới hạn đã biết (known limitations) về các trang PARTIAL (LS Trang 2 & 5, CHINT Trang 5) và chưa xây dựng/kiểm thử mô-đun cầu nối tích hợp (Integration Bridge).",
+    "required_next_phase": "Thiết kế mô-đun cầu nối tích hợp (Integration Bridge) để chuyển đổi dữ liệu từ Coordinate Column Profiler sang pipeline chuẩn hóa chính, đồng thời tiếp tục tinh chỉnh layout nếu cần."
+  },
+  "non_goals": [
+    "Không sửa đổi Streamlit UI trong phase hiện tại",
+    "Không tích hợp trực tiếp vào main pipeline hiện tại khi chưa được kiểm thử",
+    "Không bổ sung thêm nhà cung cấp mới",
+    "Không sử dụng OCR, AI/LLM hay parse Excel",
+    "Không tuyên bố hệ thống đã sẵn sàng vận hành thực tế (Not Ready for Production)"
+  ]
+}
