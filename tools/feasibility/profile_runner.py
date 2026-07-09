@@ -351,7 +351,10 @@ def parse_page_from_config(
         desc_line = evidence_text.lower()
         
         # Lọc bỏ tiêu đề trang rác
-        if "bảng dự toán" in desc_line or "ghi chú:" in desc_line or "sản phẩm khả năng" in desc_line:
+        if any(kw in desc_line for kw in [
+            "bảng dự toán", "ghi chú:", "sản phẩm khả năng", 
+            "tiêu chuẩn:", "định mức:", "số pha:", "đơn giá", "iđm (a)", "icu:"
+        ]):
             continue
             
         # --- 1. double_column_3p_4p (ABB) ---

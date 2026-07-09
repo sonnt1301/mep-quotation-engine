@@ -80,9 +80,9 @@
     "supplier_code": "CHINT",
     "status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
     "valid_items": 45,
-    "invalid_items": 6,
-    "pass_pages": 1,
-    "partial_pages": 2,
+    "invalid_items": 0,
+    "pass_pages": 2,
+    "partial_pages": 1,
     "total_pages": 3,
     "checks": [
       {
@@ -93,7 +93,7 @@
       {
         "check_name": "chint_invalid_items_count",
         "status": "PASS",
-        "details": "Invalid items: 6 (criteria <=15)"
+        "details": "Invalid items: 0 (criteria <=15)"
       },
       {
         "check_name": "chint_total_pages_count",
@@ -103,12 +103,12 @@
       {
         "check_name": "chint_pass_pages_count",
         "status": "PASS",
-        "details": "PASS pages: 1 (criteria >=1)"
+        "details": "PASS pages: 2 (criteria >=1)"
       },
       {
         "check_name": "chint_partial_pages_count",
         "status": "PASS",
-        "details": "PARTIAL pages: 2 (criteria <=2)"
+        "details": "PARTIAL pages: 1 (criteria <=2)"
       },
       {
         "check_name": "output_contract_compliance",

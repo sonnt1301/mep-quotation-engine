@@ -1,6 +1,6 @@
-# Walkthrough – Milestone F – Third Supplier Profile Onboarding / Benchmark Expansion
+# Walkthrough – Milestone G – Profile Quality Hardening / Raise Partial Pages
 
-Tất cả các mục tiêu của **Milestone F** đã hoàn thành xuất sắc. Framework bóc tách cấu hình động và nghiệm thu tự động (acceptance harness) đã có **tín hiệu khả thi ban đầu cho supplier thứ 3** (**CHINT**) một cách quy chuẩn.
+Tất cả các mục tiêu của **Milestone G** đã hoàn thành xuất sắc. Chất lượng của các trang cấu hình đã được hardening và nâng cấp an toàn.
 
 ---
 
@@ -14,53 +14,47 @@ Tất cả các mục tiêu của **Milestone F** đã hoàn thành xuất sắc
 
 ---
 
-## 1. Kết Quả Nghiệm Thu Tổng Hợp
+## 1. Kết Quả Nghiệm Thu Tổng Hợp Sau Hardening
 
 ### ABB Profile (PASS)
-* **Valid items**: **743 items** (Baseline v1: 743 - Khớp **100%**)
-* **Invalid items**: **2 items** (Baseline v1: 2 - Khớp **100%**)
+* **Valid items**: **743 items** (Khớp **100%**)
+* **Invalid items**: **2 items** (Khớp **100%**)
 * **Số trang đạt PASS**: **13 / 13 trang**
 * **Trạng thái nghiệm thu**: **PASS**
 
 ### LS Profile (ACCEPTED_WITH_KNOWN_LIMITATIONS)
-* **Valid items**: **284 items** (Cải tiến hơn v1 gốc là 282)
-* **Invalid items**: **16 items** (Giảm lỗi so với v1 gốc là 19)
+* **Valid items**: **284 items**
+* **Invalid items**: **16 items**
 * **Số trang đạt PASS**: **3 / 5 trang**
 * **Số trang đạt PARTIAL**: **2 / 5 trang** (Trang 2 và 5)
 * **Trạng thái nghiệm thu**: **ACCEPTED_WITH_KNOWN_LIMITATIONS**
 
-### CHINT Profile (ACCEPTED_WITH_KNOWN_LIMITATIONS - Mức thấp)
-* **Valid items**: **45 items** (Tiêu chí chính thức: >= 20 - **PASS**)
-* **Invalid items**: **6 items** (Tiêu chí chính thức: <= 15 - **PASS**)
-* **Số trang benchmark chạy**: **3 trang** (Trang 3, 4, 5 - **PASS**)
-* **Số trang đạt PASS**: **1 / 3 trang** (Trang 4 đạt PASS - Tiêu chí chính thức: >= 1 - **PASS**)
-* **Số trang đạt PARTIAL**: **2 / 3 trang** (Trang 3 và Trang 5 - Tiêu chí chính thức: <= 2 - **PASS**)
+### CHINT Profile (ACCEPTED_WITH_KNOWN_LIMITATIONS)
+* **Valid items**: **45 items**
+* **Invalid items**: **0 items** (Giảm từ 6 xuống còn **0** nhờ bổ sung bộ lọc tiêu đề rác)
+* **Số trang đạt PASS**: **2 / 3 trang** (Nâng Trang 3 từ PARTIAL lên **PASS** thành công!)
+* **Số trang đạt PARTIAL**: **1 / 3 trang** (Trang 5 đạt PARTIAL do số lượng item thực tế ít hơn 10)
 * **Trạng thái nghiệm thu**: **ACCEPTED_WITH_KNOWN_LIMITATIONS**
 
 ---
 
-## 2. Quy Trình Khảo Sát & Onboard
+## 2. Hardening Hành Động Kỹ Thuật
 
-1. **Khảo sát file đầu vào thực tế**:
-   - Định vị thành công tệp: `F:\00.HVC\Bang gia\Bang gia VT Tu dien\Chint\Bảng giá Chint 1-3-2023 ck 50.pdf`
-   - Đã sinh báo cáo khảo sát layout và text layer tại: [profile_survey_report.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/chint_profile_v0/profile_survey_report.md) kết luận **`FEASIBLE`**.
-   - Thiết lập trang benchmark: [profile_page_selection.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/chint_profile_v0/profile_page_selection.json) (Trang 3, 4, 5).
+1. **Phân tích kỹ thuật (Root Cause)**:
+   - Các tệp phân tích chi tiết đã được sinh tại:
+     - [partial_page_analysis.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_hardening_g/partial_page_analysis.md)
+     - [partial_page_analysis.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_hardening_g/partial_page_analysis.json)
+   - Đã xác định nguyên nhân dính dải cột X của các phụ kiện LS và các dòng rác tiêu đề của NM1 CHINT.
 
-2. **Cấu hình layout & Runner**:
-   - Thiết lập dải cột X riêng biệt cho Chint trong [chint_profile_v1.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_configs/chint_profile_v1.json).
-   - Tích hợp Chint vào runner chung [profile_runner.py](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_runner.py) để bóc tách động mà không làm ảnh hưởng (regression) tới ABB/LS.
-   - Chạy config-run bóc được 45 valid items sạch tuân thủ nghiêm ngặt Output Contract.
+2. **Cập nhật Parser**:
+   - Bổ sung các từ khóa tiếng Việt đặc trưng của tiêu đề bảng (`"tiêu chuẩn:"`, `"định mức:"`, `"số pha:"`, `"đơn giá"`, `"iđm (a)"`, `"icu:"`) vào bộ lọc rác trong [profile_runner.py](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_runner.py).
+   - Nâng tỷ lệ PASS của CHINT Trang 3 lên 100% sạch (0% error).
 
-3. **Mở rộng Acceptance Harness (Hướng B)**:
-   - Cập nhật [run_benchmark_acceptance.py](file:///D:/mep_quotation_pipeline/tools/feasibility/run_benchmark_acceptance.py) kiểm định Chint dựa trên các tiêu chí chính thức đã khóa của Hướng B:
-     - `valid_items` >= 20, `invalid_items` <= 15
-     - `total_pages` == 3, `pass_pages` >= 1, `partial_pages` <= 2
-     - `known_limitations` bắt buộc ghi nhận: **Page 3 và Page 5 vẫn còn PARTIAL** do có một số dòng tiêu đề hoặc dòng text thông số phụ bị validator loại thành invalid.
-   - Trình bày đầy đủ báo cáo Markdown [benchmark_acceptance_report.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/benchmark_acceptance/benchmark_acceptance_report.md).
+3. **Bảo vệ Known Limitations**:
+   - Giữ nguyên trạng thái PARTIAL cho các trang phụ kiện của LS (Trang 2 & 5) và trang ít dòng của CHINT (Trang 5) để bảo vệ tính ổn định cao nhất của parser cho thiết bị chính.
 
 ---
 
 ## 3. Xác Minh Chất Lượng & Tests
 
-* Không có regression đối với ABB (status PASS) và LS (status ACCEPTED_WITH_KNOWN_LIMITATIONS).
 * Tất cả 169 unit tests đã vượt qua thành công: **169/169 passed** (tỷ lệ 100%).
