@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone G
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone H
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -69,6 +69,15 @@
 - `[x]` Chạy lại benchmark acceptance và unit tests pytest (169/169 passed)
 - `[x]` Đồng bộ các tệp tài liệu báo cáo nghiệm thu tại project root
 
+## Milestone H – Profile Run Manifest / Integration-Ready Packaging (Đã hoàn thành)
+- `[x]` Định nghĩa contract manifest máy đọc: `tools/feasibility/profile_run_manifest_contract.json`
+- `[x]` Phát triển script xuất manifest: `tools/feasibility/export_profile_run_manifest.py`
+- `[x]` Đóng gói đầu ra Feasibility thành manifest JSON và Markdown tại `feasibility_outputs/profile_run_manifest/`
+- `[x]` Đặt ready_for_main_pipeline = False trong manifest để chuẩn bị tích hợp an toàn
+- `[x]` Xây dựng unit test bảo vệ manifest: `tests/test_profile_run_manifest.py` và loại trừ các cụm từ overclaim
+- `[x]` Chạy kiểm chứng thành công và Passed 170/170 tests
+- `[x]` Đồng bộ toàn bộ tài liệu root tại project root
+
 ---
 > [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
@@ -76,4 +85,4 @@
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
 > * **Không OCR, không AI/LLM, không parse Excel.**
 > * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
-> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).
+> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).

@@ -1,6 +1,6 @@
-# Walkthrough – Milestone G – Profile Quality Hardening / Raise Partial Pages
+# Walkthrough – Milestone H – Profile Run Manifest / Integration-Ready Packaging
 
-Tất cả các mục tiêu của **Milestone G** đã hoàn thành xuất sắc. Chất lượng của các trang cấu hình đã được hardening và nâng cấp an toàn.
+Tất cả các mục tiêu của **Milestone H** đã hoàn thành xuất sắc. Kết quả nghiệm thu khả thi bóc tách thiết bị M&E đã được đóng gói chuẩn hóa, sẵn sàng cho phase tích hợp trong tương lai.
 
 ---
 
@@ -10,11 +10,11 @@ Tất cả các mục tiêu của **Milestone G** đã hoàn thành xuất sắc
 > * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
 > * **Không OCR, không AI/LLM, không parse Excel.**
 > * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
-> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Production-Ready).
+> * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Kết Quả Nghiệm Thu Tổng Hợp Sau Hardening
+## 1. Kết Quả Nghiệm Thu Tổng Hợp Sau Hardening & Đóng Gói
 
 ### ABB Profile (PASS)
 * **Valid items**: **743 items** (Khớp **100%**)
@@ -38,23 +38,20 @@ Tất cả các mục tiêu của **Milestone G** đã hoàn thành xuất sắc
 
 ---
 
-## 2. Hardening Hành Động Kỹ Thuật
+## 2. Hardening & Packaging Hành Động Kỹ Thuật
 
-1. **Phân tích kỹ thuật (Root Cause)**:
-   - Các tệp phân tích chi tiết đã được sinh tại:
-     - [partial_page_analysis.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_hardening_g/partial_page_analysis.md)
-     - [partial_page_analysis.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_hardening_g/partial_page_analysis.json)
-   - Đã xác định nguyên nhân dính dải cột X của các phụ kiện LS và các dòng rác tiêu đề của NM1 CHINT.
+1. **Manifest Đóng Gói Máy Đọc và Người Đọc**:
+   - Manifest JSON: [profile_run_manifest.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.json)
+   - Manifest Markdown: [profile_run_manifest.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.md)
+   - JSON Schema Contract: [profile_run_manifest_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_run_manifest_contract.json)
 
-2. **Cập nhật Parser**:
-   - Bổ sung các từ khóa tiếng Việt đặc trưng của tiêu đề bảng (`"tiêu chuẩn:"`, `"định mức:"`, `"số pha:"`, `"đơn giá"`, `"iđm (a)"`, `"icu:"`) vào bộ lọc rác trong [profile_runner.py](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_runner.py).
-   - Nâng tỷ lệ PASS của CHINT Trang 3 lên 100% sạch (0% error).
-
-3. **Bảo vệ Known Limitations**:
-   - Giữ nguyên trạng thái PARTIAL cho các trang phụ kiện của LS (Trang 2 & 5) và trang ít dòng của CHINT (Trang 5) để bảo vệ tính ổn định cao nhất của parser cho thiết bị chính.
+2. **Integration Readiness (Độ Sẵn Sàng Tích Hợp)**:
+   - `ready_for_main_pipeline`: **`FALSE`**
+   - **Lý do**: Vẫn còn các giới hạn đã biết (known limitations) về các trang PARTIAL (LS Trang 2 & 5, CHINT Trang 5) và chưa xây dựng/kiểm thử mô-đun cầu nối tích hợp (Integration Bridge).
+   - **Phase yêu cầu tiếp theo**: Thiết kế mô-đun cầu nối tích hợp (Integration Bridge) để chuyển đổi dữ liệu từ Coordinate Column Profiler sang pipeline chuẩn hóa chính, đồng thời tiếp tục tinh chỉnh layout nếu cần.
 
 ---
 
 ## 3. Xác Minh Chất Lượng & Tests
 
-* Tất cả 169 unit tests đã vượt qua thành công: **169/169 passed** (tỷ lệ 100%).
+* Tất cả 170 unit tests đã vượt qua thành công: **170/170 passed** (tỷ lệ 100%).
