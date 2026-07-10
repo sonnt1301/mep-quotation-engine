@@ -1,0 +1,23 @@
+[
+  {
+    "supplier_code": "CHINT",
+    "source_page": 3,
+    "layout_name": "chint_mccb_nxm_nm1",
+    "product_family": "MCCB Chint",
+    "type": "sốPTsơcấp:500kV",
+    "pole": "3P",
+    "rated_current": "",
+    "breaking_capacity": "-Càiđặthệ",
+    "material_code": "sốPTsơcấp:500kV",
+    "description": "MCCB Chint sốPTsơcấp:500kV 3P  -Càiđặthệ",
+    "unit": "cái",
+    "unit_price": 3427000,
+    "currency": "VND",
+    "confidence": 0.9,
+    "extraction_method": "coordinate_column_profiler",
+    "evidence_text": "-Cài đặt hệ số PT sơ cấp: 500kV , thứ cấp 3,427,000 Việt Nam",
+    "validation_status": "valid",
+    "errors": [],
+    "warnings": []
+  }
+]

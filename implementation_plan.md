@@ -1,60 +1,78 @@
-# Kế Hoạch Triển Khai – Milestone H – Profile Run Manifest / Integration-Ready Packaging
+# Kế Hoạch Triển Khai – Phase 2A.5 – PDF Page Preview for Human Review
 
-Kế hoạch này onboard nhà cung cấp thứ 3 (**CHINT**) theo mô hình **Khảo sát trước - Quyết định sau (Survey-First Workflow)**, thực hiện tinh chỉnh chất lượng ở Milestone G, và đóng gói kết quả nghiệm thu (Packaging) ở Milestone H.
+Kế hoạch này triển khai giao diện PDF Page Preview trực quan kèm tính năng Zoom co giãn để hỗ trợ reviewer đối chiếu trực tiếp bản vẽ gốc khi thực hiện duyệt vật tư.
 
 ---
 
 > [warning]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
-> * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
-> * **Không OCR, không AI/LLM, không parse Excel.**
-> * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
-> * **Không sửa đổi ABB/LS parser nếu không phát hiện bug thật.**
+> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **PDF Page Preview for Human Review**.
+> * **Không ghi dữ liệu vào main pipeline chính và không sửa đổi giao diện Streamlit UI cũ.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Quy Trình Khảo Sát & criteria Nghiệm Thu Chính Thức
+## 1. Thiết Kế PDF Page Preview & Cache Render
 
-### A. Nhà cung cấp mục tiêu
-* **Tên nhà cung cấp**: CHINT
-* **File đầu vào thực tế**: [Bảng giá Chint 1-3-2023 ck 50.pdf](file:///F:/00.HVC/Bang gia/Bang gia VT Tu dien/Chint/Bảng giá Chint 1-3-2023 ck 50.pdf)
-
-### B. Tiêu chí Acceptance chính thức sau thực tế (Hướng B)
-* **valid_items** >= 20
-* **invalid_items** <= 15
-* **Tổng số trang benchmark chạy** = 3 trang (Trang 3, 4, 5)
-* **pass_pages** >= 1 (Trang 4 đạt PASS)
-* **partial_pages** <= 2 (Trang 3 và 5 đạt PARTIAL)
-* **Known Limitations bắt buộc**: Phải ghi rõ Page 3 và Page 5 còn PARTIAL và cần tinh chỉnh profile trong tương lai.
-* **Trạng thái nghiệm thu mong đợi**: `ACCEPTED_WITH_KNOWN_LIMITATIONS` mức thấp.
+### A. Giao diện & Helper
+* **UI App**: [profile_bridge_review_app.py](file:///D:/mep_quotation_pipeline/tools/profile_bridge_review_app.py) (Bổ sung hiển thị ảnh chụp PDF ở cột trái, slider Zoom từ 1.0 đến 3.0).
+* **Helper**: [profile_bridge_review_helpers.py](file:///D:/mep_quotation_pipeline/tools/profile_bridge_review_helpers.py) (Bổ sung `render_pdf_page_to_image` có lru_cache, `resolve_session_pdf_path`, `validate_pdf_page_number`).
+* **Fallback an toàn**: Nếu tệp PDF không tồn tại (chế độ benchmark mặc định không cấu hình hoặc máy chấm không có file), ứng dụng tự động hiển thị warning và fallback về Source Evidence Text, tuyệt đối không crash.
 
 ---
 
-## 2. Kế Hoạch Đóng Gói Nghiệm Thu – Milestone H
+## 2. Kịch Bản Thực Hiện & Xác Minh
 
-### A. Mục tiêu
-* Đóng gói toàn bộ kết quả bóc tách và nghiệm thu Feasibility thành cấu trúc máy đọc (JSON) và người đọc (Markdown) chuẩn hóa.
-* Thiết lập cầu nối (Integration Readiness) ghi nhận trạng thái và định hình các bước triển khai của phase Integration Bridge sau này.
-
-### B. Thành phần manifest
-* **JSON Schema Contract**: [profile_run_manifest_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_run_manifest_contract.json)
-* **Script xuất Manifest**: [export_profile_run_manifest.py](file:///D:/mep_quotation_pipeline/tools/feasibility/export_profile_run_manifest.py)
-* **Tệp đầu ra đóng gói**:
-  - [profile_run_manifest.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.json)
-  - [profile_run_manifest.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.md)
+1. Khởi chạy Streamlit ứng dụng review:
+   ```powershell
+   $env:PYTHONUTF8=1; python -m streamlit run tools/profile_bridge_review_app.py --browser.gatherUsageStats false
+   ```
+2. Chọn dòng vật tư bất kỳ, xác nhận ảnh chụp trang tương ứng xuất hiện sắc nét.
+3. Chạy unit tests kiểm định:
+  ```powershell
+  & .venv\Scripts\pytest tests/test_profile_bridge_pdf_preview.py -q
+  ```
 
 ---
 
-## 3. Kịch Bản Thực Hiện & Xác Minh
+# Ke hoach trien khai - Phase 2B - Controlled Write Adapter Dry-run
 
-1. Thực thi chạy bóc tách và nghiệm thu cho cả 3 hãng.
-2. Thực thi script đóng gói manifest:
-   ```powershell
-   python tools/feasibility/export_profile_run_manifest.py
-   ```
-3. Chạy unit tests kiểm thử bảo vệ manifest:
-   ```powershell
-   python -m pytest -q
-   ```
+Phase 2B bat dau lop chuyen tiep tu du lieu Profile Bridge da duoc human review sang dang normalized preview. Pham vi hien tai chi la dry-run an toan, khong ghi vao main pipeline, khong database, khong sua package normalized chinh thuc.
+
+## Muc tieu
+
+1. Doc `profile_bridge_items.json` va `profile_bridge_review_decisions.json`.
+2. Chi cho phep cac dong co decision hop le di tiep:
+   - `APPROVE`
+   - `EDIT_AND_APPROVE`
+   - `ACCEPT_WITH_LIMITATION`
+3. Chan cac dong:
+   - `REJECT`
+   - `NEEDS_INVESTIGATION`
+   - chua co human decision
+4. Sinh output reviewable tai `feasibility_outputs/profile_write_adapter_dry_run/`.
+5. Giu `ready_for_write_to_main_pipeline = false`.
+
+## Artifact
+
+- `tools/feasibility/profile_write_adapter_contract.json`
+- `tools/feasibility/run_profile_write_adapter_dry_run.py`
+- `tests/test_profile_write_adapter_dry_run.py`
+- `feasibility_outputs/profile_write_adapter_dry_run/normalized_items_preview.json`
+- `feasibility_outputs/profile_write_adapter_dry_run/blocked_items.json`
+- `feasibility_outputs/profile_write_adapter_dry_run/profile_write_adapter_summary.json`
+- `feasibility_outputs/profile_write_adapter_dry_run/profile_write_adapter_report.md`
+
+## Lenh chay
+
+```powershell
+python tools/feasibility/run_profile_write_adapter_dry_run.py
+```
+
+## Nguyen tac an toan
+
+- Khong write main pipeline.
+- Khong ghi database.
+- Khong su dung moi `supplier_code + material_code` lam write key.
+- Khong export dong `NEEDS_INVESTIGATION`.
+- Khong export dong chua duoc human review.

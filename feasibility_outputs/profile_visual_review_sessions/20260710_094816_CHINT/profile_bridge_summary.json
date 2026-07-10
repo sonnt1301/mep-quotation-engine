@@ -1,0 +1,14 @@
+{
+  "bridge_version": "1.0.0",
+  "generated_at": "2026-07-10T09:48:16.712486Z",
+  "mode": "dry_run",
+  "source_pdf": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_visual_review_sessions\\20260710_094816_CHINT\\Bảng giá Chint 1-3-2023 ck 50.pdf",
+  "bridge_status": "PASS",
+  "total_bridged_items": 45,
+  "duplicate_code_group_count": 1,
+  "duplicate_code_with_different_price_count": 1,
+  "integration_readiness": {
+    "ready_for_write_to_main_pipeline": false,
+    "reason": "Đây mới là phase Integration Bridge Dry-run (Chạy cầu nối khô). Toàn bộ dữ liệu chưa được phép ghi đè hay đẩy trực tiếp vào cơ sở dữ liệu hoặc main pipeline chính của dự án."
+  }
+}

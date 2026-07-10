@@ -111,9 +111,8 @@ def test_chint_benchmark_integrity():
         assert chint["partial_pages"] <= 2
         assert chint["total_pages"] == 3
         
-        # Bắt buộc phải ghi nhận limitations của Page 3 và Page 5
+        # Bắt buộc phải ghi nhận limitations của Page 5
         limits_text = " ".join(chint["known_limitations"])
-        assert "Page 3" in limits_text
         assert "Page 5" in limits_text
         
         # Kiểm tra contract compliance check

@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Milestone H
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2A.5
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -78,11 +78,77 @@
 - `[x]` Chạy kiểm chứng thành công và Passed 170/170 tests
 - `[x]` Đồng bộ toàn bộ tài liệu root tại project root
 
+## Phase 2A – Integration Bridge Dry-run (Đã hoàn thành)
+- `[x]` Thực hiện **Human Test Fix**: Sửa schema types viết thường trong `profile_run_manifest_contract.json` và cập nhật stale text về CHINT Trang 3 PARTIAL trong `run_benchmark_acceptance.py` và `test_benchmark_acceptance.py`.
+- `[x]` Tạo contract bridge trung gian: [profile_bridge_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_bridge_contract.json)
+- `[x]` Phát triển script dry-run bridge: [run_profile_bridge_dry_run.py](file:///D:/mep_quotation_pipeline/tools/feasibility/run_profile_bridge_dry_run.py)
+- `[x]` Xuất kết quả bóc tách dry-run sang `feasibility_outputs/profile_bridge_dry_run/` (items.json, summary.json, report.md)
+- `[x]` Phát triển unit test bảo vệ: [test_profile_bridge_dry_run.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_dry_run.py)
+- `[x]` Chạy kiểm chứng thành công: 172/172 tests passed.
+- `[x]` Đồng bộ hóa toàn bộ tài liệu root tại project root.
+
+## Phase 2A.1 – Human Review Package (Đã hoàn thành)
+- `[x]` Tinh gọn summary JSON: Sửa `run_profile_bridge_dry_run.py` để loại bỏ danh sách full items khỏi summary và bổ sung thống kê trùng mã.
+- `[x]` Phát triển script xuất gói review: [export_profile_bridge_human_review.py](file:///D:/mep_quotation_pipeline/tools/feasibility/export_profile_bridge_human_review.py).
+- `[x]` Sinh tệp CSV mẫu review (73 dòng, có LS/CHINT/ABB giá trị lớn) tại `feasibility_outputs/profile_bridge_human_review/profile_bridge_review_sample.csv`.
+- `[x]` Sinh tệp CSV đánh giá trùng mã (75 nhóm, 69 nhóm rủi ro HIGH) tại `feasibility_outputs/profile_bridge_human_review/profile_bridge_duplicate_code_review.csv`.
+- `[x]` Thiết lập hướng dẫn và checklist tại `profile_bridge_human_review_checklist.md`.
+- `[x]` Viết tệp unit test bảo vệ gói human review: [test_profile_bridge_human_review.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_human_review.py).
+- `[x]` Chạy kiểm thử thành công: 173/173 tests passed.
+- `[x]` Đồng bộ hóa tài liệu tại project root.
+
+## Phase 2A.2 – Visual Human Review Workspace (Đã hoàn thành)
+- `[x]` Phát triển Streamlit UI mới riêng biệt: [profile_bridge_review_app.py](file:///D:/mep_quotation_pipeline/tools/profile_bridge_review_app.py).
+- `[x]` Phát triển helper logic cho review workspace: [profile_bridge_review_helpers.py](file:///D:/mep_quotation_pipeline/tools/profile_bridge_review_helpers.py).
+- `[x]` Tạo tệp hướng dẫn sử dụng trực quan: [profile_bridge_visual_review_guide.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_bridge_human_review/profile_bridge_visual_review_guide.md).
+- `[x]` Viết tệp unit test kiểm định: [test_profile_bridge_review_ui_helpers.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_review_ui_helpers.py).
+- `[x]` Sinh kết quả lưu trữ quyết định review ra tệp tin decisions JSON và CSV cục bộ.
+- `[x]` Chạy kiểm thử pytest toàn cục đảm bảoPassed: **174/174 passed**.
+- `[x]` Đồng bộ hóa toàn bộ tài liệu root tại project root.
+
+## Phase 2A.3 – PDF Intake & Processing Flow (Đã hoàn thành)
+- `[x]` Bổ sung giao diện "Thêm & Xử lý PDF mới" vào đầu ứng dụng review: chọn supplier, upload tệp PDF, nhập local path.
+- `[x]` Thêm các helper chức năng bóc tách PDF tùy chọn và nạp session độc lập tại `profile_bridge_review_helpers.py`.
+- `[x]` Thiết lập tệp unit test bảo vệ intake: [test_profile_bridge_pdf_intake.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_intake.py).
+- `[x]` Cập nhật tệp hướng dẫn review chi tiết quy trình chạy PDF và nạp session.
+- `[x]` Chạy pytest kiểm chứng toàn cục thành công: **185/185 passed**.
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2A.4 – Human Review UI Stabilization (Đã hoàn thành)
+- `[x]` Khai báo dependencies chính thức `pdfplumber` vào `pyproject.toml` và cài đặt ổn định trong `.venv`.
+- `[x]` Loại bỏ mojibake tiếng Việt và khai báo encoding UTF-8 ở đầu các file Python.
+- `[x]` Đồng bộ UX session: Tự động nhảy sang `All Bridged Items` khi xử lý session thành công, hiển thị banner session cụ thể.
+- `[x]` Xử lý Duplicate Review của session: Tính toán duplicate group động trực tiếp từ items của session bằng helper `build_duplicate_review_rows` và load chi tiết dòng con từ session items.
+- `[x]` Thêm unit test bảo vệ: [test_profile_bridge_ui_stabilization.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_ui_stabilization.py).
+- `[x]` Chạy pytest kiểm chứng toàn cục thành công: **190/190 passed**.
+- `[x]` Đồng bộ hóa các tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2A.5 – PDF Page Preview for Human Review (Đã hoàn thành)
+- `[x]` Phát triển tính năng PDF Page Preview trực quan ở cột trái bằng PyMuPDF (fitz) có lru_cache.
+- `[x]` Thêm các helper chức năng render PDF: `render_pdf_page_to_image`, `resolve_session_pdf_path`, và `validate_pdf_page_number`.
+- `[x]` Hỗ trợ thanh trượt Zoom scale thu phóng ảnh PDF preview mượt mà từ 1.0 đến 3.0.
+- `[x]` Cơ chế fallback an toàn tự động về văn bản Source Evidence Text thô nếu không tìm thấy tệp PDF hoặc lỗi render.
+- `[x]` Viết tệp unit test kiểm định: [test_profile_bridge_pdf_preview.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_preview.py).
+- `[x]` Chạy pytest toàn cục Passed: **195/195 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
 ---
 > [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
-> * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
+> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset) & Giao diện review trực quan (Visual Human Review)**.
+> * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI cũ.**
 > * **Không OCR, không AI/LLM, không parse Excel.**
 > * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
+## Phase 2B - Controlled Write Adapter Dry-run (Dang trien khai)
+- `[x]` Tao contract adapter: `tools/feasibility/profile_write_adapter_contract.json`.
+- `[x]` Tao script dry-run: `tools/feasibility/run_profile_write_adapter_dry_run.py`.
+- `[x]` Chi export cac decision `APPROVE`, `EDIT_AND_APPROVE`, `ACCEPT_WITH_LIMITATION`.
+- `[x]` Chan cac decision `REJECT`, `NEEDS_INVESTIGATION`, va item chua review.
+- `[x]` Tao write key an toan hon `supplier + code` bang cach them page, unit_price va chu ky description.
+- `[x]` Tao unit test bao ve: `tests/test_profile_write_adapter_dry_run.py`.
+- `[x]` Targeted pytest trong moi truong Codex sandbox: `5 passed`.
+- `[ ]` Chay full pytest trong moi truong dev co quyen ghi repo that.
+- `[ ]` Chay adapter tren decisions review that sau khi human review du lieu.
+
+> Safety: Phase 2B hien tai van la dry-run. `ready_for_write_to_main_pipeline = false`.

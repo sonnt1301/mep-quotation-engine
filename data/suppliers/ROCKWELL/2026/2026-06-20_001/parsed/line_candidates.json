@@ -1,0 +1,1730 @@
+{
+  "candidate_count": 66,
+  "candidates": [
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0001",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-PS120-240VAC",
+      "evidence": {
+        "end_offset": 299,
+        "source_path": "text/quotation.md",
+        "start_offset": 281,
+        "text": "2080-PS120-240VAC\n"
+      },
+      "line_number": 18,
+      "material_code_candidate": "PS120",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "2080-PS120-240VAC\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0002",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 24V DC Power Supply",
+      "evidence": {
+        "end_offset": 328,
+        "source_path": "text/quotation.md",
+        "start_offset": 299,
+        "text": "Micro800 24V DC Power Supply\n"
+      },
+      "line_number": 19,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 24V DC Power Supply\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0003",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Analog Input Plug-In",
+      "evidence": {
+        "end_offset": 384,
+        "source_path": "text/quotation.md",
+        "start_offset": 346,
+        "text": "Micro800 4 Point Analog Input Plug-In\n"
+      },
+      "line_number": 22,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Analog Input Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0004",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 2 Point Analog Input Plug-In",
+      "evidence": {
+        "end_offset": 442,
+        "source_path": "text/quotation.md",
+        "start_offset": 404,
+        "text": "Micro800 2 Point Analog Input Plug-In\n"
+      },
+      "line_number": 25,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 2 Point Analog Input Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0005",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 2 Point Analog Output Plug-In",
+      "evidence": {
+        "end_offset": 499,
+        "source_path": "text/quotation.md",
+        "start_offset": 460,
+        "text": "Micro800 2 Point Analog Output Plug-In\n"
+      },
+      "line_number": 28,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 2 Point Analog Output Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0006",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 Isolated Serial Port Plug-In",
+      "evidence": {
+        "end_offset": 562,
+        "source_path": "text/quotation.md",
+        "start_offset": 524,
+        "text": "Micro800 Isolated Serial Port Plug-In\n"
+      },
+      "line_number": 31,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 Isolated Serial Port Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0007",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 6 Point Trim Pot Plug-In",
+      "evidence": {
+        "end_offset": 619,
+        "source_path": "text/quotation.md",
+        "start_offset": 585,
+        "text": "Micro800 6 Point Trim Pot Plug-In\n"
+      },
+      "line_number": 34,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 6 Point Trim Pot Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0008",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 Memory Module With RTC Plug-In",
+      "evidence": {
+        "end_offset": 686,
+        "source_path": "text/quotation.md",
+        "start_offset": 646,
+        "text": "Micro800 Memory Module With RTC Plug-In\n"
+      },
+      "line_number": 37,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 Memory Module With RTC Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0009",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 2 Channel RTD Plug-In",
+      "evidence": {
+        "end_offset": 738,
+        "source_path": "text/quotation.md",
+        "start_offset": 707,
+        "text": "Micro800 2 Channel RTD Plug-In\n"
+      },
+      "line_number": 40,
+      "material_code_candidate": "Micro800",
+      "page_number": 1,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 2 Channel RTD Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0010",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 2 Channel TC Plug-In",
+      "evidence": {
+        "end_offset": 903,
+        "source_path": "text/quotation.md",
+        "start_offset": 873,
+        "text": "Micro800 2 Channel TC Plug-In\n"
+      },
+      "line_number": 54,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 2 Channel TC Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0011",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2085-IQ16",
+      "evidence": {
+        "end_offset": 924,
+        "source_path": "text/quotation.md",
+        "start_offset": 914,
+        "text": "2085-IQ16\n"
+      },
+      "line_number": 56,
+      "material_code_candidate": "IQ16",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "2085-IQ16\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0012",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 16 Point  Digital Input Module",
+      "evidence": {
+        "end_offset": 964,
+        "source_path": "text/quotation.md",
+        "start_offset": 924,
+        "text": "Micro800 16 Point  Digital Input Module\n"
+      },
+      "line_number": 57,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 16 Point  Digital Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0013",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 32 Point  Digital Input Module",
+      "evidence": {
+        "end_offset": 1026,
+        "source_path": "text/quotation.md",
+        "start_offset": 986,
+        "text": "Micro800 32 Point  Digital Input Module\n"
+      },
+      "line_number": 60,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 32 Point  Digital Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0014",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2085-OV16",
+      "evidence": {
+        "end_offset": 1047,
+        "source_path": "text/quotation.md",
+        "start_offset": 1037,
+        "text": "2085-OV16\n"
+      },
+      "line_number": 62,
+      "material_code_candidate": "OV16",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "2085-OV16\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0015",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 16 Point Sink Output Module",
+      "evidence": {
+        "end_offset": 1084,
+        "source_path": "text/quotation.md",
+        "start_offset": 1047,
+        "text": "Micro800 16 Point Sink Output Module\n"
+      },
+      "line_number": 63,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 16 Point Sink Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0016",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2085-OB16",
+      "evidence": {
+        "end_offset": 1105,
+        "source_path": "text/quotation.md",
+        "start_offset": 1095,
+        "text": "2085-OB16\n"
+      },
+      "line_number": 65,
+      "material_code_candidate": "OB16",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "2085-OB16\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0017",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 16 Point Source Output Module",
+      "evidence": {
+        "end_offset": 1144,
+        "source_path": "text/quotation.md",
+        "start_offset": 1105,
+        "text": "Micro800 16 Point Source Output Module\n"
+      },
+      "line_number": 66,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 16 Point Source Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0018",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point Relay Output Module",
+      "evidence": {
+        "end_offset": 1201,
+        "source_path": "text/quotation.md",
+        "start_offset": 1164,
+        "text": "Micro800 8 Point Relay Output Module\n"
+      },
+      "line_number": 69,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point Relay Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0019",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2085-OW16",
+      "evidence": {
+        "end_offset": 1222,
+        "source_path": "text/quotation.md",
+        "start_offset": 1212,
+        "text": "2085-OW16\n"
+      },
+      "line_number": 71,
+      "material_code_candidate": "OW16",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "2085-OW16\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0020",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 16 Point Relay Output Module",
+      "evidence": {
+        "end_offset": 1260,
+        "source_path": "text/quotation.md",
+        "start_offset": 1222,
+        "text": "Micro800 16 Point Relay Output Module\n"
+      },
+      "line_number": 72,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 16 Point Relay Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0021",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point 120 VAC Input Module",
+      "evidence": {
+        "end_offset": 1318,
+        "source_path": "text/quotation.md",
+        "start_offset": 1280,
+        "text": "Micro800 8 Point 120 VAC Input Module\n"
+      },
+      "line_number": 75,
+      "material_code_candidate": "Micro800",
+      "page_number": 2,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point 120 VAC Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0022",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point 240 VAC Input Module",
+      "evidence": {
+        "end_offset": 1523,
+        "source_path": "text/quotation.md",
+        "start_offset": 1485,
+        "text": "Micro800 8 Point 240 VAC Input Module\n"
+      },
+      "line_number": 90,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point 240 VAC Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0023",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point Triac Output Module",
+      "evidence": {
+        "end_offset": 1580,
+        "source_path": "text/quotation.md",
+        "start_offset": 1543,
+        "text": "Micro800 8 Point Triac Output Module\n"
+      },
+      "line_number": 93,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point Triac Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0024",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Analog Input Module",
+      "evidence": {
+        "end_offset": 1637,
+        "source_path": "text/quotation.md",
+        "start_offset": 1600,
+        "text": "Micro800 4 Point Analog Input Module\n"
+      },
+      "line_number": 96,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Analog Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0025",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point Analog Input Module",
+      "evidence": {
+        "end_offset": 1694,
+        "source_path": "text/quotation.md",
+        "start_offset": 1657,
+        "text": "Micro800 8 Point Analog Input Module\n"
+      },
+      "line_number": 99,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point Analog Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0026",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Analog Output Module",
+      "evidence": {
+        "end_offset": 1752,
+        "source_path": "text/quotation.md",
+        "start_offset": 1714,
+        "text": "Micro800 4 Point Analog Output Module\n"
+      },
+      "line_number": 102,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Analog Output Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0027",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Channel TC/RTD Input Module",
+      "evidence": {
+        "end_offset": 1812,
+        "source_path": "text/quotation.md",
+        "start_offset": 1773,
+        "text": "Micro800 4 Channel TC/RTD Input Module\n"
+      },
+      "line_number": 105,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Channel TC/RTD Input Module\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0028",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 Expansion Module End Cap",
+      "evidence": {
+        "end_offset": 1866,
+        "source_path": "text/quotation.md",
+        "start_offset": 1832,
+        "text": "Micro800 Expansion Module End Cap\n"
+      },
+      "line_number": 108,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 Expansion Module End Cap\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0029",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point IEC Digital Input",
+      "evidence": {
+        "end_offset": 1919,
+        "source_path": "text/quotation.md",
+        "start_offset": 1884,
+        "text": "Micro800 4 Point IEC Digital Input\n"
+      },
+      "line_number": 111,
+      "material_code_candidate": "Micro800",
+      "page_number": 3,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point IEC Digital Input\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0030",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Source Output",
+      "evidence": {
+        "end_offset": 2115,
+        "source_path": "text/quotation.md",
+        "start_offset": 2084,
+        "text": "Micro800 4 Point Source Output\n"
+      },
+      "line_number": 126,
+      "material_code_candidate": "Micro800",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Source Output\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0031",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Sink Output",
+      "evidence": {
+        "end_offset": 2162,
+        "source_path": "text/quotation.md",
+        "start_offset": 2133,
+        "text": "Micro800 4 Point Sink Output\n"
+      },
+      "line_number": 129,
+      "material_code_candidate": "Micro800",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Sink Output\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0032",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 4 Point Relay Output",
+      "evidence": {
+        "end_offset": 2211,
+        "source_path": "text/quotation.md",
+        "start_offset": 2181,
+        "text": "Micro800 4 Point Relay Output\n"
+      },
+      "line_number": 132,
+      "material_code_candidate": "Micro800",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 4 Point Relay Output\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0033",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point Digital Combo (Source)",
+      "evidence": {
+        "end_offset": 2272,
+        "source_path": "text/quotation.md",
+        "start_offset": 2232,
+        "text": "Micro800 8 Point Digital Combo (Source)\n"
+      },
+      "line_number": 135,
+      "material_code_candidate": "Micro800",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point Digital Combo (Source)\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0034",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 8 Point Digital Combo (Sink)",
+      "evidence": {
+        "end_offset": 2331,
+        "source_path": "text/quotation.md",
+        "start_offset": 2293,
+        "text": "Micro800 8 Point Digital Combo (Sink)\n"
+      },
+      "line_number": 138,
+      "material_code_candidate": "Micro800",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 8 Point Digital Combo (Sink)\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0035",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-48QWB",
+      "evidence": {
+        "end_offset": 2356,
+        "source_path": "text/quotation.md",
+        "start_offset": 2340,
+        "text": "2080-LC50-48QWB\n"
+      },
+      "line_number": 140,
+      "material_code_candidate": "LC50",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-48QWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0036",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 48 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2395,
+        "source_path": "text/quotation.md",
+        "start_offset": 2356,
+        "text": "Micro850 48 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 141,
+      "material_code_candidate": "Micro850",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 48 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0037",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-48AWB",
+      "evidence": {
+        "end_offset": 2422,
+        "source_path": "text/quotation.md",
+        "start_offset": 2406,
+        "text": "2080-LC50-48AWB\n"
+      },
+      "line_number": 143,
+      "material_code_candidate": "LC50",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-48AWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0038",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 48 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2461,
+        "source_path": "text/quotation.md",
+        "start_offset": 2422,
+        "text": "Micro850 48 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 144,
+      "material_code_candidate": "Micro850",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 48 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0039",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-24QWB",
+      "evidence": {
+        "end_offset": 2488,
+        "source_path": "text/quotation.md",
+        "start_offset": 2472,
+        "text": "2080-LC50-24QWB\n"
+      },
+      "line_number": 146,
+      "material_code_candidate": "LC50",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-24QWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0040",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 24 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2527,
+        "source_path": "text/quotation.md",
+        "start_offset": 2488,
+        "text": "Micro850 24 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 147,
+      "material_code_candidate": "Micro850",
+      "page_number": 4,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 24 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0041",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-24QVB",
+      "evidence": {
+        "end_offset": 2701,
+        "source_path": "text/quotation.md",
+        "start_offset": 2685,
+        "text": "2080-LC50-24QVB\n"
+      },
+      "line_number": 161,
+      "material_code_candidate": "LC50",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-24QVB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0042",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 24 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2740,
+        "source_path": "text/quotation.md",
+        "start_offset": 2701,
+        "text": "Micro850 24 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 162,
+      "material_code_candidate": "Micro850",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 24 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0043",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-24QBB",
+      "evidence": {
+        "end_offset": 2767,
+        "source_path": "text/quotation.md",
+        "start_offset": 2751,
+        "text": "2080-LC50-24QBB\n"
+      },
+      "line_number": 164,
+      "material_code_candidate": "LC50",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-24QBB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0044",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 24 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2806,
+        "source_path": "text/quotation.md",
+        "start_offset": 2767,
+        "text": "Micro850 24 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 165,
+      "material_code_candidate": "Micro850",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 24 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0045",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-24AWB",
+      "evidence": {
+        "end_offset": 2833,
+        "source_path": "text/quotation.md",
+        "start_offset": 2817,
+        "text": "2080-LC50-24AWB\n"
+      },
+      "line_number": 167,
+      "material_code_candidate": "LC50",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-24AWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0046",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 24 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2872,
+        "source_path": "text/quotation.md",
+        "start_offset": 2833,
+        "text": "Micro850 24 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 168,
+      "material_code_candidate": "Micro850",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 24 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0047",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-48QVB",
+      "evidence": {
+        "end_offset": 2899,
+        "source_path": "text/quotation.md",
+        "start_offset": 2883,
+        "text": "2080-LC50-48QVB\n"
+      },
+      "line_number": 170,
+      "material_code_candidate": "LC50",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-48QVB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0048",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 48 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 2938,
+        "source_path": "text/quotation.md",
+        "start_offset": 2899,
+        "text": "Micro850 48 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 171,
+      "material_code_candidate": "Micro850",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 48 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0049",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC50-48QBB",
+      "evidence": {
+        "end_offset": 2965,
+        "source_path": "text/quotation.md",
+        "start_offset": 2949,
+        "text": "2080-LC50-48QBB\n"
+      },
+      "line_number": 173,
+      "material_code_candidate": "LC50",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC50-48QBB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0050",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro850 48 I/O EtherNet/IP Controller",
+      "evidence": {
+        "end_offset": 3004,
+        "source_path": "text/quotation.md",
+        "start_offset": 2965,
+        "text": "Micro850 48 I/O EtherNet/IP Controller\n"
+      },
+      "line_number": 174,
+      "material_code_candidate": "Micro850",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro850 48 I/O EtherNet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0051",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 250KHz HSC Plug-In",
+      "evidence": {
+        "end_offset": 3056,
+        "source_path": "text/quotation.md",
+        "start_offset": 3028,
+        "text": "Micro800 250KHz HSC Plug-In\n"
+      },
+      "line_number": 177,
+      "material_code_candidate": "Micro800",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 250KHz HSC Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0052",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20QWB",
+      "evidence": {
+        "end_offset": 3083,
+        "source_path": "text/quotation.md",
+        "start_offset": 3067,
+        "text": "2080-LC20-20QWB\n"
+      },
+      "line_number": 179,
+      "material_code_candidate": "LC20",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20QWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0053",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller",
+      "evidence": {
+        "end_offset": 3118,
+        "source_path": "text/quotation.md",
+        "start_offset": 3083,
+        "text": "Micro820 20 I/O ENet/IP Controller\n"
+      },
+      "line_number": 180,
+      "material_code_candidate": "Micro820",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0054",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20AWB",
+      "evidence": {
+        "end_offset": 3145,
+        "source_path": "text/quotation.md",
+        "start_offset": 3129,
+        "text": "2080-LC20-20AWB\n"
+      },
+      "line_number": 182,
+      "material_code_candidate": "LC20",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20AWB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0055",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller",
+      "evidence": {
+        "end_offset": 3180,
+        "source_path": "text/quotation.md",
+        "start_offset": 3145,
+        "text": "Micro820 20 I/O ENet/IP Controller\n"
+      },
+      "line_number": 183,
+      "material_code_candidate": "Micro820",
+      "page_number": 5,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0056",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20QWBR",
+      "evidence": {
+        "end_offset": 3355,
+        "source_path": "text/quotation.md",
+        "start_offset": 3338,
+        "text": "2080-LC20-20QWBR\n"
+      },
+      "line_number": 197,
+      "material_code_candidate": "LC20",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20QWBR\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0057",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "evidence": {
+        "end_offset": 3396,
+        "source_path": "text/quotation.md",
+        "start_offset": 3355,
+        "text": "Micro820 20 I/O ENet/IP Controller (RTB)\n"
+      },
+      "line_number": 198,
+      "material_code_candidate": "Micro820",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0058",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-DNET20",
+      "evidence": {
+        "end_offset": 3419,
+        "source_path": "text/quotation.md",
+        "start_offset": 3407,
+        "text": "2080-DNET20\n"
+      },
+      "line_number": 200,
+      "material_code_candidate": "DNET20",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "2080-DNET20\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0059",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 DeviceNet Scanner Plug-In",
+      "evidence": {
+        "end_offset": 3454,
+        "source_path": "text/quotation.md",
+        "start_offset": 3419,
+        "text": "Micro800 DeviceNet Scanner Plug-In\n"
+      },
+      "line_number": 201,
+      "material_code_candidate": "Micro800",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 DeviceNet Scanner Plug-In\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0060",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20AWBR",
+      "evidence": {
+        "end_offset": 3482,
+        "source_path": "text/quotation.md",
+        "start_offset": 3465,
+        "text": "2080-LC20-20AWBR\n"
+      },
+      "line_number": 203,
+      "material_code_candidate": "LC20",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20AWBR\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0061",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "evidence": {
+        "end_offset": 3523,
+        "source_path": "text/quotation.md",
+        "start_offset": 3482,
+        "text": "Micro820 20 I/O ENet/IP Controller (RTB)\n"
+      },
+      "line_number": 204,
+      "material_code_candidate": "Micro820",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0062",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20QBBR",
+      "evidence": {
+        "end_offset": 3551,
+        "source_path": "text/quotation.md",
+        "start_offset": 3534,
+        "text": "2080-LC20-20QBBR\n"
+      },
+      "line_number": 206,
+      "material_code_candidate": "LC20",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20QBBR\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0063",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "evidence": {
+        "end_offset": 3592,
+        "source_path": "text/quotation.md",
+        "start_offset": 3551,
+        "text": "Micro820 20 I/O ENet/IP Controller (RTB)\n"
+      },
+      "line_number": 207,
+      "material_code_candidate": "Micro820",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0064",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro800 Remote LCD Display",
+      "evidence": {
+        "end_offset": 3643,
+        "source_path": "text/quotation.md",
+        "start_offset": 3615,
+        "text": "Micro800 Remote LCD Display\n"
+      },
+      "line_number": 210,
+      "material_code_candidate": "Micro800",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro800 Remote LCD Display\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0065",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "2080-LC20-20QBB",
+      "evidence": {
+        "end_offset": 3670,
+        "source_path": "text/quotation.md",
+        "start_offset": 3654,
+        "text": "2080-LC20-20QBB\n"
+      },
+      "line_number": 212,
+      "material_code_candidate": "LC20",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "2080-LC20-20QBB\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    },
+    {
+      "brand_candidate": null,
+      "candidate_id": "ROCKWELL_20260620_001_LINECAND_0066",
+      "confidence": 0.4,
+      "currency_candidate": null,
+      "description_candidate": "Micro820 20 I/O ENet/IP Controller",
+      "evidence": {
+        "end_offset": 3705,
+        "source_path": "text/quotation.md",
+        "start_offset": 3670,
+        "text": "Micro820 20 I/O ENet/IP Controller\n"
+      },
+      "line_number": 213,
+      "material_code_candidate": "Micro820",
+      "page_number": 6,
+      "quantity_candidate": null,
+      "raw_line": "Micro820 20 I/O ENet/IP Controller\n",
+      "unit_candidate": null,
+      "unit_price_candidate": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-07-10T01:29:16Z",
+  "parser_name": "rule_based_line_candidate_v1",
+  "parser_version": "0.1.0",
+  "quotation_id": "ROCKWELL_20260620_001",
+  "schema_version": "1.0",
+  "source_markdown": "text/quotation.md",
+  "source_sha256": "6ee1a6b55786eb6cac0f5bab82988b94974442ce87e4a78fd209a0ce3c193ce0",
+  "source_text_manifest": "text/quotation_text.json",
+  "warnings": []
+}

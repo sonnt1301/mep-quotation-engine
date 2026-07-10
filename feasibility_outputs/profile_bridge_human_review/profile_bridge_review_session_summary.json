@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-07-10T15:31:22.361901Z",
+  "total_items": 45,
+  "reviewed_items": 3,
+  "unreviewed_items": 42,
+  "progress_percent": 6.67,
+  "counts": {
+    "APPROVE": 3,
+    "EDIT_AND_APPROVE": 0,
+    "REJECT": 0,
+    "NEEDS_INVESTIGATION": 0,
+    "ACCEPT_WITH_LIMITATION": 0
+  },
+  "proposed_status": "READY_FOR_HUMAN_REVIEW",
+  "ready_for_write_to_main_pipeline": false
+}

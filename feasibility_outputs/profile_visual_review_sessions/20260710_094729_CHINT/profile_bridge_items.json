@@ -1,0 +1,22 @@
+[
+  {
+    "supplier_code": "CHINT",
+    "source_page": 3,
+    "source_layout_name": "chint_mccb_nxm_nm1",
+    "source_material_code": "sốPTsơcấp:500kV",
+    "normalized_material_code": "SỐPTSƠCẤP:500KV",
+    "description": "MCCB Chint sốPTsơcấp:500kV 3P  -Càiđặthệ",
+    "unit": "cái",
+    "unit_price": 3427000,
+    "currency": "VND",
+    "product_family": "MCCB Chint",
+    "rated_current": "",
+    "breaking_capacity": "-Càiđặthệ",
+    "pole": "3P",
+    "source_extraction_method": "coordinate_column_profiler",
+    "source_evidence_text": "-Cài đặt hệ số PT sơ cấp: 500kV , thứ cấp 3,427,000 Việt Nam",
+    "provenance": "Source PDF: Bang gia  KDE 2024 ck 35%.pdf, Page: 3, Layout: chint_mccb_nxm_nm1, Method: coordinate_column_profiler",
+    "bridge_status": "bridged",
+    "bridge_warnings": []
+  }
+]

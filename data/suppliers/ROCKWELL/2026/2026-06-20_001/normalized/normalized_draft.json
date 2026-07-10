@@ -1,0 +1,3119 @@
+{
+  "currency": null,
+  "draft_builder_name": "rule_based_normalized_draft_builder",
+  "draft_builder_version": "1.0",
+  "generated_at": "2026-07-10T01:29:17Z",
+  "item_count": 66,
+  "items": [
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-PS120-240VAC",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0001",
+      "end_line_number": 18,
+      "evidence": {
+        "end_offset": 299,
+        "raw_evidence_text": "2080-PS120-240VAC\n",
+        "start_offset": 281
+      },
+      "material_code": "PS120",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0001",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0001",
+      "start_line_number": 18,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 24V DC Power Supply",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0002",
+      "end_line_number": 19,
+      "evidence": {
+        "end_offset": 328,
+        "raw_evidence_text": "Micro800 24V DC Power Supply\n",
+        "start_offset": 299
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0002",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0002",
+      "start_line_number": 19,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Analog Input Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0003",
+      "end_line_number": 22,
+      "evidence": {
+        "end_offset": 384,
+        "raw_evidence_text": "Micro800 4 Point Analog Input Plug-In\n",
+        "start_offset": 346
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0003",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0003",
+      "start_line_number": 22,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 2 Point Analog Input Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0004",
+      "end_line_number": 25,
+      "evidence": {
+        "end_offset": 442,
+        "raw_evidence_text": "Micro800 2 Point Analog Input Plug-In\n",
+        "start_offset": 404
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0004",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0004",
+      "start_line_number": 25,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 2 Point Analog Output Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0005",
+      "end_line_number": 28,
+      "evidence": {
+        "end_offset": 499,
+        "raw_evidence_text": "Micro800 2 Point Analog Output Plug-In\n",
+        "start_offset": 460
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0005",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0005",
+      "start_line_number": 28,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 Isolated Serial Port Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0006",
+      "end_line_number": 31,
+      "evidence": {
+        "end_offset": 562,
+        "raw_evidence_text": "Micro800 Isolated Serial Port Plug-In\n",
+        "start_offset": 524
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0006",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0006",
+      "start_line_number": 31,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 6 Point Trim Pot Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0007",
+      "end_line_number": 34,
+      "evidence": {
+        "end_offset": 619,
+        "raw_evidence_text": "Micro800 6 Point Trim Pot Plug-In\n",
+        "start_offset": 585
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0007",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0007",
+      "start_line_number": 34,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 Memory Module With RTC Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0008",
+      "end_line_number": 37,
+      "evidence": {
+        "end_offset": 686,
+        "raw_evidence_text": "Micro800 Memory Module With RTC Plug-In\n",
+        "start_offset": 646
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0008",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0008",
+      "start_line_number": 37,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 2 Channel RTD Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0009",
+      "end_line_number": 40,
+      "evidence": {
+        "end_offset": 738,
+        "raw_evidence_text": "Micro800 2 Channel RTD Plug-In\n",
+        "start_offset": 707
+      },
+      "material_code": "Micro800",
+      "page_number": 1,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0009",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0009",
+      "start_line_number": 40,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 2 Channel TC Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0010",
+      "end_line_number": 54,
+      "evidence": {
+        "end_offset": 903,
+        "raw_evidence_text": "Micro800 2 Channel TC Plug-In\n",
+        "start_offset": 873
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0010",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0010",
+      "start_line_number": 54,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2085-IQ16",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0011",
+      "end_line_number": 56,
+      "evidence": {
+        "end_offset": 924,
+        "raw_evidence_text": "2085-IQ16\n",
+        "start_offset": 914
+      },
+      "material_code": "IQ16",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0011",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0011",
+      "start_line_number": 56,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 16 Point  Digital Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0012",
+      "end_line_number": 57,
+      "evidence": {
+        "end_offset": 964,
+        "raw_evidence_text": "Micro800 16 Point  Digital Input Module\n",
+        "start_offset": 924
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0012",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0012",
+      "start_line_number": 57,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 32 Point  Digital Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0013",
+      "end_line_number": 60,
+      "evidence": {
+        "end_offset": 1026,
+        "raw_evidence_text": "Micro800 32 Point  Digital Input Module\n",
+        "start_offset": 986
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0013",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0013",
+      "start_line_number": 60,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2085-OV16",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0014",
+      "end_line_number": 62,
+      "evidence": {
+        "end_offset": 1047,
+        "raw_evidence_text": "2085-OV16\n",
+        "start_offset": 1037
+      },
+      "material_code": "OV16",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0014",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0014",
+      "start_line_number": 62,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 16 Point Sink Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0015",
+      "end_line_number": 63,
+      "evidence": {
+        "end_offset": 1084,
+        "raw_evidence_text": "Micro800 16 Point Sink Output Module\n",
+        "start_offset": 1047
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0015",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0015",
+      "start_line_number": 63,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2085-OB16",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0016",
+      "end_line_number": 65,
+      "evidence": {
+        "end_offset": 1105,
+        "raw_evidence_text": "2085-OB16\n",
+        "start_offset": 1095
+      },
+      "material_code": "OB16",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0016",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0016",
+      "start_line_number": 65,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 16 Point Source Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0017",
+      "end_line_number": 66,
+      "evidence": {
+        "end_offset": 1144,
+        "raw_evidence_text": "Micro800 16 Point Source Output Module\n",
+        "start_offset": 1105
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0017",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0017",
+      "start_line_number": 66,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point Relay Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0018",
+      "end_line_number": 69,
+      "evidence": {
+        "end_offset": 1201,
+        "raw_evidence_text": "Micro800 8 Point Relay Output Module\n",
+        "start_offset": 1164
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0018",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0018",
+      "start_line_number": 69,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2085-OW16",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0019",
+      "end_line_number": 71,
+      "evidence": {
+        "end_offset": 1222,
+        "raw_evidence_text": "2085-OW16\n",
+        "start_offset": 1212
+      },
+      "material_code": "OW16",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0019",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0019",
+      "start_line_number": 71,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 16 Point Relay Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0020",
+      "end_line_number": 72,
+      "evidence": {
+        "end_offset": 1260,
+        "raw_evidence_text": "Micro800 16 Point Relay Output Module\n",
+        "start_offset": 1222
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0020",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0020",
+      "start_line_number": 72,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point 120 VAC Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0021",
+      "end_line_number": 75,
+      "evidence": {
+        "end_offset": 1318,
+        "raw_evidence_text": "Micro800 8 Point 120 VAC Input Module\n",
+        "start_offset": 1280
+      },
+      "material_code": "Micro800",
+      "page_number": 2,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0021",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0021",
+      "start_line_number": 75,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point 240 VAC Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0022",
+      "end_line_number": 90,
+      "evidence": {
+        "end_offset": 1523,
+        "raw_evidence_text": "Micro800 8 Point 240 VAC Input Module\n",
+        "start_offset": 1485
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0022",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0022",
+      "start_line_number": 90,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point Triac Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0023",
+      "end_line_number": 93,
+      "evidence": {
+        "end_offset": 1580,
+        "raw_evidence_text": "Micro800 8 Point Triac Output Module\n",
+        "start_offset": 1543
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0023",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0023",
+      "start_line_number": 93,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Analog Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0024",
+      "end_line_number": 96,
+      "evidence": {
+        "end_offset": 1637,
+        "raw_evidence_text": "Micro800 4 Point Analog Input Module\n",
+        "start_offset": 1600
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0024",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0024",
+      "start_line_number": 96,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point Analog Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0025",
+      "end_line_number": 99,
+      "evidence": {
+        "end_offset": 1694,
+        "raw_evidence_text": "Micro800 8 Point Analog Input Module\n",
+        "start_offset": 1657
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0025",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0025",
+      "start_line_number": 99,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Analog Output Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0026",
+      "end_line_number": 102,
+      "evidence": {
+        "end_offset": 1752,
+        "raw_evidence_text": "Micro800 4 Point Analog Output Module\n",
+        "start_offset": 1714
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0026",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0026",
+      "start_line_number": 102,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Channel TC/RTD Input Module",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0027",
+      "end_line_number": 105,
+      "evidence": {
+        "end_offset": 1812,
+        "raw_evidence_text": "Micro800 4 Channel TC/RTD Input Module\n",
+        "start_offset": 1773
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0027",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0027",
+      "start_line_number": 105,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 Expansion Module End Cap",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0028",
+      "end_line_number": 108,
+      "evidence": {
+        "end_offset": 1866,
+        "raw_evidence_text": "Micro800 Expansion Module End Cap\n",
+        "start_offset": 1832
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0028",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0028",
+      "start_line_number": 108,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point IEC Digital Input",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0029",
+      "end_line_number": 111,
+      "evidence": {
+        "end_offset": 1919,
+        "raw_evidence_text": "Micro800 4 Point IEC Digital Input\n",
+        "start_offset": 1884
+      },
+      "material_code": "Micro800",
+      "page_number": 3,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0029",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0029",
+      "start_line_number": 111,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Source Output",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0030",
+      "end_line_number": 126,
+      "evidence": {
+        "end_offset": 2115,
+        "raw_evidence_text": "Micro800 4 Point Source Output\n",
+        "start_offset": 2084
+      },
+      "material_code": "Micro800",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0030",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0030",
+      "start_line_number": 126,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Sink Output",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0031",
+      "end_line_number": 129,
+      "evidence": {
+        "end_offset": 2162,
+        "raw_evidence_text": "Micro800 4 Point Sink Output\n",
+        "start_offset": 2133
+      },
+      "material_code": "Micro800",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0031",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0031",
+      "start_line_number": 129,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 4 Point Relay Output",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0032",
+      "end_line_number": 132,
+      "evidence": {
+        "end_offset": 2211,
+        "raw_evidence_text": "Micro800 4 Point Relay Output\n",
+        "start_offset": 2181
+      },
+      "material_code": "Micro800",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0032",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0032",
+      "start_line_number": 132,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point Digital Combo (Source)",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0033",
+      "end_line_number": 135,
+      "evidence": {
+        "end_offset": 2272,
+        "raw_evidence_text": "Micro800 8 Point Digital Combo (Source)\n",
+        "start_offset": 2232
+      },
+      "material_code": "Micro800",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0033",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0033",
+      "start_line_number": 135,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 8 Point Digital Combo (Sink)",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0034",
+      "end_line_number": 138,
+      "evidence": {
+        "end_offset": 2331,
+        "raw_evidence_text": "Micro800 8 Point Digital Combo (Sink)\n",
+        "start_offset": 2293
+      },
+      "material_code": "Micro800",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0034",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0034",
+      "start_line_number": 138,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-48QWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0035",
+      "end_line_number": 140,
+      "evidence": {
+        "end_offset": 2356,
+        "raw_evidence_text": "2080-LC50-48QWB\n",
+        "start_offset": 2340
+      },
+      "material_code": "LC50",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0035",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0035",
+      "start_line_number": 140,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 48 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0036",
+      "end_line_number": 141,
+      "evidence": {
+        "end_offset": 2395,
+        "raw_evidence_text": "Micro850 48 I/O EtherNet/IP Controller\n",
+        "start_offset": 2356
+      },
+      "material_code": "Micro850",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0036",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0036",
+      "start_line_number": 141,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-48AWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0037",
+      "end_line_number": 143,
+      "evidence": {
+        "end_offset": 2422,
+        "raw_evidence_text": "2080-LC50-48AWB\n",
+        "start_offset": 2406
+      },
+      "material_code": "LC50",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0037",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0037",
+      "start_line_number": 143,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 48 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0038",
+      "end_line_number": 144,
+      "evidence": {
+        "end_offset": 2461,
+        "raw_evidence_text": "Micro850 48 I/O EtherNet/IP Controller\n",
+        "start_offset": 2422
+      },
+      "material_code": "Micro850",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0038",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0038",
+      "start_line_number": 144,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-24QWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0039",
+      "end_line_number": 146,
+      "evidence": {
+        "end_offset": 2488,
+        "raw_evidence_text": "2080-LC50-24QWB\n",
+        "start_offset": 2472
+      },
+      "material_code": "LC50",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0039",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0039",
+      "start_line_number": 146,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 24 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0040",
+      "end_line_number": 147,
+      "evidence": {
+        "end_offset": 2527,
+        "raw_evidence_text": "Micro850 24 I/O EtherNet/IP Controller\n",
+        "start_offset": 2488
+      },
+      "material_code": "Micro850",
+      "page_number": 4,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0040",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0040",
+      "start_line_number": 147,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-24QVB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0041",
+      "end_line_number": 161,
+      "evidence": {
+        "end_offset": 2701,
+        "raw_evidence_text": "2080-LC50-24QVB\n",
+        "start_offset": 2685
+      },
+      "material_code": "LC50",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0041",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0041",
+      "start_line_number": 161,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 24 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0042",
+      "end_line_number": 162,
+      "evidence": {
+        "end_offset": 2740,
+        "raw_evidence_text": "Micro850 24 I/O EtherNet/IP Controller\n",
+        "start_offset": 2701
+      },
+      "material_code": "Micro850",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0042",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0042",
+      "start_line_number": 162,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-24QBB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0043",
+      "end_line_number": 164,
+      "evidence": {
+        "end_offset": 2767,
+        "raw_evidence_text": "2080-LC50-24QBB\n",
+        "start_offset": 2751
+      },
+      "material_code": "LC50",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0043",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0043",
+      "start_line_number": 164,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 24 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0044",
+      "end_line_number": 165,
+      "evidence": {
+        "end_offset": 2806,
+        "raw_evidence_text": "Micro850 24 I/O EtherNet/IP Controller\n",
+        "start_offset": 2767
+      },
+      "material_code": "Micro850",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0044",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0044",
+      "start_line_number": 165,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-24AWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0045",
+      "end_line_number": 167,
+      "evidence": {
+        "end_offset": 2833,
+        "raw_evidence_text": "2080-LC50-24AWB\n",
+        "start_offset": 2817
+      },
+      "material_code": "LC50",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0045",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0045",
+      "start_line_number": 167,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 24 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0046",
+      "end_line_number": 168,
+      "evidence": {
+        "end_offset": 2872,
+        "raw_evidence_text": "Micro850 24 I/O EtherNet/IP Controller\n",
+        "start_offset": 2833
+      },
+      "material_code": "Micro850",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0046",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0046",
+      "start_line_number": 168,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-48QVB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0047",
+      "end_line_number": 170,
+      "evidence": {
+        "end_offset": 2899,
+        "raw_evidence_text": "2080-LC50-48QVB\n",
+        "start_offset": 2883
+      },
+      "material_code": "LC50",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0047",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0047",
+      "start_line_number": 170,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 48 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0048",
+      "end_line_number": 171,
+      "evidence": {
+        "end_offset": 2938,
+        "raw_evidence_text": "Micro850 48 I/O EtherNet/IP Controller\n",
+        "start_offset": 2899
+      },
+      "material_code": "Micro850",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0048",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0048",
+      "start_line_number": 171,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC50-48QBB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0049",
+      "end_line_number": 173,
+      "evidence": {
+        "end_offset": 2965,
+        "raw_evidence_text": "2080-LC50-48QBB\n",
+        "start_offset": 2949
+      },
+      "material_code": "LC50",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0049",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0049",
+      "start_line_number": 173,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro850 48 I/O EtherNet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0050",
+      "end_line_number": 174,
+      "evidence": {
+        "end_offset": 3004,
+        "raw_evidence_text": "Micro850 48 I/O EtherNet/IP Controller\n",
+        "start_offset": 2965
+      },
+      "material_code": "Micro850",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0050",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0050",
+      "start_line_number": 174,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 250KHz HSC Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0051",
+      "end_line_number": 177,
+      "evidence": {
+        "end_offset": 3056,
+        "raw_evidence_text": "Micro800 250KHz HSC Plug-In\n",
+        "start_offset": 3028
+      },
+      "material_code": "Micro800",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0051",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0051",
+      "start_line_number": 177,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20QWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0052",
+      "end_line_number": 179,
+      "evidence": {
+        "end_offset": 3083,
+        "raw_evidence_text": "2080-LC20-20QWB\n",
+        "start_offset": 3067
+      },
+      "material_code": "LC20",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0052",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0052",
+      "start_line_number": 179,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0053",
+      "end_line_number": 180,
+      "evidence": {
+        "end_offset": 3118,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller\n",
+        "start_offset": 3083
+      },
+      "material_code": "Micro820",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0053",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0053",
+      "start_line_number": 180,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20AWB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0054",
+      "end_line_number": 182,
+      "evidence": {
+        "end_offset": 3145,
+        "raw_evidence_text": "2080-LC20-20AWB\n",
+        "start_offset": 3129
+      },
+      "material_code": "LC20",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0054",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0054",
+      "start_line_number": 182,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0055",
+      "end_line_number": 183,
+      "evidence": {
+        "end_offset": 3180,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller\n",
+        "start_offset": 3145
+      },
+      "material_code": "Micro820",
+      "page_number": 5,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0055",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0055",
+      "start_line_number": 183,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20QWBR",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0056",
+      "end_line_number": 197,
+      "evidence": {
+        "end_offset": 3355,
+        "raw_evidence_text": "2080-LC20-20QWBR\n",
+        "start_offset": 3338
+      },
+      "material_code": "LC20",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0056",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0056",
+      "start_line_number": 197,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0057",
+      "end_line_number": 198,
+      "evidence": {
+        "end_offset": 3396,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+        "start_offset": 3355
+      },
+      "material_code": "Micro820",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0057",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0057",
+      "start_line_number": 198,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-DNET20",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0058",
+      "end_line_number": 200,
+      "evidence": {
+        "end_offset": 3419,
+        "raw_evidence_text": "2080-DNET20\n",
+        "start_offset": 3407
+      },
+      "material_code": "DNET20",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0058",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0058",
+      "start_line_number": 200,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 DeviceNet Scanner Plug-In",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0059",
+      "end_line_number": 201,
+      "evidence": {
+        "end_offset": 3454,
+        "raw_evidence_text": "Micro800 DeviceNet Scanner Plug-In\n",
+        "start_offset": 3419
+      },
+      "material_code": "Micro800",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0059",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0059",
+      "start_line_number": 201,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20AWBR",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0060",
+      "end_line_number": 203,
+      "evidence": {
+        "end_offset": 3482,
+        "raw_evidence_text": "2080-LC20-20AWBR\n",
+        "start_offset": 3465
+      },
+      "material_code": "LC20",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0060",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0060",
+      "start_line_number": 203,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0061",
+      "end_line_number": 204,
+      "evidence": {
+        "end_offset": 3523,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+        "start_offset": 3482
+      },
+      "material_code": "Micro820",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0061",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0061",
+      "start_line_number": 204,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20QBBR",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0062",
+      "end_line_number": 206,
+      "evidence": {
+        "end_offset": 3551,
+        "raw_evidence_text": "2080-LC20-20QBBR\n",
+        "start_offset": 3534
+      },
+      "material_code": "LC20",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0062",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0062",
+      "start_line_number": 206,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller (RTB)",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0063",
+      "end_line_number": 207,
+      "evidence": {
+        "end_offset": 3592,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller (RTB)\n",
+        "start_offset": 3551
+      },
+      "material_code": "Micro820",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0063",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0063",
+      "start_line_number": 207,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro800 Remote LCD Display",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0064",
+      "end_line_number": 210,
+      "evidence": {
+        "end_offset": 3643,
+        "raw_evidence_text": "Micro800 Remote LCD Display\n",
+        "start_offset": 3615
+      },
+      "material_code": "Micro800",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0064",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0064",
+      "start_line_number": 210,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "2080-LC20-20QBB",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0065",
+      "end_line_number": 212,
+      "evidence": {
+        "end_offset": 3670,
+        "raw_evidence_text": "2080-LC20-20QBB\n",
+        "start_offset": 3654
+      },
+      "material_code": "LC20",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0065",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0065",
+      "start_line_number": 212,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    },
+    {
+      "amount": null,
+      "brand": null,
+      "confidence": 0.2,
+      "currency": null,
+      "description": "Micro820 20 I/O ENet/IP Controller",
+      "draft_item_id": "ROCKWELL_20260620_001_DRAFTITEM_0066",
+      "end_line_number": 213,
+      "evidence": {
+        "end_offset": 3705,
+        "raw_evidence_text": "Micro820 20 I/O ENet/IP Controller\n",
+        "start_offset": 3670
+      },
+      "material_code": "Micro820",
+      "page_number": 6,
+      "quantity": null,
+      "review_reasons": [
+        "missing_unit",
+        "missing_unit_price",
+        "currency_uncertain",
+        "low_confidence"
+      ],
+      "review_status": "needs_review",
+      "source_item_candidate_id": "ROCKWELL_20260620_001_ITEMCAND_0066",
+      "source_row_id": "ROCKWELL_20260620_001_ROWCAND_0066",
+      "start_line_number": 213,
+      "unit": null,
+      "unit_price": null,
+      "warnings": [
+        {
+          "code": "low_confidence",
+          "message": "Dòng ứng viên có độ tin cậy thấp (0.4)"
+        },
+        {
+          "code": "missing_unit",
+          "message": "Item needs review due to: missing_unit"
+        },
+        {
+          "code": "missing_unit_price",
+          "message": "Item needs review due to: missing_unit_price"
+        },
+        {
+          "code": "currency_uncertain",
+          "message": "Item needs review due to: currency_uncertain"
+        }
+      ]
+    }
+  ],
+  "quotation_date": "2026-06-20",
+  "quotation_id": "ROCKWELL_20260620_001",
+  "review_required_count": 66,
+  "schema_version": "1.0",
+  "source_item_candidates": "parsed/item_candidates.json",
+  "source_sha256": "2ddeb8f4c41fc5e9fddac52178d818ddd7153b28f99d92583ad04b5285ce0455",
+  "supplier_code": "ROCKWELL",
+  "warnings": []
+}
