@@ -1,83 +1,45 @@
-# Walkthrough – Phase 2A.5 – PDF Page Preview for Human Review
+# Walkthrough – Phase 2B.1 – Visual Adapter Output Package
 
-Tất cả các mục tiêu phát triển giao diện PDF Page Preview trực quan kèm tính năng Zoom co giãn hỗ trợ rà soát thực tế đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
+Tất cả các mục tiêu phát triển chức năng kết xuất dữ liệu Adapter đầu ra dưới dạng CSV và Excel đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
 
 ---
 
-> [!WARNING]
+> [warning]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Visual Human Review Workspace**.
-> * **Không ghi dữ liệu vào main pipeline chính và không sửa đổi giao diện Streamlit UI cũ.**
+> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Controlled Write Adapter Dry-run**.
+> * **Không ghi dữ liệu vào main pipeline chính và không sửa đổi dữ liệu gốc.**
+> * **Không set ready_for_write_to_main_pipeline = True.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Kết Quả Triển Khai PDF Page Preview
+## 1. Kết Quả Kết Xuất Visual Package
 
-1. **PDF Page Preview Trực Quan**:
-   - Sử dụng PyMuPDF (`fitz`) để render cực nhanh trang PDF của mỗi vật tư đang được chọn review thành ảnh PNG.
-   - Hình ảnh hiển thị trực quan ở cột bên trái **📄 Nguồn Đối Chiếu & Bằng Chứng** ngay phía trên thông tin metadata và văn bản bằng chứng thô.
-   - Tự động thay đổi trang hiển thị tương ứng theo `source_page` của vật tư đang được kích hoạt.
+1. **normalized_items_preview.csv**:
+   - Ghi lại toàn bộ dữ liệu vật tư được phép ghi nhận (APPROVED, EDIT_AND_APPROVE, ACCEPT_WITH_LIMITATION).
+   - Mã hóa chuẩn `utf-8-sig` (UTF-8 với BOM) để Excel hiển thị đúng tiếng Việt gốc.
+   
+2. **blocked_items.csv**:
+   - Ghi nhận tất cả các vật tư bị khóa (REJECT, NEEDS_INVESTIGATION, UNREVIEWED) kèm theo lý do khóa.
 
-2. **Thanh trượt điều chỉnh Zoom (scale/DPI)**:
-   - Tích hợp thanh trượt `st.slider` hỗ trợ phóng to bản vẽ trang PDF (từ 1.0 đến 3.0) trực tiếp trên UI.
-   - Sử dụng `lru_cache` để tối ưu hóa hiệu năng, giảm thiểu tối đa việc render lại trang PDF cũ khi thay đổi độ thu phóng hoặc chuyển dòng.
-
-3. **Fallback & Khả năng chịu lỗi**:
-   - Nếu tệp PDF không tồn tại (chế độ benchmark mặc định không cấu hình hoặc không tìm thấy tệp) hoặc gặp sự cố render, hệ thống tự động fallback hiển thị **Source Evidence Text** thô kèm theo thông báo warning, hoàn toàn không gây crash ứng dụng.
+3. **profile_write_adapter_review.xlsx**:
+   - Tệp Excel báo cáo chuyên nghiệp gồm 3 sheet:
+     * **Summary**: tóm tắt đệ trình các chỉ số counts và metadata an toàn.
+     * **Exportable Preview**: chứa thông số các dòng được duyệt.
+     * **Blocked Items**: chứa các dòng bị khóa.
+   - Định dạng Excel nâng cao:
+     * Cố định dòng tiêu đề (Freeze row header 1).
+     * Bật tính năng tự động lọc (Auto-filter).
+     * Thiết lập tự động căn lề cột, format number (`#,##0`) cho cột đơn giá/số lượng/thành tiền.
+     * Highlight tự động màu đỏ nhạt cho các dòng bị khóa cảnh báo (`NEEDS_INVESTIGATION`, `REJECT`).
 
 ---
 
 ## 2. Xác Minh Chất Lượng & Tests
 
-* Tất cả 195 unit tests đã vượt qua thành công: **195/195 passed** (tỷ lệ 100%).
-* Đã tạo tệp unit test bảo vệ preview: [test_profile_bridge_pdf_preview.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_preview.py)
-  - Xác minh chức năng render trang PDF thành ảnh PNG bytes hợp lệ.
-  - Kiểm thử số trang vượt phạm vi ném lỗi ValueError an toàn.
-  - Kiểm thử `validate_pdf_page_number` và `resolve_session_pdf_path` hoạt động chính xác.
-  - Rà soát tĩnh chống mojibake tiếng Việt.
-# Walkthrough - Phase 2B - Controlled Write Adapter Dry-run
-
-Phase 2B tao lop adapter an toan de bien cac dong Profile Bridge da duoc human review thanh normalized preview. Day chua phai write adapter that vao main pipeline.
-
-## Cach chay
-
-```powershell
-cd D:\mep_quotation_pipeline
-python tools/feasibility/run_profile_write_adapter_dry_run.py
-```
-
-Neu can chi dinh decisions/session rieng:
-
-```powershell
-python tools/feasibility/run_profile_write_adapter_dry_run.py `
-  --bridge-items feasibility_outputs/profile_bridge_dry_run/profile_bridge_items.json `
-  --decisions feasibility_outputs/profile_bridge_human_review/profile_bridge_review_decisions.json `
-  --output-dir feasibility_outputs/profile_write_adapter_dry_run
-```
-
-## Output
-
-- `normalized_items_preview.json`: cac dong du dieu kien export preview.
-- `blocked_items.json`: cac dong bi chan do reject, needs investigation, hoac chua review.
-- `profile_write_adapter_summary.json`: manifest tong hop dry-run.
-- `profile_write_adapter_report.md`: bao cao doc nhanh.
-
-## Dieu kien duoc export preview
-
-- `APPROVE`
-- `EDIT_AND_APPROVE`
-- `ACCEPT_WITH_LIMITATION`
-
-## Dieu kien bi chan
-
-- `REJECT`
-- `NEEDS_INVESTIGATION`
-- Chua co human decision
-
-## Safety
-
-- `ready_for_write_to_main_pipeline = false`
-- Khong ghi database.
-- Khong sua normalized/package chinh thuc.
-- Khong dung moi `supplier_code + normalized_material_code` lam write key.
+* Tất cả 201 unit tests đã vượt qua thành công: **201/201 passed** (tỷ lệ 100%).
+* Cập nhật unit test bảo vệ: [test_profile_write_adapter_dry_run.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_adapter_dry_run.py)
+  - Xác minh các file CSV và XLSX mới được sinh ra tại thư mục đầu ra.
+  - Xác minh workbook có đủ 3 sheet hợp lệ.
+  - Xác minh logic nạp khi chưa có quyết định human review (exportable = 0, blocked = tổng số dòng bridge).
+  - Đảm bảo `ready_for_write_to_main_pipeline` luôn luôn được set là `False`.

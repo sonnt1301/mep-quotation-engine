@@ -8,10 +8,15 @@ official normalized package. It creates a reviewable normalized preview only.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
+
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -247,6 +252,210 @@ This dry-run does not write to the main pipeline, database, or official normaliz
 """
 
 
+def write_csv_and_xlsx(
+    output_dir: Path,
+    summary: Dict[str, Any],
+    exported: List[Dict[str, Any]],
+    blocked: List[Dict[str, Any]],
+) -> None:
+    # 1. Ghi CSV normalized_items_preview.csv
+    csv_exp_path = output_dir / "normalized_items_preview.csv"
+    headers_exp = [
+        "item_id", "supplier_code", "material_code", "description", "unit",
+        "quantity", "unit_price", "amount", "currency", "page_number",
+        "human_decision", "human_note", "write_key", "provenance", "evidence_text"
+    ]
+    with open(csv_exp_path, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers_exp)
+        writer.writeheader()
+        for item in exported:
+            row = {k: item.get(k, "") for k in headers_exp}
+            writer.writerow(row)
+
+    # 2. Ghi CSV blocked_items.csv
+    csv_blk_path = output_dir / "blocked_items.csv"
+    headers_blk = [
+        "review_item_key", "supplier_code", "source_page", "normalized_material_code",
+        "unit_price", "decision", "block_reason", "human_note"
+    ]
+    with open(csv_blk_path, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers_blk)
+        writer.writeheader()
+        for item in blocked:
+            row = {k: item.get(k, "") for k in headers_blk}
+            writer.writerow(row)
+
+    # 3. Ghi Excel profile_write_adapter_review.xlsx
+    xlsx_path = output_dir / "profile_write_adapter_review.xlsx"
+    wb = openpyxl.Workbook()
+    
+    # Styles
+    font_bold = Font(name="Calibri", size=11, bold=True)
+    font_header = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    font_regular = Font(name="Calibri", size=11)
+    
+    fill_header = PatternFill(start_color="366092", end_color="366092", fill_type="solid") # Xanh dương đậm
+    fill_warning = PatternFill(start_color="FCE4D6", end_color="FCE4D6", fill_type="solid") # Cam nhạt cho ACCEPT_WITH_LIMITATION
+    fill_danger = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid") # Đỏ nhạt cho REJECT/NEEDS_INVESTIGATION
+    
+    thin_border = Border(
+        left=Side(style='thin', color='D9D9D9'),
+        right=Side(style='thin', color='D9D9D9'),
+        top=Side(style='thin', color='D9D9D9'),
+        bottom=Side(style='thin', color='D9D9D9')
+    )
+    
+    align_center = Alignment(horizontal="center", vertical="center")
+    align_left = Alignment(horizontal="left", vertical="center")
+    align_right = Alignment(horizontal="right", vertical="center")
+
+    # Sheet 1: Summary
+    ws_sum = wb.active
+    ws_sum.title = "Summary"
+    ws_sum.views.sheetView[0].showGridLines = True
+    
+    ws_sum.append(["Chỉ số (Metric)", "Giá trị (Value)"])
+    ws_sum.cell(row=1, column=1).font = font_header
+    ws_sum.cell(row=1, column=1).fill = fill_header
+    ws_sum.cell(row=1, column=2).font = font_header
+    ws_sum.cell(row=1, column=2).fill = fill_header
+    
+    summary_rows = [
+        ("input_bridge_items_count", summary.get("input_bridge_items_count", 0)),
+        ("review_decisions_count", summary.get("review_decisions_count", 0)),
+        ("exportable_items_count", summary.get("exportable_items_count", 0)),
+        ("blocked_items_count", summary.get("blocked_items_count", 0)),
+        ("approved_count", summary.get("approved_count", 0)),
+        ("edited_count", summary.get("edited_count", 0)),
+        ("accepted_with_limitation_count", summary.get("accepted_with_limitation_count", 0)),
+        ("rejected_count", summary.get("rejected_count", 0)),
+        ("needs_investigation_count", summary.get("needs_investigation_count", 0)),
+        ("unreviewed_count", summary.get("unreviewed_count", 0)),
+        ("proposed_status", summary.get("proposed_status", "N/A")),
+        ("ready_for_write_to_main_pipeline", False)
+    ]
+    
+    for r_idx, (metric, val) in enumerate(summary_rows, start=2):
+        ws_sum.append([metric, val])
+        ws_sum.cell(row=r_idx, column=1).font = font_bold
+        ws_sum.cell(row=r_idx, column=1).border = thin_border
+        
+        val_cell = ws_sum.cell(row=r_idx, column=2)
+        val_cell.font = font_regular
+        val_cell.border = thin_border
+        
+        if isinstance(val, int):
+            val_cell.number_format = "#,##0"
+            val_cell.alignment = align_right
+        elif isinstance(val, bool):
+            val_cell.alignment = align_center
+            if val is False:
+                val_cell.fill = fill_warning
+        else:
+            val_cell.alignment = align_left
+            if val == "BLOCKED_NEEDS_HUMAN_REVIEW":
+                val_cell.fill = fill_danger
+
+    # Sheet 2: Exportable Preview
+    ws_exp = wb.create_sheet(title="Exportable Preview")
+    ws_exp.views.sheetView[0].showGridLines = True
+    ws_exp.freeze_panes = "A2"
+    
+    # Ghi header
+    ws_exp.append(headers_exp)
+    for col_idx in range(1, len(headers_exp) + 1):
+        cell = ws_exp.cell(row=1, column=col_idx)
+        cell.font = font_header
+        cell.fill = fill_header
+        cell.alignment = align_center
+        cell.border = thin_border
+
+    # Ghi data rows
+    for r_idx, item in enumerate(exported, start=2):
+        row_data = [item.get(k, "") for k in headers_exp]
+        ws_exp.append(row_data)
+        
+        # Format các ô
+        for col_idx, k in enumerate(headers_exp, start=1):
+            cell = ws_exp.cell(row=r_idx, column=col_idx)
+            cell.font = font_regular
+            cell.border = thin_border
+            
+            # Format số
+            if k in ["quantity", "unit_price", "amount", "page_number"]:
+                cell.number_format = "#,##0"
+                cell.alignment = align_right
+            elif k in ["item_id", "supplier_code", "material_code", "currency", "human_decision"]:
+                cell.alignment = align_center
+            else:
+                cell.alignment = align_left
+
+            # Highlight
+            h_dec = item.get("human_decision", "")
+            if h_dec == "ACCEPT_WITH_LIMITATION":
+                cell.fill = fill_warning
+
+    ws_exp.auto_filter.ref = f"A1:{get_column_letter(len(headers_exp))}{len(exported) + 1}"
+
+    # Sheet 3: Blocked Items
+    ws_blk = wb.create_sheet(title="Blocked Items")
+    ws_blk.views.sheetView[0].showGridLines = True
+    ws_blk.freeze_panes = "A2"
+    
+    # Ghi header
+    ws_blk.append(headers_blk)
+    for col_idx in range(1, len(headers_blk) + 1):
+        cell = ws_blk.cell(row=1, column=col_idx)
+        cell.font = font_header
+        cell.fill = fill_header
+        cell.alignment = align_center
+        cell.border = thin_border
+
+    # Ghi data rows
+    for r_idx, item in enumerate(blocked, start=2):
+        row_data = [item.get(k, "") for k in headers_blk]
+        ws_blk.append(row_data)
+        
+        decision = item.get("decision", "")
+        is_high_risk = decision in ["REJECT", "NEEDS_INVESTIGATION"]
+        
+        # Format các ô
+        for col_idx, k in enumerate(headers_blk, start=1):
+            cell = ws_blk.cell(row=r_idx, column=col_idx)
+            cell.font = font_regular
+            cell.border = thin_border
+            
+            # Format số
+            if k in ["source_page", "unit_price"]:
+                cell.number_format = "#,##0"
+                cell.alignment = align_right
+            elif k in ["supplier_code", "decision"]:
+                cell.alignment = align_center
+            else:
+                cell.alignment = align_left
+
+            # Highlight
+            if is_high_risk:
+                cell.fill = fill_danger
+
+    ws_blk.auto_filter.ref = f"A1:{get_column_letter(len(headers_blk))}{len(blocked) + 1}"
+
+    # Auto-fit column widths cho cả 3 sheet
+    for ws in [ws_sum, ws_exp, ws_blk]:
+        for col in ws.columns:
+            max_len = 0
+            col_letter = get_column_letter(col[0].column)
+            for cell in col:
+                val_str = str(cell.value or '')
+                lines = val_str.split('\n')
+                for line in lines:
+                    if len(line) > max_len:
+                        max_len = len(line)
+            ws.column_dimensions[col_letter].width = min(max(max_len + 3, 12), 40)
+
+    wb.save(xlsx_path)
+
+
 def run_adapter(
     bridge_items_path: Path,
     decisions_path: Path,
@@ -290,6 +499,10 @@ def run_adapter(
     write_json(output_dir / "normalized_items_preview.json", exported)
     write_json(output_dir / "blocked_items.json", blocked)
     write_json(output_dir / "profile_write_adapter_summary.json", manifest)
+    
+    # Ghi các file CSV và XLSX
+    write_csv_and_xlsx(output_dir, summary, exported, blocked)
+    
     (output_dir / "profile_write_adapter_report.md").write_text(
         build_report(summary, output_dir),
         encoding="utf-8",

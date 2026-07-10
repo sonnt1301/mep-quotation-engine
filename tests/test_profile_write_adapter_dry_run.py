@@ -193,6 +193,19 @@ def test_run_adapter_writes_preview_outputs_and_keeps_write_disabled():
         assert (out_dir / "blocked_items.json").exists()
         assert (out_dir / "profile_write_adapter_summary.json").exists()
         assert (out_dir / "profile_write_adapter_report.md").exists()
+        
+        # Kiểm tra file CSV và XLSX mới sinh ra
+        assert (out_dir / "normalized_items_preview.csv").exists()
+        assert (out_dir / "blocked_items.csv").exists()
+        assert (out_dir / "profile_write_adapter_review.xlsx").exists()
+        
+        # Kiểm tra workbook có đủ 3 sheet
+        import openpyxl
+        wb = openpyxl.load_workbook(out_dir / "profile_write_adapter_review.xlsx")
+        assert "Summary" in wb.sheetnames
+        assert "Exportable Preview" in wb.sheetnames
+        assert "Blocked Items" in wb.sheetnames
+        wb.close()
     finally:
         shutil.rmtree(tmp_path, ignore_errors=True)
 
@@ -225,3 +238,26 @@ def test_contract_requires_write_disabled():
     )
     assert contract["properties"]["ready_for_write_to_main_pipeline"]["const"] is False
     assert "dry_run" in contract["properties"]["mode"]["enum"]
+
+
+def test_run_adapter_with_no_decisions():
+    tmp_path = make_tmp_dir("no_decisions")
+    approved = sample_bridge_item("NXM-63S", 800000, 3)
+    blocked = sample_bridge_item("NXM-125S", 860000, 3)
+    bridge_path = tmp_path / "profile_bridge_items.json"
+    decisions_path = tmp_path / "profile_bridge_review_decisions.json"
+    out_dir = tmp_path / "out"
+
+    bridge_path.write_text(json.dumps([approved, blocked], ensure_ascii=False), encoding="utf-8")
+    # Viết tệp decisions trống
+    decisions_path.write_text("{}", encoding="utf-8")
+
+    try:
+        manifest = run_adapter(bridge_path, decisions_path, out_dir, "CHINT_20230301_001")
+
+        assert manifest["ready_for_write_to_main_pipeline"] is False
+        assert manifest["summary"]["exportable_items_count"] == 0
+        assert manifest["summary"]["blocked_items_count"] == 2
+        assert manifest["summary"]["unreviewed_count"] == 2
+    finally:
+        shutil.rmtree(tmp_path, ignore_errors=True)

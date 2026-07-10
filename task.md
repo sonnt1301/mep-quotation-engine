@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2A.5
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2B.1
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -89,7 +89,7 @@
 
 ## Phase 2A.1 – Human Review Package (Đã hoàn thành)
 - `[x]` Tinh gọn summary JSON: Sửa `run_profile_bridge_dry_run.py` để loại bỏ danh sách full items khỏi summary và bổ sung thống kê trùng mã.
-- `[x]` Phát triển script xuất gói review: [export_profile_bridge_human_review.py](file:///D:/mep_quotation_pipeline/tools/feasibility/export_profile_bridge_human_review.py).
+- `[x]` Phát triển script xuất gói review: [export_profile_bridge_human_review.py](file:///D:/mep_quotation_pipeline/tools/export_profile_bridge_human_review.py).
 - `[x]` Sinh tệp CSV mẫu review (73 dòng, có LS/CHINT/ABB giá trị lớn) tại `feasibility_outputs/profile_bridge_human_review/profile_bridge_review_sample.csv`.
 - `[x]` Sinh tệp CSV đánh giá trùng mã (75 nhóm, 69 nhóm rủi ro HIGH) tại `feasibility_outputs/profile_bridge_human_review/profile_bridge_duplicate_code_review.csv`.
 - `[x]` Thiết lập hướng dẫn và checklist tại `profile_bridge_human_review_checklist.md`.
@@ -132,6 +132,15 @@
 - `[x]` Chạy pytest toàn cục Passed: **195/195 passed** (100% thành công).
 - `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
+## Phase 2B.1 – Visual Adapter Output Package (Đã hoàn thành)
+- `[x]` Cập nhật Controlled Write Adapter `run_profile_write_adapter_dry_run.py` để tích hợp thêm kết xuất định dạng Excel và CSV.
+- `[x]` Sinh tệp `normalized_items_preview.csv` và `blocked_items.csv` trong thư mục dry-run.
+- `[x]` Sinh tệp Excel `profile_write_adapter_review.xlsx` chứa 3 sheet: Summary, Exportable Preview, Blocked Items.
+- `[x]` Định dạng Excel chuyên nghiệp (Freeze row header, auto-filter, tự động fit độ rộng cột, format number unit_price/amount, highlight dòng rủi ro đỏ nhạt).
+- `[x]` Cập nhật unit test `tests/test_profile_write_adapter_dry_run.py` kiểm thử đầy đủ sự tồn tại của file, các sheet trong Excel và trạng thái an toàn.
+- `[x]` Chạy pytest kiểm định toàn cục thành công: **201/201 passed** (100% thành công).
+- `[x]` Đồng bộ hóa các tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
 ---
 > [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
@@ -140,15 +149,3 @@
 > * **Không OCR, không AI/LLM, không parse Excel.**
 > * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
-## Phase 2B - Controlled Write Adapter Dry-run (Dang trien khai)
-- `[x]` Tao contract adapter: `tools/feasibility/profile_write_adapter_contract.json`.
-- `[x]` Tao script dry-run: `tools/feasibility/run_profile_write_adapter_dry_run.py`.
-- `[x]` Chi export cac decision `APPROVE`, `EDIT_AND_APPROVE`, `ACCEPT_WITH_LIMITATION`.
-- `[x]` Chan cac decision `REJECT`, `NEEDS_INVESTIGATION`, va item chua review.
-- `[x]` Tao write key an toan hon `supplier + code` bang cach them page, unit_price va chu ky description.
-- `[x]` Tao unit test bao ve: `tests/test_profile_write_adapter_dry_run.py`.
-- `[x]` Targeted pytest trong moi truong Codex sandbox: `5 passed`.
-- `[ ]` Chay full pytest trong moi truong dev co quyen ghi repo that.
-- `[ ]` Chay adapter tren decisions review that sau khi human review du lieu.
-
-> Safety: Phase 2B hien tai van la dry-run. `ready_for_write_to_main_pipeline = false`.
