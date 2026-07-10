@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileBridgeContract",
+  "type": "object",
+  "properties": {
+    "bridge_version": {
+      "type": "string",
+      "description": "Phiên bản của Integration Bridge"
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "Thời điểm sinh kết quả chuyển đổi (ISO 8601)"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run"],
+      "description": "Chế độ chạy cầu nối (mặc định: dry_run)"
+    },
+    "source_manifest": {
+      "type": "string",
+      "description": "Đường dẫn tới tệp manifest nguồn"
+    },
+    "bridge_status": {
+      "type": "string",
+      "enum": ["PASS", "FAIL"],
+      "description": "Trạng thái tổng thể của cầu nối chuyển đổi"
+    },
+    "suppliers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "supplier_code": {
+            "type": "string"
+          },
+          "source_profile_status": {
+            "type": "string"
+          },
+          "included": {
+            "type": "boolean"
+          },
+          "inclusion_reason": {
+            "type": "string"
+          },
+          "input_valid_items_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bridged_items_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "skipped_items_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "supplier_code",
+          "source_profile_status",
+          "included",
+          "inclusion_reason",
+          "input_valid_items_count",
+          "bridged_items_count",
+          "skipped_items_count",
+          "warnings"
+        ]
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "supplier_code": {
+            "type": "string"
+          },
+          "source_page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_layout_name": {
+            "type": "string"
+          },
+          "source_material_code": {
+            "type": "string"
+          },
+          "normalized_material_code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "unit_price": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "currency": {
+            "type": "string",
+            "enum": ["VND"]
+          },
+          "product_family": {
+            "type": "string"
+          },
+          "rated_current": {
+            "type": "string"
+          },
+          "breaking_capacity": {
+            "type": "string"
+          },
+          "pole": {
+            "type": "string"
+          },
+          "source_extraction_method": {
+            "type": "string"
+          },
+          "source_evidence_text": {
+            "type": "string"
+          },
+          "bridge_status": {
+            "type": "string",
+            "enum": ["bridged", "skipped"]
+          },
+          "bridge_warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "string",
+            "description": "Thông tin truy vết nguồn gốc (file, page, method)"
+          }
+        },
+        "required": [
+          "supplier_code",
+          "source_page",
+          "source_layout_name",
+          "source_material_code",
+          "normalized_material_code",
+          "description",
+          "unit",
+          "unit_price",
+          "currency",
+          "provenance",
+          "bridge_status",
+          "bridge_warnings"
+        ]
+      }
+    },
+    "integration_readiness": {
+      "type": "object",
+      "properties": {
+        "ready_for_write_to_main_pipeline": {
+          "type": "boolean",
+          "description": "Trạng thái sẵn sàng ghi trực tiếp vào main pipeline"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["ready_for_write_to_main_pipeline", "reason"]
+    }
+  },
+  "required": [
+    "bridge_version",
+    "generated_at",
+    "mode",
+    "source_manifest",
+    "bridge_status",
+    "suppliers",
+    "items",
+    "integration_readiness"
+  ]
+}

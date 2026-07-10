@@ -1,0 +1,66 @@
+[
+  {
+    "source_page": 3,
+    "raw_item": {
+      "supplier_code": "CHINT",
+      "source_page": 3,
+      "layout_name": "chint_mccb_nxm_nm1",
+      "product_family": "MCCB Chint",
+      "type": "bảovệ",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "-Cópassword",
+      "material_code": "bảovệ",
+      "description": "MCCB Chint bảovệ 3P  -Cópassword",
+      "unit": "cái",
+      "unit_price": 2200000,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "- Có password bảo vệ 2,200,000",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_prefix",
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_prefix",
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  },
+  {
+    "source_page": 3,
+    "raw_item": {
+      "supplier_code": "CHINT",
+      "source_page": 3,
+      "layout_name": "chint_mccb_nxm_nm1",
+      "product_family": "MCCB Chint",
+      "type": "kWhImpot+Export,",
+      "pole": "3P",
+      "rated_current": "",
+      "breaking_capacity": "Export,Tổng",
+      "material_code": "kWhImpot+Export,",
+      "description": "MCCB Chint kWhImpot+Export, 3P  Export,Tổng",
+      "unit": "cái",
+      "unit_price": 2868000,
+      "currency": "VND",
+      "confidence": 0.9,
+      "extraction_method": "coordinate_column_profiler",
+      "evidence_text": "Export, Tổng kWh Impot + Export, 2,868,000 Việt Nam",
+      "validation_status": "invalid",
+      "errors": [
+        "material_code_invalid_prefix",
+        "material_code_invalid_format"
+      ],
+      "warnings": []
+    },
+    "errors": [
+      "material_code_invalid_prefix",
+      "material_code_invalid_format"
+    ],
+    "warnings": []
+  }
+]

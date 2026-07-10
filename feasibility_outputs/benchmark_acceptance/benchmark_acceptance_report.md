@@ -65,13 +65,13 @@ Báo cáo này tổng kết kết quả đánh giá nghiệm thu khả thi bóc 
 * **Trang 2 và Trang 5 vẫn ở trạng thái PARTIAL** (chưa đạt tỷ lệ lỗi <= 5% hoặc chưa đủ số lượng item tối thiểu trên mỗi trang để PASS tuyệt đối). Việc tối ưu hóa các trang này sẽ cần các bước hardening profile sâu hơn trong tương lai.
 
 ### Hãng CHINT
-* **Trang 3 và Trang 5 vẫn ở trạng thái PARTIAL** do có một số dòng tiêu đề hoặc dòng text thông số phụ bị validator loại thành invalid. Có thể tiếp tục tinh chỉnh lề min_y/max_y hoặc logic validator để nâng cao độ phủ.
+* **Trang 5 vẫn ở trạng thái PARTIAL** do số lượng dòng thiết bị hợp lệ thực tế (7 dòng) ít hơn ngưỡng PASS tối thiểu (10 dòng). Không thực hiện hạ threshold để làm đẹp báo cáo.
 
 ---
 
 ## 4. Đề Xuất & Khuyến Nghị Cuối Cùng (Final Recommendation)
 
-1. **Khả năng Benchmark**: Việc onboard CHINT cho thấy tín hiệu khả thi ban đầu khi áp dụng quy trình Supplier Profile Config cho nhà cung cấp thứ 3. Tuy nhiên, do CHINT mới đạt 1/3 trang PASS và còn 2/3 trang PARTIAL, kết quả này chưa đủ để kết luận framework có tính tổng quát cao. Cần tiếp tục hardening thêm supplier và layout trước khi tích hợp pipeline chính.
+1. **Khả năng Benchmark**: Việc onboard CHINT cho thấy tín hiệu khả thi ban đầu khi áp dụng quy trình Supplier Profile Config cho nhà cung cấp thứ 3. Tuy nhiên, do CHINT mới đạt 2/3 trang PASS và còn 1/3 trang PARTIAL, kết quả này chưa đủ để kết luận framework có tính tổng quát cao. Cần tiếp tục hardening thêm supplier và layout trước khi tích hợp pipeline chính.
 2. **Trạng thái Tích hợp**: **Chưa tích hợp vào pipeline chính.** Dữ liệu đầu ra tuân thủ nghiêm ngặt chuẩn hợp đồng [profile_output_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_output_contract.json).
 3. **Các Bước Tiếp Theo**: Sau Milestone F, dự án có thể:
    * Tiếp tục Hardening profile cho hãng LS và CHINT để tăng số trang đạt PASS.

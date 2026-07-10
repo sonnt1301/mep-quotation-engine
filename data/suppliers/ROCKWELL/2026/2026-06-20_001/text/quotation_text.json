@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-10T01:29:16Z",
+  "markdown_path": "text/quotation.md",
+  "page_count": 6,
+  "pages": [
+    {
+      "character_count": 597,
+      "end_offset": 749,
+      "has_text": true,
+      "page_number": 1,
+      "start_offset": 152
+    },
+    {
+      "character_count": 594,
+      "end_offset": 1361,
+      "has_text": true,
+      "page_number": 2,
+      "start_offset": 767
+    },
+    {
+      "character_count": 581,
+      "end_offset": 1960,
+      "has_text": true,
+      "page_number": 3,
+      "start_offset": 1379
+    },
+    {
+      "character_count": 592,
+      "end_offset": 2570,
+      "has_text": true,
+      "page_number": 4,
+      "start_offset": 1978
+    },
+    {
+      "character_count": 635,
+      "end_offset": 3223,
+      "has_text": true,
+      "page_number": 5,
+      "start_offset": 2588
+    },
+    {
+      "character_count": 622,
+      "end_offset": 3863,
+      "has_text": true,
+      "page_number": 6,
+      "start_offset": 3241
+    }
+  ],
+  "pages_with_text": 6,
+  "quotation_id": "ROCKWELL_20260620_001",
+  "schema_version": "1.0",
+  "source_raw_text": "source/raw_text.json",
+  "source_sha256": "d1580ca132c383dc5895a2ac6210cfee990642ab28ae537425acf3a7166a107e",
+  "total_characters": 3621
+}

@@ -1,0 +1,48 @@
+{
+  "extraction_engine": "pymupdf",
+  "extraction_engine_version": "1.27.2.2",
+  "generated_at": "2026-07-10T01:29:16Z",
+  "page_count": 6,
+  "pages": [
+    {
+      "character_count": 597,
+      "has_text": true,
+      "page_number": 1,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nFY 16/17 – A&S Micro Initiative\nMODEL\nDESCRIPTION\nUNIT PRICE\n2080-PS120-240VAC\nMicro800 24V DC Power Supply\n510,000 \n2080-IF4\nMicro800 4 Point Analog Input Plug-In\n1,520,000 \n2080-IF2\nMicro800 2 Point Analog Input Plug-In\n910,000 \n2080-OF2\nMicro800 2 Point Analog Output Plug-In\n910,000 \n2080-SERIALISOL\nMicro800 Isolated Serial Port Plug-In\n710,000 \n2080-TRIMPOT6\nMicro800 6 Point Trim Pot Plug-In\n1,010,000 \n2080-MEMBAK-RTC\nMicro800 Memory Module With RTC Plug-In\n1,010,000 \n2080-RTD2\nMicro800 2 Channel RTD Plug-In\n1,110,000 \n"
+    },
+    {
+      "character_count": 594,
+      "has_text": true,
+      "page_number": 2,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nMODEL\nDESCRIPTION\nUNIT PRICE\n2080-TC2\nMicro800 2 Channel TC Plug-In\n1,110,000 \n2085-IQ16\nMicro800 16 Point  Digital Input Module\n1,440,000 \n2085-IQ32T\nMicro800 32 Point  Digital Input Module\n2,370,000 \n2085-OV16\nMicro800 16 Point Sink Output Module\n1,820,000 \n2085-OB16\nMicro800 16 Point Source Output Module\n1,820,000 \n2085-OW8\nMicro800 8 Point Relay Output Module\n1,200,000 \n2085-OW16\nMicro800 16 Point Relay Output Module\n1,760,000 \n2085-IA8\nMicro800 8 Point 120 VAC Input Module\n1,140,000 \nFY 16/17 – A&S Micro Initiative\n"
+    },
+    {
+      "character_count": 581,
+      "has_text": true,
+      "page_number": 3,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nMODEL\nDESCRIPTION\nUNIT PRICE\n2085-IM8\nMicro800 8 Point 240 VAC Input Module\n1,140,000 \n2085-OA8\nMicro800 8 Point Triac Output Module\n1,440,000 \n2085-IF4\nMicro800 4 Point Analog Input Module\n2,270,000 \n2085-IF8\nMicro800 8 Point Analog Input Module\n3,930,000 \n2085-OF4\nMicro800 4 Point Analog Output Module\n2,270,000 \n2085-IRT4\nMicro800 4 Channel TC/RTD Input Module\n3,510,000 \n2085-ECR\nMicro800 Expansion Module End Cap\n160,000 \n2080-IQ4\nMicro800 4 Point IEC Digital Input\n500,000 \nFY 16/17 – A&S Micro Initiative\n"
+    },
+    {
+      "character_count": 592,
+      "has_text": true,
+      "page_number": 4,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nMODEL\nDESCRIPTION\nUNIT PRICE\n2080-OB4\nMicro800 4 Point Source Output\n500,000 \n2080-OV4\nMicro800 4 Point Sink Output\n500,000 \n2080-OW4I\nMicro800 4 Point Relay Output\n710,000 \n2080-IQ4OB4\nMicro800 8 Point Digital Combo (Source)\n810,000 \n2080-IQ4OV4\nMicro800 8 Point Digital Combo (Sink)\n810,000 \n2080-LC50-48QWB\nMicro850 48 I/O EtherNet/IP Controller\n6,610,000 \n2080-LC50-48AWB\nMicro850 48 I/O EtherNet/IP Controller\n6,610,000 \n2080-LC50-24QWB\nMicro850 24 I/O EtherNet/IP Controller\n4,520,000 \nFY 16/17 – A&S Micro Initiative\n"
+    },
+    {
+      "character_count": 635,
+      "has_text": true,
+      "page_number": 5,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nMODEL\nDESCRIPTION\nUNIT PRICE\n2080-LC50-24QVB\nMicro850 24 I/O EtherNet/IP Controller\n4,520,000 \n2080-LC50-24QBB\nMicro850 24 I/O EtherNet/IP Controller\n4,520,000 \n2080-LC50-24AWB\nMicro850 24 I/O EtherNet/IP Controller\n4,520,000 \n2080-LC50-48QVB\nMicro850 48 I/O EtherNet/IP Controller\n6,610,000 \n2080-LC50-48QBB\nMicro850 48 I/O EtherNet/IP Controller\n6,610,000 \n2080-MOT-HSC\nMicro800 250KHz HSC Plug-In\n1,010,000 \n2080-LC20-20QWB\nMicro820 20 I/O ENet/IP Controller\n2,570,000 \n2080-LC20-20AWB\nMicro820 20 I/O ENet/IP Controller\n2,570,000 \nFY 16/17 – A&S Micro Initiative\n"
+    },
+    {
+      "character_count": 622,
+      "has_text": true,
+      "page_number": 6,
+      "text": "Servodynamics Engineering Pte Ltd\nServodynamics Engineering Pte Ltd\nMODEL\nDESCRIPTION\nUNIT PRICE\n2080-LC20-20QWBR\nMicro820 20 I/O ENet/IP Controller (RTB)\n2,880,000 \n2080-DNET20\nMicro800 DeviceNet Scanner Plug-In\n1,520,000 \n2080-LC20-20AWBR\nMicro820 20 I/O ENet/IP Controller (RTB)\n2,880,000 \n2080-LC20-20QBBR\nMicro820 20 I/O ENet/IP Controller (RTB)\n2,880,000 \n2080-REMLCD\nMicro800 Remote LCD Display\n1,520,000 \n2080-LC20-20QBB\nMicro820 20 I/O ENet/IP Controller\n2,570,000 \n2711R-T10T\nPANELVIEW 800 10.4-INCH HMI TERMINAL\n13,760,000 \n2711R-T7T\nPANELVIEW 800 7-INCH HMI TERMINAL\n5,900,000 \nFY 16/17 – A&S Micro Initiative\n"
+    }
+  ],
+  "quotation_id": "ROCKWELL_20260620_001",
+  "schema_version": "1.0",
+  "source_pdf": "source/original.pdf",
+  "source_sha256": "ee5c03f52d01258994994029c03e8123af769e72ab9af00b8f68af82f6a55784"
+}

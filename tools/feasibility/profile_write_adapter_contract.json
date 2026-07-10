@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileWriteAdapterDryRunContract",
+  "type": "object",
+  "required": [
+    "adapter_version",
+    "generated_at",
+    "mode",
+    "source_bridge_items",
+    "source_review_decisions",
+    "write_target",
+    "ready_for_write_to_main_pipeline",
+    "summary",
+    "items",
+    "blocked_items"
+  ],
+  "properties": {
+    "adapter_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run"]
+    },
+    "source_bridge_items": {
+      "type": "string"
+    },
+    "source_review_decisions": {
+      "type": "string"
+    },
+    "write_target": {
+      "type": "string",
+      "enum": ["normalized_json_preview_only"]
+    },
+    "ready_for_write_to_main_pipeline": {
+      "type": "boolean",
+      "const": false
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "input_bridge_items_count",
+        "review_decisions_count",
+        "exportable_items_count",
+        "blocked_items_count",
+        "approved_count",
+        "edited_count",
+        "accepted_with_limitation_count",
+        "rejected_count",
+        "needs_investigation_count",
+        "unreviewed_count",
+        "proposed_status"
+      ],
+      "properties": {
+        "input_bridge_items_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "review_decisions_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "exportable_items_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_items_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "approved_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "edited_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_with_limitation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "needs_investigation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unreviewed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proposed_status": {
+          "type": "string",
+          "enum": ["READY_FOR_CONTROLLED_WRITE_REVIEW", "BLOCKED_NEEDS_HUMAN_REVIEW"]
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "blocked_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

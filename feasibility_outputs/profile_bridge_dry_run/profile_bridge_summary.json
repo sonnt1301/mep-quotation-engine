@@ -1,0 +1,57 @@
+{
+  "bridge_version": "1.0.0",
+  "generated_at": "2026-07-10T13:40:04.930388Z",
+  "mode": "dry_run",
+  "source_manifest": "feasibility_outputs/profile_run_manifest/profile_run_manifest.json",
+  "bridge_status": "PASS",
+  "suppliers": [
+    {
+      "supplier_code": "ABB",
+      "source_profile_status": "PASS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is PASS, fully accepted for integration.",
+      "input_valid_items_count": 743,
+      "bridged_items_count": 743,
+      "skipped_items_count": 0,
+      "warnings": []
+    },
+    {
+      "supplier_code": "LS",
+      "source_profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is ACCEPTED_WITH_KNOWN_LIMITATIONS, accepted with known limitations.",
+      "input_valid_items_count": 284,
+      "bridged_items_count": 284,
+      "skipped_items_count": 0,
+      "warnings": [
+        "LS Page 2 và Trang 5 ở trạng thái PARTIAL do dòng phụ kiện (accessories) chưa được gộp."
+      ]
+    },
+    {
+      "supplier_code": "CHINT",
+      "source_profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is ACCEPTED_WITH_KNOWN_LIMITATIONS, accepted with known limitations.",
+      "input_valid_items_count": 45,
+      "bridged_items_count": 45,
+      "skipped_items_count": 0,
+      "warnings": [
+        "CHINT Page 5 ở trạng thái PARTIAL do số lượng sản phẩm ít hơn 10 dòng."
+      ]
+    }
+  ],
+  "total_input_valid_items": 1072,
+  "total_bridged_items": 1072,
+  "total_skipped_items": 0,
+  "duplicate_code_group_count": 75,
+  "duplicate_code_with_different_price_count": 69,
+  "integration_readiness": {
+    "ready_for_write_to_main_pipeline": false,
+    "reason": "Đây mới là phase Integration Bridge Dry-run (Chạy cầu nối khô). Toàn bộ dữ liệu chưa được phép ghi đè hay đẩy trực tiếp vào cơ sở dữ liệu hoặc main pipeline chính của dự án."
+  },
+  "output_files": {
+    "bridged_items_json": "feasibility_outputs/profile_bridge_dry_run/profile_bridge_items.json",
+    "bridge_summary_json": "feasibility_outputs/profile_bridge_dry_run/profile_bridge_summary.json",
+    "bridge_report_md": "feasibility_outputs/profile_bridge_dry_run/profile_bridge_report.md"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "page": 3,
+    "status": "PASS",
+    "raw_detected_rows": 15,
+    "skipped_before_validation": 2,
+    "validation_input_count": 15,
+    "valid_items_count": 15,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "chint_mccb_nxm_nm1"
+  },
+  {
+    "page": 4,
+    "status": "PASS",
+    "raw_detected_rows": 23,
+    "skipped_before_validation": 6,
+    "validation_input_count": 23,
+    "valid_items_count": 23,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "chint_contactor_nxc"
+  },
+  {
+    "page": 5,
+    "status": "PARTIAL",
+    "raw_detected_rows": 7,
+    "skipped_before_validation": 24,
+    "validation_input_count": 7,
+    "valid_items_count": 7,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "chint_thermal_relay_nxr"
+  }
+]

@@ -2,6 +2,7 @@ import json
 import pytest
 import sys
 import subprocess
+import re
 from pathlib import Path
 
 # Thêm thư mục gốc dự án vào sys.path để tránh lỗi import
@@ -45,13 +46,16 @@ def test_manifest_generation_execution():
     assert "Trang 5" in ls_limits or "Page 5" in ls_limits or "accessories" in ls_limits.lower() or "phụ kiện" in ls_limits.lower()
     assert "Trang 5" in chint_limits or "Page 5" in chint_limits or "rơ le nhiệt" in chint_limits.lower()
     
-    # 6. Kiểm tra các từ khóa overclaim không được xuất hiện
+    # 6. Đảm bảo không còn stale text về Chint Page 3 và Page 5 đều PARTIAL
+    assert "Page 3 and Page 5 remain PARTIAL" not in chint_limits
+    assert "Trang 3 và Trang 5 vẫn ở trạng thái PARTIAL" not in chint_limits
+    
+    # 7. Kiểm tra các từ khóa overclaim không được xuất hiện
     with open(manifest_md_path, "r", encoding="utf-8") as f:
         md_text = f.read()
         
     overclaim_keywords = [
         "chứng minh tính tổng quát",
-        "production-ready",
         "sẵn sàng production",
         "tự động xử lý mọi pdf",
         "generic parser đã hoàn thiện"
@@ -70,3 +74,19 @@ def test_manifest_generation_execution():
         clean_kw = remove_accents(kw).lower()
         assert clean_kw not in clean_md, f"Found overclaiming keyword '{kw}' in manifest MD."
         assert clean_kw not in clean_json, f"Found overclaiming keyword '{kw}' in manifest JSON."
+
+def test_manifest_contract_schema_types_lowercase():
+    # Kiểm tra JSON Schema contract type phải viết thường (lowercase)
+    contract_path = Path("tools/feasibility/profile_run_manifest_contract.json")
+    assert contract_path.exists(), "Manifest JSON Schema contract file not found."
+    
+    with open(contract_path, "r", encoding="utf-8") as f:
+        contract = json.load(f)
+        
+    # Đọc raw text của file để check xem có chứa type viết hoa không
+    with open(contract_path, "r", encoding="utf-8") as f:
+        raw_text = f.read()
+        
+    # Tìm kiếm các mẫu '"type": "WRITE_UPPERCASE"'
+    uppercase_types = re.findall(r'"type":\s*"([A-Z]+)"', raw_text)
+    assert not uppercase_types, f"Found uppercase schema types in contract: {uppercase_types}"

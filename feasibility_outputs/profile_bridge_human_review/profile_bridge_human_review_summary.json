@@ -1,0 +1,48 @@
+{
+  "total_bridged_items": 1072,
+  "total_sample_rows": 72,
+  "total_duplicate_code_groups": 75,
+  "duplicate_groups_by_risk": {
+    "HIGH": 69,
+    "MEDIUM": 6,
+    "LOW": 0
+  },
+  "known_limitations": [
+    {
+      "supplier_code": "ABB",
+      "source_profile_status": "PASS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is PASS, fully accepted for integration.",
+      "input_valid_items_count": 743,
+      "bridged_items_count": 743,
+      "skipped_items_count": 0,
+      "warnings": []
+    },
+    {
+      "supplier_code": "LS",
+      "source_profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is ACCEPTED_WITH_KNOWN_LIMITATIONS, accepted with known limitations.",
+      "input_valid_items_count": 284,
+      "bridged_items_count": 284,
+      "skipped_items_count": 0,
+      "warnings": [
+        "LS Page 2 và Trang 5 ở trạng thái PARTIAL do dòng phụ kiện (accessories) chưa được gộp."
+      ]
+    },
+    {
+      "supplier_code": "CHINT",
+      "source_profile_status": "ACCEPTED_WITH_KNOWN_LIMITATIONS",
+      "included": true,
+      "inclusion_reason": "Supplier profile status is ACCEPTED_WITH_KNOWN_LIMITATIONS, accepted with known limitations.",
+      "input_valid_items_count": 45,
+      "bridged_items_count": 45,
+      "skipped_items_count": 0,
+      "warnings": [
+        "CHINT Page 5 ở trạng thái PARTIAL do số lượng sản phẩm ít hơn 10 dòng."
+      ]
+    }
+  ],
+  "proposed_status": "READY_FOR_HUMAN_REVIEW",
+  "ready_for_write_to_main_pipeline": false
+}

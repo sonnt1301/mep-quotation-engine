@@ -1,0 +1,41 @@
+[
+  {
+    "page": 3,
+    "status": "PARTIAL",
+    "raw_detected_rows": 3,
+    "skipped_before_validation": 41,
+    "validation_input_count": 3,
+    "valid_items_count": 1,
+    "invalid_items_count": 2,
+    "invalid_ratio": 66.7,
+    "errors_sample": [
+      "material_code_invalid_prefix",
+      "material_code_invalid_format"
+    ],
+    "detected_table_type": "chint_mccb_nxm_nm1"
+  },
+  {
+    "page": 4,
+    "status": "FAIL",
+    "raw_detected_rows": 0,
+    "skipped_before_validation": 43,
+    "validation_input_count": 0,
+    "valid_items_count": 0,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "chint_contactor_nxc"
+  },
+  {
+    "page": 5,
+    "status": "FAIL",
+    "raw_detected_rows": 0,
+    "skipped_before_validation": 35,
+    "validation_input_count": 0,
+    "valid_items_count": 0,
+    "invalid_items_count": 0,
+    "invalid_ratio": 0.0,
+    "errors_sample": [],
+    "detected_table_type": "chint_thermal_relay_nxr"
+  }
+]

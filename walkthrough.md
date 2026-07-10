@@ -1,57 +1,83 @@
-# Walkthrough – Milestone H – Profile Run Manifest / Integration-Ready Packaging
+# Walkthrough – Phase 2A.5 – PDF Page Preview for Human Review
 
-Tất cả các mục tiêu của **Milestone H** đã hoàn thành xuất sắc. Kết quả nghiệm thu khả thi bóc tách thiết bị M&E đã được đóng gói chuẩn hóa, sẵn sàng cho phase tích hợp trong tương lai.
+Tất cả các mục tiêu phát triển giao diện PDF Page Preview trực quan kèm tính năng Zoom co giãn hỗ trợ rà soát thực tế đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
 
 ---
 
 > [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc trong giai đoạn này chỉ phục vụ mục tiêu **Khảo sát Khả thi (Feasibility Reset)**.
-> * **Không tích hợp vào pipeline chính của dự án và không sửa đổi giao diện Streamlit UI.**
-> * **Không OCR, không AI/LLM, không parse Excel.**
-> * **Không hardcode dữ liệu đầu ra chỉ để pass test.**
+> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Visual Human Review Workspace**.
+> * **Không ghi dữ liệu vào main pipeline chính và không sửa đổi giao diện Streamlit UI cũ.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Kết Quả Nghiệm Thu Tổng Hợp Sau Hardening & Đóng Gói
+## 1. Kết Quả Triển Khai PDF Page Preview
 
-### ABB Profile (PASS)
-* **Valid items**: **743 items** (Khớp **100%**)
-* **Invalid items**: **2 items** (Khớp **100%**)
-* **Số trang đạt PASS**: **13 / 13 trang**
-* **Trạng thái nghiệm thu**: **PASS**
+1. **PDF Page Preview Trực Quan**:
+   - Sử dụng PyMuPDF (`fitz`) để render cực nhanh trang PDF của mỗi vật tư đang được chọn review thành ảnh PNG.
+   - Hình ảnh hiển thị trực quan ở cột bên trái **📄 Nguồn Đối Chiếu & Bằng Chứng** ngay phía trên thông tin metadata và văn bản bằng chứng thô.
+   - Tự động thay đổi trang hiển thị tương ứng theo `source_page` của vật tư đang được kích hoạt.
 
-### LS Profile (ACCEPTED_WITH_KNOWN_LIMITATIONS)
-* **Valid items**: **284 items**
-* **Invalid items**: **16 items**
-* **Số trang đạt PASS**: **3 / 5 trang**
-* **Số trang đạt PARTIAL**: **2 / 5 trang** (Trang 2 và 5)
-* **Trạng thái nghiệm thu**: **ACCEPTED_WITH_KNOWN_LIMITATIONS**
+2. **Thanh trượt điều chỉnh Zoom (scale/DPI)**:
+   - Tích hợp thanh trượt `st.slider` hỗ trợ phóng to bản vẽ trang PDF (từ 1.0 đến 3.0) trực tiếp trên UI.
+   - Sử dụng `lru_cache` để tối ưu hóa hiệu năng, giảm thiểu tối đa việc render lại trang PDF cũ khi thay đổi độ thu phóng hoặc chuyển dòng.
 
-### CHINT Profile (ACCEPTED_WITH_KNOWN_LIMITATIONS)
-* **Valid items**: **45 items**
-* **Invalid items**: **0 items** (Giảm từ 6 xuống còn **0** nhờ bổ sung bộ lọc tiêu đề rác)
-* **Số trang đạt PASS**: **2 / 3 trang** (Nâng Trang 3 từ PARTIAL lên **PASS** thành công!)
-* **Số trang đạt PARTIAL**: **1 / 3 trang** (Trang 5 đạt PARTIAL do số lượng item thực tế ít hơn 10)
-* **Trạng thái nghiệm thu**: **ACCEPTED_WITH_KNOWN_LIMITATIONS**
+3. **Fallback & Khả năng chịu lỗi**:
+   - Nếu tệp PDF không tồn tại (chế độ benchmark mặc định không cấu hình hoặc không tìm thấy tệp) hoặc gặp sự cố render, hệ thống tự động fallback hiển thị **Source Evidence Text** thô kèm theo thông báo warning, hoàn toàn không gây crash ứng dụng.
 
 ---
 
-## 2. Hardening & Packaging Hành Động Kỹ Thuật
+## 2. Xác Minh Chất Lượng & Tests
 
-1. **Manifest Đóng Gói Máy Đọc và Người Đọc**:
-   - Manifest JSON: [profile_run_manifest.json](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.json)
-   - Manifest Markdown: [profile_run_manifest.md](file:///D:/mep_quotation_pipeline/feasibility_outputs/profile_run_manifest/profile_run_manifest.md)
-   - JSON Schema Contract: [profile_run_manifest_contract.json](file:///D:/mep_quotation_pipeline/tools/feasibility/profile_run_manifest_contract.json)
+* Tất cả 195 unit tests đã vượt qua thành công: **195/195 passed** (tỷ lệ 100%).
+* Đã tạo tệp unit test bảo vệ preview: [test_profile_bridge_pdf_preview.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_preview.py)
+  - Xác minh chức năng render trang PDF thành ảnh PNG bytes hợp lệ.
+  - Kiểm thử số trang vượt phạm vi ném lỗi ValueError an toàn.
+  - Kiểm thử `validate_pdf_page_number` và `resolve_session_pdf_path` hoạt động chính xác.
+  - Rà soát tĩnh chống mojibake tiếng Việt.
+# Walkthrough - Phase 2B - Controlled Write Adapter Dry-run
 
-2. **Integration Readiness (Độ Sẵn Sàng Tích Hợp)**:
-   - `ready_for_main_pipeline`: **`FALSE`**
-   - **Lý do**: Vẫn còn các giới hạn đã biết (known limitations) về các trang PARTIAL (LS Trang 2 & 5, CHINT Trang 5) và chưa xây dựng/kiểm thử mô-đun cầu nối tích hợp (Integration Bridge).
-   - **Phase yêu cầu tiếp theo**: Thiết kế mô-đun cầu nối tích hợp (Integration Bridge) để chuyển đổi dữ liệu từ Coordinate Column Profiler sang pipeline chuẩn hóa chính, đồng thời tiếp tục tinh chỉnh layout nếu cần.
+Phase 2B tao lop adapter an toan de bien cac dong Profile Bridge da duoc human review thanh normalized preview. Day chua phai write adapter that vao main pipeline.
 
----
+## Cach chay
 
-## 3. Xác Minh Chất Lượng & Tests
+```powershell
+cd D:\mep_quotation_pipeline
+python tools/feasibility/run_profile_write_adapter_dry_run.py
+```
 
-* Tất cả 170 unit tests đã vượt qua thành công: **170/170 passed** (tỷ lệ 100%).
+Neu can chi dinh decisions/session rieng:
+
+```powershell
+python tools/feasibility/run_profile_write_adapter_dry_run.py `
+  --bridge-items feasibility_outputs/profile_bridge_dry_run/profile_bridge_items.json `
+  --decisions feasibility_outputs/profile_bridge_human_review/profile_bridge_review_decisions.json `
+  --output-dir feasibility_outputs/profile_write_adapter_dry_run
+```
+
+## Output
+
+- `normalized_items_preview.json`: cac dong du dieu kien export preview.
+- `blocked_items.json`: cac dong bi chan do reject, needs investigation, hoac chua review.
+- `profile_write_adapter_summary.json`: manifest tong hop dry-run.
+- `profile_write_adapter_report.md`: bao cao doc nhanh.
+
+## Dieu kien duoc export preview
+
+- `APPROVE`
+- `EDIT_AND_APPROVE`
+- `ACCEPT_WITH_LIMITATION`
+
+## Dieu kien bi chan
+
+- `REJECT`
+- `NEEDS_INVESTIGATION`
+- Chua co human decision
+
+## Safety
+
+- `ready_for_write_to_main_pipeline = false`
+- Khong ghi database.
+- Khong sua normalized/package chinh thuc.
+- Khong dung moi `supplier_code + normalized_material_code` lam write key.
