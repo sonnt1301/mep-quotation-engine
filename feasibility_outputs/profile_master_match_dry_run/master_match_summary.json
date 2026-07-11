@@ -1,6 +1,6 @@
 {
   "match_version": "1.0.0",
-  "generated_at": "2026-07-11T02:03:15.552623Z",
+  "generated_at": "2026-07-11T02:30:15.162117Z",
   "mode": "master_match_dry_run",
   "source_write_simulation_summary": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_simulation\\simulated_write_summary.json",
   "ready_for_write_to_main_pipeline": false,

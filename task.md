@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2F
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2G
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -20,7 +20,7 @@
 - `[x]` Khai báo tệp JSON Schema `profile_config_schema.json` chuẩn hóa cấu trúc
 - `[x]` Tách toàn bộ thông số tọa độ cột X, validation rule và page mapping của ABB sang `abb_profile_v1.json`
 - `[x]` Tách toàn bộ thông số tọa độ cột X, validation rule và page mapping của LS sang `ls_profile_v1.json`
-- `[x]` Tạo mô-đun nạp cấu hình `profile_config_loader.py` tích bộ kiểm chứng (validator) đệ quy
+- `[x]` Tạo mô-đun nạp cấu hình `profile_config_loader.py` tích hợp bộ kiểm chứng (validator) đệ quy
 - `[x]` Viết tệp hướng dẫn `README.md` chi tiết cấu hình và cảnh báo feasibility
 - `[x]` Xây dựng tệp unit tests `test_profile_config_loader.py` và kiểm chứng các ca thành công/thất bại
 - `[x]` Chạy kiểm thử pytest toàn dự án đạt 158/158 tests passed thành công
@@ -107,7 +107,7 @@
 - `[x]` Đồng bộ hóa toàn bộ tài liệu root tại project root.
 
 ## Phase 2A.3 – PDF Intake & Processing Flow (Đã hoàn thành)
-- `[x]` Bổ sung giao diện "Thêm & Xử lý PDF mới" vào đầu ứng dụng review: chọn supplier, upload tệp PDF, nhập local path.
+- `[x]` Bổ dung giao diện "Thêm & Xử lý PDF mới" vào đầu ứng dụng review: chọn supplier, upload tệp PDF, nhập local path.
 - `[x]` Thêm các helper chức năng bóc tách PDF tùy chọn và nạp session độc lập tại `profile_bridge_review_helpers.py`.
 - `[x]` Thiết lập tệp unit test bảo vệ intake: [test_profile_bridge_pdf_intake.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_intake.py).
 - `[x]` Cập nhật tệp hướng dẫn review chi tiết quy trình chạy PDF và nạp session.
@@ -165,6 +165,15 @@
 - `[x]` Thực thi bóc tách kết quả so khớp và sinh đầy đủ báo cáo (results JSON, summary JSON, review CSV, Excel 4 sheet và Markdown report).
 - `[x]` Viết tệp unit test kiểm định: [test_profile_master_match_dry_run.py](file:///D:/mep_quotation_pipeline/tests/test_profile_master_match_dry_run.py).
 - `[x]` Chạy pytest toàn cục Passed: **217/217 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2G – Master Review Resolution Package (Đã hoàn thành)
+- `[x]` Phát triển tệp JSON schema contract đầu ra: `tools/feasibility/profile_master_review_resolution_contract.json`.
+- `[x]` Phát triển script đóng gói resolution templates: `export_profile_master_review_resolution.py`.
+- `[x]` Tự động lọc ra các dòng có cảnh báo/trùng lắp master và gán quyết định mặc định `PENDING`.
+- `[x]` Sinh đầy đủ tệp tin resolution (items JSON, summary JSON, CSV template, Excel 4 sheet có validation dropdown và guide Markdown).
+- `[x]` Viết tệp unit test kiểm định: [test_profile_master_review_resolution.py](file:///D:/mep_quotation_pipeline/tests/test_profile_master_review_resolution.py).
+- `[x]` Chạy pytest toàn cục Passed: **220/220 passed** (100% thành công).
 - `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ---
