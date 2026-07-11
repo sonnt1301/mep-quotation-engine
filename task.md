@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2B.1
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2E
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -140,6 +140,23 @@
 - `[x]` Cập nhật unit test `tests/test_profile_write_adapter_dry_run.py` kiểm thử đầy đủ sự tồn tại của file, các sheet trong Excel và trạng thái an toàn.
 - `[x]` Chạy pytest kiểm định toàn cục thành công: **201/201 passed** (100% thành công).
 - `[x]` Đồng bộ hóa các tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2C – Write Candidate Design / Controlled Commit Plan (Đã hoàn thành)
+- `[x]` Xây dựng tệp JSON schema contract đầu ra tại `tools/feasibility/profile_write_candidate_contract.json`.
+- `[x]` Phát triển script đóng gói Controlled Write Candidate `export_profile_write_candidate.py`.
+- `[x]` Phân tích an toàn trùng lặp: mark `SKIP_CANDIDATE` cho các dòng trùng write_key và ghi nhận warning chi tiết.
+- `[x]` Sinh đầy đủ tệp tin write_candidate (JSON items, JSON summary, CSV và XLSX multi-sheet có định dạng và highlight warnings).
+- `[x]` Viết tệp unit test kiểm định: [test_profile_write_candidate.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_candidate.py).
+- `[x]` Chạy pytest toàn cục thành công: **205/205 passed** (100% thành công).
+- `[x]` Đồng bộ hóa các tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2E – Write Simulation / Sandbox Commit (Đã hoàn thành)
+- `[x]` Phát triển tệp JSON schema contract đầu ra của simulation: `tools/feasibility/profile_write_simulation_contract.json`.
+- `[x]` Phát triển script sandbox simulation `run_profile_write_simulation.py` kiểm chứng điều kiện gate và candidates.
+- `[x]` Giả lập đầy đủ material records, commit log, rollback plan sandbox, markdown report và Excel 4 sheet (Summary, Simulated Records, Commit Log, Rollback Plan).
+- `[x]` Viết tệp unit test kiểm định: [test_profile_write_simulation.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_simulation.py).
+- `[x]` Chạy pytest toàn cục Passed: **214/214 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ---
 > [!WARNING]

@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileWriteCandidateContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Write Candidate Package outputs",
+  "type": "object",
+  "properties": {
+    "candidate_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run"]
+    },
+    "source_adapter_summary_path": {
+      "type": "string"
+    },
+    "write_target": {
+      "type": "string",
+      "const": "write_candidate_preview_only"
+    },
+    "ready_for_write_to_main_pipeline": {
+      "type": "boolean",
+      "const": false
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "candidate_items_count": { "type": "integer", "minimum": 0 },
+        "skipped_items_count": { "type": "integer", "minimum": 0 },
+        "duplicate_write_key_count": { "type": "integer", "minimum": 0 },
+        "duplicate_material_code_count": { "type": "integer", "minimum": 0 },
+        "proposed_status": {
+          "type": "string",
+          "enum": ["READY_FOR_HUMAN_COMMIT_REVIEW", "BLOCKED_NEEDS_REVIEW"]
+        },
+        "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+        "reasons_not_ready_for_write": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "candidate_items_count",
+        "skipped_items_count",
+        "duplicate_write_key_count",
+        "duplicate_material_code_count",
+        "proposed_status",
+        "ready_for_write_to_main_pipeline",
+        "reasons_not_ready_for_write"
+      ]
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "write_candidate_id": { "type": "string" },
+          "source_adapter_item_id": { "type": "string" },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "description": { "type": "string" },
+          "unit": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit_price": { "type": "integer" },
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "page_number": { "type": "integer" },
+          "write_key": { "type": "string" },
+          "human_decision": { "type": "string" },
+          "human_note": { "type": "string" },
+          "provenance": { "type": "string" },
+          "evidence_text": { "type": "string" },
+          "proposed_action": {
+            "type": "string",
+            "enum": ["INSERT_CANDIDATE", "UPDATE_CANDIDATE", "SKIP_CANDIDATE"]
+          }
+        },
+        "required": [
+          "write_candidate_id",
+          "source_adapter_item_id",
+          "supplier_code",
+          "material_code",
+          "description",
+          "unit",
+          "quantity",
+          "unit_price",
+          "amount",
+          "currency",
+          "page_number",
+          "write_key",
+          "human_decision",
+          "human_note",
+          "provenance",
+          "evidence_text",
+          "proposed_action"
+        ]
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "write_key": { "type": "string" },
+          "material_code": { "type": "string" },
+          "message": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["type", "message", "items"]
+      }
+    }
+  },
+  "required": [
+    "candidate_version",
+    "generated_at",
+    "mode",
+    "source_adapter_summary_path",
+    "write_target",
+    "ready_for_write_to_main_pipeline",
+    "summary",
+    "candidates",
+    "warnings"
+  ]
+}

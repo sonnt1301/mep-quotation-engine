@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileCommitGateContract",
+  "type": "object",
+  "required": [
+    "gate_version",
+    "generated_at",
+    "mode",
+    "source_write_candidate_summary",
+    "source_write_candidate_items",
+    "source_artifact_hashes",
+    "candidate_summary",
+    "commit_gate_status",
+    "approval",
+    "ready_for_write_to_main_pipeline",
+    "next_allowed_phase",
+    "blocking_reasons"
+  ],
+  "properties": {
+    "gate_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["approval_lock"]
+    },
+    "source_write_candidate_summary": {
+      "type": "string"
+    },
+    "source_write_candidate_items": {
+      "type": "string"
+    },
+    "source_artifact_hashes": {
+      "type": "object"
+    },
+    "candidate_summary": {
+      "type": "object"
+    },
+    "commit_gate_status": {
+      "type": "string",
+      "enum": [
+        "PENDING_HUMAN_APPROVAL",
+        "BLOCKED_NEEDS_REVIEW",
+        "APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY"
+      ]
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "approved",
+        "approved_by",
+        "approval_note",
+        "approval_phrase",
+        "approved_at"
+      ],
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "approved_by": {
+          "type": "string"
+        },
+        "approval_note": {
+          "type": "string"
+        },
+        "approval_phrase": {
+          "type": "string"
+        },
+        "approved_at": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "ready_for_write_to_main_pipeline": {
+      "type": "boolean",
+      "const": false
+    },
+    "next_allowed_phase": {
+      "type": "string"
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
