@@ -1,6 +1,6 @@
 {
   "bridge_version": "1.0.0",
-  "generated_at": "2026-07-10T13:40:04.930388Z",
+  "generated_at": "2026-07-10T18:09:37.492504Z",
   "mode": "dry_run",
   "source_manifest": "feasibility_outputs/profile_run_manifest/profile_run_manifest.json",
   "bridge_status": "PASS",

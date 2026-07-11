@@ -1,0 +1,13 @@
+{
+  "simulation_id": "SIM_SESSION_2026-07-10T11-09-31-574964Z",
+  "generated_at": "2026-07-10T11:09:31.574964Z",
+  "total_candidates": 0,
+  "would_insert_count": 0,
+  "would_update_count": 0,
+  "would_skip_count": 0,
+  "blocked_count": 0,
+  "source_commit_gate_hash": "5d3c5ae8b3dfdf5f6d3942915cb2da8e75e23bb3ffd7496e23e5a8ef3cc8e3b7",
+  "source_candidate_hash": "28651447e1d09fac7611a350c5bac348aa56960565609b7fce024f9743ff0fe7",
+  "ready_for_real_write": false,
+  "log_entries": []
+}

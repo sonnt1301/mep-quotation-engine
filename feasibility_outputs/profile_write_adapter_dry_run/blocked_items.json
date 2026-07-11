@@ -10270,36 +10270,6 @@
     "human_note": ""
   },
   {
-    "review_item_key": "CHINT_P3_NXM-63S_800000",
-    "supplier_code": "CHINT",
-    "source_page": 3,
-    "normalized_material_code": "NXM-63S",
-    "unit_price": 800000,
-    "decision": "UNREVIEWED",
-    "block_reason": "missing_human_approval",
-    "human_note": ""
-  },
-  {
-    "review_item_key": "CHINT_P3_NXM-125S_860000",
-    "supplier_code": "CHINT",
-    "source_page": 3,
-    "normalized_material_code": "NXM-125S",
-    "unit_price": 860000,
-    "decision": "UNREVIEWED",
-    "block_reason": "missing_human_approval",
-    "human_note": ""
-  },
-  {
-    "review_item_key": "CHINT_P3_NXM-250S_1400000",
-    "supplier_code": "CHINT",
-    "source_page": 3,
-    "normalized_material_code": "NXM-250S",
-    "unit_price": 1400000,
-    "decision": "UNREVIEWED",
-    "block_reason": "missing_human_approval",
-    "human_note": ""
-  },
-  {
     "review_item_key": "CHINT_P3_NXM-400S_4200000",
     "supplier_code": "CHINT",
     "source_page": 3,

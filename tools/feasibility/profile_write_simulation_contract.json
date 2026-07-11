@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileWriteSimulationContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Write Simulation outputs",
+  "type": "object",
+  "properties": {
+    "simulation_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "mode": { "type": "string", "const": "simulation" },
+    "source_commit_gate_manifest": { "type": "string" },
+    "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "simulation_status": {
+          "type": "string",
+          "enum": ["SIMULATION_READY_FOR_REVIEW", "BLOCKED_BY_COMMIT_GATE", "BLOCKED_NEEDS_REVIEW"]
+        },
+        "total_candidates": { "type": "integer", "minimum": 0 },
+        "simulated_records_count": { "type": "integer", "minimum": 0 },
+        "would_insert_count": { "type": "integer", "minimum": 0 },
+        "would_update_count": { "type": "integer", "minimum": 0 },
+        "would_skip_count": { "type": "integer", "minimum": 0 },
+        "blocked_count": { "type": "integer", "minimum": 0 },
+        "ready_for_real_write": { "type": "boolean", "const": false },
+        "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+        "reasons_not_ready_for_real_write": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "simulation_status",
+        "total_candidates",
+        "simulated_records_count",
+        "would_insert_count",
+        "would_update_count",
+        "would_skip_count",
+        "blocked_count",
+        "ready_for_real_write",
+        "ready_for_write_to_main_pipeline",
+        "reasons_not_ready_for_real_write"
+      ]
+    },
+    "simulated_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "simulation_record_id": { "type": "string" },
+          "write_candidate_id": { "type": "string" },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "description": { "type": "string" },
+          "unit": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit_price": { "type": "integer" },
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "write_key": { "type": "string" },
+          "proposed_action": { "type": "string" },
+          "simulated_result": {
+            "type": "string",
+            "enum": ["WOULD_INSERT", "WOULD_UPDATE", "WOULD_SKIP", "BLOCKED"]
+          },
+          "source_provenance": { "type": "string" },
+          "evidence_text": { "type": "string" },
+          "created_from_phase": { "type": "string", "const": "Phase 2E Simulation" },
+          "ready_for_real_write": { "type": "boolean", "const": false }
+        },
+        "required": [
+          "simulation_record_id",
+          "write_candidate_id",
+          "supplier_code",
+          "material_code",
+          "description",
+          "unit",
+          "quantity",
+          "unit_price",
+          "amount",
+          "currency",
+          "write_key",
+          "proposed_action",
+          "simulated_result",
+          "source_provenance",
+          "evidence_text",
+          "created_from_phase",
+          "ready_for_real_write"
+        ]
+      }
+    },
+    "commit_log": {
+      "type": "object",
+      "properties": {
+        "simulation_id": { "type": "string" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "total_candidates": { "type": "integer" },
+        "would_insert_count": { "type": "integer" },
+        "would_update_count": { "type": "integer" },
+        "would_skip_count": { "type": "integer" },
+        "blocked_count": { "type": "integer" },
+        "source_commit_gate_hash": { "type": "string" },
+        "source_candidate_hash": { "type": "string" },
+        "ready_for_real_write": { "type": "boolean", "const": false },
+        "log_entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "log_id": { "type": "string" },
+              "write_candidate_id": { "type": "string" },
+              "write_key": { "type": "string" },
+              "action": { "type": "string" },
+              "result": { "type": "string" },
+              "message": { "type": "string" }
+            },
+            "required": ["log_id", "write_candidate_id", "write_key", "action", "result", "message"]
+          }
+        }
+      },
+      "required": [
+        "simulation_id",
+        "generated_at",
+        "total_candidates",
+        "would_insert_count",
+        "would_update_count",
+        "would_skip_count",
+        "blocked_count",
+        "source_commit_gate_hash",
+        "source_candidate_hash",
+        "ready_for_real_write",
+        "log_entries"
+      ]
+    },
+    "rollback_plan": {
+      "type": "object",
+      "properties": {
+        "rollback_plan_id": { "type": "string" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "simulation_id": { "type": "string" },
+        "rollback_available": { "type": "boolean", "const": true },
+        "rollback_scope": { "type": "string", "const": "sandbox_only" },
+        "rollback_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action_id": { "type": "string" },
+              "target_record_id": { "type": "string" },
+              "undo_action": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["action_id", "target_record_id", "undo_action", "description"]
+          }
+        },
+        "note": { "type": "string" }
+      },
+      "required": [
+        "rollback_plan_id",
+        "generated_at",
+        "simulation_id",
+        "rollback_available",
+        "rollback_scope",
+        "rollback_actions",
+        "note"
+      ]
+    }
+  },
+  "required": [
+    "simulation_version",
+    "generated_at",
+    "mode",
+    "source_commit_gate_manifest",
+    "ready_for_write_to_main_pipeline",
+    "summary",
+    "simulated_records",
+    "commit_log",
+    "rollback_plan"
+  ]
+}

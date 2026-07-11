@@ -1,0 +1,11 @@
+﻿metric,value
+commit_gate_status,PENDING_HUMAN_APPROVAL
+ready_for_write_to_main_pipeline,False
+next_allowed_phase,Human candidate review
+candidate_items_count,3
+skipped_items_count,0
+duplicate_write_key_count,0
+duplicate_material_code_count,0
+approval_approved,False
+approved_by,
+blocking_reasons,

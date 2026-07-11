@@ -1,0 +1,43 @@
+{
+  "gate_version": "1.0.0",
+  "generated_at": "2026-07-10T11:09:31.313354Z",
+  "mode": "approval_lock",
+  "source_write_candidate_summary": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_summary.json",
+  "source_write_candidate_items": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_items.json",
+  "source_artifact_hashes": {
+    "write_candidate_items.json": "28651447e1d09fac7611a350c5bac348aa56960565609b7fce024f9743ff0fe7",
+    "write_candidate_summary.json": "695cc75389a8622de680003b623720eeb44a5d8a3be2472a061368adc1179d4d",
+    "write_candidate_review.csv": "ddf24386d6ab739f3b6c749cc466e37967e80f4e0bf67db1682265de0c3caae5",
+    "write_candidate_review.xlsx": "690a548d50d554d19c9ab87cea9ba81783c368fcc75b04fe9f11e25748628935",
+    "write_candidate_commit_plan.md": "74e32a545ae76a3359a417a9287667378e61d15afab15fe0e85e21b48bf66831"
+  },
+  "candidate_summary": {
+    "candidate_items_count": 3,
+    "skipped_items_count": 0,
+    "duplicate_write_key_count": 0,
+    "duplicate_material_code_count": 0,
+    "proposed_status": "READY_FOR_HUMAN_COMMIT_REVIEW",
+    "ready_for_write_to_main_pipeline": false,
+    "reasons_not_ready_for_write": [
+      "Chưa có chữ ký số hoặc Human Approval duyệt file Excel Controlled Commit."
+    ]
+  },
+  "candidate_items_count_observed": 3,
+  "commit_gate_status": "PENDING_HUMAN_APPROVAL",
+  "approval": {
+    "approved": false,
+    "approved_by": "",
+    "approval_note": "",
+    "approval_phrase": "",
+    "approved_at": null
+  },
+  "ready_for_write_to_main_pipeline": false,
+  "next_allowed_phase": "Human candidate review",
+  "blocking_reasons": [],
+  "safety_notes": [
+    "This gate does not write to the main pipeline.",
+    "This gate does not write to a database.",
+    "Approval here only unlocks the next design/simulation phase.",
+    "ready_for_write_to_main_pipeline remains false."
+  ]
+}

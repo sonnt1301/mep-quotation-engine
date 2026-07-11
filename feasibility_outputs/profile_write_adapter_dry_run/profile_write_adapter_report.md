@@ -2,22 +2,22 @@
 
 ## Status
 
-- Proposed status: `BLOCKED_NEEDS_HUMAN_REVIEW`
+- Proposed status: `READY_FOR_CONTROLLED_WRITE_REVIEW`
 - Ready for write to main pipeline: `FALSE`
 - Write target: `normalized_json_preview_only`
 
 ## Counts
 
 - Input bridge items: `1072`
-- Review decisions: `0`
-- Exportable preview items: `0`
-- Blocked items: `1072`
-- Approved: `0`
+- Review decisions: `3`
+- Exportable preview items: `3`
+- Blocked items: `1069`
+- Approved: `3`
 - Edited and approved: `0`
 - Accepted with limitation: `0`
 - Rejected: `0`
 - Needs investigation: `0`
-- Unreviewed: `1072`
+- Unreviewed: `1069`
 
 ## Output
 

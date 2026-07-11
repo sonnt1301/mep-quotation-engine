@@ -1,0 +1,9 @@
+{
+  "rollback_plan_id": "ROLLBACK_PLAN_2026-07-10T11-09-31-574964Z",
+  "generated_at": "2026-07-10T11:09:31.574964Z",
+  "simulation_id": "SIM_SESSION_2026-07-10T11-09-31-574964Z",
+  "rollback_available": true,
+  "rollback_scope": "sandbox_only",
+  "rollback_actions": [],
+  "note": "Đây chỉ là phương án rollback giả lập được thiết kế trong sandbox. Chưa có bất kỳ ghi dữ liệu thực tế nào được thực thi nên không cần chạy rollback thật."
+}

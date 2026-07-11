@@ -1,83 +1,44 @@
-# Walkthrough – Phase 2A.5 – PDF Page Preview for Human Review
+# Walkthrough – Phase 2E – Write Simulation / Sandbox Commit
 
-Tất cả các mục tiêu phát triển giao diện PDF Page Preview trực quan kèm tính năng Zoom co giãn hỗ trợ rà soát thực tế đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
+Tất cả các mục tiêu phát triển Sandbox Write Simulation giả lập quy trình ghi và kết xuất rollback plan đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
 
 ---
 
 > [!WARNING]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Visual Human Review Workspace**.
-> * **Không ghi dữ liệu vào main pipeline chính và không sửa đổi giao diện Streamlit UI cũ.**
+> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Sandbox Write Simulation**.
+> * **Không ghi dữ liệu vào database và không thay đổi production pipeline.**
+> * **Không set ready_for_write_to_main_pipeline = True hoặc ready_for_real_write = True.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Kết Quả Triển Khai PDF Page Preview
+## 1. Kết Quả Sandbox Simulation
 
-1. **PDF Page Preview Trực Quan**:
-   - Sử dụng PyMuPDF (`fitz`) để render cực nhanh trang PDF của mỗi vật tư đang được chọn review thành ảnh PNG.
-   - Hình ảnh hiển thị trực quan ở cột bên trái **📄 Nguồn Đối Chiếu & Bằng Chứng** ngay phía trên thông tin metadata và văn bản bằng chứng thô.
-   - Tự động thay đổi trang hiển thị tương ứng theo `source_page` của vật tư đang được kích hoạt.
+1. **Ràng buộc an toàn kiểm soát (Commit Gate)**:
+   - Simulation chỉ chạy thành công nếu Commit Gate được người duyệt chuyển trạng thái thành `APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY`.
+   - Nếu chưa duyệt (như trạng thái an toàn mặc định), simulation tự động trả về `BLOCKED_BY_COMMIT_GATE` mà không crash hệ thống.
+   - Trạng thái an toàn: `ready_for_real_write = FALSE` và `ready_for_write_to_main_pipeline = FALSE`.
 
-2. **Thanh trượt điều chỉnh Zoom (scale/DPI)**:
-   - Tích hợp thanh trượt `st.slider` hỗ trợ phóng to bản vẽ trang PDF (từ 1.0 đến 3.0) trực tiếp trên UI.
-   - Sử dụng `lru_cache` để tối ưu hóa hiệu năng, giảm thiểu tối đa việc render lại trang PDF cũ khi thay đổi độ thu phóng hoặc chuyển dòng.
+2. **Giả lập kết quả & Log**:
+   - Ghi nhận `simulated_result = WOULD_INSERT` (cho các proposed_action = INSERT_CANDIDATE) kèm theo warning `"not_checked_against_master_database"` do chưa tích hợp database chính.
+   - Ghi nhận commit log sandbox chứa đầy đủ hashes nguồn của gate manifest và candidate items để đối chiếu.
 
-3. **Fallback & Khả năng chịu lỗi**:
-   - Nếu tệp PDF không tồn tại (chế độ benchmark mặc định không cấu hình hoặc không tìm thấy tệp) hoặc gặp sự cố render, hệ thống tự động fallback hiển thị **Source Evidence Text** thô kèm theo thông báo warning, hoàn toàn không gây crash ứng dụng.
+3. **Simulated Rollback Plan**:
+   - Tự động sinh danh sách rollback plan chứa các thao tác ngược (ví dụ: `DELETE sim_record_id`) phục vụ phương án dự phòng.
+
+4. **Báo cáo và Excel tại `feasibility_outputs/profile_write_simulation/`**:
+   - Sinh đầy đủ các file JSON (records, logs, rollback, summary).
+   - Excel Workbook `simulated_write_review.xlsx` gồm 4 sheet: `Summary`, `Simulated Records`, `Commit Log`, `Rollback Plan` định dạng chuyên nghiệp.
+   - `simulated_write_report.md` báo cáo tổng hợp sandbox.
 
 ---
 
 ## 2. Xác Minh Chất Lượng & Tests
 
-* Tất cả 195 unit tests đã vượt qua thành công: **195/195 passed** (tỷ lệ 100%).
-* Đã tạo tệp unit test bảo vệ preview: [test_profile_bridge_pdf_preview.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_preview.py)
-  - Xác minh chức năng render trang PDF thành ảnh PNG bytes hợp lệ.
-  - Kiểm thử số trang vượt phạm vi ném lỗi ValueError an toàn.
-  - Kiểm thử `validate_pdf_page_number` và `resolve_session_pdf_path` hoạt động chính xác.
-  - Rà soát tĩnh chống mojibake tiếng Việt.
-# Walkthrough - Phase 2B - Controlled Write Adapter Dry-run
-
-Phase 2B tao lop adapter an toan de bien cac dong Profile Bridge da duoc human review thanh normalized preview. Day chua phai write adapter that vao main pipeline.
-
-## Cach chay
-
-```powershell
-cd D:\mep_quotation_pipeline
-python tools/feasibility/run_profile_write_adapter_dry_run.py
-```
-
-Neu can chi dinh decisions/session rieng:
-
-```powershell
-python tools/feasibility/run_profile_write_adapter_dry_run.py `
-  --bridge-items feasibility_outputs/profile_bridge_dry_run/profile_bridge_items.json `
-  --decisions feasibility_outputs/profile_bridge_human_review/profile_bridge_review_decisions.json `
-  --output-dir feasibility_outputs/profile_write_adapter_dry_run
-```
-
-## Output
-
-- `normalized_items_preview.json`: cac dong du dieu kien export preview.
-- `blocked_items.json`: cac dong bi chan do reject, needs investigation, hoac chua review.
-- `profile_write_adapter_summary.json`: manifest tong hop dry-run.
-- `profile_write_adapter_report.md`: bao cao doc nhanh.
-
-## Dieu kien duoc export preview
-
-- `APPROVE`
-- `EDIT_AND_APPROVE`
-- `ACCEPT_WITH_LIMITATION`
-
-## Dieu kien bi chan
-
-- `REJECT`
-- `NEEDS_INVESTIGATION`
-- Chua co human decision
-
-## Safety
-
-- `ready_for_write_to_main_pipeline = false`
-- Khong ghi database.
-- Khong sua normalized/package chinh thuc.
-- Khong dung moi `supplier_code + normalized_material_code` lam write key.
+* Tất cả 214 unit tests đã vượt qua thành công: **214/214 passed** (tỷ lệ 100%).
+* Tạo tệp unit test bảo vệ: [test_profile_write_simulation.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_simulation.py)
+  - Xác minh gate `PENDING_HUMAN_APPROVAL` trả về `BLOCKED_BY_COMMIT_GATE`.
+  - Xác minh gate `APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY` sinh đầy đủ records và logs.
+  - Xác minh `ready_for_real_write` và `ready_for_write_to_main_pipeline` luôn `False`.
+  - Xác minh workbook có đủ 4 sheet hợp lệ.
