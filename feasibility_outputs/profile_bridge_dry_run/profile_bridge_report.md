@@ -16,7 +16,7 @@ Báo cáo này tổng hợp kết quả chạy thử nghiệm cầu nối tích 
 
 * **Trạng Thái Cầu Nối**: `PASS`
 * **Chế Độ Chạy**: `dry_run`
-* **Thời Gian Khởi Tạo**: `2026-07-10T18:09:37.492504Z`
+* **Thời Gian Khởi Tạo**: `2026-07-11T09:03:22.208202Z`
 * **Tổng Số Vật Tư Đầu Vào (Valid)**: 1072
 * **Tổng Số Vật Tư Chuyển Đổi Thành Công**: 1072
 * **Tổng Số Vật Tư Bị Loại Bỏ (Skip)**: 0

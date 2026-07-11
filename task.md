@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2E
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2F
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -20,7 +20,7 @@
 - `[x]` Khai báo tệp JSON Schema `profile_config_schema.json` chuẩn hóa cấu trúc
 - `[x]` Tách toàn bộ thông số tọa độ cột X, validation rule và page mapping của ABB sang `abb_profile_v1.json`
 - `[x]` Tách toàn bộ thông số tọa độ cột X, validation rule và page mapping của LS sang `ls_profile_v1.json`
-- `[x]` Tạo mô-đun nạp cấu hình `profile_config_loader.py` tích hợp bộ kiểm chứng (validator) đệ quy
+- `[x]` Tạo mô-đun nạp cấu hình `profile_config_loader.py` tích bộ kiểm chứng (validator) đệ quy
 - `[x]` Viết tệp hướng dẫn `README.md` chi tiết cấu hình và cảnh báo feasibility
 - `[x]` Xây dựng tệp unit tests `test_profile_config_loader.py` và kiểm chứng các ca thành công/thất bại
 - `[x]` Chạy kiểm thử pytest toàn dự án đạt 158/158 tests passed thành công
@@ -156,6 +156,15 @@
 - `[x]` Giả lập đầy đủ material records, commit log, rollback plan sandbox, markdown report và Excel 4 sheet (Summary, Simulated Records, Commit Log, Rollback Plan).
 - `[x]` Viết tệp unit test kiểm định: [test_profile_write_simulation.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_simulation.py).
 - `[x]` Chạy pytest toàn cục Passed: **214/214 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2F – Master Data / Existing Record Matching Dry-run (Đã hoàn thành)
+- `[x]` Phát triển tệp JSON schema contract đầu ra: `tools/feasibility/profile_master_match_contract.json`.
+- `[x]` Phát triển script đối chiếu khô Master Match: `run_profile_master_match_dry_run.py`.
+- `[x]` Sinh tệp master_index_fixture.json giả lập các trường hợp so khớp write_key, code match trùng giá, trùng mã khác giá/mô tả.
+- `[x]` Thực thi bóc tách kết quả so khớp và sinh đầy đủ báo cáo (results JSON, summary JSON, review CSV, Excel 4 sheet và Markdown report).
+- `[x]` Viết tệp unit test kiểm định: [test_profile_master_match_dry_run.py](file:///D:/mep_quotation_pipeline/tests/test_profile_master_match_dry_run.py).
+- `[x]` Chạy pytest toàn cục Passed: **217/217 passed** (100% thành công).
 - `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ---

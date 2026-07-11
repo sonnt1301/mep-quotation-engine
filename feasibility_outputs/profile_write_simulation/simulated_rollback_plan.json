@@ -1,7 +1,7 @@
 {
-  "rollback_plan_id": "ROLLBACK_PLAN_2026-07-10T11-09-31-574964Z",
-  "generated_at": "2026-07-10T11:09:31.574964Z",
-  "simulation_id": "SIM_SESSION_2026-07-10T11-09-31-574964Z",
+  "rollback_plan_id": "ROLLBACK_PLAN_2026-07-11T02-03-15-242159Z",
+  "generated_at": "2026-07-11T02:03:15.242159Z",
+  "simulation_id": "SIM_SESSION_2026-07-11T02-03-15-242159Z",
   "rollback_available": true,
   "rollback_scope": "sandbox_only",
   "rollback_actions": [],

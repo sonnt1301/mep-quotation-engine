@@ -1,44 +1,44 @@
-# Walkthrough – Phase 2E – Write Simulation / Sandbox Commit
+# Walkthrough – Phase 2F – Master Data / Existing Record Matching Dry-run
 
-Tất cả các mục tiêu phát triển Sandbox Write Simulation giả lập quy trình ghi và kết xuất rollback plan đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
+Tất cả các mục tiêu phát triển Sandbox Master Data matching và kết xuất báo cáo Excel 4 sheet đã hoàn thành xuất sắc và vượt qua 100% các bài kiểm thử tự động.
 
 ---
 
-> [!WARNING]
+> [warning]
 > **PHẠM VI TRIỂN KHAI**
-> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Sandbox Write Simulation**.
+> * Toàn bộ các công việc ở Phase này chỉ phục vụ mục tiêu **Master Matching Dry-run**.
 > * **Không ghi dữ liệu vào database và không thay đổi production pipeline.**
 > * **Không set ready_for_write_to_main_pipeline = True hoặc ready_for_real_write = True.**
 > * Chưa sẵn sàng cho môi trường vận hành thực tế (Not Ready for Production).
 
 ---
 
-## 1. Kết Quả Sandbox Simulation
+## 1. Kết Quả Sandbox Master Matching
 
-1. **Ràng buộc an toàn kiểm soát (Commit Gate)**:
-   - Simulation chỉ chạy thành công nếu Commit Gate được người duyệt chuyển trạng thái thành `APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY`.
-   - Nếu chưa duyệt (như trạng thái an toàn mặc định), simulation tự động trả về `BLOCKED_BY_COMMIT_GATE` mà không crash hệ thống.
+1. **Safety Lọc & Trích xuất**:
+   - Chỉ đối chiếu dựa trên simulated material records đã được simulation ở sandbox, tuyệt đối không lấy trực tiếp từ raw bridge hay adapter blocked items.
    - Trạng thái an toàn: `ready_for_real_write = FALSE` và `ready_for_write_to_main_pipeline = FALSE`.
 
-2. **Giả lập kết quả & Log**:
-   - Ghi nhận `simulated_result = WOULD_INSERT` (cho các proposed_action = INSERT_CANDIDATE) kèm theo warning `"not_checked_against_master_database"` do chưa tích hợp database chính.
-   - Ghi nhận commit log sandbox chứa đầy đủ hashes nguồn của gate manifest và candidate items để đối chiếu.
+2. **Matching Logic đa tầng**:
+   - So khớp `exact_write_key_match` -> `WOULD_SKIP` (trùng khớp hoàn toàn) hoặc `WOULD_UPDATE` (khác mô tả/đơn vị).
+   - So khớp `supplier_material_code_match` (trùng mã trùng giá -> `NEEDS_MASTER_REVIEW` / `POSSIBLE_DUPLICATE`; trùng mã khác giá/mô tả -> `NEEDS_MASTER_REVIEW` / `POSSIBLE_UPDATE`). Cấm tự động gộp dòng trùng mã khác giá.
+   - So khớp `no_match` -> `WOULD_INSERT`.
+   - Sinh tệp tin `master_index_fixture.json` chứa các bản ghi master mẫu phục vụ kiểm thử matching.
 
-3. **Simulated Rollback Plan**:
-   - Tự động sinh danh sách rollback plan chứa các thao tác ngược (ví dụ: `DELETE sim_record_id`) phục vụ phương án dự phòng.
-
-4. **Báo cáo và Excel tại `feasibility_outputs/profile_write_simulation/`**:
-   - Sinh đầy đủ các file JSON (records, logs, rollback, summary).
-   - Excel Workbook `simulated_write_review.xlsx` gồm 4 sheet: `Summary`, `Simulated Records`, `Commit Log`, `Rollback Plan` định dạng chuyên nghiệp.
-   - `simulated_write_report.md` báo cáo tổng hợp sandbox.
+3. **Báo cáo và Excel tại `feasibility_outputs/profile_master_match_dry_run/`**:
+   - Sinh đầy đủ các file JSON (results, summary).
+   - Excel Workbook `master_match_review.xlsx` gồm 4 sheet: `Summary`, `Match Results`, `Possible Duplicates`, `Master Index Fixture` định dạng chuyên nghiệp và highlight màu.
+   - `master_match_report.md` báo cáo markdown đối chiếu.
 
 ---
 
 ## 2. Xác Minh Chất Lượng & Tests
 
-* Tất cả 214 unit tests đã vượt qua thành công: **214/214 passed** (tỷ lệ 100%).
-* Tạo tệp unit test bảo vệ: [test_profile_write_simulation.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_simulation.py)
-  - Xác minh gate `PENDING_HUMAN_APPROVAL` trả về `BLOCKED_BY_COMMIT_GATE`.
-  - Xác minh gate `APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY` sinh đầy đủ records và logs.
+* Tất cả 217 unit tests đã vượt qua thành công: **217/217 passed** (tỷ lệ 100%).
+* Tạo tệp unit test bảo vệ: [test_profile_master_match_dry_run.py](file:///D:/mep_quotation_pipeline/tests/test_profile_master_match_dry_run.py)
+  - Xác minh input simulated records rỗng trả về `BLOCKED_NO_SIMULATION_RECORDS`.
+  - Xác minh `NO_MATCH` đề xuất `WOULD_INSERT`.
+  - Xác minh exact `write_key` match đề xuất `WOULD_SKIP`/`WOULD_UPDATE`.
+  - Xác minh trùng mã khác giá/mô tả đề xuất `NEEDS_MASTER_REVIEW`.
   - Xác minh `ready_for_real_write` và `ready_for_write_to_main_pipeline` luôn `False`.
   - Xác minh workbook có đủ 4 sheet hợp lệ.

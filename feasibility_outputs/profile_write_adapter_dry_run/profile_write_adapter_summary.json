@@ -1,6 +1,6 @@
 {
   "adapter_version": "1.0.0",
-  "generated_at": "2026-07-10T11:09:30.576285Z",
+  "generated_at": "2026-07-11T02:03:14.179341Z",
   "mode": "dry_run",
   "source_bridge_items": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_bridge_dry_run\\profile_bridge_items.json",
   "source_review_decisions": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_bridge_human_review\\profile_bridge_review_decisions.json",
