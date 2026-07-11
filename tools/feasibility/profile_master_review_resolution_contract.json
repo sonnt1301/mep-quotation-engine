@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileMasterReviewResolutionContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Master Review Resolution Package outputs",
+  "type": "object",
+  "properties": {
+    "resolution_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "mode": { "type": "string", "const": "master_review_resolution" },
+    "source_master_match_summary_path": { "type": "string" },
+    "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "input_match_results_count": { "type": "integer", "minimum": 0 },
+        "resolution_required_count": { "type": "integer", "minimum": 0 },
+        "pending_count": { "type": "integer", "minimum": 0 },
+        "confirm_insert_count": { "type": "integer", "minimum": 0 },
+        "confirm_update_count": { "type": "integer", "minimum": 0 },
+        "confirm_skip_count": { "type": "integer", "minimum": 0 },
+        "mark_duplicate_count": { "type": "integer", "minimum": 0 },
+        "needs_more_info_count": { "type": "integer", "minimum": 0 },
+        "rejected_candidate_count": { "type": "integer", "minimum": 0 },
+        "ready_for_write_plan": { "type": "boolean", "const": false },
+        "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+        "proposed_status": {
+          "type": "string",
+          "enum": ["MASTER_REVIEW_RESOLUTION_REQUIRED", "MASTER_REVIEW_RESOLUTION_READY", "NO_MASTER_REVIEW_REQUIRED"]
+        }
+      },
+      "required": [
+        "input_match_results_count",
+        "resolution_required_count",
+        "pending_count",
+        "confirm_insert_count",
+        "confirm_update_count",
+        "confirm_skip_count",
+        "mark_duplicate_count",
+        "needs_more_info_count",
+        "rejected_candidate_count",
+        "ready_for_write_plan",
+        "ready_for_write_to_main_pipeline",
+        "proposed_status"
+      ]
+    },
+    "resolution_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "resolution_item_id": { "type": "string" },
+          "match_result_id": { "type": "string" },
+          "simulation_record_id": { "type": "string" },
+          "write_candidate_id": { "type": "string" },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "description": { "type": "string" },
+          "unit": { "type": "string" },
+          "unit_price": { "type": "integer" },
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "write_key": { "type": "string" },
+          "match_status": { "type": "string" },
+          "recommended_action": { "type": "string" },
+          "matched_master_record_id": { "type": ["string", "null"] },
+          "match_confidence": { "type": "number" },
+          "match_reason": { "type": "string" },
+          "warnings": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "human_resolution_decision": {
+            "type": "string",
+            "enum": ["PENDING", "CONFIRM_INSERT", "CONFIRM_UPDATE", "CONFIRM_SKIP", "MARK_DUPLICATE", "NEEDS_MORE_INFO", "REJECT_CANDIDATE"]
+          },
+          "human_resolution_note": { "type": "string" },
+          "resolved_by": { "type": "string" },
+          "resolved_at": { "type": "string" }
+        },
+        "required": [
+          "resolution_item_id",
+          "match_result_id",
+          "simulation_record_id",
+          "write_candidate_id",
+          "supplier_code",
+          "material_code",
+          "description",
+          "unit",
+          "unit_price",
+          "amount",
+          "currency",
+          "write_key",
+          "match_status",
+          "recommended_action",
+          "matched_master_record_id",
+          "match_confidence",
+          "match_reason",
+          "warnings",
+          "human_resolution_decision",
+          "human_resolution_note",
+          "resolved_by",
+          "resolved_at"
+        ]
+      }
+    }
+  },
+  "required": [
+    "resolution_version",
+    "generated_at",
+    "mode",
+    "source_master_match_summary_path",
+    "ready_for_write_to_main_pipeline",
+    "summary",
+    "resolution_items"
+  ]
+}

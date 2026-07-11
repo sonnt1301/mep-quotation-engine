@@ -1,0 +1,22 @@
+{
+  "match_version": "1.0.0",
+  "generated_at": "2026-07-11T02:30:15.162117Z",
+  "mode": "master_match_dry_run",
+  "source_write_simulation_summary": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_simulation\\simulated_write_summary.json",
+  "ready_for_write_to_main_pipeline": false,
+  "summary": {
+    "input_simulated_records_count": 0,
+    "matched_count": 0,
+    "no_match_count": 0,
+    "possible_duplicate_count": 0,
+    "needs_master_review_count": 0,
+    "would_insert_count": 0,
+    "would_update_count": 0,
+    "would_skip_count": 0,
+    "blocked_count": 0,
+    "ready_for_real_write": false,
+    "ready_for_write_to_main_pipeline": false,
+    "proposed_status": "BLOCKED_NO_SIMULATION_RECORDS"
+  },
+  "match_results": []
+}

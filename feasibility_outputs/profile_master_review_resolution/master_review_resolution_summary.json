@@ -1,0 +1,22 @@
+{
+  "resolution_version": "1.0.0",
+  "generated_at": "2026-07-11T02:30:15.465939Z",
+  "mode": "master_review_resolution",
+  "source_master_match_summary_path": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_master_match_dry_run\\master_match_summary.json",
+  "ready_for_write_to_main_pipeline": false,
+  "summary": {
+    "input_match_results_count": 0,
+    "resolution_required_count": 0,
+    "pending_count": 0,
+    "confirm_insert_count": 0,
+    "confirm_update_count": 0,
+    "confirm_skip_count": 0,
+    "mark_duplicate_count": 0,
+    "needs_more_info_count": 0,
+    "rejected_candidate_count": 0,
+    "ready_for_write_plan": false,
+    "ready_for_write_to_main_pipeline": false,
+    "proposed_status": "NO_MASTER_REVIEW_REQUIRED"
+  },
+  "resolution_items": []
+}
