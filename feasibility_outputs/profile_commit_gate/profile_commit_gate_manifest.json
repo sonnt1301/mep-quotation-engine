@@ -1,14 +1,14 @@
 {
   "gate_version": "1.0.0",
-  "generated_at": "2026-07-11T02:30:14.554303Z",
+  "generated_at": "2026-07-11T04:11:44.244482Z",
   "mode": "approval_lock",
   "source_write_candidate_summary": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_summary.json",
   "source_write_candidate_items": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_items.json",
   "source_artifact_hashes": {
     "write_candidate_items.json": "28651447e1d09fac7611a350c5bac348aa56960565609b7fce024f9743ff0fe7",
-    "write_candidate_summary.json": "e5b2b8f67a5ae75f9d305f86581e25555e37441ee33f6b88bfd6177108b5595a",
+    "write_candidate_summary.json": "6b28f78bb1ca9325f4ab2c94cfd0e519d88b01a5972ee815e8515b6fa21c583b",
     "write_candidate_review.csv": "ddf24386d6ab739f3b6c749cc466e37967e80f4e0bf67db1682265de0c3caae5",
-    "write_candidate_review.xlsx": "1e5648e6d1c1308e46a2178bb14fdca0bab73f652399e800a54cc322c94a0b45",
+    "write_candidate_review.xlsx": "295942a0418064766fb63bc7c267d609b3603ea57919141e3f574a8379b74e8a",
     "write_candidate_commit_plan.md": "74e32a545ae76a3359a417a9287667378e61d15afab15fe0e85e21b48bf66831"
   },
   "candidate_summary": {

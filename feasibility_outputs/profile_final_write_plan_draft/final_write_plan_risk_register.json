@@ -1,0 +1,26 @@
+[
+  {
+    "risk_id": "RISK_0001",
+    "final_plan_item_id": "PLAN_ITEM_0001",
+    "risk_level": "HIGH",
+    "risk_reason": "Bản ghi bị chặn ở khâu lập kế hoạch.",
+    "suggested_resolution": "Reviewer mở tệp Excel Resolution phân xử thủ công dòng này.",
+    "blocking": true
+  },
+  {
+    "risk_id": "RISK_0002",
+    "final_plan_item_id": "PLAN_ITEM_0002",
+    "risk_level": "HIGH",
+    "risk_reason": "Bản ghi bị chặn ở khâu lập kế hoạch.",
+    "suggested_resolution": "Reviewer mở tệp Excel Resolution phân xử thủ công dòng này.",
+    "blocking": true
+  },
+  {
+    "risk_id": "RISK_0003",
+    "final_plan_item_id": "PLAN_ITEM_0003",
+    "risk_level": "HIGH",
+    "risk_reason": "Bản ghi bị chặn ở khâu lập kế hoạch.",
+    "suggested_resolution": "Reviewer mở tệp Excel Resolution phân xử thủ công dòng này.",
+    "blocking": true
+  }
+]

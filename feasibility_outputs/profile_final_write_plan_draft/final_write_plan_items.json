@@ -1,0 +1,83 @@
+[
+  {
+    "final_plan_item_id": "PLAN_ITEM_0001",
+    "write_candidate_id": "WRITE_CANDIDATE_0001",
+    "simulation_record_id": null,
+    "match_result_id": null,
+    "resolution_item_id": null,
+    "supplier_code": "CHINT",
+    "material_code": "NXM-63S",
+    "description": "MCCB Chint NXM-63S 3P 25÷63 25",
+    "unit": "cái",
+    "quantity": 1.0,
+    "unit_price": 800000,
+    "amount": 800000.0,
+    "currency": "VND",
+    "write_key": "CHINT|NXM-63S|P3|800000|MCCBCHINTNXM63S3P256325",
+    "final_planned_action": "PLAN_BLOCKED",
+    "action_source": "default_blocked",
+    "matched_master_record_id": null,
+    "resolution_decision": null,
+    "risk_level": "HIGH",
+    "risk_reasons": [
+      "Bản ghi bị chặn ở khâu lập kế hoạch."
+    ],
+    "provenance": "Source PDF: Bảng giá Chint 1-3-2023 ck 50.pdf, Page: 3, Layout: chint_mccb_nxm_nm1, Method: coordinate_column_profiler",
+    "evidence_text": "25÷63 25 NXM-63S 800,000",
+    "ready_for_execution": false
+  },
+  {
+    "final_plan_item_id": "PLAN_ITEM_0002",
+    "write_candidate_id": "WRITE_CANDIDATE_0002",
+    "simulation_record_id": null,
+    "match_result_id": null,
+    "resolution_item_id": null,
+    "supplier_code": "CHINT",
+    "material_code": "NXM-125S",
+    "description": "MCCB Chint NXM-125S 3P 80÷125 25",
+    "unit": "cái",
+    "quantity": 1.0,
+    "unit_price": 860000,
+    "amount": 860000.0,
+    "currency": "VND",
+    "write_key": "CHINT|NXM-125S|P3|860000|MCCBCHINTNXM125S3P801252",
+    "final_planned_action": "PLAN_BLOCKED",
+    "action_source": "default_blocked",
+    "matched_master_record_id": null,
+    "resolution_decision": null,
+    "risk_level": "HIGH",
+    "risk_reasons": [
+      "Bản ghi bị chặn ở khâu lập kế hoạch."
+    ],
+    "provenance": "Source PDF: Bảng giá Chint 1-3-2023 ck 50.pdf, Page: 3, Layout: chint_mccb_nxm_nm1, Method: coordinate_column_profiler",
+    "evidence_text": "80 ÷ 125 25 NXM-125S 860,000",
+    "ready_for_execution": false
+  },
+  {
+    "final_plan_item_id": "PLAN_ITEM_0003",
+    "write_candidate_id": "WRITE_CANDIDATE_0003",
+    "simulation_record_id": null,
+    "match_result_id": null,
+    "resolution_item_id": null,
+    "supplier_code": "CHINT",
+    "material_code": "NXM-250S",
+    "description": "MCCB Chint NXM-250S 3P 160,200,250 35",
+    "unit": "cái",
+    "quantity": 1.0,
+    "unit_price": 1400000,
+    "amount": 1400000.0,
+    "currency": "VND",
+    "write_key": "CHINT|NXM-250S|P3|1400000|MCCBCHINTNXM250S3P160200",
+    "final_planned_action": "PLAN_BLOCKED",
+    "action_source": "default_blocked",
+    "matched_master_record_id": null,
+    "resolution_decision": null,
+    "risk_level": "HIGH",
+    "risk_reasons": [
+      "Bản ghi bị chặn ở khâu lập kế hoạch."
+    ],
+    "provenance": "Source PDF: Bảng giá Chint 1-3-2023 ck 50.pdf, Page: 3, Layout: chint_mccb_nxm_nm1, Method: coordinate_column_profiler",
+    "evidence_text": "160,200,250 35 NXM-250S 1,400,000",
+    "ready_for_execution": false
+  }
+]

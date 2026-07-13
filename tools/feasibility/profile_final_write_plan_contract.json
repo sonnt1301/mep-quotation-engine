@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileFinalWritePlanContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Final Write Plan Draft outputs",
+  "type": "object",
+  "properties": {
+    "plan_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "mode": { "type": "string", "const": "final_write_plan_draft" },
+    "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "input_candidate_count": { "type": "integer", "minimum": 0 },
+        "input_simulation_count": { "type": "integer", "minimum": 0 },
+        "input_match_count": { "type": "integer", "minimum": 0 },
+        "input_resolution_count": { "type": "integer", "minimum": 0 },
+        "plan_insert_count": { "type": "integer", "minimum": 0 },
+        "plan_update_count": { "type": "integer", "minimum": 0 },
+        "plan_skip_count": { "type": "integer", "minimum": 0 },
+        "plan_blocked_count": { "type": "integer", "minimum": 0 },
+        "high_risk_count": { "type": "integer", "minimum": 0 },
+        "medium_risk_count": { "type": "integer", "minimum": 0 },
+        "low_risk_count": { "type": "integer", "minimum": 0 },
+        "ready_for_execution": { "type": "boolean", "const": false },
+        "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+        "proposed_status": {
+          "type": "string",
+          "enum": ["FINAL_WRITE_PLAN_READY_FOR_HUMAN_REVIEW", "FINAL_WRITE_PLAN_BLOCKED", "FINAL_WRITE_PLAN_EMPTY"]
+        }
+      },
+      "required": [
+        "input_candidate_count",
+        "input_simulation_count",
+        "input_match_count",
+        "input_resolution_count",
+        "plan_insert_count",
+        "plan_update_count",
+        "plan_skip_count",
+        "plan_blocked_count",
+        "high_risk_count",
+        "medium_risk_count",
+        "low_risk_count",
+        "ready_for_execution",
+        "ready_for_write_to_main_pipeline",
+        "proposed_status"
+      ]
+    },
+    "plan_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "final_plan_item_id": { "type": "string" },
+          "write_candidate_id": { "type": "string" },
+          "simulation_record_id": { "type": "string" },
+          "match_result_id": { "type": "string" },
+          "resolution_item_id": { "type": ["string", "null"] },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "description": { "type": "string" },
+          "unit": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit_price": { "type": "integer" },
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "write_key": { "type": "string" },
+          "final_planned_action": {
+            "type": "string",
+            "enum": ["PLAN_INSERT", "PLAN_UPDATE", "PLAN_SKIP", "PLAN_BLOCKED"]
+          },
+          "action_source": { "type": "string" },
+          "matched_master_record_id": { "type": ["string", "null"] },
+          "resolution_decision": { "type": ["string", "null"] },
+          "risk_level": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH"]
+          },
+          "risk_reasons": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "provenance": { "type": "string" },
+          "evidence_text": { "type": "string" },
+          "ready_for_execution": { "type": "boolean", "const": false }
+        },
+        "required": [
+          "final_plan_item_id",
+          "write_candidate_id",
+          "simulation_record_id",
+          "match_result_id",
+          "resolution_item_id",
+          "supplier_code",
+          "material_code",
+          "description",
+          "unit",
+          "quantity",
+          "unit_price",
+          "amount",
+          "currency",
+          "write_key",
+          "final_planned_action",
+          "action_source",
+          "matched_master_record_id",
+          "resolution_decision",
+          "risk_level",
+          "risk_reasons",
+          "provenance",
+          "evidence_text",
+          "ready_for_execution"
+        ]
+      }
+    }
+  },
+  "required": [
+    "plan_version",
+    "generated_at",
+    "mode",
+    "ready_for_write_to_main_pipeline",
+    "summary",
+    "plan_items"
+  ]
+}
