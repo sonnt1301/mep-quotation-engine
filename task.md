@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2G
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2H
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -107,7 +107,7 @@
 - `[x]` Đồng bộ hóa toàn bộ tài liệu root tại project root.
 
 ## Phase 2A.3 – PDF Intake & Processing Flow (Đã hoàn thành)
-- `[x]` Bổ dung giao diện "Thêm & Xử lý PDF mới" vào đầu ứng dụng review: chọn supplier, upload tệp PDF, nhập local path.
+- `[x]` Bổ sung giao diện "Thêm & Xử lý PDF mới" vào đầu ứng dụng review: chọn supplier, upload tệp PDF, nhập local path.
 - `[x]` Thêm các helper chức năng bóc tách PDF tùy chọn và nạp session độc lập tại `profile_bridge_review_helpers.py`.
 - `[x]` Thiết lập tệp unit test bảo vệ intake: [test_profile_bridge_pdf_intake.py](file:///D:/mep_quotation_pipeline/tests/test_profile_bridge_pdf_intake.py).
 - `[x]` Cập nhật tệp hướng dẫn review chi tiết quy trình chạy PDF và nạp session.
@@ -148,7 +148,7 @@
 - `[x]` Sinh đầy đủ tệp tin write_candidate (JSON items, JSON summary, CSV và XLSX multi-sheet có định dạng và highlight warnings).
 - `[x]` Viết tệp unit test kiểm định: [test_profile_write_candidate.py](file:///D:/mep_quotation_pipeline/tests/test_profile_write_candidate.py).
 - `[x]` Chạy pytest toàn cục thành công: **205/205 passed** (100% thành công).
-- `[x]` Đồng bộ hóa các tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ## Phase 2E – Write Simulation / Sandbox Commit (Đã hoàn thành)
 - `[x]` Phát triển tệp JSON schema contract đầu ra của simulation: `tools/feasibility/profile_write_simulation_contract.json`.
@@ -174,6 +174,15 @@
 - `[x]` Sinh đầy đủ tệp tin resolution (items JSON, summary JSON, CSV template, Excel 4 sheet có validation dropdown và guide Markdown).
 - `[x]` Viết tệp unit test kiểm định: [test_profile_master_review_resolution.py](file:///D:/mep_quotation_pipeline/tests/test_profile_master_review_resolution.py).
 - `[x]` Chạy pytest toàn cục Passed: **220/220 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2H – Final Write Plan Draft (Đã hoàn thành)
+- `[x]` Thiết kế tệp JSON Schema Contract đầu ra kế hoạch: `tools/feasibility/profile_final_write_plan_contract.json`.
+- `[x]` Phát triển script tổng hợp Final Write Plan Draft: `export_profile_final_write_plan_draft.py`.
+- `[x]` Tự động phân loại kế hoạch (`PLAN_INSERT`/`PLAN_UPDATE`/`PLAN_SKIP`/`PLAN_BLOCKED`) và phân tích rủi ro (`LOW`/`MEDIUM`/`HIGH`).
+- `[x]` Sinh đầy đủ tệp tin write plan draft (items JSON, summary JSON, risk register JSON, review CSV, Excel 5 sheet có định dạng màu sắc chi tiết và báo cáo Markdown).
+- `[x]` Viết tệp unit test kiểm định tự động QA Workbook bằng openpyxl: [test_profile_final_write_plan_draft.py](file:///D:/mep_quotation_pipeline/tests/test_profile_final_write_plan_draft.py).
+- `[x]` Chạy pytest toàn cục Passed: **223/223 passed** (100% thành công).
 - `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ---
