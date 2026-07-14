@@ -13,24 +13,24 @@ Báo cáo kế hoạch ghi nhận vật tư cuối cùng ở dạng nháp (Final
 
 ## 1. Trạng Thái Tổng Thể (Proposed Status)
 
-* Proposed status: `FINAL_WRITE_PLAN_BLOCKED`
+* Proposed status: `FINAL_WRITE_PLAN_READY_FOR_HUMAN_REVIEW`
 * Các lý do chặn chưa sẵn sàng ghi thật:
   - Phase Final Write Plan Draft chưa có Human Approval.
-  - Tồn tại `3` bản ghi ở trạng thái `PLAN_BLOCKED` cần phân xử.
-  - Tồn tại `3` lỗi HIGH risk trong Risk Register cần làm rõ.
+  - Tồn tại `0` bản ghi ở trạng thái `PLAN_BLOCKED` cần phân xử.
+  - Tồn tại `0` lỗi HIGH risk trong Risk Register cần làm rõ.
 
 ## 2. Thống Kê Final Write Plan
 
 * Tổng candidates: `3`
-* Đề xuất thêm mới (plan_insert_count): `0`
+* Đề xuất thêm mới (plan_insert_count): `3`
 * Đề xuất cập nhật (plan_update_count): `0`
 * Đề xuất bỏ qua (plan_skip_count): `0`
-* Đề xuất bị chặn (plan_blocked_count): `3`
+* Đề xuất bị chặn (plan_blocked_count): `0`
 
 ### Thống kê mức độ rủi ro (Risk Counts):
-* LOW Risk: `0`
+* LOW Risk: `3`
 * MEDIUM Risk: `0`
-* HIGH Risk: `3`
+* HIGH Risk: `0`
 
 ---
 

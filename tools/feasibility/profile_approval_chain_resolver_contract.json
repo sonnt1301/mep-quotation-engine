@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileApprovalChainResolverContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Approval Chain Resolver outputs",
+  "type": "object",
+  "properties": {
+    "resolver_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "mode": { "type": "string", "const": "approval_chain_resolver" },
+    "top_level_status": {
+      "type": "string",
+      "enum": ["CHAIN_BLOCKED", "CHAIN_READY_FOR_HUMAN_APPROVAL_REPLAY", "CHAIN_EMPTY"]
+    },
+    "ready_for_execution": { "type": "boolean", "const": false },
+    "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+    "chain_summary": {
+      "type": "object",
+      "properties": {
+        "commit_gate_status": { "type": "string" },
+        "simulation_status": { "type": "string" },
+        "master_match_status": { "type": "string" },
+        "master_resolution_status": { "type": "string" },
+        "final_write_plan_status": { "type": "string" },
+        "total_blockers_count": { "type": "integer", "minimum": 0 },
+        "total_candidates_count": { "type": "integer", "minimum": 0 }
+      },
+      "required": [
+        "commit_gate_status",
+        "simulation_status",
+        "master_match_status",
+        "master_resolution_status",
+        "final_write_plan_status",
+        "total_blockers_count",
+        "total_candidates_count"
+      ]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blocker_id": { "type": "string" },
+          "phase": { "type": "string" },
+          "blocking_reason": { "type": "string" },
+          "required_human_action": { "type": "string" },
+          "required_command_if_any": { "type": "string" },
+          "severity": { "type": "string", "enum": ["CRITICAL", "WARNING"] }
+        },
+        "required": ["blocker_id", "phase", "blocking_reason", "required_human_action", "required_command_if_any", "severity"]
+      }
+    },
+    "replay_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chain_item_id": { "type": "string" },
+          "write_candidate_id": { "type": "string" },
+          "final_plan_item_id": { "type": ["string", "null"] },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "current_blocking_phase": { "type": "string" },
+          "blocking_reason": { "type": "string" },
+          "upstream_status": { "type": "string" },
+          "required_human_action": { "type": "string" },
+          "required_command_if_any": { "type": "string" },
+          "risk_level": { "type": "string" },
+          "can_auto_resolve": { "type": "boolean", "const": false }
+        },
+        "required": [
+          "chain_item_id",
+          "write_candidate_id",
+          "final_plan_item_id",
+          "supplier_code",
+          "material_code",
+          "current_blocking_phase",
+          "blocking_reason",
+          "upstream_status",
+          "required_human_action",
+          "required_command_if_any",
+          "risk_level",
+          "can_auto_resolve"
+        ]
+      }
+    }
+  },
+  "required": [
+    "resolver_version",
+    "generated_at",
+    "mode",
+    "top_level_status",
+    "ready_for_execution",
+    "ready_for_write_to_main_pipeline",
+    "chain_summary",
+    "blockers",
+    "replay_items"
+  ]
+}

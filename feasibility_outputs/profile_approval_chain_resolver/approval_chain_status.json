@@ -1,0 +1,63 @@
+{
+  "resolver_version": "1.0.0",
+  "generated_at": "2026-07-13T12:30:48.159733Z",
+  "mode": "approval_chain_resolver",
+  "top_level_status": "CHAIN_READY_FOR_HUMAN_APPROVAL_REPLAY",
+  "ready_for_execution": false,
+  "ready_for_write_to_main_pipeline": false,
+  "chain_summary": {
+    "top_level_status": "CHAIN_READY_FOR_HUMAN_APPROVAL_REPLAY",
+    "commit_gate_status": "APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY",
+    "simulation_status": "SIMULATION_READY_FOR_REVIEW",
+    "master_match_status": "MASTER_MATCH_READY_FOR_REVIEW",
+    "master_resolution_status": "NO_MASTER_REVIEW_REQUIRED",
+    "final_write_plan_status": "FINAL_WRITE_PLAN_READY_FOR_HUMAN_REVIEW",
+    "total_blockers_count": 0,
+    "total_candidates_count": 3
+  },
+  "blockers": [],
+  "replay_items": [
+    {
+      "chain_item_id": "CHAIN_REP_0001",
+      "write_candidate_id": "WRITE_CANDIDATE_0001",
+      "final_plan_item_id": "PLAN_ITEM_0001",
+      "supplier_code": "CHINT",
+      "material_code": "NXM-63S",
+      "current_blocking_phase": "None",
+      "blocking_reason": "Không bị chặn ở khâu nào.",
+      "upstream_status": "OK",
+      "required_human_action": "Sẵn sàng cho thiết kế Phase tiếp theo.",
+      "required_command_if_any": "",
+      "risk_level": "LOW",
+      "can_auto_resolve": false
+    },
+    {
+      "chain_item_id": "CHAIN_REP_0002",
+      "write_candidate_id": "WRITE_CANDIDATE_0002",
+      "final_plan_item_id": "PLAN_ITEM_0002",
+      "supplier_code": "CHINT",
+      "material_code": "NXM-125S",
+      "current_blocking_phase": "None",
+      "blocking_reason": "Không bị chặn ở khâu nào.",
+      "upstream_status": "OK",
+      "required_human_action": "Sẵn sàng cho thiết kế Phase tiếp theo.",
+      "required_command_if_any": "",
+      "risk_level": "LOW",
+      "can_auto_resolve": false
+    },
+    {
+      "chain_item_id": "CHAIN_REP_0003",
+      "write_candidate_id": "WRITE_CANDIDATE_0003",
+      "final_plan_item_id": "PLAN_ITEM_0003",
+      "supplier_code": "CHINT",
+      "material_code": "NXM-250S",
+      "current_blocking_phase": "None",
+      "blocking_reason": "Không bị chặn ở khâu nào.",
+      "upstream_status": "OK",
+      "required_human_action": "Sẵn sàng cho thiết kế Phase tiếp theo.",
+      "required_command_if_any": "",
+      "risk_level": "LOW",
+      "can_auto_resolve": false
+    }
+  ]
+}

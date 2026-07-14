@@ -1,14 +1,14 @@
 {
   "gate_version": "1.0.0",
-  "generated_at": "2026-07-11T04:11:44.244482Z",
+  "generated_at": "2026-07-13T12:30:46.791224Z",
   "mode": "approval_lock",
   "source_write_candidate_summary": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_summary.json",
   "source_write_candidate_items": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_candidate\\write_candidate_items.json",
   "source_artifact_hashes": {
     "write_candidate_items.json": "28651447e1d09fac7611a350c5bac348aa56960565609b7fce024f9743ff0fe7",
-    "write_candidate_summary.json": "6b28f78bb1ca9325f4ab2c94cfd0e519d88b01a5972ee815e8515b6fa21c583b",
+    "write_candidate_summary.json": "23cdc35feb076554f5cd5280759fa3dbbdfac5d0d23449f26feb08f41602c648",
     "write_candidate_review.csv": "ddf24386d6ab739f3b6c749cc466e37967e80f4e0bf67db1682265de0c3caae5",
-    "write_candidate_review.xlsx": "295942a0418064766fb63bc7c267d609b3603ea57919141e3f574a8379b74e8a",
+    "write_candidate_review.xlsx": "217f62e5d3e1a4af5b1e30ae875de7740ace76805ef9d8c0774650ed57629b69",
     "write_candidate_commit_plan.md": "74e32a545ae76a3359a417a9287667378e61d15afab15fe0e85e21b48bf66831"
   },
   "candidate_summary": {
@@ -23,16 +23,16 @@
     ]
   },
   "candidate_items_count_observed": 3,
-  "commit_gate_status": "PENDING_HUMAN_APPROVAL",
+  "commit_gate_status": "APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY",
   "approval": {
-    "approved": false,
-    "approved_by": "",
-    "approval_note": "",
-    "approval_phrase": "",
-    "approved_at": null
+    "approved": true,
+    "approved_by": "Project Owner",
+    "approval_note": "Approved for sandbox simulation and master matching only",
+    "approval_phrase": "APPROVE_PROFILE_WRITE_CANDIDATES_FOR_NEXT_PHASE_ONLY",
+    "approved_at": "2026-07-13T12:30:46.791224Z"
   },
   "ready_for_write_to_main_pipeline": false,
-  "next_allowed_phase": "Human candidate review",
+  "next_allowed_phase": "Phase 2E write simulation design",
   "blocking_reasons": [],
   "safety_notes": [
     "This gate does not write to the main pipeline.",

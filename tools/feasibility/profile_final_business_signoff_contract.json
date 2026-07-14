@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileFinalBusinessSignoffContract",
+  "description": "Schema for MEP Quotation Pipeline Profile Final Business Sign-off Package",
+  "type": "object",
+  "properties": {
+    "signoff_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "mode": { "type": "string", "const": "final_business_signoff" },
+    "ready_for_execution": { "type": "boolean", "const": false },
+    "ready_for_write_to_main_pipeline": { "type": "boolean", "const": false },
+    "source_file_hashes": {
+      "type": "object",
+      "properties": {
+        "final_write_plan_items_json": { "type": "string" },
+        "approval_chain_status_json": { "type": "string" }
+      },
+      "required": ["final_write_plan_items_json", "approval_chain_status_json"]
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total_signoff_items": { "type": "integer", "minimum": 0 },
+        "approved_count": { "type": "integer", "minimum": 0 },
+        "pending_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "proposed_status": {
+          "type": "string",
+          "enum": ["FINAL_BUSINESS_SIGNOFF_PENDING", "FINAL_BUSINESS_SIGNOFF_APPROVED", "BLOCKED_BY_APPROVAL_CHAIN", "STALE_SIGNOFF_SOURCE"]
+        }
+      },
+      "required": [
+        "total_signoff_items",
+        "approved_count",
+        "pending_count",
+        "rejected_count",
+        "proposed_status"
+      ]
+    },
+    "signoff_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signoff_item_id": { "type": "string" },
+          "final_plan_item_id": { "type": "string" },
+          "write_candidate_id": { "type": "string" },
+          "supplier_code": { "type": "string" },
+          "material_code": { "type": "string" },
+          "normalized_description": { "type": "string" },
+          "unit": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit_price": { "type": "integer" },
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "planned_action": { "type": "string" },
+          "risk_level": { "type": "string" },
+          "provenance": { "type": "string" },
+          "evidence_text": { "type": "string" },
+          "master_match_result": { "type": ["string", "null"] },
+          "human_decision": {
+            "type": "string",
+            "enum": ["PENDING", "APPROVE_FOR_EXECUTOR_DESIGN", "REJECT", "NEEDS_CORRECTION", "NEEDS_SOURCE_REVIEW"]
+          },
+          "human_note": { "type": "string" },
+          "reviewed_by": { "type": "string" },
+          "reviewed_at": { "type": ["string", "null"] },
+          "decision_required": { "type": "boolean", "const": true }
+        },
+        "required": [
+          "signoff_item_id",
+          "final_plan_item_id",
+          "write_candidate_id",
+          "supplier_code",
+          "material_code",
+          "normalized_description",
+          "unit",
+          "quantity",
+          "unit_price",
+          "amount",
+          "currency",
+          "planned_action",
+          "risk_level",
+          "provenance",
+          "evidence_text",
+          "master_match_result",
+          "human_decision",
+          "human_note",
+          "reviewed_by",
+          "reviewed_at",
+          "decision_required"
+        ]
+      }
+    }
+  },
+  "required": [
+    "signoff_version",
+    "generated_at",
+    "mode",
+    "ready_for_execution",
+    "ready_for_write_to_main_pipeline",
+    "source_file_hashes",
+    "summary",
+    "signoff_items"
+  ]
+}

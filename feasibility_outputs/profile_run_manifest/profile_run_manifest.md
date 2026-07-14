@@ -16,7 +16,7 @@ Báo cáo này tổng hợp kết quả chạy bóc tách (Profile Run Manifest)
 ## 1. Thông Tin Chung
 
 * **Trạng Thái Benchmark**: `PASS`
-* **Thời Gian Khởi Tạo**: `2026-07-11T11:11:54.038490Z`
+* **Thời Gian Khởi Tạo**: `2026-07-14T08:21:56.604032Z`
 * **Giai Đoạn Dự Án**: `Feasibility Reset`
 
 ---

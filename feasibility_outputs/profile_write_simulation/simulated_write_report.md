@@ -14,15 +14,14 @@ Báo cáo kết quả chạy sandbox write simulation đối với các write ca
 
 ## 1. Trạng Thái Sandbox Simulation (Simulation Status)
 
-* Trạng thái mô phỏng: `BLOCKED_BY_COMMIT_GATE`
+* Trạng thái mô phỏng: `SIMULATION_READY_FOR_REVIEW`
 * Lý do chưa thể ghi thật:
-  - Commit Gate chưa được phê duyệt (Trạng thái hiện tại: PENDING_HUMAN_APPROVAL).
   - Chưa chuyển đổi biến môi trường và chưa kích hoạt lệnh ghi thật của Phase 2F.
 
 ## 2. Thống Kê Sandbox Commit
 
-* Tổng số candidates: `0`
-* Số lượng giả lập ghi mới (would_insert_count): `0`
+* Tổng số candidates: `3`
+* Số lượng giả lập ghi mới (would_insert_count): `3`
 * Số lượng giả lập cập nhật (would_update_count): `0`
 * Số lượng giả lập bỏ qua (would_skip_count): `0`
 * Số lượng giả lập bị chặn (blocked_count): `0`

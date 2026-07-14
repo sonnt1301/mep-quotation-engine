@@ -14,7 +14,7 @@ Báo cáo đối chiếu khô (Dry-run Matching) giữa các simulated material 
 
 ## 1. Trạng Thái Đề Xuất (Proposed Status)
 
-* Proposed status: `BLOCKED_NO_SIMULATION_RECORDS`
+* Proposed status: `MASTER_MATCH_READY_FOR_REVIEW`
 * Lý do chặn hoặc chưa sẵn sàng ghi thật:
   - Phase đối chiếu dry-run chưa được Human Approve.
   - Tồn tại `0` bản ghi cần rà soát thủ công (`NEEDS_MASTER_REVIEW`).
@@ -22,14 +22,14 @@ Báo cáo đối chiếu khô (Dry-run Matching) giữa các simulated material 
 
 ## 2. Thống Kê Kết Quả Matching
 
-* Tổng simulated records: `0`
+* Tổng simulated records: `3`
 * Khớp dữ liệu (matched_count): `0`
-* Không khớp (no_match_count): `0` (Sẽ đề xuất `WOULD_INSERT`)
+* Không khớp (no_match_count): `3` (Sẽ đề xuất `WOULD_INSERT`)
 * Trùng lặp nghi vấn (possible_duplicate_count): `0`
 * Yêu cầu xem xét lại (needs_master_review_count): `0`
 
 ### Phân rã hành động đề xuất (Recommended Actions):
-* WOULD_INSERT: `0`
+* WOULD_INSERT: `3`
 * WOULD_UPDATE: `0`
 * WOULD_SKIP: `0`
 * BLOCKED: `0`

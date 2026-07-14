@@ -1,11 +1,11 @@
 {
   "resolution_version": "1.0.0",
-  "generated_at": "2026-07-11T04:11:45.083748Z",
+  "generated_at": "2026-07-13T12:30:47.605001Z",
   "mode": "master_review_resolution",
   "source_master_match_summary_path": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_master_match_dry_run\\master_match_summary.json",
   "ready_for_write_to_main_pipeline": false,
   "summary": {
-    "input_match_results_count": 0,
+    "input_match_results_count": 3,
     "resolution_required_count": 0,
     "pending_count": 0,
     "confirm_insert_count": 0,

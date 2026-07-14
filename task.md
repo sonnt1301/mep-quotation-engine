@@ -1,4 +1,4 @@
-# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2H
+# Danh sách công việc ABB + LS + CHINT Profile Onboarding & Phase 2J Hotfix
 
 ## Hardening v1 (Đã hoàn thành)
 - `[x]` Khảo sát tọa độ chữ và chẩn đoán lỗi dính dải cột X của trang 41/42 ABB
@@ -183,6 +183,25 @@
 - `[x]` Sinh đầy đủ tệp tin write plan draft (items JSON, summary JSON, risk register JSON, review CSV, Excel 5 sheet có định dạng màu sắc chi tiết và báo cáo Markdown).
 - `[x]` Viết tệp unit test kiểm định tự động QA Workbook bằng openpyxl: [test_profile_final_write_plan_draft.py](file:///D:/mep_quotation_pipeline/tests/test_profile_final_write_plan_draft.py).
 - `[x]` Chạy pytest toàn cục Passed: **223/223 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2I – Approval Chain Resolver / Gate Replay (Đã hoàn thành)
+- `[x]` Thiết kế tệp JSON Schema Contract đầu ra resolver: `tools/feasibility/profile_approval_chain_resolver_contract.json`.
+- `[x]` Phát triển script Replay chuỗi phê duyệt: `run_profile_approval_chain_resolver.py`.
+- `[x]` Sinh đầy đủ báo cáo (blockers JSON, status JSON, Excel replay 5 sheet, checklist gỡ chặn Markdown và report Markdown).
+- `[x]` Tích hợp QA tự động bằng openpyxl trong unit test: [test_profile_approval_chain_resolver.py](file:///D:/mep_quotation_pipeline/tests/test_profile_approval_chain_resolver.py).
+- `[x]` **Sửa nóng**: Chuyển đổi approval phrase sang `APPROVE_PROFILE_WRITE_CANDIDATES_FOR_NEXT_PHASE_ONLY` và hỗ trợ đầy đủ các tham số phê duyệt.
+- `[x]` Chạy pytest toàn cục Passed: **227/227 passed** (100% thành công).
+- `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
+
+## Phase 2J – Final Business Sign-off Package (Đã hoàn thành)
+- `[x]` Thiết kế tệp JSON Schema Contract đầu ra sign-off: `tools/feasibility/profile_final_business_signoff_contract.json`.
+- `[x]` Phát triển script đóng gói Business Sign-off: `export_profile_final_business_signoff.py`.
+- `[x]` Lọc sạch các plan items hợp lệ và gán quyết định mặc định `PENDING`.
+- `[x]` **Sửa nóng bảo vệ Read-Only**: Ngăn chặn tuyệt đối mọi hành vi chạy hay import các phase upstream, tích hợp so khớp mã băm SHA-256 động của 7 tệp nguồn trước và sau khi chạy.
+- `[x]` Sinh đầy đủ tệp tin business sign-off (items JSON, summary JSON, Excel template 5 sheet có dropdown validation và guide Markdown).
+- `[x]` Viết tệp unit test kiểm định tự động QA Workbook bằng openpyxl: [test_profile_final_business_signoff.py](file:///D:/mep_quotation_pipeline/tests/test_profile_final_business_signoff.py).
+- `[x]` Chạy pytest toàn cục Passed: **232/232 passed** (100% thành công).
 - `[x]` Đồng bộ hóa tài liệu root (`implementation_plan.md`, `task.md`, `walkthrough.md`).
 
 ---

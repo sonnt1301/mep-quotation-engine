@@ -1,9 +1,28 @@
 {
-  "rollback_plan_id": "ROLLBACK_PLAN_2026-07-11T04-11-44-526600Z",
-  "generated_at": "2026-07-11T04:11:44.526600Z",
-  "simulation_id": "SIM_SESSION_2026-07-11T04-11-44-526600Z",
+  "rollback_plan_id": "ROLLBACK_PLAN_2026-07-13T12-30-47-103402Z",
+  "generated_at": "2026-07-13T12:30:47.103402Z",
+  "simulation_id": "SIM_SESSION_2026-07-13T12-30-47-103402Z",
   "rollback_available": true,
   "rollback_scope": "sandbox_only",
-  "rollback_actions": [],
+  "rollback_actions": [
+    {
+      "action_id": "ROLLBACK_ACT_0001",
+      "target_record_id": "SIM_REC_0001",
+      "undo_action": "DELETE",
+      "description": "Xóa bản ghi giả lập SIM_REC_0001 đối với write_key CHINT|NXM-63S|P3|800000|MCCBCHINTNXM63S3P256325."
+    },
+    {
+      "action_id": "ROLLBACK_ACT_0002",
+      "target_record_id": "SIM_REC_0002",
+      "undo_action": "DELETE",
+      "description": "Xóa bản ghi giả lập SIM_REC_0002 đối với write_key CHINT|NXM-125S|P3|860000|MCCBCHINTNXM125S3P801252."
+    },
+    {
+      "action_id": "ROLLBACK_ACT_0003",
+      "target_record_id": "SIM_REC_0003",
+      "undo_action": "DELETE",
+      "description": "Xóa bản ghi giả lập SIM_REC_0003 đối với write_key CHINT|NXM-250S|P3|1400000|MCCBCHINTNXM250S3P160200."
+    }
+  ],
   "note": "Đây chỉ là phương án rollback giả lập được thiết kế trong sandbox. Chưa có bất kỳ ghi dữ liệu thực tế nào được thực thi nên không cần chạy rollback thật."
 }

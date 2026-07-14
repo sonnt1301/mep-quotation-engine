@@ -1,11 +1,11 @@
 ﻿metric,value
-commit_gate_status,PENDING_HUMAN_APPROVAL
+commit_gate_status,APPROVED_FOR_NEXT_PHASE_DESIGN_ONLY
 ready_for_write_to_main_pipeline,False
-next_allowed_phase,Human candidate review
+next_allowed_phase,Phase 2E write simulation design
 candidate_items_count,3
 skipped_items_count,0
 duplicate_write_key_count,0
 duplicate_material_code_count,0
-approval_approved,False
-approved_by,
+approval_approved,True
+approved_by,Project Owner
 blocking_reasons,

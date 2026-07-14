@@ -1,0 +1,4 @@
+﻿signoff_item_id,final_plan_item_id,supplier_code,material_code,normalized_description,unit,quantity,unit_price,amount,planned_action,risk_level,human_decision,human_note
+SIGNOFF_ITEM_0001,PLAN_ITEM_0001,CHINT,NXM-63S,MCCB Chint NXM-63S 3P 25÷63 25,cái,1.0,800000,800000.0,PLAN_INSERT,LOW,APPROVE_FOR_EXECUTOR_DESIGN,Approved by Project Owner for executor design only; no real write authorization.
+SIGNOFF_ITEM_0002,PLAN_ITEM_0002,CHINT,NXM-125S,MCCB Chint NXM-125S 3P 80÷125 25,cái,1.0,860000,860000.0,PLAN_INSERT,LOW,APPROVE_FOR_EXECUTOR_DESIGN,Approved by Project Owner for executor design only; no real write authorization.
+SIGNOFF_ITEM_0003,PLAN_ITEM_0003,CHINT,NXM-250S,"MCCB Chint NXM-250S 3P 160,200,250 35",cái,1.0,1400000,1400000.0,PLAN_INSERT,LOW,APPROVE_FOR_EXECUTOR_DESIGN,Approved by Project Owner for executor design only; no real write authorization.

@@ -1,1 +1,4 @@
 ﻿match_result_id,simulation_record_id,write_candidate_id,supplier_code,material_code,description,unit,unit_price,write_key,match_status,recommended_action,matched_master_record_id,match_confidence,match_reason
+MATCH_RES_0001,SIM_REC_0001,WRITE_CANDIDATE_0001,CHINT,NXM-63S,MCCB Chint NXM-63S 3P 25÷63 25,cái,800000,CHINT|NXM-63S|P3|800000|MCCBCHINTNXM63S3P256325,NO_MATCH,WOULD_INSERT,,0.0,"Mã hàng mới hoàn toàn, không tìm thấy trong dữ liệu master."
+MATCH_RES_0002,SIM_REC_0002,WRITE_CANDIDATE_0002,CHINT,NXM-125S,MCCB Chint NXM-125S 3P 80÷125 25,cái,860000,CHINT|NXM-125S|P3|860000|MCCBCHINTNXM125S3P801252,NO_MATCH,WOULD_INSERT,,0.0,"Mã hàng mới hoàn toàn, không tìm thấy trong dữ liệu master."
+MATCH_RES_0003,SIM_REC_0003,WRITE_CANDIDATE_0003,CHINT,NXM-250S,"MCCB Chint NXM-250S 3P 160,200,250 35",cái,1400000,CHINT|NXM-250S|P3|1400000|MCCBCHINTNXM250S3P160200,NO_MATCH,WOULD_INSERT,,0.0,"Mã hàng mới hoàn toàn, không tìm thấy trong dữ liệu master."

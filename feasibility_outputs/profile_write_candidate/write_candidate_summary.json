@@ -1,6 +1,6 @@
 {
   "candidate_version": "1.0.0",
-  "generated_at": "2026-07-11T04:11:43.938131Z",
+  "generated_at": "2026-07-13T11:02:25.468049Z",
   "mode": "dry_run",
   "source_adapter_summary_path": "D:\\mep_quotation_pipeline\\feasibility_outputs\\profile_write_adapter_dry_run\\profile_write_adapter_summary.json",
   "write_target": "write_candidate_preview_only",

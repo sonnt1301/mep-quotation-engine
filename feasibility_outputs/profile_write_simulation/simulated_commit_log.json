@@ -1,13 +1,38 @@
 {
-  "simulation_id": "SIM_SESSION_2026-07-11T04-11-44-526600Z",
-  "generated_at": "2026-07-11T04:11:44.526600Z",
-  "total_candidates": 0,
-  "would_insert_count": 0,
+  "simulation_id": "SIM_SESSION_2026-07-13T12-30-47-103402Z",
+  "generated_at": "2026-07-13T12:30:47.103402Z",
+  "total_candidates": 3,
+  "would_insert_count": 3,
   "would_update_count": 0,
   "would_skip_count": 0,
   "blocked_count": 0,
-  "source_commit_gate_hash": "478d0642e12e52d79568afb76a539e17e798d2e72094eac33662813f2e357367",
+  "source_commit_gate_hash": "858d1883f5b3672dff96f6d7d98eb3d48d32f57930d6c3fb5d24532ad6d7f0f9",
   "source_candidate_hash": "28651447e1d09fac7611a350c5bac348aa56960565609b7fce024f9743ff0fe7",
   "ready_for_real_write": false,
-  "log_entries": []
+  "log_entries": [
+    {
+      "log_id": "LOG_ENTRY_0001",
+      "write_candidate_id": "WRITE_CANDIDATE_0001",
+      "write_key": "CHINT|NXM-63S|P3|800000|MCCBCHINTNXM63S3P256325",
+      "action": "simulation_insert",
+      "result": "WOULD_INSERT",
+      "message": "[WARNING: not_checked_against_master_database] Giả lập thêm mới thành công."
+    },
+    {
+      "log_id": "LOG_ENTRY_0002",
+      "write_candidate_id": "WRITE_CANDIDATE_0002",
+      "write_key": "CHINT|NXM-125S|P3|860000|MCCBCHINTNXM125S3P801252",
+      "action": "simulation_insert",
+      "result": "WOULD_INSERT",
+      "message": "[WARNING: not_checked_against_master_database] Giả lập thêm mới thành công."
+    },
+    {
+      "log_id": "LOG_ENTRY_0003",
+      "write_candidate_id": "WRITE_CANDIDATE_0003",
+      "write_key": "CHINT|NXM-250S|P3|1400000|MCCBCHINTNXM250S3P160200",
+      "action": "simulation_insert",
+      "result": "WOULD_INSERT",
+      "message": "[WARNING: not_checked_against_master_database] Giả lập thêm mới thành công."
+    }
+  ]
 }
